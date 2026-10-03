@@ -1,0 +1,69 @@
+{
+  "categories": {
+    "simulation-physics": "Physics & simulation — rigid/soft bodies, cloth, fluids, MPM, XPBD, reaction-diffusion",
+    "procedural-generation": "Procedural generation — rules or constraints that build structure: WFC, rewrite grammars, terrain",
+    "generative-art": "Generative art — algorithmic drawing and aesthetics",
+    "geometry-algorithms": "Geometry & algorithms — Voronoi, Delaunay, solvers, meshes",
+    "vector-plotter": "Vector & pen-plotter — line output, SVG, plotters, laser",
+    "noise-shaders": "Noise, shaders & GPU — noise fields, raymarching, WebGL",
+    "fractals-3d": "Fractals & 3D rendering",
+    "crowds-agents": "Crowds & agents — multi-agent steering, swarms, collision avoidance",
+    "computer-vision": "Computer vision & ML — tracking, depth, segmentation",
+    "motion-video": "Code-driven motion & video — render pipelines, render QA, reels",
+    "vfx-post": "VFX & compositing — After Effects, relighting, post",
+    "animation-rigging": "Characters, animation & rigging — IK, skeletal rigs, avatars, auto-rigging, character creation",
+    "web-animation": "Web animation libraries — tweening, timelines, Lottie/Rive/vector runtimes, scroll & UI motion",
+    "ai-video-generation": "AI video & image generation — diffusion video models, stylization, anime/toon models, automated short-video engines",
+    "agent-skills": "Agent skills, plugins & MCP — installable know-how and tools for Claude Code and other coding agents",
+    "social-media-marketing": "Social media & ads automation — scheduling, posting, analytics, ad-account agents"
+  },
+  "kinds": {
+    "repo": "Open-source repository",
+    "library": "Library/package you import",
+    "tool": "App or CLI you run",
+    "technique": "A method or pattern, not tied to one codebase",
+    "guide": "Article, tutorial or write-up",
+    "service": "Hosted product / SaaS",
+    "paper": "Research paper",
+    "model": "ML model / checkpoint",
+    "source": "A person, account or feed worth mining for more ideas",
+    "skill": "Agent skill or skill collection (SKILL.md) / plugin",
+    "mcp-server": "Model Context Protocol server an agent can call"
+  },
+  "statuses": {
+    "inbox": "Captured, not checked yet",
+    "verified": "Links checked, details confirmed",
+    "tried": "We ran it ourselves",
+    "used": "Shipped in a project"
+  },
+  "fit": {
+    "avatar-arcade": "Avatar Arcade installation",
+    "collective-heartbeat": "Collective Heartbeat installation",
+    "digital-doodles-wall": "Digital Doodles Wall installation",
+    "living-floor": "Living Floor installation",
+    "living-swarm": "Living Swarm installation",
+    "memory-mosaic": "Memory Mosaic installation",
+    "mural-wall": "Mural Wall installation",
+    "rhythm-battle": "Rhythm Battle installation",
+    "synesthetic-room": "Synesthetic Room installation",
+    "touchdesigner": "TouchDesigner builds",
+    "reels-content": "Social reels / promo video production",
+    "merch-takeaway": "Physical take-home output (prints, plots, merch)",
+    "social-ops": "Running CTX / client social media, content calendar and ads",
+    "client-pitches": "Pitch decks, proposal videos, client teasers"
+  },
+  "runs_in": [
+    "browser",
+    "node",
+    "python",
+    "desktop",
+    "gpu",
+    "after-effects",
+    "touchdesigner",
+    "cloud",
+    "cli",
+    "unity",
+    "claude-code",
+    "mcp"
+  ]
+}

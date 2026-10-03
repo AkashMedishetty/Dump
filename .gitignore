@@ -1,0 +1,10 @@
+# Full phone screenshots stay local: they show other people's handles, comments and avatars,
+# and this repo is public. Commit only the cropped versions in assets/thumbs/.
+assets/IMG_*.jpg
+assets/IMG_*.jpeg
+assets/IMG_*.png
+assets/IMG_*.heic
+assets/IMG_*.HEIC
+inbox/
+.DS_Store
+node_modules/

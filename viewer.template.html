@@ -1,0 +1,478 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CTX Idea Library</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: sticky search bar over a filter rail + card catalogue; navy "caption band" ink borrowed from the reels the library grew from. */
+:root {
+  --bg: #eef0f4; --surface: #ffffff; --surface-2: #e4e8ef; --ink: #0d1324; --ink-2: #47506a; --ink-3: #7a8299;
+  --line: #d7dce6; --accent: #2448c9; --accent-ink: #ffffff; --mark: #ffe58a; --band: #0b1020; --band-ink: #f4f6fb;
+  --shadow: 0 1px 2px rgb(13 19 36 / .06), 0 10px 28px -14px rgb(13 19 36 / .28);
+  --thumb-l: .90; --thumb-c: .045; --chip-l: .93; --chip-ink-l: .36;
+  --serif: "Bricolage Grotesque", "Avenir Next", "Segoe UI", system-ui, sans-serif;
+  --sans: "IBM Plex Sans", ui-sans-serif, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0b1020; --surface: #121a2e; --surface-2: #1b2540; --ink: #e9edf7; --ink-2: #a9b2c9; --ink-3: #6f7a96;
+    --line: #232e4b; --accent: #8fb0ff; --accent-ink: #0b1020; --mark: #6b5a12; --band: #050816; --band-ink: #f4f6fb;
+    --shadow: 0 1px 2px rgb(0 0 0 / .4), 0 10px 28px -14px rgb(0 0 0 / .7);
+    --thumb-l: .30; --thumb-c: .06; --chip-l: .28; --chip-ink-l: .86; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0b1020; --surface: #121a2e; --surface-2: #1b2540; --ink: #e9edf7; --ink-2: #a9b2c9; --ink-3: #6f7a96;
+  --line: #232e4b; --accent: #8fb0ff; --accent-ink: #0b1020; --mark: #6b5a12; --band: #050816; --band-ink: #f4f6fb;
+  --shadow: 0 1px 2px rgb(0 0 0 / .4), 0 10px 28px -14px rgb(0 0 0 / .7);
+  --thumb-l: .30; --thumb-c: .06; --chip-l: .28; --chip-ink-l: .86; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body { background: var(--bg); color: var(--ink); font: 15px/1.5 var(--sans); -webkit-font-smoothing: antialiased; }
+a { color: inherit; }
+button { font: inherit; color: inherit; }
+:where(button, a, input, select):focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+@media (prefers-reduced-motion: reduce) { .card { transition: none; } .card:hover { transform: none; } }
+mark { background: var(--mark); color: inherit; border-radius: 2px; padding: 0 1px; }
+
+header { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+.bar { max-width: 1400px; margin: 0 auto; padding: 14px 24px; display: flex; gap: 16px; align-items: center; }
+.brand { font: 700 21px/1 var(--serif); letter-spacing: -.01em; white-space: nowrap; }
+.brand small { display: block; font: 12px/1.4 var(--sans); color: var(--ink-3); margin-top: 4px; letter-spacing: 0; }
+.search { flex: 1; position: relative; }
+.search input { width: 100%; padding: 11px 14px 11px 38px; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); color: var(--ink); font: 15px var(--sans); outline: none; }
+.search input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 22%, transparent); }
+.search svg { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: var(--ink-3); }
+.search kbd { position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font: 11px var(--mono); color: var(--ink-3); border: 1px solid var(--line); border-radius: 5px; padding: 1px 6px; }
+.iconbtn { border: 1px solid var(--line); background: var(--surface); border-radius: 10px; padding: 9px 11px; cursor: pointer; line-height: 0; }
+.iconbtn:hover { border-color: var(--ink-3); }
+#filterToggle { display: none; }
+
+.layout { max-width: 1400px; margin: 0 auto; padding: 20px 24px 64px; display: grid; grid-template-columns: 250px 1fr; gap: 28px; }
+aside { position: sticky; top: calc(84px + env(safe-area-inset-top, 0px)); align-self: start; max-height: calc(100vh - 100px); overflow: auto; padding-right: 6px; }
+.facet { border-bottom: 1px solid var(--line); padding: 10px 0 12px; }
+.facet h3 { margin: 0 0 6px; font: 600 11px/1 var(--sans); letter-spacing: .08em; text-transform: uppercase; color: var(--ink-3); }
+.opt { display: flex; align-items: center; gap: 8px; width: 100%; padding: 4px 6px; margin: 0 -6px; border: 0; background: none; border-radius: 6px; cursor: pointer; text-align: left; font-size: 13.5px; color: var(--ink-2); }
+.opt:hover { background: var(--surface-2); }
+.opt .box { width: 14px; height: 14px; border: 1.5px solid var(--ink-3); border-radius: 4px; flex: none; display: grid; place-items: center; }
+.opt[aria-pressed="true"] { color: var(--ink); font-weight: 600; }
+.opt[aria-pressed="true"] .box { background: var(--accent); border-color: var(--accent); }
+.opt[aria-pressed="true"] .box::after { content: ""; width: 7px; height: 4px; border: 2px solid var(--accent-ink); border-top: 0; border-right: 0; transform: rotate(-45deg) translate(1px, -1px); }
+.opt .lbl { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.opt .n { font: 11px var(--mono); color: var(--ink-3); }
+.opt[disabled] { opacity: .4; cursor: default; }
+.more { border: 0; background: none; color: var(--accent); font-size: 12.5px; padding: 4px 0; cursor: pointer; }
+
+.status { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; margin-bottom: 16px; color: var(--ink-2); font-size: 13.5px; }
+.status strong { color: var(--ink); }
+.status .spacer { flex: 1; }
+.status select { background: var(--surface); color: var(--ink); border: 1px solid var(--line); border-radius: 8px; padding: 5px 8px; font: 13px var(--sans); }
+.active { display: inline-flex; align-items: center; gap: 6px; border: 1px solid var(--line); background: var(--surface); border-radius: 999px; padding: 3px 6px 3px 10px; font-size: 12.5px; cursor: pointer; }
+.active:hover { border-color: var(--accent); }
+.active span { color: var(--ink-3); }
+.clear { border: 0; background: none; color: var(--accent); cursor: pointer; font-size: 13px; }
+
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); gap: 18px; }
+.card { display: flex; flex-direction: column; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; cursor: pointer; text-align: left; padding: 0; transition: transform .15s, box-shadow .15s, border-color .15s; }
+.card:hover, .card:focus-visible { transform: translateY(-2px); box-shadow: var(--shadow); border-color: color-mix(in srgb, var(--accent) 40%, var(--line)); outline: none; }
+.thumb { aspect-ratio: 16 / 9; background: oklch(var(--thumb-l) var(--thumb-c) var(--h, 60)); position: relative; overflow: hidden; }
+.thumb img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 8%; display: block; }
+.thumb .mono { position: absolute; inset: 0; display: grid; place-items: center; font: 600 44px/1 var(--serif); color: oklch(calc(var(--thumb-l) - .25) .08 var(--h, 60)); letter-spacing: -.02em; }
+.thumb .kind { position: absolute; left: 10px; top: 10px; font: 500 10.5px/1 var(--mono); letter-spacing: .06em; text-transform: uppercase; background: var(--band); color: var(--band-ink); padding: 5px 7px; border-radius: 6px; }
+.body { padding: 14px 16px 16px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
+.card h2 { margin: 0; font: 600 17px/1.22 var(--serif); letter-spacing: -.01em; text-wrap: balance; }
+.pin { font: 11px var(--mono); color: var(--ink-3); }
+.card p { margin: 0; color: var(--ink-2); font-size: 13.5px; line-height: 1.45; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+.meta { margin-top: auto; display: flex; flex-wrap: wrap; gap: 5px; padding-top: 4px; }
+.chip { display: inline-block; font: 11.5px/1 var(--sans); padding: 5px 8px; border-radius: 999px; background: var(--surface-2); color: var(--ink-2); border: 0; white-space: nowrap; }
+.chip.cat { background: oklch(var(--chip-l) .05 var(--h, 60)); color: oklch(var(--chip-ink-l) .09 var(--h, 60)); }
+button.chip { cursor: pointer; }
+button.chip:hover { outline: 1px solid var(--ink-3); }
+.author { font-size: 12px; color: var(--ink-3); }
+.empty { padding: 60px 20px; text-align: center; color: var(--ink-2); border: 1px dashed var(--line); border-radius: 14px; }
+
+dialog { width: min(860px, calc(100vw - 32px)); max-height: calc(100vh - 48px); padding: 0; border: 1px solid var(--line); border-radius: 16px; background: var(--surface); color: var(--ink); box-shadow: 0 30px 80px -20px rgb(0 0 0 / .45); }
+dialog::backdrop { background: rgb(10 9 7 / .55); backdrop-filter: blur(3px); }
+.d-head { display: grid; grid-template-columns: 220px 1fr; gap: 22px; padding: 22px; border-bottom: 1px solid var(--line); }
+.d-head .thumb { aspect-ratio: auto; height: 100%; min-height: 160px; max-height: 320px; border-radius: 10px; }
+.d-head h2 { margin: 2px 0 8px; font: 700 27px/1.12 var(--serif); text-wrap: balance; letter-spacing: -.01em; }
+.d-head .hook { margin: 0 0 14px; color: var(--ink-2); font-size: 15.5px; }
+.links { display: flex; flex-wrap: wrap; gap: 8px; }
+.btn { display: inline-flex; align-items: center; gap: 6px; text-decoration: none; border: 1px solid var(--line); background: var(--surface-2); border-radius: 8px; padding: 7px 11px; font-size: 13px; cursor: pointer; }
+.btn.primary { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); font-weight: 600; }
+.btn:hover { filter: brightness(1.05); border-color: var(--ink-3); }
+.close { position: absolute; right: 12px; top: 12px; }
+.d-body { padding: 8px 22px 26px; display: grid; grid-template-columns: 1fr 230px; gap: 28px; }
+.prose h3 { font: 600 12px/1 var(--sans); letter-spacing: .08em; text-transform: uppercase; color: var(--accent); margin: 22px 0 8px; }
+.prose h4 { font: 600 14px var(--sans); margin: 14px 0 4px; }
+.prose p, .prose li { font-size: 14.5px; line-height: 1.6; }
+.prose p { margin: 0 0 10px; }
+.prose ul, .prose ol { margin: 0 0 10px; padding-left: 20px; }
+.prose li { margin: 3px 0; }
+.prose code { font: 12.5px var(--mono); background: var(--surface-2); padding: 1px 5px; border-radius: 4px; }
+.prose pre { background: var(--surface-2); border: 1px solid var(--line); border-radius: 8px; padding: 12px 14px; overflow-x: auto; font: 12.5px/1.55 var(--mono); }
+.prose pre code { background: none; padding: 0; }
+.prose a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; word-break: break-word; }
+.side { padding-top: 22px; display: flex; flex-direction: column; gap: 14px; font-size: 13px; }
+.side dl { margin: 0; display: grid; grid-template-columns: auto 1fr; gap: 6px 10px; }
+.side dt { color: var(--ink-3); font-size: 11.5px; text-transform: uppercase; letter-spacing: .06em; padding-top: 2px; }
+.side dd { margin: 0; word-break: break-word; }
+.side dd.mono { font: 12px var(--mono); }
+.side h4 { margin: 0 0 6px; font: 600 11px var(--sans); letter-spacing: .08em; text-transform: uppercase; color: var(--ink-3); }
+.side .chips { display: flex; flex-wrap: wrap; gap: 5px; }
+.rel { display: block; text-align: left; width: 100%; border: 1px solid var(--line); background: var(--surface-2); border-radius: 8px; padding: 7px 9px; margin-bottom: 6px; cursor: pointer; font-size: 13px; }
+.rel:hover { border-color: var(--accent); }
+.path { font: 11.5px var(--mono); color: var(--ink-3); word-break: break-all; }
+
+@media (max-width: 900px) {
+  .layout { grid-template-columns: 1fr; padding: 16px; }
+  .bar { padding: 12px 16px; flex-wrap: wrap; }
+  .brand small { display: none; }
+  .search { order: 3; flex-basis: 100%; }
+  .search kbd { display: none; }
+  #filterToggle { display: inline-block; margin-left: auto; }
+  aside { position: static; max-height: none; display: none; border: 1px solid var(--line); border-radius: 12px; padding: 4px 14px; background: var(--surface); }
+  aside.open { display: block; }
+  .d-head, .d-body { grid-template-columns: 1fr; }
+  .d-head .thumb { max-height: 220px; }
+  .side { padding-top: 0; }
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="bar">
+    <div class="brand">Idea Library<small id="stats"></small></div>
+    <label class="search">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <input id="q" type="search" placeholder="Search ideas, tags, authors…  try  tag:xpbd  license:mit  fit:living-floor  -gpl" autocomplete="off" spellcheck="false" aria-label="Search the library">
+      <kbd>/</kbd>
+    </label>
+    <button class="iconbtn" id="filterToggle" aria-expanded="false" aria-controls="facets" title="Filters">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M7 12h10M10 18h4"/></svg>
+    </button>
+    <button class="iconbtn" id="theme" title="Toggle light/dark">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 3a9 9 0 1 0 9 9 7 7 0 0 1-9-9z"/></svg>
+    </button>
+  </div>
+</header>
+<div class="layout">
+  <aside id="facets" aria-label="Filters"></aside>
+  <main>
+    <div class="status" id="status"></div>
+    <div class="grid" id="grid"></div>
+  </main>
+</div>
+<dialog id="detail" aria-labelledby="d-title"></dialog>
+
+<script>
+const LIB = /*__LIBRARY__*/null;
+const MODE = /*__MODE__*/'local';
+const E = LIB.entries;
+const byId = Object.fromEntries(E.map(e => [e.id, e]));
+const CATS = Object.keys(LIB.vocab.categories);
+const FACETS = [
+  ['category', 'Category', 99], ['kind', 'Kind', 99], ['fit', 'Fits project', 99], ['tags', 'Tags', 14],
+  ['stack', 'Stack', 10], ['runs_in', 'Runs in', 99], ['license', 'License', 99], ['status', 'Status', 99],
+];
+const FIELD = { tag: 'tags', tags: 'tags', cat: 'category', category: 'category', kind: 'kind', fit: 'fit', stack: 'stack',
+  runs: 'runs_in', runs_in: 'runs_in', license: 'license', status: 'status', author: 'author', id: 'id', source: 'source' };
+const W = { title: 10, tags: 6, hook: 5, meta: 3, body: 1 };
+
+const $ = s => document.querySelector(s);
+const norm = s => String(s ?? '').toLowerCase().normalize('NFKD').replace(/[̀-ͯ]/g, '');
+const esc = s => String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+const vals = (e, k) => Array.isArray(e[k]) ? e[k] : (e[k] ? [e[k]] : []);
+const shortPin = p => /^[0-9a-f]{12,40}$/i.test(p) ? p.slice(0, 7) : p;
+const hue = c => Math.round((CATS.indexOf(c) / Math.max(CATS.length, 1)) * 360 + 25) % 360;
+
+for (const e of E) {
+  e._f = {
+    title: norm(`${e.title} ${e.aliases.join(' ')}`),
+    tags: norm(`${e.tags.join(' ')} ${e.category.join(' ')}`),
+    hook: norm(e.hook),
+    meta: norm([e.id, e.author, e.stack.join(' '), e.runs_in.join(' '), e.fit.join(' '), e.license, e.kind, e.source, e.url, e.demo].join(' ')),
+    body: norm(e.body),
+  };
+}
+
+const state = { q: '', f: {}, sort: 'auto', open: null, more: {} };
+
+function parseQuery(q) {
+  const terms = [];
+  for (const m of q.matchAll(/(-?)(?:([a-z_]+):)?("([^"]*)"|\S+)/gi)) {
+    const neg = m[1] === '-';
+    const field = m[2] && FIELD[m[2].toLowerCase()];
+    let v = norm(m[4] ?? m[3]);
+    if (m[2] && !field) v = norm(`${m[2]}:${m[4] ?? m[3]}`); // not a known field: treat literally
+    if (v) terms.push({ neg, field: field || null, v });
+  }
+  return terms;
+}
+
+function scoreEntry(e, terms) {
+  let score = 0;
+  for (const t of terms) {
+    let s = 0;
+    if (t.field) s = vals(e, t.field).some(x => norm(x).includes(t.v)) ? 4 : 0;
+    else for (const [k, w] of Object.entries(W)) if (e._f[k].includes(t.v)) s += w;
+    if (t.neg ? s > 0 : s === 0) return -1;
+    if (!t.neg) score += s + (e._f.title.startsWith(t.v) ? 5 : 0);
+  }
+  return score;
+}
+
+function passFacets(e, skip) {
+  for (const [k, set] of Object.entries(state.f)) {
+    if (k === skip || !set.size) continue;
+    if (!vals(e, k).some(v => set.has(v))) return false;
+  }
+  return true;
+}
+
+function compute() {
+  const terms = parseQuery(state.q);
+  const scored = [];
+  for (const e of E) {
+    const s = terms.length ? scoreEntry(e, terms) : 0;
+    if (s >= 0) scored.push([e, s]);
+  }
+  const results = scored.filter(([e]) => passFacets(e)).map(([e, s]) => ({ e, s }));
+  const sort = state.sort === 'auto' ? (terms.length ? 'relevance' : 'newest') : state.sort;
+  results.sort((a, b) =>
+    sort === 'relevance' ? b.s - a.s || a.e.title.localeCompare(b.e.title)
+    : sort === 'az' ? a.e.title.localeCompare(b.e.title)
+    : b.e.added.localeCompare(a.e.added) || a.e.title.localeCompare(b.e.title));
+  const counts = {};
+  for (const [k] of FACETS) {
+    const c = {};
+    for (const [e] of scored) if (passFacets(e, k)) for (const v of vals(e, k)) c[v] = (c[v] ?? 0) + 1;
+    counts[k] = c;
+  }
+  return { results, counts, terms };
+}
+
+function hl(text, terms) {
+  let out = esc(text);
+  const words = terms.filter(t => !t.neg && !t.field && t.v.length > 1).map(t => t.v.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'));
+  if (!words.length) return out;
+  return out.replace(new RegExp(`(${words.join('|')})`, 'gi'), '<mark>$1</mark>');
+}
+
+function thumb(e, cls = '') {
+  const h = hue(e.category[0]);
+  const src = e.thumb || e.image;
+  const inner = src
+    ? `<img src="${esc(src)}" alt="" loading="lazy" style="object-position:${e.thumb ? '50% 0%' : '50% 8%'}">`
+    : `<div class="mono">${esc(e.title.replace(/^[^A-Za-z0-9]+/, '').slice(0, 2))}</div>`;
+  return `<div class="thumb ${cls}" style="--h:${h}">${inner}<span class="kind">${esc(e.kind)}</span></div>`;
+}
+
+function render() {
+  const { results, counts, terms } = compute();
+  $('#stats').textContent = `${E.length} ideas · ${Object.keys(LIB.tags).length} tags · built ${LIB.generated.slice(0, 10)}`;
+
+  // facets
+  $('#facets').innerHTML = FACETS.map(([k, label, limit]) => {
+    const sel = state.f[k] ?? new Set();
+    const universe = {};
+    for (const e of E) for (const v of vals(e, k)) universe[v] = (universe[v] ?? 0) + 1;
+    let opts = Object.keys(universe).sort((a, b) => (counts[k][b] ?? 0) - (counts[k][a] ?? 0) || universe[b] - universe[a] || a.localeCompare(b));
+    if (!opts.length) return '';
+    const showAll = state.more[k] || opts.length <= limit + 2;
+    const visible = showAll ? opts : opts.filter((v, i) => i < limit || sel.has(v));
+    return `<div class="facet"><h3>${label}</h3>${visible.map(v => {
+      const n = counts[k][v] ?? 0, on = sel.has(v);
+      return `<button class="opt" data-k="${k}" data-v="${esc(v)}" aria-pressed="${on}" ${!n && !on ? 'disabled' : ''}><span class="box"></span><span class="lbl">${esc(v)}</span><span class="n">${n}</span></button>`;
+    }).join('')}${showAll ? '' : `<button class="more" data-more="${k}">Show all ${opts.length}</button>`}</div>`;
+  }).join('');
+
+  // status line
+  const actives = [];
+  for (const [k, set] of Object.entries(state.f)) for (const v of set) actives.push(`<button class="active" data-k="${k}" data-v="${esc(v)}"><span>${k}:</span>${esc(v)} ✕</button>`);
+  const filtered = actives.length || state.q;
+  $('#status').innerHTML = `<span><strong>${results.length}</strong> of ${E.length}</span>${actives.join('')}${filtered ? '<button class="clear" id="clear">Clear all</button>' : ''}
+    <span class="spacer"></span>
+    <label>Sort <select id="sort">
+      ${[['auto', 'Auto'], ['relevance', 'Relevance'], ['newest', 'Newest'], ['az', 'A–Z']].map(([v, l]) => `<option value="${v}" ${state.sort === v ? 'selected' : ''}>${l}</option>`).join('')}
+    </select></label>`;
+
+  // cards
+  $('#grid').innerHTML = results.length ? results.map(({ e }) => `
+    <button class="card" data-open="${e.id}" style="--h:${hue(e.category[0])}">
+      ${thumb(e)}
+      <div class="body">
+        <h2>${hl(e.title, terms)}</h2>
+        <p>${hl(e.hook, terms)}</p>
+        <div class="author">${esc(e.author || '')}${e.pin ? ` <span class="pin" title="Pinned commit or tag">@${esc(shortPin(e.pin))}</span>` : ''}</div>
+        <div class="meta">
+          ${e.category.map(c => `<span class="chip cat" style="--h:${hue(c)}">${esc(c)}</span>`).join('')}
+          ${e.license ? `<span class="chip">${esc(e.license)}</span>` : ''}
+          ${e.stack.slice(0, 2).map(s => `<span class="chip">${esc(s)}</span>`).join('')}
+        </div>
+      </div>
+    </button>`).join('')
+    : `<div class="empty">Nothing matches. <button class="clear" id="clear2">Clear search and filters</button></div>`;
+
+  writeHash();
+}
+
+// ---------- detail ----------
+function md(src) {
+  const inline = s => esc(s)
+    .replace(/`([^`]+)`/g, (_, c) => `<code>${c}</code>`)
+    .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
+    .replace(/(^|[\s(])\*([^*\s][^*]*?)\*/g, '$1<em>$2</em>')
+    .replace(/\[([^\]]+)\]\((https?:[^)\s]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>')
+    .replace(/(^|[\s(])(https?:\/\/[^\s<)]+)/g, '$1<a href="$2" target="_blank" rel="noopener">$2</a>');
+  const lines = src.split('\n'); let html = '', para = [], list = null;
+  const flushP = () => { if (para.length) html += `<p>${inline(para.join(' '))}</p>`; para = []; };
+  const flushL = () => { if (list) html += `</${list}>`; list = null; };
+  for (let i = 0; i < lines.length; i++) {
+    const l = lines[i];
+    if (l.startsWith('```')) {
+      flushP(); flushL();
+      const buf = []; while (++i < lines.length && !lines[i].startsWith('```')) buf.push(lines[i]);
+      html += `<pre><code>${esc(buf.join('\n'))}</code></pre>`; continue;
+    }
+    let m;
+    if ((m = l.match(/^###\s+(.*)/))) { flushP(); flushL(); html += `<h4>${inline(m[1])}</h4>`; continue; }
+    if ((m = l.match(/^\s*[-*]\s+(.*)/)) || (m = l.match(/^\s*\d+\.\s+(.*)/))) {
+      flushP(); const t = /^\s*\d+\./.test(l) ? 'ol' : 'ul';
+      if (list !== t) { flushL(); html += `<${t}>`; list = t; }
+      html += `<li>${inline(m[1])}</li>`; continue;
+    }
+    if (!l.trim()) { flushP(); flushL(); continue; }
+    if (list) { html = html.replace(/<\/li>$/, ` ${inline(l.trim())}</li>`); continue; }
+    para.push(l.trim());
+  }
+  flushP(); flushL();
+  return html;
+}
+
+function openDetail(id) {
+  const e = byId[id]; if (!e) return;
+  state.open = id;
+  const order = ['What it is', 'How it works', 'Ideas for us', 'Notes'];
+  const keys = [...order.filter(k => e.sections[k]), ...Object.keys(e.sections).filter(k => !order.includes(k) && k !== '_intro')];
+  const row = (k, v) => v && (!Array.isArray(v) || v.length) ? `<dt>${k}</dt><dd>${Array.isArray(v) ? v.map(esc).join(', ') : esc(v)}</dd>` : '';
+  const gh = e.url;
+  $('#detail').innerHTML = `
+    <button class="iconbtn close" data-close title="Close (Esc)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    <div class="d-head">
+      ${thumb(e)}
+      <div>
+        <div class="meta" style="margin:0 0 6px">${e.category.map(c => `<button class="chip cat" data-filter="category" data-v="${esc(c)}" style="--h:${hue(c)}">${esc(c)}</button>`).join('')}</div>
+        <h2 id="d-title">${esc(e.title)}</h2>
+        <p class="hook">${esc(e.hook)}</p>
+        <div class="links">
+          ${gh ? `<a class="btn primary" href="${esc(gh)}" target="_blank" rel="noopener">Open source ↗</a>` : ''}
+          ${e.demo ? `<a class="btn" href="${esc(e.demo)}" target="_blank" rel="noopener">Demo ↗</a>` : ''}
+          ${e.image ? `<a class="btn" href="${esc(e.image)}" target="_blank" rel="noopener">Original screenshot</a>` : ''}
+          ${MODE === 'local' ? `<button class="btn" data-copy="${esc(e.file)}">Copy file path</button>` : `<button class="btn" data-copy="${esc(e.url)}">Copy link</button>`}
+        </div>
+      </div>
+    </div>
+    <div class="d-body">
+      <div class="prose">${keys.map(k => `<h3>${esc(k)}</h3>${md(e.sections[k])}`).join('')}</div>
+      <div class="side">
+        <dl>
+          ${row('Kind', e.kind)}${row('Author', e.author)}${row('License', e.license)}${row('License notes', e.license_notes)}
+          ${row('Stack', e.stack)}${row('Runs in', e.runs_in)}${e.pin ? `<dt>Pin</dt><dd class="mono">${esc(e.pin)}</dd>` : ''}${row('Aliases', e.aliases)}
+          ${row('Status', e.status)}${row('Added', e.added)}${row('Source', e.source)}${row('Ref', e.source_ref)}
+        </dl>
+        ${e.fit.length ? `<div><h4>Fits</h4><div class="chips">${e.fit.map(t => `<button class="chip" data-filter="fit" data-v="${esc(t)}">${esc(t)}</button>`).join('')}</div></div>` : ''}
+        ${e.tags.length ? `<div><h4>Tags</h4><div class="chips">${e.tags.map(t => `<button class="chip" data-filter="tags" data-v="${esc(t)}">${esc(t)}</button>`).join('')}</div></div>` : ''}
+        ${e.related.length ? `<div><h4>Related</h4>${e.related.filter(r => byId[r]).map(r => `<button class="rel" data-open="${r}">${esc(byId[r].title)}</button>`).join('')}</div>` : ''}
+        ${MODE === 'local' ? `<div class="path">${esc(e.file)}</div>` : ''}
+      </div>
+    </div>`;
+  const d = $('#detail');
+  if (!d.open) d.showModal();
+  d.scrollTop = 0;
+  writeHash();
+}
+
+function closeDetail() { const d = $('#detail'); if (d.open) d.close(); }
+$('#detail').addEventListener('close', () => { state.open = null; writeHash(); });
+$('#detail').addEventListener('click', ev => { if (ev.target === ev.currentTarget) closeDetail(); });
+
+// ---------- hash state ----------
+function writeHash() {
+  let h = '';
+  if (MODE === 'artifact') h = state.open || '';
+  else {
+    const p = new URLSearchParams();
+    if (state.q) p.set('q', state.q);
+    const f = Object.entries(state.f).filter(([, s]) => s.size).map(([k, s]) => `${k}:${[...s].join(',')}`).join(';');
+    if (f) p.set('f', f);
+    if (state.sort !== 'auto') p.set('sort', state.sort);
+    if (state.open) p.set('open', state.open);
+    h = p.toString();
+  }
+  try { if (location.hash.slice(1) !== h) history.replaceState(null, '', h ? `#${h}` : location.pathname + location.search); } catch {}
+}
+function readHash() {
+  const raw = decodeURIComponent(location.hash.slice(1));
+  if (byId[raw]) { render(); openDetail(raw); return; }
+  const p = new URLSearchParams(raw.includes('=') ? raw : '');
+  state.q = p.get('q') ?? '';
+  state.sort = p.get('sort') ?? 'auto';
+  state.f = {};
+  for (const part of (p.get('f') ?? '').split(';').filter(Boolean)) {
+    const i = part.indexOf(':');
+    state.f[part.slice(0, i)] = new Set(part.slice(i + 1).split(',').filter(Boolean));
+  }
+  $('#q').value = state.q;
+  render();
+  if (p.get('open')) openDetail(p.get('open'));
+}
+
+// ---------- events ----------
+function toggleFacet(k, v, only) {
+  const s = state.f[k] ?? (state.f[k] = new Set());
+  if (only) { s.clear(); s.add(v); } else s.has(v) ? s.delete(v) : s.add(v);
+  render();
+}
+let t;
+$('#q').addEventListener('input', ev => { clearTimeout(t); t = setTimeout(() => { state.q = ev.target.value.trim(); render(); }, 60); });
+document.addEventListener('click', async ev => {
+  const b = ev.target.closest('button, a'); if (!b) return;
+  if (b.dataset.open) { openDetail(b.dataset.open); return; }
+  if (b.matches('.opt, .active')) { toggleFacet(b.dataset.k, b.dataset.v); return; }
+  if (b.dataset.filter) { closeDetail(); toggleFacet(b.dataset.filter, b.dataset.v, true); window.scrollTo({ top: 0 }); return; }
+  if (b.dataset.more) { state.more[b.dataset.more] = true; render(); return; }
+  if (b.id === 'clear' || b.id === 'clear2') { state.q = ''; state.f = {}; $('#q').value = ''; render(); return; }
+  if (b.hasAttribute('data-close')) { closeDetail(); return; }
+  if (b.dataset.copy) {
+    try { await navigator.clipboard.writeText(b.dataset.copy); b.textContent = 'Copied'; } catch { b.textContent = b.dataset.copy; }
+    return;
+  }
+  if (b.id === 'filterToggle') {
+    const open = $('#facets').classList.toggle('open'); b.setAttribute('aria-expanded', open); return;
+  }
+  if (b.id === 'theme') {
+    const cur = document.documentElement.dataset.theme || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    const next = cur === 'dark' ? 'light' : 'dark';
+    document.documentElement.dataset.theme = next;
+    try { localStorage.setItem('idea-library-theme', next); } catch {}
+  }
+});
+document.addEventListener('change', ev => { if (ev.target.id === 'sort') { state.sort = ev.target.value; render(); } });
+document.addEventListener('keydown', ev => {
+  if (ev.key === '/' && document.activeElement !== $('#q') && !$('#detail').open) { ev.preventDefault(); $('#q').focus(); $('#q').select(); }
+  if (ev.key === 'Escape' && document.activeElement === $('#q') && !$('#detail').open) { $('#q').value = ''; state.q = ''; render(); }
+});
+window.addEventListener('hashchange', readHash);
+try { const th = localStorage.getItem('idea-library-theme'); if (th) document.documentElement.dataset.theme = th; } catch {}
+readHash();
+</script>
+</body>
+</html>
