@@ -15,7 +15,8 @@
     "web-animation": "Web animation libraries — tweening, timelines, Lottie/Rive/vector runtimes, scroll & UI motion",
     "ai-video-generation": "AI video & image generation — diffusion video models, stylization, anime/toon models, automated short-video engines",
     "agent-skills": "Agent skills, plugins & MCP — installable know-how and tools for Claude Code and other coding agents",
-    "social-media-marketing": "Social media & ads automation — scheduling, posting, analytics, ad-account agents"
+    "social-media-marketing": "Social media, messaging & ads automation — scheduling, posting, WhatsApp/chat gateways, analytics, ad-account agents",
+    "stage-production": "Stages, lighting & rigging — stage design & previz, truss/hoist rigging, DMX lighting, fixture data (GDTF/MVR), show control, projection mapping"
   },
   "kinds": {
     "repo": "Open-source repository",
@@ -50,7 +51,8 @@
     "reels-content": "Social reels / promo video production",
     "merch-takeaway": "Physical take-home output (prints, plots, merch)",
     "social-ops": "Running CTX / client social media, content calendar and ads",
-    "client-pitches": "Pitch decks, proposal videos, client teasers"
+    "client-pitches": "Pitch decks, proposal videos, client teasers",
+    "event-stages": "Event stage design, lighting & rigging previz for shows we produce"
   },
   "runs_in": [
     "browser",

@@ -1,6 +1,6 @@
 {
-  "generated": "2026-10-03T08:19:39.038Z",
-  "count": 97,
+  "generated": "2026-10-03T08:24:47.121Z",
+  "count": 113,
   "vocab": {
     "categories": {
       "simulation-physics": "Physics & simulation — rigid/soft bodies, cloth, fluids, MPM, XPBD, reaction-diffusion",
@@ -18,7 +18,8 @@
       "web-animation": "Web animation libraries — tweening, timelines, Lottie/Rive/vector runtimes, scroll & UI motion",
       "ai-video-generation": "AI video & image generation — diffusion video models, stylization, anime/toon models, automated short-video engines",
       "agent-skills": "Agent skills, plugins & MCP — installable know-how and tools for Claude Code and other coding agents",
-      "social-media-marketing": "Social media & ads automation — scheduling, posting, analytics, ad-account agents"
+      "social-media-marketing": "Social media, messaging & ads automation — scheduling, posting, WhatsApp/chat gateways, analytics, ad-account agents",
+      "stage-production": "Stages, lighting & rigging — stage design & previz, truss/hoist rigging, DMX lighting, fixture data (GDTF/MVR), show control, projection mapping"
     },
     "kinds": {
       "repo": "Open-source repository",
@@ -53,7 +54,8 @@
       "reels-content": "Social reels / promo video production",
       "merch-takeaway": "Physical take-home output (prints, plots, merch)",
       "social-ops": "Running CTX / client social media, content calendar and ads",
-      "client-pitches": "Pitch decks, proposal videos, client teasers"
+      "client-pitches": "Pitch decks, proposal videos, client teasers",
+      "event-stages": "Event stage design, lighting & rigging previz for shows we produce"
     },
     "runs_in": [
       "browser",
@@ -72,10 +74,11 @@
   },
   "tags": {
     "mcp": 9,
-    "svg": 7,
+    "svg": 8,
+    "dmx": 7,
+    "ffmpeg": 7,
     "threejs": 7,
     "tts": 7,
-    "ffmpeg": 6,
     "image-to-video": 6,
     "p5js": 6,
     "storyboard": 5,
@@ -84,26 +87,43 @@
     "captions": 4,
     "chinese": 4,
     "deterministic-rendering": 4,
+    "gdtf": 4,
     "gsap": 4,
     "open-weights": 4,
+    "paper-cut": 4,
     "pen-plotter": 4,
+    "previz": 4,
+    "remotion": 4,
     "scheduling": 4,
+    "timeline": 4,
     "webgl": 4,
     "whisper": 4,
     "2d-rigging": 3,
     "api": 3,
+    "art-net": 3,
     "claude-code": 3,
     "claude-code-skill": 3,
+    "explainer": 3,
+    "fixtures": 3,
+    "halftone": 3,
     "headless-chrome": 3,
+    "hoists": 3,
+    "kinetic-type": 3,
     "mesh-deformation": 3,
+    "mvr": 3,
+    "n8n": 3,
+    "osc": 3,
     "p5-brush": 3,
     "painterly": 3,
     "pixijs": 3,
-    "remotion": 3,
     "reporting": 3,
+    "sacn": 3,
     "self-hosted": 3,
     "short-video": 3,
-    "timeline": 3,
+    "subagents": 3,
+    "truss": 3,
+    "vertical-video": 3,
+    "3d-view": 2,
     "after-effects": 2,
     "analytics": 2,
     "animals": 2,
@@ -111,6 +131,7 @@
     "asset-generation": 2,
     "auto-generation": 2,
     "auto-rigging": 2,
+    "blender": 2,
     "blendshapes": 2,
     "buffer-alternative": 2,
     "campaign-management": 2,
@@ -119,16 +140,18 @@
     "claude-code-plugin": 2,
     "clawd": 2,
     "cli": 2,
-    "explainer": 2,
+    "collage": 2,
+    "diorama": 2,
+    "elevenlabs": 2,
     "face-tracking": 2,
     "fluids": 2,
     "game-characters": 2,
+    "gateway": 2,
     "hand-drawn": 2,
     "highlights": 2,
     "hyperframes": 2,
     "illustration": 2,
     "inspiration-feed": 2,
-    "kinetic-type": 2,
     "lambda": 2,
     "landscape": 2,
     "launch-video": 2,
@@ -137,34 +160,40 @@
     "live2d": 2,
     "long-video": 2,
     "lottie": 2,
+    "midi": 2,
     "music-video": 2,
-    "n8n": 2,
     "narration": 2,
+    "nextjs": 2,
     "opencl": 2,
+    "paper-wipe": 2,
     "playwright": 2,
     "procedural-music": 2,
     "raymarching": 2,
     "react": 2,
     "reels": 2,
+    "rest-api": 2,
+    "riso": 2,
     "shan-shui": 2,
     "showreel": 2,
     "skeletal-animation": 2,
     "skeleton": 2,
     "spatial-hashing": 2,
+    "stage-plot": 2,
+    "state-machine": 2,
     "stock-footage": 2,
     "style-transfer": 2,
-    "subagents": 2,
     "svg-animation": 2,
     "tweening": 2,
-    "vertical-video": 2,
     "voiceover": 2,
     "vrm": 2,
     "vtuber": 2,
     "wasm": 2,
     "watercolor": 2,
     "webgl2": 2,
+    "webhooks": 2,
     "2d": 1,
     "2d-animation": 1,
+    "2d-plot": 1,
     "3d": 1,
     "3d-captions": 1,
     "3d-characters": 1,
@@ -179,19 +208,23 @@
     "ai-film-evaluation": 1,
     "ai-painter": 1,
     "algorithmic-art": 1,
+    "android": 1,
+    "animated-vector-drawable": 1,
     "animation": 1,
     "animation-editor": 1,
     "anime-avatar": 1,
     "anime-portraits": 1,
     "anime-production": 1,
+    "artnet": 1,
     "attribution": 1,
     "auto-editing": 1,
+    "auto-reply": 1,
     "avatar": 1,
     "axidraw": 1,
     "babylonjs": 1,
+    "baileys": 1,
     "barba": 1,
     "bilingual": 1,
-    "blender": 1,
     "blender-pipeline": 1,
     "bloom": 1,
     "blueprints": 1,
@@ -203,6 +236,7 @@
     "bpm-sync": 1,
     "brain": 1,
     "bristles": 1,
+    "broadcast": 1,
     "brushes": 1,
     "brushstrokes": 1,
     "budget-control": 1,
@@ -210,11 +244,13 @@
     "bursts": 1,
     "bvh": 1,
     "canvas-design": 1,
+    "capture": 1,
     "cartoon": 1,
     "cartoonization": 1,
     "cel-animation": 1,
     "cells": 1,
     "cellular-automata": 1,
+    "chain-motors": 1,
     "character-consistency": 1,
     "character-reference": 1,
     "chinese-painting": 1,
@@ -227,7 +263,6 @@
     "cloth": 1,
     "cloud-render": 1,
     "clouds": 1,
-    "collage": 1,
     "collision-avoidance": 1,
     "collisions": 1,
     "colorization": 1,
@@ -244,12 +279,15 @@
     "creatormotion": 1,
     "creatures": 1,
     "cron": 1,
+    "cross-platform": 1,
     "crowd-simulation": 1,
     "cue-timeline": 1,
     "curated-list": 1,
     "curation": 1,
+    "cut-paper": 1,
     "delaunay": 1,
     "demucs": 1,
+    "depence": 1,
     "depth-map": 1,
     "diagrams": 1,
     "differential-growth": 1,
@@ -262,19 +300,24 @@
     "drawing-to-animation": 1,
     "dungeons": 1,
     "dye": 1,
+    "edge-tts": 1,
+    "editorial": 1,
     "efficient": 1,
-    "elevenlabs": 1,
+    "elevenlabs-music": 1,
     "entropy": 1,
     "erosion": 1,
     "event-qr": 1,
     "exit-animation": 1,
     "explainer-video": 1,
+    "export": 1,
     "expression-transfer": 1,
     "fabrik": 1,
     "face-reenactment": 1,
     "facebook-ads": 1,
     "fast": 1,
+    "fbx": 1,
     "film-grain": 1,
+    "fixture-profiles": 1,
     "flip": 1,
     "flow-field": 1,
     "flowers": 1,
@@ -282,6 +325,7 @@
     "flythrough": 1,
     "fold-format": 1,
     "folding": 1,
+    "folklore": 1,
     "footage": 1,
     "fractals": 1,
     "frame-analysis": 1,
@@ -302,6 +346,7 @@
     "google-ads": 1,
     "gpu": 1,
     "gpu-simulation": 1,
+    "grandma3": 1,
     "gray-scott": 1,
     "growth": 1,
     "gsap-scrolltrigger": 1,
@@ -317,6 +362,7 @@
     "human-in-the-loop": 1,
     "humanoid": 1,
     "hydraulic-erosion": 1,
+    "icon-animation": 1,
     "icons": 1,
     "ik": 1,
     "image-approximation": 1,
@@ -334,6 +380,7 @@
     "instancing": 1,
     "integrations": 1,
     "interactive-character": 1,
+    "interchange": 1,
     "interpolation": 1,
     "inverse-kinematics": 1,
     "jax": 1,
@@ -352,9 +399,14 @@
     "laravel": 1,
     "layout-animation": 1,
     "lens-effects": 1,
+    "letterpress": 1,
     "level-generation": 1,
+    "lighting-console": 1,
+    "lighting-design": 1,
+    "lighting-previz": 1,
     "line-optimization": 1,
     "lloyd-relaxation": 1,
+    "load-calculation": 1,
     "loaders": 1,
     "locomotive-scroll": 1,
     "low-vram": 1,
@@ -386,12 +438,16 @@
     "mpm": 1,
     "multi-agent": 1,
     "multi-platform": 1,
+    "multi-session": 1,
     "music-visualizer": 1,
+    "myth": 1,
+    "nano-banana": 1,
+    "narrated-short": 1,
+    "narration-clock": 1,
     "navier-stokes": 1,
     "navigation": 1,
     "nearest-neighbour": 1,
     "next-frame-prediction": 1,
-    "nextjs": 1,
     "no-code": 1,
     "node-graph": 1,
     "noise": 1,
@@ -399,6 +455,7 @@
     "oil-paint": 1,
     "onnx": 1,
     "opencomputer": 1,
+    "openframeworks": 1,
     "optical-flow": 1,
     "optimization": 1,
     "opus-clip-alternative": 1,
@@ -407,8 +464,13 @@
     "paint-on": 1,
     "paint-simulation": 1,
     "painted-animation": 1,
+    "paper-collage": 1,
+    "paper-texture": 1,
+    "papercraft": 1,
+    "parallax": 1,
     "particle-editor": 1,
     "particles": 1,
+    "path-morphing": 1,
     "patterns": 1,
     "pbr": 1,
     "perlin-worley": 1,
@@ -438,15 +500,20 @@
     "productized": 1,
     "profiles": 1,
     "programmatic-video": 1,
+    "projection-mapping": 1,
     "prompt-adherence": 1,
     "prompts": 1,
     "prospecting": 1,
+    "psn": 1,
     "python": 1,
     "python-dsl": 1,
     "pytorch": 1,
     "qa": 1,
+    "qc-script": 1,
+    "qlcplus": 1,
     "qr-code": 1,
     "r3f": 1,
+    "rdm": 1,
     "react-spring": 1,
     "react-three-fiber": 1,
     "reaction-diffusion": 1,
@@ -455,8 +522,9 @@
     "relighting": 1,
     "render": 1,
     "render-validation": 1,
-    "rest-api": 1,
+    "renders": 1,
     "rewrite-rules": 1,
+    "rigging": 1,
     "rigid-body": 1,
     "rive": 1,
     "river-networks": 1,
@@ -466,23 +534,30 @@
     "saas": 1,
     "saas-launch-video": 1,
     "saas-video": 1,
+    "safety": 1,
     "sand": 1,
+    "saul-bass": 1,
     "scannable-art": 1,
     "scanning": 1,
     "scene-building": 1,
+    "scheduler": 1,
     "scientific-illustration": 1,
     "screenplay": 1,
     "scroll": 1,
     "scrolltrigger": 1,
     "search-ads": 1,
+    "seedance": 1,
     "seeded-random": 1,
     "seek-purity": 1,
+    "sensors": 1,
     "sequence-editor": 1,
     "serverless": 1,
     "sfx": 1,
     "shaders": 1,
+    "shape-morph": 1,
     "shapes": 1,
     "shinkai": 1,
+    "show-control": 1,
     "shutter": 1,
     "siggraph": 1,
     "sketch-guided": 1,
@@ -504,16 +579,20 @@
     "speech-to-video": 1,
     "spline": 1,
     "splittext": 1,
+    "spout": 1,
     "spring-bones": 1,
     "springs": 1,
+    "spritesheet": 1,
     "stable-fluids": 1,
     "stacking": 1,
+    "stage-design": 1,
+    "stage-model": 1,
     "stagger": 1,
     "starter": 1,
-    "state-machine": 1,
     "steering": 1,
     "stippling": 1,
     "stl-export": 1,
+    "stop-motion": 1,
     "structure": 1,
     "strudel": 1,
     "studio-ghibli": 1,
@@ -524,6 +603,7 @@
     "surface": 1,
     "swarm": 1,
     "synthesized-music": 1,
+    "syphon": 1,
     "team-collaboration": 1,
     "template": 1,
     "tentacles": 1,
@@ -534,7 +614,9 @@
     "theme-factory": 1,
     "tiktok-ads": 1,
     "tiles": 1,
+    "title-sequence": 1,
     "touch-interaction": 1,
+    "touchdesigner": 1,
     "training": 1,
     "transcription": 1,
     "treatment": 1,
@@ -543,9 +625,12 @@
     "tutorial": 1,
     "twitter": 1,
     "unity": 1,
+    "unreal": 1,
     "upload": 1,
+    "usb-dmx": 1,
     "vector": 1,
     "vector-animation": 1,
+    "vectorworks": 1,
     "video": 1,
     "video-analysis": 1,
     "video-commentary": 1,
@@ -562,12 +647,14 @@
     "voxels": 1,
     "vroid": 1,
     "waapi": 1,
+    "web-access": 1,
     "webcam": 1,
+    "webgl-shader": 1,
     "webgpu": 1,
-    "webhooks": 1,
     "webui": 1,
     "wechat": 1,
     "wfc": 1,
+    "whatsapp": 1,
     "whisperx": 1,
     "whiteboard": 1,
     "worked-example": 1,
@@ -868,6 +955,72 @@
       "links": []
     },
     {
+      "id": "animation-pipeline-riso",
+      "title": "animation-pipeline — code-made music videos in riso cut-paper style",
+      "kind": "repo",
+      "url": "https://github.com/bishpls/animation-pipeline",
+      "demo": "",
+      "author": "bishpls",
+      "license": "none (all rights reserved)",
+      "license_notes": "No LICENSE file. Third film is an unofficial Clawd fan work.",
+      "pin": "73acbef6713d80f10ddf8d8f401a7a47b4f1a0cb",
+      "category": [
+        "motion-video",
+        "noise-shaders"
+      ],
+      "tags": [
+        "paper-cut",
+        "riso",
+        "halftone",
+        "saul-bass",
+        "title-sequence",
+        "kinetic-type",
+        "letterpress",
+        "elevenlabs-music",
+        "subagents",
+        "webgl-shader"
+      ],
+      "stack": [
+        "JavaScript",
+        "WebGL",
+        "GLSL"
+      ],
+      "runs_in": [
+        "browser",
+        "node"
+      ],
+      "fit": [
+        "reels-content"
+      ],
+      "aliases": [
+        "OPEN ALL NIGHT",
+        "WORDS ARE FOSSILS",
+        "HELLO",
+        "WORLD!"
+      ],
+      "hook": "Films where a WebGL shader prints every frame as mid-century cut paper on four riso inks — misregistration, halftones, paper grain.",
+      "source": "GitHub search for paper-cut animation, 2026-10-03",
+      "source_ref": "",
+      "image": "",
+      "thumb": "",
+      "added": "2026-10-03",
+      "status": "verified",
+      "related": [
+        "paper-cut-animation",
+        "functional-emotions-video",
+        "pdoom-video"
+      ],
+      "file": "entries/animation-pipeline-riso.md",
+      "body": "## What it is\n\nA base for making films with Claude Code, with three finished works.\n- *OPEN ALL NIGHT*: a 93 s cut-paper title sequence in the style of Saul Bass / *Catch Me If You Can*, on four riso inks.\n- *WORDS ARE FOSSILS*: 86 s vertical, letterpress look.\n- *HELLO, WORLD!*: a J-pop style piece.\n\n## How it works\n\n- **Picture:** riso simulation in a shader. Blue, fluorescent pink, yellow and black inks with overprint multiply, halftone tints, misregistration, ink mottling and paper grain. \"Light is paper\": lit windows and neon are knockouts.\n- **Type:** variable-font glyph outlines (fontkit) animated per glyph.\n- **Sound:** sign clicks and hum are synthesised from the same schedule the picture draws.\n- **Song:** ElevenLabs Music. The best of seven takes was chosen by beat-grid fit, seam analysis, speech-to-text intelligibility and blind Gemini rankings (Borda count). Word timestamps print lyrics on their sung syllable.\n- **Process:** storyboard → slate animatic → five parallel sub-agents against one craft guide → review passes (contact sheets, strips, crops, seam checks).\n\n## Ideas for us\n\n- The riso overprint shader is a strong, cheap house look for event posters that animate into reels.\n\n## Notes\n\nREADME read 2026-10-03.",
+      "sections": {
+        "What it is": "A base for making films with Claude Code, with three finished works.\n- *OPEN ALL NIGHT*: a 93 s cut-paper title sequence in the style of Saul Bass / *Catch Me If You Can*, on four riso inks.\n- *WORDS ARE FOSSILS*: 86 s vertical, letterpress look.\n- *HELLO, WORLD!*: a J-pop style piece.",
+        "How it works": "- **Picture:** riso simulation in a shader. Blue, fluorescent pink, yellow and black inks with overprint multiply, halftone tints, misregistration, ink mottling and paper grain. \"Light is paper\": lit windows and neon are knockouts.\n- **Type:** variable-font glyph outlines (fontkit) animated per glyph.\n- **Sound:** sign clicks and hum are synthesised from the same schedule the picture draws.\n- **Song:** ElevenLabs Music. The best of seven takes was chosen by beat-grid fit, seam analysis, speech-to-text intelligibility and blind Gemini rankings (Borda count). Word timestamps print lyrics on their sung syllable.\n- **Process:** storyboard → slate animatic → five parallel sub-agents against one craft guide → review passes (contact sheets, strips, crops, seam checks).",
+        "Ideas for us": "- The riso overprint shader is a strong, cheap house look for event posters that animate into reels.",
+        "Notes": "README read 2026-10-03."
+      },
+      "links": []
+    },
+    {
       "id": "anime-js",
       "title": "Anime.js — lightweight JS animation engine",
       "kind": "library",
@@ -912,7 +1065,8 @@
       "related": [
         "gsap",
         "claudedesignskills",
-        "mojs"
+        "mojs",
+        "shapeshifter"
       ],
       "file": "entries/anime-js.md",
       "body": "## What it is\n\nAbout 73k stars. Animates CSS properties, SVG attributes (line drawing, morphing), DOM attributes and plain JS objects. Has timelines, staggering grids, springs, draggable, scroll observers and a `seek()`-able timeline (v4).\n\n## Ideas for us\n\n- MIT alternative to GSAP when licensing must be simple.\n- Grid staggers suit tile reveals in memory-mosaic.\n\n## Notes\n\nMetadata (exists, stars, license, last push) checked 2026-10-03; description from general knowledge, README not re-read.",
@@ -1144,7 +1298,9 @@
       "related": [
         "unirig",
         "trellis-image-to-3d",
-        "threejs-skills"
+        "threejs-skills",
+        "blender-dmx",
+        "stage-truss-rigging-workflow"
       ],
       "file": "entries/blender-mcp.md",
       "body": "## What it is\n\nAn MCP server plus Blender add-on (about 30k stars) that exposes Blender's Python API to an LLM: create and modify objects, materials, lighting and cameras, run scripts, and pull assets.\n\n## Ideas for us\n\n- Prototype 3D scenes and characters by conversation, then export GLB for three.js installations (see our `r3f-3d-web` skill pipeline).\n\n## Notes\n\nMetadata checked 2026-10-03; README not reviewed. Running arbitrary Python in Blender is powerful, so keep it to local, trusted files.",
@@ -1152,6 +1308,76 @@
         "What it is": "An MCP server plus Blender add-on (about 30k stars) that exposes Blender's Python API to an LLM: create and modify objects, materials, lighting and cameras, run scripts, and pull assets.",
         "Ideas for us": "- Prototype 3D scenes and characters by conversation, then export GLB for three.js installations (see our `r3f-3d-web` skill pipeline).",
         "Notes": "Metadata checked 2026-10-03; README not reviewed. Running arbitrary Python in Blender is powerful, so keep it to local, trusted files."
+      },
+      "links": []
+    },
+    {
+      "id": "blender-dmx",
+      "title": "BlenderDMX — design and render stage lighting in Blender",
+      "kind": "tool",
+      "url": "https://github.com/open-stage/blender-dmx",
+      "demo": "https://blenderdmx.eu",
+      "author": "open-stage (Hugo Aboud, vanous & contributors)",
+      "license": "GPL-3.0",
+      "license_notes": "",
+      "pin": "8a6076d8509c2eda16eb022894617302ff621049",
+      "category": [
+        "stage-production",
+        "fractals-3d"
+      ],
+      "tags": [
+        "blender",
+        "dmx",
+        "gdtf",
+        "mvr",
+        "lighting-previz",
+        "art-net",
+        "sacn",
+        "osc",
+        "psn",
+        "renders"
+      ],
+      "stack": [
+        "Python",
+        "Blender"
+      ],
+      "runs_in": [
+        "desktop"
+      ],
+      "fit": [
+        "event-stages",
+        "reels-content",
+        "client-pitches",
+        "synesthetic-room"
+      ],
+      "aliases": [
+        "Blender DMX",
+        "blenderdmx.eu"
+      ],
+      "hook": "A free lighting visualiser inside Blender: import GDTF fixtures and MVR rigs, drive them by DMX (Art-Net/sACN) or keyframes, render pitch-quality stage images.",
+      "source": "Research for stage design / rigging request, 2026-10-03",
+      "source_ref": "",
+      "image": "",
+      "thumb": "",
+      "added": "2026-10-03",
+      "status": "verified",
+      "related": [
+        "gdtf-mvr",
+        "perastage",
+        "blender-mcp",
+        "qlcplus",
+        "chataigne",
+        "ola",
+        "stage-truss-rigging-workflow",
+        "td-gdtf",
+        "virtual-mapper"
+      ],
+      "file": "entries/blender-dmx.md",
+      "body": "## What it is\n\nA Blender add-on (4.2+, tested to 5.0, available as an Extension) for lighting designers. Fixtures come from GDTF Share; MVR scenes import and export via pymvr. It can be driven live from a console or software over DMX networks and OSC/PSN (per its website), or animated in Blender.\n\n## Ideas for us\n\n- **client-pitches:** photoreal stage concept renders (Cycles/Eevee) with real fixture models before a show is sold.\n- Combine with Blender MCP so Claude can lay out truss, fixtures and looks from a brief.\n- Preview programmed looks from QLC+ in the 3D venue.\n\n## Notes\n\nREADME read 2026-10-03. Docs/FAQ at blenderdmx.eu.",
+      "sections": {
+        "What it is": "A Blender add-on (4.2+, tested to 5.0, available as an Extension) for lighting designers. Fixtures come from GDTF Share; MVR scenes import and export via pymvr. It can be driven live from a console or software over DMX networks and OSC/PSN (per its website), or animated in Blender.",
+        "Ideas for us": "- **client-pitches:** photoreal stage concept renders (Cycles/Eevee) with real fixture models before a show is sold.\n- Combine with Blender MCP so Claude can lay out truss, fixtures and looks from a brief.\n- Preview programmed looks from QLC+ in the 3D venue.",
+        "Notes": "README read 2026-10-03. Docs/FAQ at blenderdmx.eu."
       },
       "links": []
     },
@@ -1268,6 +1494,128 @@
         "How it works": "- Broad phase (dynamic AABB tree), then narrow-phase contact manifolds, then a constraint solver for contacts and joints (revolute, prismatic, weld, mouse, ...).\n- v3's soft-step solver uses sub-stepping plus soft constraints, which keeps tall pyramids standing and avoids jitter.\n- Bodies sleep when at rest, so big scenes stay cheap.",
         "Ideas for us": "- **digital-doodles-wall:** submitted doodles become physical bodies that rain down, pile up and get knocked over.\n- **avatar-arcade:** tracked silhouettes or hands as kinematic bodies batting objects around.\n- **rhythm-battle:** each team's energy spawns blocks; the taller tower wins.",
         "Notes": "Web: box2d3 WASM builds, or Planck.js (pure-JS v2 port). Matter.js is simpler but less stable for big stacks."
+      },
+      "links": []
+    },
+    {
+      "id": "cardstock-diorama-myth",
+      "title": "Cardstock Diorama Myth — Claude skill for cut-paper myth shorts",
+      "kind": "skill",
+      "url": "https://github.com/sadekxD/cardstock-diorama-myth",
+      "demo": "https://tryunsora.com",
+      "author": "sadekxD",
+      "license": "none (all rights reserved)",
+      "license_notes": "No LICENSE file. Generation runs on the paid Unsora MCP (nano-banana-pro images, seedance-2.0 video, ElevenLabs v3 voice).",
+      "pin": "d4e46cf801a179cb736f21a45507a0fd7fe72404",
+      "category": [
+        "agent-skills",
+        "ai-video-generation"
+      ],
+      "tags": [
+        "paper-cut",
+        "diorama",
+        "myth",
+        "folklore",
+        "narrated-short",
+        "seedance",
+        "nano-banana",
+        "elevenlabs",
+        "paper-wipe",
+        "qc-script"
+      ],
+      "stack": [
+        "Markdown",
+        "Python"
+      ],
+      "runs_in": [
+        "claude-code",
+        "mcp"
+      ],
+      "fit": [
+        "reels-content",
+        "client-pitches"
+      ],
+      "aliases": [
+        "cardstock diorama",
+        "Unsora MCP"
+      ],
+      "hook": "Ask for a myth; get a narrated short in layered cardstock diorama style — three-colour palette, paper wipes, storyteller voice.",
+      "source": "GitHub search for paper-cut animation, 2026-10-03",
+      "source_ref": "",
+      "image": "",
+      "thumb": "",
+      "added": "2026-10-03",
+      "status": "verified",
+      "related": [
+        "paper-cut-animation",
+        "vox-editorial"
+      ],
+      "file": "entries/cardstock-diorama-myth.md",
+      "body": "## What it is\n\nA Claude Code / Claude.ai skill that turns a myth or premise into a finished narrated short film. The look: flat matte cardstock worlds with visible cut edges and soft contact shadows, a strict three-colour palette, a tiny figure centred in a huge symmetrical set, a top-down concentric \"ring\" hero shot, and paper-wipe transitions.\n\n## How it works\n\nPhases:\n1. Story: use the given myth, or propose several.\n2. Lore research on the real tradition.\n3. Lock the palette.\n4. Style key image, then character and place sheets (`create_image`).\n5. Beat sheet: about 12–18 narration words per 10 s block.\n6. Block prompts, each bookended by wipes.\n7. 10 s clips via `create_video`, with the style key and sheets on every one.\n8. Voiceover with one storyteller voice.\n9. Local ffmpeg assembly.\n\nThe style is treated as a **measurable spec**: a bundled QC script checks palette, exposure and pacing against the output (numpy, pillow, scikit-learn).\n\n## Ideas for us\n\n- Borrow the \"look as a numeric spec + automated QC\" idea for any AI-generated reel series.\n- Local myths and folklore as event intro films for cultural clients.\n\n## Notes\n\nREADME read 2026-10-03. Requires an Unsora account; defaults are 16:9, 1 minute, 720p.",
+      "sections": {
+        "What it is": "A Claude Code / Claude.ai skill that turns a myth or premise into a finished narrated short film. The look: flat matte cardstock worlds with visible cut edges and soft contact shadows, a strict three-colour palette, a tiny figure centred in a huge symmetrical set, a top-down concentric \"ring\" hero shot, and paper-wipe transitions.",
+        "How it works": "Phases:\n1. Story: use the given myth, or propose several.\n2. Lore research on the real tradition.\n3. Lock the palette.\n4. Style key image, then character and place sheets (`create_image`).\n5. Beat sheet: about 12–18 narration words per 10 s block.\n6. Block prompts, each bookended by wipes.\n7. 10 s clips via `create_video`, with the style key and sheets on every one.\n8. Voiceover with one storyteller voice.\n9. Local ffmpeg assembly.\n\nThe style is treated as a **measurable spec**: a bundled QC script checks palette, exposure and pacing against the output (numpy, pillow, scikit-learn).",
+        "Ideas for us": "- Borrow the \"look as a numeric spec + automated QC\" idea for any AI-generated reel series.\n- Local myths and folklore as event intro films for cultural clients.",
+        "Notes": "README read 2026-10-03. Requires an Unsora account; defaults are 16:9, 1 minute, 720p."
+      },
+      "links": []
+    },
+    {
+      "id": "chataigne",
+      "title": "Chataigne — modular show-control hub for art & tech",
+      "kind": "tool",
+      "url": "https://github.com/benkuper/Chataigne",
+      "demo": "",
+      "author": "Ben Kuper",
+      "license": "GPL-3.0",
+      "license_notes": "",
+      "pin": "",
+      "category": [
+        "stage-production"
+      ],
+      "tags": [
+        "show-control",
+        "osc",
+        "midi",
+        "dmx",
+        "timeline",
+        "state-machine",
+        "sensors",
+        "artnet"
+      ],
+      "stack": [
+        "C++",
+        "JUCE"
+      ],
+      "runs_in": [
+        "desktop"
+      ],
+      "fit": [
+        "touchdesigner",
+        "event-stages",
+        "synesthetic-room",
+        "rhythm-battle"
+      ],
+      "aliases": [
+        "Chataigne show control"
+      ],
+      "hook": "One app that connects everything — OSC, MIDI, DMX, serial, sensors, apps — with mappings, state machines and timelines to run a show.",
+      "source": "Research for stage design / rigging request, 2026-10-03",
+      "source_ref": "",
+      "image": "",
+      "thumb": "",
+      "added": "2026-10-03",
+      "status": "inbox",
+      "related": [
+        "gdtf-mvr",
+        "blender-dmx"
+      ],
+      "file": "entries/chataigne.md",
+      "body": "## What it is\n\nAn artist-friendly \"modular machine\" (about 1.7k stars): modules for OSC, MIDI, DMX/Art-Net, serial, HTTP, WebSocket, Kinect and many apps (Resolume, Millumin, Ableton...), plus conditions, mappings, a state machine and a sequence timeline.\n\n## Ideas for us\n\n- Event show control: cue the whole installation (TD scenes, lights, sound) from one timeline, with operator overrides.\n\n## Notes\n\nMetadata (exists, stars, license, last push) checked 2026-10-03; description from general knowledge, README not re-read.",
+      "sections": {
+        "What it is": "An artist-friendly \"modular machine\" (about 1.7k stars): modules for OSC, MIDI, DMX/Art-Net, serial, HTTP, WebSocket, Kinect and many apps (Resolume, Millumin, Ableton...), plus conditions, mappings, a state machine and a sequence timeline.",
+        "Ideas for us": "- Event show control: cue the whole installation (TD scenes, lights, sound) from one timeline, with operator overrides.",
+        "Notes": "Metadata (exists, stars, license, last push) checked 2026-10-03; description from general knowledge, README not re-read."
       },
       "links": []
     },
@@ -1833,7 +2181,8 @@
       "status": "verified",
       "related": [
         "code-rendered-motion-video",
-        "openmontage"
+        "openmontage",
+        "paper-cut-animation"
       ],
       "file": "entries/distilbook.md",
       "body": "## What it is\n\nPackaged software that turns a document into an explainer video with narration, visuals and captions, from a script you approve. Inputs: PDF (scans supported), DOCX, TXT, images, article links or a written prompt.\n\n## How it works\n\n1. Upload the source and pick a style.\n2. It writes the narration script (approval checkpoint).\n3. It draws original art per slide and animates it in sync with the voice.\n4. Edit the result on a timeline.\n\n- **Styles:** 15 in total. A hand-drawn whiteboard style plus 14 motion-graphics styles, including isometric illustration, soft 3D coral, cut-paper collage, ink-wash journal, editorial flat vector, sketch notebook, Bauhaus poster and doodle colour-pop.\n- **Output:** MP4 up to 1440p (paid), 16:9 or 9:16, narration in 20+ languages.\n- **Speed:** script in a couple of minutes, first narrated slide in about 6 minutes, a typical 8–10 slide video in about 35 minutes.\n\n## Ideas for us\n\n- A quick way to make client pitch explainers from our installation specs (`.specs/*.md`) when frame-level control doesn't matter.\n\n## Notes\n\nVerified on distilbook.com 2026-10-03. **The guide's pricing is out of date:** it listed 30 free credits and $15/$35/$75 plans for 170/450/1,000 credits. The site now shows 10 free credits and $20/$50/$100 plans.",
@@ -2193,6 +2542,7 @@
         "claude-paint",
         "p5-brush",
         "code-rendered-motion-video",
+        "animation-pipeline-riso",
         "sceneflow"
       ],
       "file": "entries/functional-emotions-video.md",
@@ -2202,6 +2552,79 @@
         "How it works": "**Renderer (`js/paint.js`):**\n- Each shot draws a flat Canvas2D **underpainting** plus an additive **light layer**.\n- The GPU repaints the underpainting with about 60k instanced, textured strokes in three size layers. Each stroke samples its colour from beneath and aligns to local edges; in flat areas it follows a flow field.\n- Strokes re-roll a few times per second (\"boil\"), and whip pans smear strokes along the motion.\n- The light layer gets bloom, then canvas weave, grain and vignette.\n\n**Timing:**\n- Each frame is a pure function of song time.\n- A beat grid plus word-level lyric timing drive the cuts.\n- Demucs separates the vocals, Whisper transcribes them in chunks, and Needleman–Wunsch alignment matches them to the real lyrics.\n\n```bash\nopen index.html                               # plays live in the browser\nnode check.mjs out/sheet.jpg 30 101.5 218.3   # contact sheet at given times\nnode render.mjs 0 372.7 out/video.mp4 6       # 1080p, 6 parallel pages\n```\nUse the real GPU (`--use-angle=metal` on macOS). Software GL is about 20× slower. A full render takes about 10 minutes on an M5 Pro.",
         "Ideas for us": "- **Steal the stroke renderer idea for installations:** any live scene (particles, camera feed, guests) as the underpainting, repainted in real time as brushstrokes. That gives a painterly mural-wall or synesthetic-room look at 60 fps.\n- The direction notes in the README are a good template for directing Claude on reels: short shots, one action each, the camera always moving, hits on the beat.",
         "Notes": "README read 2026-10-03."
+      },
+      "links": []
+    },
+    {
+      "id": "gdtf-mvr",
+      "title": "GDTF & MVR — open standards for fixtures and whole stage rigs",
+      "kind": "technique",
+      "url": "https://github.com/mvrdevelopment/spec",
+      "demo": "https://gdtf-share.com",
+      "author": "GDTF group (MA Lighting, Robe, Vectorworks + industry); DIN SPEC",
+      "license": "open specification",
+      "license_notes": "Spec repo has no LICENSE file; the formats are published as DIN SPEC 15800 (GDTF) and DIN SPEC 15801 (MVR).",
+      "pin": "",
+      "category": [
+        "stage-production"
+      ],
+      "tags": [
+        "gdtf",
+        "mvr",
+        "fixtures",
+        "dmx",
+        "stage-plot",
+        "interchange",
+        "truss",
+        "hoists",
+        "previz"
+      ],
+      "stack": [
+        "XML",
+        "3D models"
+      ],
+      "runs_in": [
+        "desktop"
+      ],
+      "fit": [
+        "event-stages",
+        "touchdesigner",
+        "synesthetic-room"
+      ],
+      "aliases": [
+        "General Device Type Format",
+        "My Virtual Rig",
+        "DIN SPEC 15800",
+        "DIN SPEC 15801",
+        "GDTF Share",
+        "pymvr",
+        "pygdtf"
+      ],
+      "hook": "One file describes a moving light (GDTF); another describes the whole rig — truss, hoists, fixtures, video, addresses (MVR). Every serious lighting tool reads them.",
+      "source": "Research for stage design / rigging request, 2026-10-03",
+      "source_ref": "",
+      "image": "",
+      "thumb": "",
+      "added": "2026-10-03",
+      "status": "verified",
+      "related": [
+        "perastage",
+        "blender-dmx",
+        "td-gdtf",
+        "open-fixture-library",
+        "stage-truss-rigging-workflow",
+        "chataigne",
+        "ola",
+        "qlcplus",
+        "virtual-mapper"
+      ],
+      "file": "entries/gdtf-mvr.md",
+      "body": "## What it is\n\n- **GDTF** (`.gdtf`, a zip of XML plus 3D models) describes a fixture: geometry, beams, DMX modes and channels, physical data (weight, power).\n- **MVR** (`.mvr`) describes a scene: positioned trusses, hoists, fixtures (referencing GDTFs), video screens, scenery, layers and patch.\n\nTogether they let a stage design move between CAD (Vectorworks), visualisers (Capture, Depence, grandMA3, Blender DMX), consoles and our own tools without being redrawn.\n\n## How it works\n\n- Fixture files come from **GDTF Share** (manufacturer-uploaded, free account).\n- **Libraries:** `pymvr` / `pygdtf` (Python, open-stage), `libMVRgdtf` (C++ reference), and MomentFactory's Omniverse MVR/GDTF→USD converter.\n- **MVR-xchange** also defines live sharing of MVR between apps on a network.\n\n## Ideas for us\n\n- Make MVR the single source of truth for event stages. The designer exports MVR → Perastage for review → BlenderDMX for renders → TouchDesigner (td-gdtf) for content previz with the real fixture positions.\n- Generate our installation-space MVRs programmatically (pymvr) from venue measurements.\n\n## Notes\n\nSpec repo and BlenderDMX/Perastage READMEs read 2026-10-03.",
+      "sections": {
+        "What it is": "- **GDTF** (`.gdtf`, a zip of XML plus 3D models) describes a fixture: geometry, beams, DMX modes and channels, physical data (weight, power).\n- **MVR** (`.mvr`) describes a scene: positioned trusses, hoists, fixtures (referencing GDTFs), video screens, scenery, layers and patch.\n\nTogether they let a stage design move between CAD (Vectorworks), visualisers (Capture, Depence, grandMA3, Blender DMX), consoles and our own tools without being redrawn.",
+        "How it works": "- Fixture files come from **GDTF Share** (manufacturer-uploaded, free account).\n- **Libraries:** `pymvr` / `pygdtf` (Python, open-stage), `libMVRgdtf` (C++ reference), and MomentFactory's Omniverse MVR/GDTF→USD converter.\n- **MVR-xchange** also defines live sharing of MVR between apps on a network.",
+        "Ideas for us": "- Make MVR the single source of truth for event stages. The designer exports MVR → Perastage for review → BlenderDMX for renders → TouchDesigner (td-gdtf) for content previz with the real fixture positions.\n- Generate our installation-space MVRs programmatically (pymvr) from venue measurements.",
+        "Notes": "Spec repo and BlenderDMX/Perastage READMEs read 2026-10-03."
       },
       "links": []
     },
@@ -2374,6 +2797,7 @@
         "hyperframes",
         "claudedesignskills",
         "lottie-web",
+        "shapeshifter",
         "theatre-js"
       ],
       "file": "entries/gsap.md",
@@ -2574,7 +2998,9 @@
       "related": [
         "hyperframes",
         "p5-brush",
-        "vercel-skills-cli"
+        "paper-cut-animation",
+        "vercel-skills-cli",
+        "vox-editorial"
       ],
       "file": "entries/hyperframes-community-skills.md",
       "body": "## What it is\n\nCommunity-maintained skills for HyperFrames that are too specific for the curated set. Each one installs on its own.\n\n## How it works\n\n- `p5-paint-animation`: text, photos and short clips → deterministic p5.js handwriting, paint-on and \"living painting\" animations.\n- `camera-3d-captions`: captions placed in 3D around a talking head, with a moving camera, hero words behind the speaker and a ring of words in front.\n- `vox-explainer`: 60–90 s collage-style explainers from a topic, document or link.\n- `day-in-my-life` / `session-story`: hand-drawn ink films made from your own Claude Code history.\n- `prod-by-claude`: a Strudel live-coding track becomes a 1080² video where each code token lights up on its note.\n- `duo` (foldable-phone comparison plates), `x-posting-license` (an animated ID card for an X profile).\n\n```bash\nnpx skills add heygen-com/hyperframes-community-skills --list\nnpx skills add heygen-com/hyperframes-community-skills --skill p5-paint-animation\n```\n\n## Ideas for us\n\n- `p5-paint-animation` for \"living painting\" reels of installation photos. It fits the ink and painterly direction (see shan-shui-inf).\n- `camera-3d-captions` for speaker clips from events we run.\n\n## Notes\n\nVerified 2026-10-03 (README + skill list). The default branch is `master`.",
@@ -3049,7 +3475,8 @@
       "related": [
         "rive",
         "gsap",
-        "claudedesignskills"
+        "claudedesignskills",
+        "shapeshifter"
       ],
       "file": "entries/lottie-web.md",
       "body": "## What it is\n\nAbout 32k stars. Renders Bodymovin JSON exports as SVG, canvas or HTML; supports `goToAndStop(frame)` for frame-exact control. The LottieFiles ecosystem adds dotLottie, a newer player and a large library.\n\n## Ideas for us\n\n- Designers keep working in AE; developers drop the JSON into installation UIs.\n\n## Notes\n\nMetadata (exists, stars, license, last push) checked 2026-10-03; description from general knowledge, README not re-read.",
@@ -3690,7 +4117,8 @@
       "related": [
         "postiz",
         "short-video-maker",
-        "social-media-agent"
+        "social-media-agent",
+        "wa-akg"
       ],
       "file": "entries/n8n.md",
       "body": "## What it is\n\nA visual-plus-code workflow tool (about 206k stars), self-hostable, with AI agent nodes, MCP client/server support, and nodes for social platforms, Postiz, Google Sheets, Slack and more. Many published templates automate social media pipelines.\n\n## Ideas for us\n\n- The scheduler around everything else in this category: weekly content calendar → short-video-maker renders → Slack approval → Postiz posts → ads MCP reports.\n\n## Notes\n\nMetadata (exists, stars, license, last push) checked 2026-10-03; description from general knowledge, README not re-read.",
@@ -3751,6 +4179,121 @@
       "sections": {
         "What it is": "A Chinese tool for \"commentary\" style content: scene understanding, script generation, clip selection, TTS narration and composition.",
         "Ideas for us": "- Turn long event recordings into narrated recap edits.",
+        "Notes": "Metadata (exists, stars, license, last push) checked 2026-10-03; description from general knowledge, README not re-read."
+      },
+      "links": []
+    },
+    {
+      "id": "ola",
+      "title": "OLA — Open Lighting Architecture",
+      "kind": "tool",
+      "url": "https://github.com/OpenLightingProject/ola",
+      "demo": "",
+      "author": "Open Lighting Project",
+      "license": "LGPL/GPL (mixed)",
+      "license_notes": "",
+      "pin": "",
+      "category": [
+        "stage-production"
+      ],
+      "tags": [
+        "dmx",
+        "art-net",
+        "sacn",
+        "rdm",
+        "usb-dmx",
+        "gateway"
+      ],
+      "stack": [
+        "C++",
+        "Python"
+      ],
+      "runs_in": [
+        "desktop",
+        "cli"
+      ],
+      "fit": [
+        "event-stages",
+        "touchdesigner"
+      ],
+      "aliases": [
+        "Open Lighting Architecture",
+        "olad"
+      ],
+      "hook": "\"The travel adaptor for the lighting industry\": a daemon that bridges DMX protocols and USB interfaces, with APIs.",
+      "source": "Research for stage design / rigging request, 2026-10-03",
+      "source_ref": "",
+      "image": "",
+      "thumb": "",
+      "added": "2026-10-03",
+      "status": "inbox",
+      "related": [
+        "gdtf-mvr",
+        "blender-dmx",
+        "open-fixture-library"
+      ],
+      "file": "entries/ola.md",
+      "body": "## What it is\n\nA Linux/macOS daemon (`olad`) plus libraries (C++, Python, JSON/HTTP) that convert between Art-Net, sACN/E1.31, USB DMX widgets, RDM and more.\n\n## Ideas for us\n\n- A Raspberry Pi DMX node for small installations, driven from our Node or Python servers.\n\n## Notes\n\nMetadata (exists, stars, license, last push) checked 2026-10-03; description from general knowledge, README not re-read.",
+      "sections": {
+        "What it is": "A Linux/macOS daemon (`olad`) plus libraries (C++, Python, JSON/HTTP) that convert between Art-Net, sACN/E1.31, USB DMX widgets, RDM and more.",
+        "Ideas for us": "- A Raspberry Pi DMX node for small installations, driven from our Node or Python servers.",
+        "Notes": "Metadata (exists, stars, license, last push) checked 2026-10-03; description from general knowledge, README not re-read."
+      },
+      "links": []
+    },
+    {
+      "id": "open-fixture-library",
+      "title": "Open Fixture Library — open DMX fixture definitions",
+      "kind": "library",
+      "url": "https://github.com/OpenLightingProject/open-fixture-library",
+      "demo": "https://open-fixture-library.org",
+      "author": "Open Lighting Project / Florian Edelmann & contributors",
+      "license": "MIT",
+      "license_notes": "",
+      "pin": "",
+      "category": [
+        "stage-production"
+      ],
+      "tags": [
+        "dmx",
+        "fixtures",
+        "fixture-profiles",
+        "qlcplus",
+        "export"
+      ],
+      "stack": [
+        "JavaScript",
+        "JSON"
+      ],
+      "runs_in": [
+        "browser",
+        "node"
+      ],
+      "fit": [
+        "event-stages",
+        "touchdesigner",
+        "rhythm-battle"
+      ],
+      "aliases": [
+        "OFL"
+      ],
+      "hook": "A community database of DMX fixture channel layouts in one JSON format, exportable to QLC+, GDTF and other consoles.",
+      "source": "Research for stage design / rigging request, 2026-10-03",
+      "source_ref": "",
+      "image": "",
+      "thumb": "",
+      "added": "2026-10-03",
+      "status": "inbox",
+      "related": [
+        "gdtf-mvr",
+        "qlcplus",
+        "ola"
+      ],
+      "file": "entries/open-fixture-library.md",
+      "body": "## What it is\n\nA website plus repo (about 260 stars) of fixture definitions (channels, modes, capabilities) in a single open JSON schema, with importers and exporters for several lighting programs.\n\n## Ideas for us\n\n- Look up a rented fixture's DMX map quickly when wiring installation lights (rhythm-battle, synesthetic-room) to our software.\n\n## Notes\n\nMetadata (exists, stars, license, last push) checked 2026-10-03; description from general knowledge, README not re-read.",
+      "sections": {
+        "What it is": "A website plus repo (about 260 stars) of fixture definitions (channels, modes, capabilities) in a single open JSON schema, with importers and exporters for several lighting programs.",
+        "Ideas for us": "- Look up a rented fixture's DMX map quickly when wiring installation lights (rhythm-battle, synesthetic-room) to our software.",
         "Notes": "Metadata (exists, stars, license, last push) checked 2026-10-03; description from general knowledge, README not re-read."
       },
       "links": []
@@ -3925,7 +4468,8 @@
       "status": "inbox",
       "related": [
         "tooncrafter",
-        "anidoc"
+        "anidoc",
+        "paper-cut-animation"
       ],
       "file": "entries/opentoonz.md",
       "body": "## What it is\n\nDesktop software for traditional and digital 2D animation: frame-by-frame vector and raster drawing, scanning and clean-up of paper animation, ink-and-paint, a node-based FX schematic, a plastic (mesh) deformation tool for cut-out rigging, and camera stand.\n\n## Ideas for us\n\n- Hand-animated anime-style sequences for reels and installation intros, with an open toolchain.\n\n## Notes\n\nMetadata (exists, stars, license, last push) checked 2026-10-03; description from general knowledge, README not re-read.",
@@ -3991,6 +4535,7 @@
         "elevenlabs-mcp",
         "openmontage",
         "opus-video-skills",
+        "paper-cut-animation",
         "sceneflow"
       ],
       "file": "entries/opus-js-animations.md",
@@ -4118,7 +4663,8 @@
       "added": "2026-10-03",
       "status": "verified",
       "related": [
-        "ten-minute-physics"
+        "ten-minute-physics",
+        "paper-cut-animation"
       ],
       "file": "entries/origami-simulator.md",
       "body": "## What it is\n\nA WebGL app that loads a crease pattern (SVG or FOLD) and simulates the sheet folding up. A slider controls the fold percentage, and a strain heatmap shows where the paper would stretch. Results export as STL, OBJ or FOLD.\n\n## How it works\n\nBased on Ghassaei, Demaine & Gershenfeld, *Fast, Interactive Origami Simulation using GPU Computation* (OSME 2018):\n\n- The sheet is a triangle mesh with **axial (bar) constraints** to keep edge lengths, **crease constraints** (torsional springs that drive the dihedral angle towards target fold × percentage), and **face constraints** to keep triangles from shearing.\n- All constraints are solved in parallel on the GPU every frame, so even complex patterns fold in real time.\n\n## Ideas for us\n\n- **Brand reveal:** a flat logo sheet folds into a 3D mark on the big screen.\n- **mural-wall:** a guest's drawing is texture-mapped onto the sheet, then folds into a crane that flies into a flock.\n- **reels-content:** the fold animation as a transition.\n- Export STL for printable keepsakes.\n\n## Notes\n\nThe crease-pattern library is large; check the terms of each pattern before using it commercially.",
@@ -4192,6 +4738,86 @@
       "links": []
     },
     {
+      "id": "paper-cut-animation",
+      "title": "Paper-cut animation — how to get the cut-paper / diorama look in code",
+      "kind": "technique",
+      "url": "",
+      "demo": "",
+      "author": "Synthesis of the repos linked below",
+      "license": "n/a (technique)",
+      "license_notes": "",
+      "pin": "",
+      "category": [
+        "motion-video",
+        "generative-art"
+      ],
+      "tags": [
+        "paper-cut",
+        "cut-paper",
+        "papercraft",
+        "diorama",
+        "stop-motion",
+        "collage",
+        "riso",
+        "halftone",
+        "paper-texture",
+        "parallax",
+        "paper-wipe"
+      ],
+      "stack": [
+        "JavaScript",
+        "Canvas",
+        "WebGL",
+        "GLSL"
+      ],
+      "runs_in": [
+        "browser",
+        "node"
+      ],
+      "fit": [
+        "reels-content",
+        "mural-wall",
+        "client-pitches",
+        "synesthetic-room"
+      ],
+      "aliases": [
+        "cut-out animation",
+        "papercut",
+        "kirigami look",
+        "paper collage",
+        "cardstock diorama",
+        "paper lightbox",
+        "切り絵",
+        "剪纸"
+      ],
+      "hook": "Layered cardstock shapes with contact shadows, ragged cut edges, paper grain, held frames and paper-wipe cuts — a style code (or a video model) can hit reliably.",
+      "source": "User request, 2026-10-03",
+      "source_ref": "",
+      "image": "",
+      "thumb": "",
+      "added": "2026-10-03",
+      "status": "verified",
+      "related": [
+        "opus-js-animations",
+        "cardstock-diorama-myth",
+        "vox-editorial",
+        "animation-pipeline-riso",
+        "distilbook",
+        "hyperframes-community-skills",
+        "opentoonz",
+        "origami-simulator"
+      ],
+      "file": "entries/paper-cut-animation.md",
+      "body": "## What it is\n\nCut-paper animation looks like coloured paper shapes stacked in layers and moved under a camera, like stop-motion or a lit diorama. It's popular in reels, explainers and myth or folklore shorts, and has deep roots in Chinese paper-cutting (剪纸), Japanese kirie (切り絵) and Lotte Reiniger's silhouette films. It suits code well because every element is a flat shape.\n\n## How it works\n\n**Ingredients (each one is cheap):**\n1. **Flat shapes, few colours:** a strict 3–5 colour palette, no gradients inside shapes (cardstock-diorama-myth enforces exactly three).\n2. **Cut edges:** offset each path's outline with low-frequency noise so edges look scissored; add a 1–2 px lighter \"core\" edge where paper thickness shows.\n3. **Depth = layers:** 4–8 planes with **soft contact shadows** (a blurred, offset, darkened copy of each layer onto the one below). Move the layers at different speeds for parallax, which reads as a diorama.\n4. **Paper grain:** multiply a fibre texture or noise per layer; for print looks add **riso / halftone** (overprint multiply, misregistration, ink mottling) in a shader, as animation-pipeline does.\n5. **Stop-motion timing:** hold poses \"on twos\" (12 fps steps inside a 24/30 fps film) and add tiny per-frame jitter in position and rotation. Smooth eases look wrong here.\n6. **Transitions:** a paper sheet sliding over the frame (the \"paper wipe\") or a fold or tear. These also hide every cut.\n7. **Lighting:** for \"paper lightbox\" scenes, light comes *through* the paper (backlit knockouts, glowing cut windows).\n8. **Sound:** paper foley (rustle, slide, snip) sells it.\n\n**Routes:**\n- **Pure code:** opus-js-animations (its `styles.md` lists cut-paper stop-motion and paper lightbox; its *Shaml* demo is a medallion of 336 cut-paper pieces) or animation-pipeline (riso cut-paper shader).\n- **Code + generated sprites:** vox-editorial (cut paper with scissored subjects, Python + ffmpeg) or vox-skill (paper collage in Remotion).\n- **Generative video:** cardstock-diorama-myth (style key + Seedance clips + paper wipes).\n- **No-code:** DistilBook's \"cut paper collage\" style, or the HyperFrames `vox-explainer` collage skill.\n- **Hand animation:** OpenToonz plastic/cut-out rigging.\n\n## Ideas for us\n\n- **mural-wall:** guests' drawings are cut out (segmentation), given a paper edge and contact shadow, and dropped into a layered paper diorama that slowly parallaxes.\n- **reels-content:** a CTX \"paper\" house style is cheap to keep consistent across many reels.\n- **synesthetic-room:** a projected paper lightbox where crowd energy lights cut windows.\n\n## Notes\n\nBuilt from the READMEs of the linked repos (read 2026-10-03). Low-star paper-cut repos found but not added: Airpyk-98/epic-paper-cutout-animation (prompt system), cameronha/paper-collage-animation (Gemini + ffmpeg).",
+      "sections": {
+        "What it is": "Cut-paper animation looks like coloured paper shapes stacked in layers and moved under a camera, like stop-motion or a lit diorama. It's popular in reels, explainers and myth or folklore shorts, and has deep roots in Chinese paper-cutting (剪纸), Japanese kirie (切り絵) and Lotte Reiniger's silhouette films. It suits code well because every element is a flat shape.",
+        "How it works": "**Ingredients (each one is cheap):**\n1. **Flat shapes, few colours:** a strict 3–5 colour palette, no gradients inside shapes (cardstock-diorama-myth enforces exactly three).\n2. **Cut edges:** offset each path's outline with low-frequency noise so edges look scissored; add a 1–2 px lighter \"core\" edge where paper thickness shows.\n3. **Depth = layers:** 4–8 planes with **soft contact shadows** (a blurred, offset, darkened copy of each layer onto the one below). Move the layers at different speeds for parallax, which reads as a diorama.\n4. **Paper grain:** multiply a fibre texture or noise per layer; for print looks add **riso / halftone** (overprint multiply, misregistration, ink mottling) in a shader, as animation-pipeline does.\n5. **Stop-motion timing:** hold poses \"on twos\" (12 fps steps inside a 24/30 fps film) and add tiny per-frame jitter in position and rotation. Smooth eases look wrong here.\n6. **Transitions:** a paper sheet sliding over the frame (the \"paper wipe\") or a fold or tear. These also hide every cut.\n7. **Lighting:** for \"paper lightbox\" scenes, light comes *through* the paper (backlit knockouts, glowing cut windows).\n8. **Sound:** paper foley (rustle, slide, snip) sells it.\n\n**Routes:**\n- **Pure code:** opus-js-animations (its `styles.md` lists cut-paper stop-motion and paper lightbox; its *Shaml* demo is a medallion of 336 cut-paper pieces) or animation-pipeline (riso cut-paper shader).\n- **Code + generated sprites:** vox-editorial (cut paper with scissored subjects, Python + ffmpeg) or vox-skill (paper collage in Remotion).\n- **Generative video:** cardstock-diorama-myth (style key + Seedance clips + paper wipes).\n- **No-code:** DistilBook's \"cut paper collage\" style, or the HyperFrames `vox-explainer` collage skill.\n- **Hand animation:** OpenToonz plastic/cut-out rigging.",
+        "Ideas for us": "- **mural-wall:** guests' drawings are cut out (segmentation), given a paper edge and contact shadow, and dropped into a layered paper diorama that slowly parallaxes.\n- **reels-content:** a CTX \"paper\" house style is cheap to keep consistent across many reels.\n- **synesthetic-room:** a projected paper lightbox where crowd energy lights cut windows.",
+        "Notes": "Built from the READMEs of the linked repos (read 2026-10-03). Low-star paper-cut repos found but not added: Airpyk-98/epic-paper-cutout-animation (prompt system), cameronha/paper-collage-animation (Gemini + ffmpeg)."
+      },
+      "links": []
+    },
+    {
       "id": "pdoom-video",
       "title": "PDoomVideo — full music video built by Claude in code",
       "kind": "repo",
@@ -4242,6 +4868,7 @@
       "related": [
         "code-rendered-motion-video",
         "claude-animation-base",
+        "animation-pipeline-riso",
         "functional-emotions-video",
         "p5-brush"
       ],
@@ -4252,6 +4879,65 @@
         "How it works": "- `studio.html`: the page every frame is painted in, with p5.js + p5.brush.\n- `src/ch/c01_lab.js` … `c09_finale.js`: nine chapter files, one per section of the song.\n- `src/`: shared code (`clawd.js`, `cast.js`, `props.js`, `lyrics.js`, `timeline.js`, `core.js`).\n- `STORYBOARD.md`: Opus's shot-by-shot plan, written after the first generation once it was told to use brush strokes and make every scene transition into the next.\n- `ANIMATION_GUIDE.md`: the style and code brief Opus wrote for the sub-agents it ran in parallel.\n- `legacy/`: the first generation (Opus 5.5 at Medium effort), kept for comparison.\n- `render.mjs`: paints frames in headless Chrome (resumable), then muxes in `assets/pdoom.mp3` with ffmpeg.\n\n```bash\nnpm install\nnode render.mjs --frames=0:156.6 --workers=4   # → out/frames (resumable)\nnode render.mjs --encode --out=out/pdoom.mp4\n```\n\nNeeds Node, Google Chrome and ffmpeg; pass `--chrome=<path>` if Chrome isn't in the default location.",
         "Ideas for us": "- Copy the **STORYBOARD.md + ANIMATION_GUIDE.md** pattern for any multi-scene piece. The guide is what keeps parallel sub-agents visually consistent.\n- Compare `legacy/` with the final version to see what the second pass (storyboard first, brush medium, forced transitions) improved.",
         "Notes": "Verified 2026-10-03 against the README and file tree at the pinned commit. Everything the guide described is present, including the nine `src/ch/` files."
+      },
+      "links": []
+    },
+    {
+      "id": "perastage",
+      "title": "Perastage — free MVR/GDTF stage planning viewer & editor",
+      "kind": "tool",
+      "url": "https://github.com/PeramatoG/Perastage",
+      "demo": "https://perastage.luismaperamato.com/",
+      "author": "Luisma Peramato (PeramatoG)",
+      "license": "GPL-3.0",
+      "license_notes": "",
+      "pin": "aa9603c2f325e9cd3d976e2e6df4dd0695050dfe",
+      "category": [
+        "stage-production"
+      ],
+      "tags": [
+        "mvr",
+        "gdtf",
+        "stage-plot",
+        "truss",
+        "hoists",
+        "2d-plot",
+        "3d-view",
+        "lighting-design",
+        "cross-platform"
+      ],
+      "stack": [
+        "C++"
+      ],
+      "runs_in": [
+        "desktop",
+        "cli"
+      ],
+      "fit": [
+        "event-stages"
+      ],
+      "aliases": [
+        "Perastage MVR viewer"
+      ],
+      "hook": "Open an MVR stage file and review fixtures, trusses and hoists in 3D and 2D plans — free, cross-platform, scriptable.",
+      "source": "Research for stage design / rigging request, 2026-10-03",
+      "source_ref": "",
+      "image": "",
+      "thumb": "",
+      "added": "2026-10-03",
+      "status": "verified",
+      "related": [
+        "gdtf-mvr",
+        "blender-dmx",
+        "stage-truss-rigging-workflow"
+      ],
+      "file": "entries/perastage.md",
+      "body": "## What it is\n\nA desktop app for viewing, editing and exporting MVR stage files with GDTF fixture libraries. It shows a 3D view plus plan-focused 2D workflows for reviewing fixtures, **trusses, hoists**, objects and scene structure. It is deliberately *not* a real-time DMX visualiser.\n\n## How it works\n\n- Import/export MVR; maintain a personal GDTF library; fetch profiles from the GDTF Share API (free account).\n- **Tools → Create from text:** generates elements from rider-style notes.\n- Create, modify and distribute MVR elements from the **command line**, which makes it scriptable by an agent.\n- Linux AppImage, Windows and macOS builds in Releases.\n\n## Ideas for us\n\n- A quick check of a lighting designer's rig before an event; produce 2D truss and hoist plans for riggers from the same MVR.\n- Its \"create from text\" and CLI pair well with Claude: describe a stage → MVR draft.\n\n## Notes\n\nREADME read 2026-10-03. Actively developed (about 117 stars).",
+      "sections": {
+        "What it is": "A desktop app for viewing, editing and exporting MVR stage files with GDTF fixture libraries. It shows a 3D view plus plan-focused 2D workflows for reviewing fixtures, **trusses, hoists**, objects and scene structure. It is deliberately *not* a real-time DMX visualiser.",
+        "How it works": "- Import/export MVR; maintain a personal GDTF library; fetch profiles from the GDTF Share API (free account).\n- **Tools → Create from text:** generates elements from rider-style notes.\n- Create, modify and distribute MVR elements from the **command line**, which makes it scriptable by an agent.\n- Linux AppImage, Windows and macOS builds in Releases.",
+        "Ideas for us": "- A quick check of a lighting designer's rig before an event; produce 2D truss and hoist plans for riggers from the same MVR.\n- Its \"create from text\" and CLI pair well with Claude: describe a stage → MVR draft.",
+        "Notes": "README read 2026-10-03. Actively developed (about 117 stars)."
       },
       "links": []
     },
@@ -4424,6 +5110,7 @@
         "social-media-agent",
         "short-video-maker",
         "n8n",
+        "wa-akg",
         "youtube-uploader-mcp"
       ],
       "file": "entries/postiz.md",
@@ -4494,6 +5181,65 @@
         "How it works": "1. Start with a canvas filled with the image's average colour.\n2. For each new shape: try random candidates, then **hill-climb** (mutate position, size and angle) to minimise RMSE between the canvas and the target. The best shape's colour is solved analytically.\n3. Add the winner, then repeat. Each shape is the single best improvement available.\n\n`primitive -i in.png -o out.svg -n 200 -m 1` (m: 0 combo, 1 triangle, 2 rect, 3 ellipse, 4 circle, 5 rotated rect, 6 beziers, 7 rotated ellipse, 8 polygon).",
         "Ideas for us": "- **memory-mosaic alternative:** the wall rebuilds the target image shape by shape live, one shape per guest submission.\n- **merch-takeaway:** a guest selfie turned into a 150-triangle poster; Bézier mode plotted with a pen.\n- **reels-content:** the build-up GIF is satisfying content on its own.",
         "Notes": "Browser ports exist (e.g. primitive.js); it is easy to reimplement with WebGL for scoring candidates."
+      },
+      "links": []
+    },
+    {
+      "id": "qlcplus",
+      "title": "QLC+ — free DMX lighting control",
+      "kind": "tool",
+      "url": "https://github.com/mcallegari/qlcplus",
+      "demo": "",
+      "author": "Massimo Callegari",
+      "license": "Apache-2.0",
+      "license_notes": "",
+      "pin": "",
+      "category": [
+        "stage-production"
+      ],
+      "tags": [
+        "dmx",
+        "lighting-console",
+        "art-net",
+        "sacn",
+        "midi",
+        "osc",
+        "web-access",
+        "3d-view"
+      ],
+      "stack": [
+        "C++",
+        "Qt"
+      ],
+      "runs_in": [
+        "desktop"
+      ],
+      "fit": [
+        "event-stages",
+        "rhythm-battle",
+        "synesthetic-room"
+      ],
+      "aliases": [
+        "Q Light Controller Plus"
+      ],
+      "hook": "A cross-platform lighting console in software — fixtures, scenes, chasers, shows, audio triggers, MIDI/OSC, Art-Net/sACN, and a 3D view.",
+      "source": "Research for stage design / rigging request, 2026-10-03",
+      "source_ref": "",
+      "image": "",
+      "thumb": "",
+      "added": "2026-10-03",
+      "status": "inbox",
+      "related": [
+        "gdtf-mvr",
+        "blender-dmx",
+        "open-fixture-library"
+      ],
+      "file": "entries/qlcplus.md",
+      "body": "## What it is\n\nFree (about 1.5k stars) DMX control for moving heads, LEDs and dimmers: a fixture library, scenes, chasers, RGB matrix effects, a show timeline, audio-triggered effects, virtual console panels, web access, and outputs (USB DMX, Art-Net, sACN, OSC, MIDI). QLC+ 5 adds a 3D preview.\n\n## Ideas for us\n\n- The lighting side of rhythm-battle and synesthetic-room: our Node server sends OSC to QLC+, which runs the rig.\n\n## Notes\n\nMetadata (exists, stars, license, last push) checked 2026-10-03; description from general knowledge, README not re-read.",
+      "sections": {
+        "What it is": "Free (about 1.5k stars) DMX control for moving heads, LEDs and dimmers: a fixture library, scenes, chasers, RGB matrix effects, a show timeline, audio-triggered effects, virtual console panels, web access, and outputs (USB DMX, Art-Net, sACN, OSC, MIDI). QLC+ 5 adds a 3D preview.",
+        "Ideas for us": "- The lighting side of rhythm-battle and synesthetic-room: our Node server sends OSC to QLC+, which runs the rig.",
+        "Notes": "Metadata (exists, stars, license, last push) checked 2026-10-03; description from general knowledge, README not re-read."
       },
       "links": []
     },
@@ -4613,7 +5359,8 @@
         "hyperframes",
         "openmontage",
         "short-video-maker",
-        "skillry"
+        "skillry",
+        "vox-editorial"
       ],
       "file": "entries/remotion.md",
       "body": "## What it is\n\nA framework (about 62k stars) where a video is a React component tree. `useCurrentFrame()` and `interpolate()` drive everything, so frames are deterministic. It renders via headless Chrome + ffmpeg locally, on AWS Lambda, or plays live in `@remotion/player`.\n\n## Ideas for us\n\n- Our installation clients are already React; Remotion lets the same components become promo videos.\n- Used inside OpenMontage and short-video-maker.\n\n## Notes\n\nMetadata checked 2026-10-03; README not reviewed. **License is not OSI.** Confirm our company tier before using it commercially.",
@@ -4985,6 +5732,68 @@
       "links": []
     },
     {
+      "id": "shapeshifter",
+      "title": "Shape Shifter — SVG path-morphing icon animation tool",
+      "kind": "tool",
+      "url": "https://github.com/alexjlockwood/ShapeShifter",
+      "demo": "https://shapeshifter.design",
+      "author": "Alex Lockwood",
+      "license": "Apache-2.0",
+      "license_notes": "",
+      "pin": "0fe06cfd7a37b45e4b548ef806a1d40fd67a7a61",
+      "category": [
+        "web-animation"
+      ],
+      "tags": [
+        "path-morphing",
+        "svg",
+        "icon-animation",
+        "animated-vector-drawable",
+        "android",
+        "spritesheet",
+        "shape-morph"
+      ],
+      "stack": [
+        "TypeScript",
+        "Angular"
+      ],
+      "runs_in": [
+        "browser"
+      ],
+      "fit": [
+        "client-pitches",
+        "reels-content",
+        "mural-wall"
+      ],
+      "aliases": [
+        "ShapeShifter",
+        "shapeshift",
+        "AnimatedVectorDrawable",
+        "path morph"
+      ],
+      "hook": "Morph one SVG shape into another cleanly — it makes two paths \"compatible\" (same points and commands) and exports SVG, spritesheets or Android animations.",
+      "source": "User shared name, 2026-10-03",
+      "source_ref": "",
+      "image": "",
+      "thumb": "",
+      "added": "2026-10-03",
+      "status": "verified",
+      "related": [
+        "gsap",
+        "lottie-web",
+        "anime-js"
+      ],
+      "file": "entries/shapeshifter.md",
+      "body": "## What it is\n\nA web app (about 4k stars, actively maintained, created 2016) for building icon animations, especially **path morphs** (play to pause, menu to back arrow, logo to logo). It exports standalone SVGs, SVG spritesheets, and Android `AnimatedVectorDrawable`.\n\n## How it works\n\nTo morph shape A into shape B, both SVG paths must have the **same number and type of drawing commands** in a matching order. Design tools hide this, so Shape Shifter lets you:\n- add or remove points without changing a path's look, and drag them along the path;\n- reverse or shift the start point and split subpaths so the points pair up sensibly;\n- auto-fix paths to be compatible, then preview the in-between states on a timeline;\n- convert unsupported primitives (circles, etc.) into curve commands.\n\nThe same logic underlies GSAP MorphSVG and flubber-style interpolation.\n\n## Ideas for us\n\n- Brand logo morphs for event intros and reels (client logo → CTX mark → event title).\n- Morphing icons in our phone-side join and conduct UIs.\n- **mural-wall:** morph a guest's simplified doodle outline into a target shape.\n\n## Notes\n\nREADME read 2026-10-03. Other repos named \"shapeshift\" that are *not* this: anishfn/shapeshift (a text input that morphs into UI), shapeshift/web (crypto exchange), jquery.shapeshift (a draggable grid).",
+      "sections": {
+        "What it is": "A web app (about 4k stars, actively maintained, created 2016) for building icon animations, especially **path morphs** (play to pause, menu to back arrow, logo to logo). It exports standalone SVGs, SVG spritesheets, and Android `AnimatedVectorDrawable`.",
+        "How it works": "To morph shape A into shape B, both SVG paths must have the **same number and type of drawing commands** in a matching order. Design tools hide this, so Shape Shifter lets you:\n- add or remove points without changing a path's look, and drag them along the path;\n- reverse or shift the start point and split subpaths so the points pair up sensibly;\n- auto-fix paths to be compatible, then preview the in-between states on a timeline;\n- convert unsupported primitives (circles, etc.) into curve commands.\n\nThe same logic underlies GSAP MorphSVG and flubber-style interpolation.",
+        "Ideas for us": "- Brand logo morphs for event intros and reels (client logo → CTX mark → event title).\n- Morphing icons in our phone-side join and conduct UIs.\n- **mural-wall:** morph a guest's simplified doodle outline into a target shape.",
+        "Notes": "README read 2026-10-03. Other repos named \"shapeshift\" that are *not* this: anishfn/shapeshift (a text input that morphs into UI), shapeshift/web (crypto exchange), jquery.shapeshift (a draggable grid)."
+      },
+      "links": []
+    },
+    {
       "id": "shipvideo",
       "title": "shipvideo (LaunchVideo) — paste a URL, get a launch video",
       "kind": "repo",
@@ -5275,6 +6084,74 @@
       "links": []
     },
     {
+      "id": "stage-truss-rigging-workflow",
+      "title": "Stage design, truss & rigging — workflow, tools and safety",
+      "kind": "guide",
+      "url": "https://gdtf-share.com",
+      "demo": "",
+      "author": "Synthesis (industry practice)",
+      "license": "n/a",
+      "license_notes": "Commercial tools named here are paid; manufacturer CAD libraries are free downloads with their own terms.",
+      "pin": "",
+      "category": [
+        "stage-production"
+      ],
+      "tags": [
+        "truss",
+        "rigging",
+        "hoists",
+        "chain-motors",
+        "load-calculation",
+        "stage-design",
+        "previz",
+        "vectorworks",
+        "capture",
+        "depence",
+        "grandma3",
+        "unreal",
+        "safety"
+      ],
+      "stack": [],
+      "runs_in": [
+        "desktop"
+      ],
+      "fit": [
+        "event-stages",
+        "client-pitches"
+      ],
+      "aliases": [
+        "trussing",
+        "entertainment rigging",
+        "ground support",
+        "roof system",
+        "ANSI E1.2",
+        "EN 17206"
+      ],
+      "hook": "How an event stage goes from concept to safe rig: 3D design with manufacturer truss models → MVR → lighting previz → rigging plot and load sign-off by a qualified rigger.",
+      "source": "Research for stage design / rigging request, 2026-10-03",
+      "source_ref": "",
+      "image": "",
+      "thumb": "",
+      "added": "2026-10-03",
+      "status": "inbox",
+      "related": [
+        "gdtf-mvr",
+        "perastage",
+        "blender-dmx",
+        "virtual-mapper",
+        "blender-mcp"
+      ],
+      "file": "entries/stage-truss-rigging-workflow.md",
+      "body": "## What it is\n\nA map of the stage-design toolchain and the part that must not be improvised: truss and rigging loads.\n\n## How it works\n\n**1. Concept and 3D design.** Model the venue, stage, set and screens. Use free 3D/CAD models and load tables from truss makers (Prolyte, Global Truss, Eurotruss, Tomcat, Area Four Industries...) so dimensions and allowable loads are real.\n- **Industry tools (paid):** Vectorworks Spotlight (CAD + rigging plots), Capture, Depence, WYSIWYG, grandMA3 3D; Unreal Engine for high-end previz and virtual production.\n- **Free/open:** Blender (+ BlenderDMX, + Blender MCP), Perastage for MVR review.\n\n**2. Interchange.** Export the rig as **MVR** with GDTF fixtures, so the lighting desk, visualiser and content team (TouchDesigner via td-gdtf) all share one rig.\n\n**3. Rigging plot.** Hang points, motor/hoist positions and capacities, truss spans and types, bridles, and point loads (fixtures + cable + screens + dynamic factors). Perastage shows trusses and hoists from MVR, and Vectorworks Spotlight produces formal plots.\n\n**4. Load calculation and sign-off.** Truss load tables give allowable uniformly-distributed and point loads per span. Hoists need rated working-load limits plus a safety factor. Roof or ceiling points need venue structural approval. **This must be done or checked by a competent rigger or structural engineer.** Relevant standards include ANSI E1.2 (aluminium truss and towers), EN 17206 (stage machinery safety), and local regulations.\n\n## Ideas for us\n\n- For CTX installations that hang screens, projectors or sensors: model them on manufacturer truss in Blender, export MVR, review in Perastage, and hand the plot to the venue's rigger.\n- Previz content plus lights plus truss in one scene for pitches (BlenderDMX renders, Virtual Mapper for projection).\n- Let Claude draft the layout (Blender MCP / Perastage CLI). **Never** let an AI or an unreviewed calculator decide loads.\n\n## Notes\n\nWritten from general industry knowledge (2026-10-03) and not verified per tool. Open-source truss load calculators on GitHub are tiny unreviewed projects (0–1 stars) and are deliberately not listed as tools.",
+      "sections": {
+        "What it is": "A map of the stage-design toolchain and the part that must not be improvised: truss and rigging loads.",
+        "How it works": "**1. Concept and 3D design.** Model the venue, stage, set and screens. Use free 3D/CAD models and load tables from truss makers (Prolyte, Global Truss, Eurotruss, Tomcat, Area Four Industries...) so dimensions and allowable loads are real.\n- **Industry tools (paid):** Vectorworks Spotlight (CAD + rigging plots), Capture, Depence, WYSIWYG, grandMA3 3D; Unreal Engine for high-end previz and virtual production.\n- **Free/open:** Blender (+ BlenderDMX, + Blender MCP), Perastage for MVR review.\n\n**2. Interchange.** Export the rig as **MVR** with GDTF fixtures, so the lighting desk, visualiser and content team (TouchDesigner via td-gdtf) all share one rig.\n\n**3. Rigging plot.** Hang points, motor/hoist positions and capacities, truss spans and types, bridles, and point loads (fixtures + cable + screens + dynamic factors). Perastage shows trusses and hoists from MVR, and Vectorworks Spotlight produces formal plots.\n\n**4. Load calculation and sign-off.** Truss load tables give allowable uniformly-distributed and point loads per span. Hoists need rated working-load limits plus a safety factor. Roof or ceiling points need venue structural approval. **This must be done or checked by a competent rigger or structural engineer.** Relevant standards include ANSI E1.2 (aluminium truss and towers), EN 17206 (stage machinery safety), and local regulations.",
+        "Ideas for us": "- For CTX installations that hang screens, projectors or sensors: model them on manufacturer truss in Blender, export MVR, review in Perastage, and hand the plot to the venue's rigger.\n- Previz content plus lights plus truss in one scene for pitches (BlenderDMX renders, Virtual Mapper for projection).\n- Let Claude draft the layout (Blender MCP / Perastage CLI). **Never** let an AI or an unreviewed calculator decide loads.",
+        "Notes": "Written from general industry knowledge (2026-10-03) and not verified per tool. Open-source truss load calculators on GitHub are tiny unreviewed projects (0–1 stars) and are deliberately not listed as tools."
+      },
+      "links": []
+    },
+    {
       "id": "story-diffusion",
       "title": "StoryDiffusion — consistent characters across images and video",
       "kind": "library",
@@ -5463,6 +6340,61 @@
         "How it works": "- **TAPIR:** per-frame matching of the query feature against every frame to get a rough track, then iterative temporal refinement using local correlations. Online (causal) variants exist for live streams.\n- **TAPNext:** treats tracking as next-token prediction over video frames, which keeps it causal and lets it run frame by frame.\n- Outputs are per-point (x, y) tracks plus an occlusion flag, so you can draw trails, dot grids or attach graphics.",
         "Ideas for us": "- **reels-content:** \"data-viz on footage\" overlays: dense rainbow dot grids that ride on a dancer, horse or crowd (the cheetah and octopus shots in the reel).\n- Track points on event footage to pin labels or particles onto performers in post, without manual rotoscoping.\n- Possible live use: an online TAPIR on a GPU box sends tracks to TouchDesigner over OSC. Check latency first.",
         "Notes": "- GPU recommended; Colab notebooks are in the repo.\n- Credit the footage separately from the code (the reel credits each Wikimedia clip)."
+      },
+      "links": []
+    },
+    {
+      "id": "td-gdtf",
+      "title": "td-gdtf — load GDTF fixtures into TouchDesigner",
+      "kind": "tool",
+      "url": "https://github.com/matthewwachter/td-gdtf",
+      "demo": "",
+      "author": "Matthew Wachter",
+      "license": "MIT",
+      "license_notes": "",
+      "pin": "77ca404c5dfe8d5fc737d84de69ab2104d6d4428",
+      "category": [
+        "stage-production"
+      ],
+      "tags": [
+        "touchdesigner",
+        "gdtf",
+        "fixtures",
+        "previz",
+        "dmx"
+      ],
+      "stack": [
+        "Python",
+        "TouchDesigner"
+      ],
+      "runs_in": [
+        "touchdesigner"
+      ],
+      "fit": [
+        "touchdesigner",
+        "event-stages",
+        "synesthetic-room"
+      ],
+      "aliases": [
+        "TouchDesigner GDTF"
+      ],
+      "hook": "A TouchDesigner component that reads GDTF fixture profiles, so TD scenes can previsualise and drive real lights.",
+      "source": "Research for stage design / rigging request, 2026-10-03",
+      "source_ref": "",
+      "image": "",
+      "thumb": "",
+      "added": "2026-10-03",
+      "status": "verified",
+      "related": [
+        "gdtf-mvr",
+        "blender-dmx"
+      ],
+      "file": "entries/td-gdtf.md",
+      "body": "## What it is\n\nA TouchDesigner component for loading GDTF fixture profiles (geometry and DMX modes).\n\n## Ideas for us\n\n- In our TD builds, place real fixture models in the room and drive them from the same audio-reactive network that drives the projections.\n\n## Notes\n\nREADME checked 2026-10-03 (one line). Last push 2023, so test against current TD builds.",
+      "sections": {
+        "What it is": "A TouchDesigner component for loading GDTF fixture profiles (geometry and DMX modes).",
+        "Ideas for us": "- In our TD builds, place real fixture models in the room and drive them from the same audio-reactive network that drives the projections.",
+        "Notes": "README checked 2026-10-03 (one line). Last push 2023, so test against current TD builds."
       },
       "links": []
     },
@@ -6061,6 +6993,132 @@
       "links": []
     },
     {
+      "id": "virtual-mapper",
+      "title": "Virtual Mapper — preview projection mapping on a 3D stage",
+      "kind": "tool",
+      "url": "https://github.com/baku89/VirtualMapper",
+      "demo": "",
+      "author": "Baku Hashimoto",
+      "license": "MIT",
+      "license_notes": "",
+      "pin": "052239503681890e5c51ca805ab3f4f1ee922f6c",
+      "category": [
+        "stage-production"
+      ],
+      "tags": [
+        "projection-mapping",
+        "previz",
+        "syphon",
+        "spout",
+        "fbx",
+        "stage-model",
+        "openframeworks"
+      ],
+      "stack": [
+        "C++",
+        "openFrameworks"
+      ],
+      "runs_in": [
+        "desktop"
+      ],
+      "fit": [
+        "event-stages",
+        "touchdesigner",
+        "client-pitches"
+      ],
+      "aliases": [
+        "VirtualMapper"
+      ],
+      "hook": "Load the stage as FBX, stream your After Effects/VDMX/TD output over Syphon/Spout, and see it projected on the 3D set in real time.",
+      "source": "Research for stage design / rigging request, 2026-10-03",
+      "source_ref": "",
+      "image": "",
+      "thumb": "",
+      "added": "2026-10-03",
+      "status": "verified",
+      "related": [
+        "blender-dmx",
+        "gdtf-mvr",
+        "stage-truss-rigging-workflow"
+      ],
+      "file": "entries/virtual-mapper.md",
+      "body": "## What it is\n\nA previz utility for non-planar video (3D mapping, stage screens, installations). Meshes named `screen*` (with UVs) receive the live texture, `guide*` meshes are guides, everything else is the stage, and imported cameras can be toggled.\n\n## Ideas for us\n\n- Preview TouchDesigner content on the actual venue model before load-in, and screen-record it for client sign-off.\n\n## Notes\n\nREADME read 2026-10-03. Last release 2017 (v2.3.1, macOS and Windows), so it may need older OS support. Browser alternative for simple quad mapping: glowbox/maptasticjs.",
+      "sections": {
+        "What it is": "A previz utility for non-planar video (3D mapping, stage screens, installations). Meshes named `screen*` (with UVs) receive the live texture, `guide*` meshes are guides, everything else is the stage, and imported cameras can be toggled.",
+        "Ideas for us": "- Preview TouchDesigner content on the actual venue model before load-in, and screen-record it for client sign-off.",
+        "Notes": "README read 2026-10-03. Last release 2017 (v2.3.1, macOS and Windows), so it may need older OS support. Browser alternative for simple quad mapping: glowbox/maptasticjs."
+      },
+      "links": []
+    },
+    {
+      "id": "vox-editorial",
+      "title": "vox / vox-editorial — cut-paper editorial explainer skills",
+      "kind": "skill",
+      "url": "https://github.com/jaredcassoutt/vox-editorial",
+      "demo": "",
+      "author": "Jared Cassoutt",
+      "license": "none (all rights reserved)",
+      "license_notes": "No LICENSE file.",
+      "pin": "f394e925f7ccbd6df3e6b3403fcb260194bbece3",
+      "category": [
+        "agent-skills",
+        "motion-video"
+      ],
+      "tags": [
+        "paper-cut",
+        "paper-collage",
+        "halftone",
+        "editorial",
+        "explainer",
+        "remotion",
+        "ffmpeg",
+        "edge-tts",
+        "narration-clock",
+        "vertical-video"
+      ],
+      "stack": [
+        "TypeScript",
+        "React",
+        "Remotion",
+        "Python"
+      ],
+      "runs_in": [
+        "claude-code",
+        "node",
+        "python"
+      ],
+      "fit": [
+        "reels-content",
+        "social-ops"
+      ],
+      "aliases": [
+        "vox-skill",
+        "Vox-style explainer"
+      ],
+      "hook": "Two Claude skills that turn a researched topic into a narrated editorial film in paper-collage or cut-paper style, free to run.",
+      "source": "GitHub search for paper-cut animation, 2026-10-03",
+      "source_ref": "",
+      "image": "",
+      "thumb": "",
+      "added": "2026-10-03",
+      "status": "verified",
+      "related": [
+        "paper-cut-animation",
+        "hyperframes-community-skills",
+        "remotion",
+        "cardstock-diorama-myth"
+      ],
+      "file": "entries/vox-editorial.md",
+      "body": "## What it is\n\n- **vox-skill (Remotion):** paper collage, halftone cut-outs and an offset red marker stroke. Charts, documents and seals are drawn in code; public-domain portraits are lifted with the macOS Vision framework and halftoned.\n- **vox-editorial (Python + ffmpeg):** cut paper on saturated grounds with generated \"scissored\" subject sprites, at 1080×1920.\n\n## How it works\n\n**\"The narration is the clock\":** the voiceover (free Edge neural TTS) is generated first, and every scene length and animation cue comes from its word boundaries. Change the voice and the film re-times itself. A synthesised documentary-style music bed is sidechain-ducked under the voice.\n\n## Ideas for us\n\n- Explainer reels about how our installations work, in a consistent editorial paper style, at near-zero cost.\n\n## Notes\n\nREADME read 2026-10-03. Very small project (7 stars).",
+      "sections": {
+        "What it is": "- **vox-skill (Remotion):** paper collage, halftone cut-outs and an offset red marker stroke. Charts, documents and seals are drawn in code; public-domain portraits are lifted with the macOS Vision framework and halftoned.\n- **vox-editorial (Python + ffmpeg):** cut paper on saturated grounds with generated \"scissored\" subject sprites, at 1080×1920.",
+        "How it works": "**\"The narration is the clock\":** the voiceover (free Edge neural TTS) is generated first, and every scene length and animation cue comes from its word boundaries. Change the voice and the film re-times itself. A synthesised documentary-style music bed is sidechain-ducked under the voice.",
+        "Ideas for us": "- Explainer reels about how our installations work, in a consistent editorial paper style, at near-zero cost.",
+        "Notes": "README read 2026-10-03. Very small project (7 stars)."
+      },
+      "links": []
+    },
+    {
       "id": "vpype",
       "title": "vpype — Swiss-army knife for plotter vector graphics",
       "kind": "tool",
@@ -6115,6 +7173,72 @@
         "How it works": "- Commands operate on layers of polylines: `read`, `linemerge` (join touching lines), `linesort` (shortest pen-up travel), `linesimplify`, `reloop`, `splitall`, `layout` / `scale` / `rotate`, `write` (SVG or HPGL).\n- A plugin system adds generators and effects; `vsketch` is the companion sketching framework.\n- A viewer (`show`) previews the result, including pen-up travel.",
         "Ideas for us": "- **merch-takeaway:** the last step for any generated line art (ln, stippling, fishdraw, differential-line) before an AxiDraw prints a guest's take-home.\n- Cut plot time at live events: `linesort` often halves the drawing time.",
         "Notes": "`pip install vpype[all]`."
+      },
+      "links": []
+    },
+    {
+      "id": "wa-akg",
+      "title": "WA-AKG — self-hosted WhatsApp gateway & dashboard",
+      "kind": "tool",
+      "url": "https://github.com/mrifqidaffaaditya/WA-AKG",
+      "demo": "https://wa-akg.aikeigroup.net",
+      "author": "M. Rifqi Daffa Aditya (mrifqidaffaaditya)",
+      "license": "MIT",
+      "license_notes": "Built on Baileys, an unofficial WhatsApp Web client: using it can break WhatsApp's terms and get numbers banned. For business or client use prefer the official WhatsApp Business Platform (Cloud API).",
+      "pin": "c7dd01a04339e4363b549beb3a41fe02cf131acb",
+      "category": [
+        "social-media-marketing"
+      ],
+      "tags": [
+        "whatsapp",
+        "gateway",
+        "rest-api",
+        "webhooks",
+        "auto-reply",
+        "scheduler",
+        "broadcast",
+        "multi-session",
+        "baileys",
+        "n8n",
+        "nextjs"
+      ],
+      "stack": [
+        "TypeScript",
+        "Next.js",
+        "Prisma"
+      ],
+      "runs_in": [
+        "node",
+        "cloud"
+      ],
+      "fit": [
+        "social-ops",
+        "memory-mosaic",
+        "collective-heartbeat"
+      ],
+      "aliases": [
+        "WA AKG",
+        "WhatsApp API gateway",
+        "n8n-nodes-wa-akg"
+      ],
+      "hook": "Turns WhatsApp numbers into a REST API with webhooks, scheduling, auto-replies and a dashboard — multi-session, self-hosted.",
+      "source": "User request, 2026-10-03",
+      "source_ref": "",
+      "image": "",
+      "thumb": "",
+      "added": "2026-10-03",
+      "status": "verified",
+      "related": [
+        "n8n",
+        "postiz"
+      ],
+      "file": "entries/wa-akg.md",
+      "body": "## What it is\n\nA Next.js 15 + Prisma dashboard and gateway (about 408 stars) that connects any number of WhatsApp accounts by QR scan and exposes 109+ REST endpoints (OpenAPI/Swagger at `/docs`). It also has a beta branch, a \"business\" customer-service variant with an AI chatbot and queues, and an official n8n community node.\n\n## How it works\n\n- **Engine:** `@whiskeysockets/baileys` WebSocket connection to WhatsApp Web, one session per number.\n- **Features:**\n  - message scheduler with media;\n  - broadcast with randomised 10–30 s delays;\n  - keyword auto-replies (group, private or all) with attachments;\n  - whitelist and blacklist;\n  - contacts;\n  - sticker maker with remove.bg.\n- **Webhooks:** events such as `message.received` (with sender, type, quoted media) are forwarded to your CRM or app.\n\n## Ideas for us\n\n- **Event join channel:** guests WhatsApp a selfie to the event number, and a webhook pushes it into memory-mosaic (no app or QR web page needed). This needs consent and a privacy note.\n- Post-event: send each guest their mosaic tile or plot via WhatsApp.\n- **social-ops:** n8n + WA-AKG for client update messages. Keep it to opted-in contacts, never cold broadcast.\n\n## Notes\n\nREADME read 2026-10-03. The project advertises \"anti-ban\" broadcast, which signals the real risk: bulk or unsolicited sending violates WhatsApp policy. Phone numbers and messages are personal data, so store them carefully.",
+      "sections": {
+        "What it is": "A Next.js 15 + Prisma dashboard and gateway (about 408 stars) that connects any number of WhatsApp accounts by QR scan and exposes 109+ REST endpoints (OpenAPI/Swagger at `/docs`). It also has a beta branch, a \"business\" customer-service variant with an AI chatbot and queues, and an official n8n community node.",
+        "How it works": "- **Engine:** `@whiskeysockets/baileys` WebSocket connection to WhatsApp Web, one session per number.\n- **Features:**\n  - message scheduler with media;\n  - broadcast with randomised 10–30 s delays;\n  - keyword auto-replies (group, private or all) with attachments;\n  - whitelist and blacklist;\n  - contacts;\n  - sticker maker with remove.bg.\n- **Webhooks:** events such as `message.received` (with sender, type, quoted media) are forwarded to your CRM or app.",
+        "Ideas for us": "- **Event join channel:** guests WhatsApp a selfie to the event number, and a webhook pushes it into memory-mosaic (no app or QR web page needed). This needs consent and a privacy note.\n- Post-event: send each guest their mosaic tile or plot via WhatsApp.\n- **social-ops:** n8n + WA-AKG for client update messages. Keep it to opted-in contacts, never cold broadcast.",
+        "Notes": "README read 2026-10-03. The project advertises \"anti-ban\" broadcast, which signals the real risk: bulk or unsolicited sending violates WhatsApp policy. Phone numbers and messages are personal data, so store them carefully."
       },
       "links": []
     },
