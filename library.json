@@ -1,6 +1,6 @@
 {
-  "generated": "2026-10-03T08:24:47.121Z",
-  "count": 113,
+  "generated": "2026-10-04T08:35:40.081Z",
+  "count": 115,
   "vocab": {
     "categories": {
       "simulation-physics": "Physics & simulation — rigid/soft bodies, cloth, fluids, MPM, XPBD, reaction-diffusion",
@@ -89,6 +89,7 @@
     "deterministic-rendering": 4,
     "gdtf": 4,
     "gsap": 4,
+    "mesh-deformation": 4,
     "open-weights": 4,
     "paper-cut": 4,
     "pen-plotter": 4,
@@ -103,13 +104,13 @@
     "art-net": 3,
     "claude-code": 3,
     "claude-code-skill": 3,
+    "cli": 3,
     "explainer": 3,
     "fixtures": 3,
     "halftone": 3,
     "headless-chrome": 3,
     "hoists": 3,
     "kinetic-type": 3,
-    "mesh-deformation": 3,
     "mvr": 3,
     "n8n": 3,
     "osc": 3,
@@ -139,8 +140,8 @@
     "character-animation": 2,
     "claude-code-plugin": 2,
     "clawd": 2,
-    "cli": 2,
     "collage": 2,
+    "cpp": 2,
     "diorama": 2,
     "elevenlabs": 2,
     "face-tracking": 2,
@@ -190,6 +191,7 @@
     "wasm": 2,
     "watercolor": 2,
     "webgl2": 2,
+    "webgpu": 2,
     "webhooks": 2,
     "2d": 1,
     "2d-animation": 1,
@@ -215,7 +217,9 @@
     "anime-avatar": 1,
     "anime-portraits": 1,
     "anime-production": 1,
+    "arap": 1,
     "artnet": 1,
+    "as-rigid-as-possible": 1,
     "attribution": 1,
     "auto-editing": 1,
     "auto-reply": 1,
@@ -303,6 +307,7 @@
     "edge-tts": 1,
     "editorial": 1,
     "efficient": 1,
+    "eigen": 1,
     "elevenlabs-music": 1,
     "entropy": 1,
     "erosion": 1,
@@ -337,6 +342,7 @@
     "gaql": 1,
     "gaussian-splat": 1,
     "gemini": 1,
+    "geometry-processing": 1,
     "gestures": 1,
     "gif": 1,
     "glb": 1,
@@ -450,9 +456,13 @@
     "next-frame-prediction": 1,
     "no-code": 1,
     "node-graph": 1,
+    "nodejs": 1,
     "noise": 1,
     "numpy": 1,
+    "ocr": 1,
+    "offline": 1,
     "oil-paint": 1,
+    "on-device": 1,
     "onnx": 1,
     "opencomputer": 1,
     "openframeworks": 1,
@@ -473,6 +483,7 @@
     "path-morphing": 1,
     "patterns": 1,
     "pbr": 1,
+    "pdf": 1,
     "perlin-worley": 1,
     "pexels": 1,
     "photo-to-anime": 1,
@@ -505,6 +516,7 @@
     "prompts": 1,
     "prospecting": 1,
     "psn": 1,
+    "puppet": 1,
     "python": 1,
     "python-dsl": 1,
     "pytorch": 1,
@@ -608,6 +620,7 @@
     "template": 1,
     "tentacles": 1,
     "terrain": 1,
+    "text-recognition": 1,
     "text-to-3d": 1,
     "texture": 1,
     "texture-synthesis": 1,
@@ -620,6 +633,7 @@
     "training": 1,
     "transcription": 1,
     "treatment": 1,
+    "triangle-mesh": 1,
     "triangles": 1,
     "turing-patterns": 1,
     "tutorial": 1,
@@ -650,7 +664,6 @@
     "web-access": 1,
     "webcam": 1,
     "webgl-shader": 1,
-    "webgpu": 1,
     "webui": 1,
     "wechat": 1,
     "wfc": 1,
@@ -666,6 +679,143 @@
     "yt-dlp": 1
   },
   "entries": [
+    {
+      "id": "libigl-arap",
+      "title": "libigl ARAP — drag a shape and it bends like paper",
+      "kind": "library",
+      "url": "https://github.com/libigl/libigl",
+      "demo": "https://libigl.github.io/tutorial/#as-rigid-as-possible",
+      "author": "Alec Jacobson, Daniele Panozzo and libigl contributors",
+      "license": "MPL-2.0",
+      "license_notes": "Core is MPL-2.0 (file-level copyleft — changes to libigl's own files must be shared; using it in our code is fine). Optional \"copyleft\" modules (CGAL, TetGen) are GPL, and the \"restricted\" Triangle module uses Shewchuk's non-commercial licence — keep both out of client work and triangulate with something else.",
+      "pin": "7100764c2a2833284a8bdfa9b948d2b3bf124624",
+      "category": [
+        "geometry-algorithms",
+        "animation-rigging"
+      ],
+      "tags": [
+        "arap",
+        "as-rigid-as-possible",
+        "mesh-deformation",
+        "triangle-mesh",
+        "puppet",
+        "geometry-processing",
+        "cpp",
+        "eigen"
+      ],
+      "stack": [
+        "C++",
+        "Eigen"
+      ],
+      "runs_in": [
+        "desktop",
+        "cli"
+      ],
+      "fit": [
+        "digital-doodles-wall",
+        "avatar-arcade",
+        "mural-wall",
+        "reels-content",
+        "touchdesigner"
+      ],
+      "aliases": [
+        "ARAP",
+        "as-rigid-as-possible deformation",
+        "igl",
+        "Sorkine and Alexa 2007",
+        "shape manipulation"
+      ],
+      "hook": "Pull one hand of a flat figure and the whole body follows naturally, bending without stretching — like paper.",
+      "source": "Instagram @index.opensource",
+      "source_ref": "IMG_libigl-arap-reel (Instagram reel, Oct 2026)",
+      "image": "assets/IMG_libigl-arap-reel.jpg",
+      "thumb": "assets/thumbs/libigl-arap.jpg",
+      "added": "2026-10-04",
+      "status": "verified",
+      "related": [
+        "animated-drawings",
+        "fullik-fabrik-ik",
+        "ten-minute-physics",
+        "index-opensource-instagram"
+      ],
+      "file": "entries/libigl-arap.md",
+      "body": "## What it is\n\nlibigl is a widely used C++ geometry-processing library (header-only by default, built on Eigen). One of its best-known tools is **as-rigid-as-possible (ARAP) deformation**: turn a shape into a triangle mesh, pin or drag a few points, and the rest of the shape moves so every little triangle stays as close to its original shape as it can. The reel shows a paper-doll figure: pull one hand and the arm, shoulder and body follow believably, with the triangles coloured by how much each one turned.\n\n## How it works\n\nARAP (Sorkine & Alexa, 2007) alternates two cheap steps a few times per frame:\n\n1. **Local step:** for each vertex (or triangle), compare its edges now with its edges at rest and find the best-fitting rotation (a small SVD per element). Each piece is allowed to rotate but not to stretch.\n2. **Global step:** with those rotations fixed, solve one sparse linear system (the cotangent Laplacian) for all vertex positions, keeping the dragged \"handle\" points where the user put them. The matrix never changes, so it is factorised once up front and every solve is fast.\n\nRepeat local → global 5–10 times per frame and the shape settles. In libigl: `igl::arap_precomputation(V, F, dim, b, data)` once, then `igl::arap_solve(handle_positions, data, U)` every frame (`tutorial/405_AsRigidAsPossible`; `503_ARAPParam` uses the same idea to flatten 3D surfaces). The same file also offers a dynamics mode (velocity, external forces, stiffness) for a springy, physical feel.\n\nFor a 2D figure the pipeline is: outline → triangulate the inside → ARAP with a few handles. The 2D version is small enough to port to JavaScript or Python in a few hundred lines.\n\n## Ideas for us\n\n- **Digital Doodles Wall:** a child draws a figure, we triangulate the drawing and they \"grab\" its hand with hand tracking to make it wave or dance. Unlike Animated Drawings, it needs no skeleton, so it also works for animals, letters and blobs.\n- **Avatar Arcade:** drive a paper-cut avatar from body tracking — map wrists, head and feet to ARAP handles for a puppet that bends instead of snapping at joints.\n- **Mural Wall:** let visitors stretch and wiggle parts of a projected illustration (a logo, a mascot) by pointing at them.\n- **Reels:** the \"pull one hand\" shot with triangles coloured by rotation is a strong 10-second explainer clip.\n- **TouchDesigner:** precompute in a Python script (libigl has Python bindings — not checked this time) or port the 2D solver into a Script SOP.\n\n## Notes\n\n- **Verified 2026-10-04:** read the README, `include/igl/arap.h` (MPL-2.0 header, ARAPData with dynamics and Young's modulus options) and the tutorial list (405, 503). Pinned `main` at `7100764` (2026-09-04). Stars and activity were not checked (GitHub API access was not available in this session).\n- The reel showed a GitHub page at commit `f68f01c`, which is not the `main` head we fetched; the link and the features match.\n- **Licensing:** stick to the MPL-2.0 core. The Triangle library behind `igl::triangle` is non-commercial, so for client installations triangulate with a permissive library instead (for example a constrained Delaunay library) or write our own.\n- ARAP preserves shape but not area or volume perfectly; for very large pulls add more handles, or the figure can fold over itself.",
+      "sections": {
+        "What it is": "libigl is a widely used C++ geometry-processing library (header-only by default, built on Eigen). One of its best-known tools is **as-rigid-as-possible (ARAP) deformation**: turn a shape into a triangle mesh, pin or drag a few points, and the rest of the shape moves so every little triangle stays as close to its original shape as it can. The reel shows a paper-doll figure: pull one hand and the arm, shoulder and body follow believably, with the triangles coloured by how much each one turned.",
+        "How it works": "ARAP (Sorkine & Alexa, 2007) alternates two cheap steps a few times per frame:\n\n1. **Local step:** for each vertex (or triangle), compare its edges now with its edges at rest and find the best-fitting rotation (a small SVD per element). Each piece is allowed to rotate but not to stretch.\n2. **Global step:** with those rotations fixed, solve one sparse linear system (the cotangent Laplacian) for all vertex positions, keeping the dragged \"handle\" points where the user put them. The matrix never changes, so it is factorised once up front and every solve is fast.\n\nRepeat local → global 5–10 times per frame and the shape settles. In libigl: `igl::arap_precomputation(V, F, dim, b, data)` once, then `igl::arap_solve(handle_positions, data, U)` every frame (`tutorial/405_AsRigidAsPossible`; `503_ARAPParam` uses the same idea to flatten 3D surfaces). The same file also offers a dynamics mode (velocity, external forces, stiffness) for a springy, physical feel.\n\nFor a 2D figure the pipeline is: outline → triangulate the inside → ARAP with a few handles. The 2D version is small enough to port to JavaScript or Python in a few hundred lines.",
+        "Ideas for us": "- **Digital Doodles Wall:** a child draws a figure, we triangulate the drawing and they \"grab\" its hand with hand tracking to make it wave or dance. Unlike Animated Drawings, it needs no skeleton, so it also works for animals, letters and blobs.\n- **Avatar Arcade:** drive a paper-cut avatar from body tracking — map wrists, head and feet to ARAP handles for a puppet that bends instead of snapping at joints.\n- **Mural Wall:** let visitors stretch and wiggle parts of a projected illustration (a logo, a mascot) by pointing at them.\n- **Reels:** the \"pull one hand\" shot with triangles coloured by rotation is a strong 10-second explainer clip.\n- **TouchDesigner:** precompute in a Python script (libigl has Python bindings — not checked this time) or port the 2D solver into a Script SOP.",
+        "Notes": "- **Verified 2026-10-04:** read the README, `include/igl/arap.h` (MPL-2.0 header, ARAPData with dynamics and Young's modulus options) and the tutorial list (405, 503). Pinned `main` at `7100764` (2026-09-04). Stars and activity were not checked (GitHub API access was not available in this session).\n- The reel showed a GitHub page at commit `f68f01c`, which is not the `main` head we fetched; the link and the features match.\n- **Licensing:** stick to the MPL-2.0 core. The Triangle library behind `igl::triangle` is non-commercial, so for client installations triangulate with a permissive library instead (for example a constrained Delaunay library) or write our own.\n- ARAP preserves shape but not area or volume perfectly; for very large pulls add more handles, or the figure can fold over itself."
+      },
+      "links": []
+    },
+    {
+      "id": "light-ocr",
+      "title": "light-ocr — fast offline OCR for Node.js and C++",
+      "kind": "library",
+      "url": "https://github.com/arcships/light-ocr",
+      "demo": "https://www.npmjs.com/package/@arcships/light-ocr",
+      "author": "arcships (light-ocr contributors)",
+      "license": "Apache-2.0",
+      "license_notes": "Code Apache-2.0. The bundled PP-OCR models are declared Apache-2.0 in the repo's model-bundle docs. PDFium and the Noto Sans SC font ship with their own notices in the release artifacts — check those before redistributing a packaged app.",
+      "pin": "39979d4ed6e62b34b152e364107844ad7641fcbb",
+      "category": [
+        "computer-vision"
+      ],
+      "tags": [
+        "ocr",
+        "offline",
+        "on-device",
+        "pdf",
+        "text-recognition",
+        "nodejs",
+        "cpp",
+        "cli",
+        "webgpu"
+      ],
+      "stack": [
+        "C++17",
+        "Node.js",
+        "Node-API"
+      ],
+      "runs_in": [
+        "node",
+        "cli",
+        "desktop"
+      ],
+      "fit": [
+        "social-ops",
+        "memory-mosaic",
+        "digital-doodles-wall",
+        "touchdesigner"
+      ],
+      "aliases": [
+        "light ocr",
+        "@arcships/light-ocr",
+        "PP-OCRv6",
+        "PaddleOCR",
+        "OCR"
+      ],
+      "hook": "One npm install reads text out of photos and PDFs entirely on the laptop — no cloud, no model downloads.",
+      "source": "Instagram @gittrend.io",
+      "source_ref": "IMG_light-ocr-reel (Instagram reel, Oct 2026)",
+      "image": "assets/IMG_light-ocr-reel.jpg",
+      "thumb": "assets/thumbs/light-ocr.jpg",
+      "added": "2026-10-04",
+      "status": "verified",
+      "related": [
+        "wa-akg",
+        "n8n"
+      ],
+      "file": "entries/light-ocr.md",
+      "body": "## What it is\n\nA small OCR (text recognition) engine you install with one command, `npm install @arcships/light-ocr`. Give it a JPEG, PNG, PDF or raw pixels and it returns each line of text in reading order, with a confidence score and the four corners of its box. Everything runs locally: the model, the PDF renderer and a Chinese fallback font come inside the package, with no post-install downloads.\n\n## How it works\n\n- **Two-stage OCR from PaddleOCR (PP-OCRv6 Small, about 30 MB):** a detector finds text regions, then a recogniser reads each region. `detect` returns boxes only; `recognize` does both.\n- **Native C++17 core with a Node-API binding,** prebuilt for eight platforms, so there is no compiler step. Node 22+.\n- **Acceleration picked automatically:** Core ML on Apple Silicon (macOS 15+), WebGPU through Vulkan (Linux) or D3D12 (Windows), with a CPU fallback. The repo reports 2.4–5.7× speed-ups over CPU on its test GPUs.\n- **PDFs:** pages are rendered with the bundled PDFium and streamed page by page (`recognizeDocument`), so long documents don't load all at once.\n- **CLI:** `light-ocr image.png --format json|text`, page ranges for PDFs, a region-of-interest option and `doctor` diagnostics.\n- Model tiers: Small (stable), Tiny (~6 MB, 49 languages, preview) and Medium (~139 MB, quality-first, preview).\n\n## Ideas for us\n\n- **Lead capture at events (social-ops):** photograph business cards or badge QR stickers at a booth; text is read offline on the laptop (no guest data sent to a cloud OCR), turned into a contact and passed to WhatsApp follow-up via WA-AKG or n8n.\n- **Memory Mosaic / wish walls:** guests write a wish on a card, a camera reads it and the words appear in the projected mosaic. Test handwriting first; printed text is far more reliable.\n- **Digital Doodles Wall:** detect any words in a drawing and animate them separately from the picture.\n- **Office use:** make old event briefs, quotes and scanned contracts searchable.\n- **TouchDesigner:** run it as a small Node service and send results to TD over OSC or WebSocket.\n\n## Notes\n\n- **Verified 2026-10-04:** read the README, LICENSE (Apache-2.0), NOTICE and the model-tier and acceleration sections. Version 0.5.8, `main` pinned at `39979d4` (2026-09-30). Stars were not checked (GitHub API access was not available in this session); the README shows a Trendshift \"#2 Repository of the Day\" badge, as in the reel.\n- Not tried by us yet. Handwriting accuracy, Hindi or Telugu support and speed on our event laptops are all untested.\n- A multimodal model (like Claude) is better for understanding a whole document; light-ocr is for fast, private, high-volume text extraction.",
+      "sections": {
+        "What it is": "A small OCR (text recognition) engine you install with one command, `npm install @arcships/light-ocr`. Give it a JPEG, PNG, PDF or raw pixels and it returns each line of text in reading order, with a confidence score and the four corners of its box. Everything runs locally: the model, the PDF renderer and a Chinese fallback font come inside the package, with no post-install downloads.",
+        "How it works": "- **Two-stage OCR from PaddleOCR (PP-OCRv6 Small, about 30 MB):** a detector finds text regions, then a recogniser reads each region. `detect` returns boxes only; `recognize` does both.\n- **Native C++17 core with a Node-API binding,** prebuilt for eight platforms, so there is no compiler step. Node 22+.\n- **Acceleration picked automatically:** Core ML on Apple Silicon (macOS 15+), WebGPU through Vulkan (Linux) or D3D12 (Windows), with a CPU fallback. The repo reports 2.4–5.7× speed-ups over CPU on its test GPUs.\n- **PDFs:** pages are rendered with the bundled PDFium and streamed page by page (`recognizeDocument`), so long documents don't load all at once.\n- **CLI:** `light-ocr image.png --format json|text`, page ranges for PDFs, a region-of-interest option and `doctor` diagnostics.\n- Model tiers: Small (stable), Tiny (~6 MB, 49 languages, preview) and Medium (~139 MB, quality-first, preview).",
+        "Ideas for us": "- **Lead capture at events (social-ops):** photograph business cards or badge QR stickers at a booth; text is read offline on the laptop (no guest data sent to a cloud OCR), turned into a contact and passed to WhatsApp follow-up via WA-AKG or n8n.\n- **Memory Mosaic / wish walls:** guests write a wish on a card, a camera reads it and the words appear in the projected mosaic. Test handwriting first; printed text is far more reliable.\n- **Digital Doodles Wall:** detect any words in a drawing and animate them separately from the picture.\n- **Office use:** make old event briefs, quotes and scanned contracts searchable.\n- **TouchDesigner:** run it as a small Node service and send results to TD over OSC or WebSocket.",
+        "Notes": "- **Verified 2026-10-04:** read the README, LICENSE (Apache-2.0), NOTICE and the model-tier and acceleration sections. Version 0.5.8, `main` pinned at `39979d4` (2026-09-30). Stars were not checked (GitHub API access was not available in this session); the README shows a Trendshift \"#2 Repository of the Day\" badge, as in the reel.\n- Not tried by us yet. Handwriting accuracy, Hindi or Telugu support and speed on our event laptops are all untested.\n- A multimodal model (like Claude) is better for understanding a whole document; light-ocr is for fast, private, high-volume text extraction."
+      },
+      "links": []
+    },
     {
       "id": "index-opensource-instagram",
       "title": "@index.opensource — daily open-source creative-coding reels",
@@ -706,7 +856,8 @@
       "status": "verified",
       "related": [
         "glowjam-depth-relight",
-        "code-rendered-motion-video"
+        "code-rendered-motion-video",
+        "libigl-arap"
       ],
       "file": "entries/index-opensource-instagram.md",
       "body": "## What it is\n\nAn Instagram account curated by @hyun2xyz (with \"Xity\" credited for local runs and video). Each reel showcases one open-source project: physics, generative art, procedural generation, computer vision. The first 21 entries in this library came from it.\n\n## How it works (their reel format)\n\n- Vertical video split into **top clip / caption band / bottom clip**: a dark navy band with a bold English line plus a Korean line underneath.\n- Opens with \"Today's open-source project is X,\" then one plain-language sentence per beat.\n- They **actually run the pinned code** and record the output (no screen grabs of other people's demos).\n- The caption ends with a question to drive comments (\"What would you draw with this?\"), then 📎 source at a pinned commit, ✳ license link, footage credits, and \"Curated by\".\n\n## Ideas for us\n\n- **reels-content:** steal the format for CTX: \"Today's installation technique is ...\" with our own builds, split-screen process + result.\n- Keep mining this feed and add entries here.\n\n## Notes\n\nCheck new posts periodically and screenshot the caption panel; pinned commit links make entries reproducible.",
@@ -943,7 +1094,8 @@
       "related": [
         "kalidokit",
         "unirig",
-        "rive"
+        "rive",
+        "libigl-arap"
       ],
       "file": "entries/animated-drawings.md",
       "body": "## What it is\n\nCode for *A Method for Animating Children's Drawings of the Human Figure*. The pipeline:\n1. Detect the figure and segment it.\n2. Estimate joint positions and build a 2D skeleton rig over the drawing's mesh.\n3. Retarget BVH motion-capture clips (dance, walk, jump) onto it with ARAP-style deformation.\n\n## Ideas for us\n\n- **digital-doodles-wall / mural-wall:** guests draw a character on paper or a phone; it walks onto the shared wall and dances to the event music. This is the strongest single fit in the library for doodle installations.\n\n## Notes\n\nThe repo is **archived** (read-only since 2025), so pin the commit and vendor it. Metadata (exists, stars, license, last push) checked 2026-10-03; description from general knowledge, README not re-read.",
@@ -2469,6 +2621,7 @@
       "related": [
         "rvo2-orca",
         "ten-minute-physics",
+        "libigl-arap",
         "kalidokit"
       ],
       "file": "entries/fullik-fabrik-ik.md",
@@ -4118,6 +4271,7 @@
         "postiz",
         "short-video-maker",
         "social-media-agent",
+        "light-ocr",
         "wa-akg"
       ],
       "file": "entries/n8n.md",
@@ -6454,6 +6608,7 @@
         "box2d",
         "taichi-mpm",
         "origami-simulator",
+        "libigl-arap",
         "fullik-fabrik-ik"
       ],
       "file": "entries/ten-minute-physics.md",
@@ -7230,7 +7385,8 @@
       "status": "verified",
       "related": [
         "n8n",
-        "postiz"
+        "postiz",
+        "light-ocr"
       ],
       "file": "entries/wa-akg.md",
       "body": "## What it is\n\nA Next.js 15 + Prisma dashboard and gateway (about 408 stars) that connects any number of WhatsApp accounts by QR scan and exposes 109+ REST endpoints (OpenAPI/Swagger at `/docs`). It also has a beta branch, a \"business\" customer-service variant with an AI chatbot and queues, and an official n8n community node.\n\n## How it works\n\n- **Engine:** `@whiskeysockets/baileys` WebSocket connection to WhatsApp Web, one session per number.\n- **Features:**\n  - message scheduler with media;\n  - broadcast with randomised 10–30 s delays;\n  - keyword auto-replies (group, private or all) with attachments;\n  - whitelist and blacklist;\n  - contacts;\n  - sticker maker with remove.bg.\n- **Webhooks:** events such as `message.received` (with sender, type, quoted media) are forwarded to your CRM or app.\n\n## Ideas for us\n\n- **Event join channel:** guests WhatsApp a selfie to the event number, and a webhook pushes it into memory-mosaic (no app or QR web page needed). This needs consent and a privacy note.\n- Post-event: send each guest their mosaic tile or plot via WhatsApp.\n- **social-ops:** n8n + WA-AKG for client update messages. Keep it to opted-in contacts, never cold broadcast.\n\n## Notes\n\nREADME read 2026-10-03. The project advertises \"anti-ban\" broadcast, which signals the real risk: bulk or unsolicited sending violates WhatsApp policy. Phone numbers and messages are personal data, so store them carefully.",
