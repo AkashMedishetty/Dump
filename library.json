@@ -1,6 +1,6 @@
 {
-  "generated": "2026-10-04T08:35:40.081Z",
-  "count": 115,
+  "generated": "2026-10-04T13:35:51.897Z",
+  "count": 116,
   "vocab": {
     "categories": {
       "simulation-physics": "Physics & simulation — rigid/soft bodies, cloth, fluids, MPM, XPBD, reaction-diffusion",
@@ -74,7 +74,7 @@
   },
   "tags": {
     "mcp": 9,
-    "svg": 8,
+    "svg": 9,
     "dmx": 7,
     "ffmpeg": 7,
     "threejs": 7,
@@ -86,6 +86,7 @@
     "anime": 4,
     "captions": 4,
     "chinese": 4,
+    "claude-code-skill": 4,
     "deterministic-rendering": 4,
     "gdtf": 4,
     "gsap": 4,
@@ -103,20 +104,22 @@
     "api": 3,
     "art-net": 3,
     "claude-code": 3,
-    "claude-code-skill": 3,
     "cli": 3,
     "explainer": 3,
     "fixtures": 3,
     "halftone": 3,
     "headless-chrome": 3,
     "hoists": 3,
+    "illustration": 3,
     "kinetic-type": 3,
+    "line-art": 3,
     "mvr": 3,
     "n8n": 3,
     "osc": 3,
     "p5-brush": 3,
     "painterly": 3,
     "pixijs": 3,
+    "react": 3,
     "reporting": 3,
     "sacn": 3,
     "self-hosted": 3,
@@ -151,12 +154,10 @@
     "hand-drawn": 2,
     "highlights": 2,
     "hyperframes": 2,
-    "illustration": 2,
     "inspiration-feed": 2,
     "lambda": 2,
     "landscape": 2,
     "launch-video": 2,
-    "line-art": 2,
     "linkedin": 2,
     "live2d": 2,
     "long-video": 2,
@@ -170,7 +171,6 @@
     "playwright": 2,
     "procedural-music": 2,
     "raymarching": 2,
-    "react": 2,
     "reels": 2,
     "rest-api": 2,
     "riso": 2,
@@ -179,6 +179,7 @@
     "skeletal-animation": 2,
     "skeleton": 2,
     "spatial-hashing": 2,
+    "springs": 2,
     "stage-plot": 2,
     "state-machine": 2,
     "stock-footage": 2,
@@ -362,6 +363,7 @@
     "heightmap": 1,
     "hidden-line-removal": 1,
     "hill-climbing": 1,
+    "hover": 1,
     "hpgl": 1,
     "html-css-svg": 1,
     "html-to-video": 1,
@@ -385,10 +387,12 @@
     "installer": 1,
     "instancing": 1,
     "integrations": 1,
+    "interactive": 1,
     "interactive-character": 1,
     "interchange": 1,
     "interpolation": 1,
     "inverse-kinematics": 1,
+    "isometric": 1,
     "jax": 1,
     "jelly": 1,
     "jit": 1,
@@ -498,6 +502,7 @@
     "player": 1,
     "plugin": 1,
     "point-tracking": 1,
+    "pointer": 1,
     "portrait-animation": 1,
     "pose": 1,
     "position-based-dynamics": 1,
@@ -565,6 +570,7 @@
     "sequence-editor": 1,
     "serverless": 1,
     "sfx": 1,
+    "shadcn": 1,
     "shaders": 1,
     "shape-morph": 1,
     "shapes": 1,
@@ -593,7 +599,6 @@
     "splittext": 1,
     "spout": 1,
     "spring-bones": 1,
-    "springs": 1,
     "spritesheet": 1,
     "stable-fluids": 1,
     "stacking": 1,
@@ -676,9 +681,83 @@
     "worley": 1,
     "xpbd": 1,
     "youtube": 1,
-    "yt-dlp": 1
+    "yt-dlp": 1,
+    "zero-dependency": 1
   },
   "entries": [
+    {
+      "id": "hairline",
+      "title": "Hairline — isometric line figures that answer the pointer (+ a skill to draw new ones)",
+      "kind": "library",
+      "url": "https://github.com/lucasmarkes/hairline",
+      "demo": "https://hairline.lucasmarkes.com",
+      "author": "Lucas Marques (lucasmarkes)",
+      "license": "MIT",
+      "license_notes": "Library and the hairline-create skill are both MIT, so client and commercial use are fine; keep the copyright notice.",
+      "pin": "c3692e0c797956268847d843949f79714b6f7a41",
+      "category": [
+        "web-animation",
+        "agent-skills"
+      ],
+      "tags": [
+        "isometric",
+        "line-art",
+        "svg",
+        "interactive",
+        "pointer",
+        "hover",
+        "springs",
+        "react",
+        "shadcn",
+        "claude-code-skill",
+        "illustration",
+        "zero-dependency"
+      ],
+      "stack": [
+        "TypeScript",
+        "SVG",
+        "React"
+      ],
+      "runs_in": [
+        "browser",
+        "claude-code"
+      ],
+      "fit": [
+        "client-pitches",
+        "social-ops",
+        "reels-content",
+        "touchdesigner"
+      ],
+      "aliases": [
+        "hairline-create",
+        "@lucasmarkes/hairline",
+        "isometric line figures",
+        "npx skills add lucasmarkes/hairline"
+      ],
+      "hook": "Nineteen elegant isometric line drawings (a laptop, a vault, a turntable…) that react to the mouse, plus a Claude skill that draws new ones from a one-line idea.",
+      "source": "Instagram reel (tech-explainer creator; handle not visible in the screenshot)",
+      "source_ref": "IMG_hairline-reel (Instagram reel, Oct 2026)",
+      "image": "assets/IMG_hairline-reel.jpg",
+      "thumb": "assets/thumbs/hairline.jpg",
+      "added": "2026-10-04",
+      "status": "verified",
+      "related": [
+        "claudedesignskills",
+        "anthropic-skills",
+        "gsap",
+        "roughjs",
+        "rive"
+      ],
+      "file": "entries/hairline.md",
+      "body": "## What it is\n\nA small zero-dependency library of 19 isometric line figures drawn in thin strokes: a tray of cards, a field of pillars, a laptop, a phone in layers, a vault, a turntable and more. Each one reacts to the mouse: pillars rise under the pointer, a laptop lid opens with the pointer's height, a vault dial turns. It works in React (`<Terrain />`) or any web page (`terrain(element)`). It also ships a Claude Code skill, `hairline-create`: give it an idea (\"a sales funnel\") and it designs a new figure in the same style as one self-contained HTML file.\n\n## How it works\n\n- **Drawing:** a tiny isometric projection kernel draws rounded solids as SVG strokes. Plates are filled with the background colour so near objects hide far ones; there are no colours, glows or shadows. The only highlight is one stroke switching from grey to bright.\n- **Motion:** two clocks. Picking an item uses a 700 ms ease-out tween; following the pointer uses a spring (k 100, c 18). Motion staggers outward from the pointer by distance (30–60 ms per step), and every figure has a designed rest pose, never flat.\n- **Performance:** all figures share one `requestAnimationFrame` loop that sleeps off-screen and when nothing moves; reduced motion is respected.\n- **Options:** `intensity` (0–1), `theme` (auto/light/dark), `label` and `onRead`. Six CSS custom properties re-colour it.\n- **Skill** (`npx skills add lucasmarkes/hairline`, then `/hairline-create <idea>`): it offers 2–3 concepts, writes one figure file against a fixed kernel, then checks it against ten written rules. A Playwright script takes eight test pictures on one sheet and the agent answers twelve questions about them before handing over. The ten rules are a great motion-design checklist in their own right.\n\n## Ideas for us\n\n- **Client pitches and proposals:** one figure per service on our website or pitch pages. For example, a stage rising for event management, a laptop for websites and apps, a \"turntable\" of venue blocks for MICE. Restrained, Apple-like, and it reacts as clients scroll.\n- **PurpleHat brand system:** recolour it to our palette (`--hairline-hi` lavender, plate = brand ink) and ask the skill for custom figures: a cap whose four panels lift apart on hover, a run-of-show timeline, a truss rig.\n- **Event screens and kiosks:** a pointer-reactive figure on a touch kiosk at registration desks. Map touch or a tracked hand position to the \"pointer\"; it's just SVG, so it works in any browser screen.\n- **Reels:** screen-record the figures for clean tech B-roll in explainer reels; the \"pull a layer apart\" figures (Exploded, Phone) suit \"how we build it\" content.\n- **TouchDesigner:** render a figure in a Web Render TOP and drive it with OSC-fed positions.\n\n## Notes\n\n- **Verified 2026-10-04:** read the README, LICENSE (MIT, © 2026 Lucas Marques), CHANGELOG (v0.2.0, 2026-10-03, added 13 figures) and `skills/hairline-create/SKILL.md` and `rules.md`. Pinned `main` at `c3692e0` (2026-10-03). Stars were not checked (GitHub API not available in this session).\n- The reel shows the site's Skill page with `npx skills add lucasmarkes/hairline`, which matches the README.\n- It's a style with strong opinions (monochrome strokes only). Brand colour comes in through the CSS variables, not fills.\n- Not tried by us yet.",
+      "sections": {
+        "What it is": "A small zero-dependency library of 19 isometric line figures drawn in thin strokes: a tray of cards, a field of pillars, a laptop, a phone in layers, a vault, a turntable and more. Each one reacts to the mouse: pillars rise under the pointer, a laptop lid opens with the pointer's height, a vault dial turns. It works in React (`<Terrain />`) or any web page (`terrain(element)`). It also ships a Claude Code skill, `hairline-create`: give it an idea (\"a sales funnel\") and it designs a new figure in the same style as one self-contained HTML file.",
+        "How it works": "- **Drawing:** a tiny isometric projection kernel draws rounded solids as SVG strokes. Plates are filled with the background colour so near objects hide far ones; there are no colours, glows or shadows. The only highlight is one stroke switching from grey to bright.\n- **Motion:** two clocks. Picking an item uses a 700 ms ease-out tween; following the pointer uses a spring (k 100, c 18). Motion staggers outward from the pointer by distance (30–60 ms per step), and every figure has a designed rest pose, never flat.\n- **Performance:** all figures share one `requestAnimationFrame` loop that sleeps off-screen and when nothing moves; reduced motion is respected.\n- **Options:** `intensity` (0–1), `theme` (auto/light/dark), `label` and `onRead`. Six CSS custom properties re-colour it.\n- **Skill** (`npx skills add lucasmarkes/hairline`, then `/hairline-create <idea>`): it offers 2–3 concepts, writes one figure file against a fixed kernel, then checks it against ten written rules. A Playwright script takes eight test pictures on one sheet and the agent answers twelve questions about them before handing over. The ten rules are a great motion-design checklist in their own right.",
+        "Ideas for us": "- **Client pitches and proposals:** one figure per service on our website or pitch pages. For example, a stage rising for event management, a laptop for websites and apps, a \"turntable\" of venue blocks for MICE. Restrained, Apple-like, and it reacts as clients scroll.\n- **PurpleHat brand system:** recolour it to our palette (`--hairline-hi` lavender, plate = brand ink) and ask the skill for custom figures: a cap whose four panels lift apart on hover, a run-of-show timeline, a truss rig.\n- **Event screens and kiosks:** a pointer-reactive figure on a touch kiosk at registration desks. Map touch or a tracked hand position to the \"pointer\"; it's just SVG, so it works in any browser screen.\n- **Reels:** screen-record the figures for clean tech B-roll in explainer reels; the \"pull a layer apart\" figures (Exploded, Phone) suit \"how we build it\" content.\n- **TouchDesigner:** render a figure in a Web Render TOP and drive it with OSC-fed positions.",
+        "Notes": "- **Verified 2026-10-04:** read the README, LICENSE (MIT, © 2026 Lucas Marques), CHANGELOG (v0.2.0, 2026-10-03, added 13 figures) and `skills/hairline-create/SKILL.md` and `rules.md`. Pinned `main` at `c3692e0` (2026-10-03). Stars were not checked (GitHub API not available in this session).\n- The reel shows the site's Skill page with `npx skills add lucasmarkes/hairline`, which matches the README.\n- It's a style with strong opinions (monochrome strokes only). Brand colour comes in through the CSS variables, not fills.\n- Not tried by us yet."
+      },
+      "links": []
+    },
     {
       "id": "libigl-arap",
       "title": "libigl ARAP — drag a shape and it bends like paper",
@@ -1342,7 +1421,8 @@
       "status": "verified",
       "related": [
         "claudedesignskills",
-        "awesome-claude-skills"
+        "awesome-claude-skills",
+        "hairline"
       ],
       "file": "entries/anthropic-skills.md",
       "body": "## What it is\n\nThe public reference set of Agent Skills (about 179k stars), including several directly relevant to visual work:\n- `algorithmic-art`: seeded p5.js generative pieces.\n- `canvas-design`: posters and visual art.\n- `slack-gif-creator`: animated GIFs.\n- `theme-factory`, `frontend-design`, `web-artifacts-builder`.\n- `skill-creator`, for writing our own skills.\n\n## Ideas for us\n\n- Use `skill-creator` to turn this library's workflow (and our installation build patterns) into CTX skills.\n- Use `algorithmic-art` as a quick generator for event visuals.\n\n## Notes\n\nTree verified 2026-10-03. Several of these are already available in this Claude setup as `anthropic-skills:*`.",
@@ -1961,6 +2041,7 @@
         "gsap",
         "rive",
         "lottie-web",
+        "hairline",
         "anthropic-skills"
       ],
       "file": "entries/claudedesignskills.md",
@@ -2949,6 +3030,7 @@
         "motion-js",
         "hyperframes",
         "claudedesignskills",
+        "hairline",
         "lottie-web",
         "shapeshifter",
         "theatre-js"
@@ -5635,6 +5717,7 @@
         "lottie-web",
         "dragonbones",
         "spine-runtimes",
+        "hairline",
         "animated-drawings",
         "claudedesignskills"
       ],
@@ -5690,7 +5773,8 @@
       "added": "2026-10-03",
       "status": "inbox",
       "related": [
-        "p5-brush"
+        "p5-brush",
+        "hairline"
       ],
       "file": "entries/roughjs.md",
       "body": "## What it is\n\nAbout 21k stars, under 9 kB. Roughness, bowing, hachure or cross-hatch fills; works on canvas and SVG.\n\n## Ideas for us\n\n- Sketch-style explainer graphics and whiteboard-style reels.\n\n## Notes\n\nMetadata (exists, stars, license, last push) checked 2026-10-03; description from general knowledge, README not re-read.",
