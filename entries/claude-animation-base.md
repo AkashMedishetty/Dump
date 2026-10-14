@@ -20,7 +20,7 @@ source_ref: code-rendered-motion-video
 image:
 added: 2026-10-03
 status: verified
-related: [pdoom-video, code-rendered-motion-video]
+related: [pdoom-video, code-rendered-motion-video, lemo-opuscar, reelmimic]
 ---
 
 ## What it is
@@ -61,3 +61,4 @@ Open `studio.html` in Chrome to scrub; add `?loop=emotions` or `?loop=views` to 
 - Without a dedicated GPU, p5.brush watercolour fills render at seconds per frame. Ask the model to avoid them on integrated graphics.
 - Linux flags: `--soft-gl` (no GPU), `--gpu-angle=gl-egl` or `vulkan` (headless NVIDIA); `node gpu_probe.mjs` shows which renderer you get.
 - Verified 2026-10-03 against the README and file tree.
+- **Re-seen 2026-10-14** as #4 in a "top 5 video skills" reel; `main` is unchanged (`0ac8bf2`), with about 1.0k stars and 98 forks per the reel. ReelMimic bundles its template (MIT) for the painted-animation, crayon, pixel-art, paper-cutout, whiteboard and anime-cel engines.

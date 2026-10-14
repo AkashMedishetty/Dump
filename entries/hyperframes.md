@@ -7,7 +7,7 @@ demo: https://hyperframes.heygen.com/showcase
 author: HeyGen
 license: Apache-2.0
 license_notes:
-pin: main @ 2026-10-03
+pin: 8c00ebad80c634f607e3a5283f8a0aa73e35f1dd
 category: [motion-video, agent-skills]
 tags: [html-to-video, deterministic-rendering, gsap, lottie, threejs, animejs, waapi, captions, tts, claude-code-plugin, cloud-render, lambda]
 stack: [TypeScript, HTML, Node.js]
@@ -21,12 +21,12 @@ image:
 thumb:
 added: 2026-10-03
 status: verified
-related: [hyperframes-community-skills, remotion, agentic-motion-graphics, code-rendered-motion-video, openmontage]
+related: [hyperframes-community-skills, remotion, agentic-motion-graphics, code-rendered-motion-video, openmontage, reelmimic, lemo-opuscar, onetake]
 ---
 
 ## What it is
 
-An open-source framework (about 56k stars) for turning HTML, CSS, media and seekable animations into deterministic MP4s. You can run it from its CLI, from coding agents through its skills, or as the rendering core of hosted tools. Most of the Opus 5.5 videos in the skillry gallery list it in their stack.
+An open-source framework (about 56k stars on 2026-10-03, 60.6k by 2026-10-14) for turning HTML, CSS, media and seekable animations into deterministic MP4s. You can run it from its CLI, from coding agents through its skills, or as the rendering core of hosted tools. Most of the Opus 5.5 videos in the skillry gallery list it in their stack.
 
 ## How it works
 
@@ -66,3 +66,5 @@ npx hyperframes skills update
 ## Notes
 
 Verified 2026-10-03 against the README and skill tree. Requires Node ≥ 22. The `skills add` registry can lag `main`; use `npx hyperframes skills update` for the newest copies.
+
+- **Re-seen 2026-10-14** as #1 in a "top 5 video skills" reel (Web Lab · AI Tools), next to onetake, gbro-collage-broll, ClaudeAnimationBase and Lemo-Opuscar. Re-pinned `main` at `8c00eba`; the reel showed 60.6k stars and 5.4k forks. ReelMimic and OpenMontage both build on it.
