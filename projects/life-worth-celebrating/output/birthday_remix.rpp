@@ -2,54 +2,21 @@
   SAMPLERATE 48000 0 0
   TEMPO 89 4 4
   <TRACK
-    NAME "viraj_piano"
+    NAME "summer_open"
     <ITEM
       POSITION 0.250000
-      LENGTH 11.500000
-      NAME "viraj_piano"
+      LENGTH 34.300000
+      NAME "summer_open"
       <SOURCE WAVE
-        FILE "clips/viraj_piano.wav"
-      >
-    >
-  >
-  <TRACK
-    NAME "viraj_strings"
-    <ITEM
-      POSITION 11.400000
-      LENGTH 16.140000
-      NAME "viraj_strings"
-      <SOURCE WAVE
-        FILE "clips/viraj_strings.wav"
-      >
-    >
-  >
-  <TRACK
-    NAME "ophelia"
-    <ITEM
-      POSITION 23.860271
-      LENGTH 12.993792
-      NAME "ophelia"
-      <SOURCE WAVE
-        FILE "clips/ophelia.wav"
-      >
-    >
-  >
-  <TRACK
-    NAME "golden"
-    <ITEM
-      POSITION 35.770604
-      LENGTH 9.000000
-      NAME "golden"
-      <SOURCE WAVE
-        FILE "clips/golden.wav"
+        FILE "clips/summer_open.wav"
       >
     >
   >
   <TRACK
     NAME "solas"
     <ITEM
-      POSITION 43.550604
-      LENGTH 29.800000
+      POSITION 32.840000
+      LENGTH 29.450000
       NAME "solas"
       <SOURCE WAVE
         FILE "clips/solas.wav"
@@ -59,8 +26,8 @@
   <TRACK
     NAME "summer_climax"
     <ITEM
-      POSITION 72.720604
-      LENGTH 21.620000
+      POSITION 60.780000
+      LENGTH 25.450000
       NAME "summer_climax"
       <SOURCE WAVE
         FILE "clips/summer_climax.wav"
@@ -70,7 +37,7 @@
   <TRACK
     NAME "summer_close"
     <ITEM
-      POSITION 94.020604
+      POSITION 85.910000
       LENGTH 22.400000
       NAME "summer_close"
       <SOURCE WAVE

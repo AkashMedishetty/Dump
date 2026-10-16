@@ -1,0 +1,345 @@
+{
+  "_doc": "Editable project. Times are SOURCE seconds unless noted. 'place' pins this clip's src time to another clip's src time (phrase-aligned). Fades: [src_start, src_end]; 'low_*' fades act only on the band below xover_hz (bass swap). Gain is set per clip by target_lufs (measured on the clip body) plus gain_db trim; gain_points are extra dB automation [[src_t, dB], ...].",
+  "title": "A Life Worth Celebrating - Original Recording Remix",
+  "sample_rate": 48000,
+  "lead_in_s": 0.25,
+  "xover_hz": 180,
+  "master": {
+    "target_lufs": -16.0,
+    "true_peak_dbtp": -1.0,
+    "highpass_hz": 25
+  },
+  "sources": {
+    "viraj": {
+      "file": "input/virajs_theme.mp4",
+      "title": "Viraj's Theme (Hi Nanna)",
+      "stem": "cache/stems/virajs_theme_(Instrumental)_UVR-MDX-NET-Inst_HQ_3.wav",
+      "bpm": 80.7
+    },
+    "ophelia": {
+      "file": "input/ophelia.webm",
+      "title": "Ophelia (instrumental cover recording)",
+      "bpm": 79.5
+    },
+    "golden": {
+      "file": "input/golden_brown_lovestory.webm",
+      "title": "Golden Brown x Love Story (instrumental mashup recording)",
+      "bpm": 94.0
+    },
+    "solas": {
+      "file": "input/solas.webm",
+      "title": "Solas",
+      "bpm": 114.8
+    },
+    "summer": {
+      "file": "input/summer.webm",
+      "title": "Summer - Joe Hisaishi (orchestral)",
+      "bpm": 89.1
+    }
+  },
+  "clips": [
+    {
+      "id": "viraj_piano",
+      "source": "viraj",
+      "variant": "mix",
+      "src_in": 0.9,
+      "src_out": 12.4,
+      "place": {
+        "out": 0.0
+      },
+      "fade_in": [
+        0.9,
+        1.4
+      ],
+      "fade_out": [
+        12.05,
+        12.4
+      ],
+      "fade_curve": "linear",
+      "target_lufs": -23.0,
+      "why": "Gentle opening: solo piano intro, D major, no lead voice. Hands over sample-coherently to the instrumental stem."
+    },
+    {
+      "id": "viraj_strings",
+      "source": "viraj",
+      "variant": "stem",
+      "src_in": 12.05,
+      "src_out": 28.19,
+      "place": {
+        "src": 12.05,
+        "clip": "viraj_piano",
+        "clip_src": 12.05
+      },
+      "fade_in": [
+        12.05,
+        12.4
+      ],
+      "fade_curve_in": "linear",
+      "fade_out": [
+        25.19,
+        28.19
+      ],
+      "low_fade_out": [
+        25.0,
+        25.6
+      ],
+      "gain_from": "viraj_piano",
+      "gain_db": 0.0,
+      "gain_points": [
+        [
+          12.05,
+          0.0
+        ],
+        [
+          24.4,
+          0.0
+        ],
+        [
+          25.19,
+          -1.5
+        ]
+      ],
+      "eq": [
+        [
+          "highshelf",
+          9000,
+          -1.5
+        ]
+      ],
+      "why": "Ensemble swell (4 bars) using the vocal-free stem: the lead line from 0:12 is voice-like, so it is removed. Bass hands to Ophelia on the bar line."
+    },
+    {
+      "id": "ophelia",
+      "source": "ophelia",
+      "variant": "mix",
+      "pitch": 1,
+      "stretch": 1.0151,
+      "src_in": 104.91,
+      "src_out": 118.1,
+      "place": {
+        "src": 105.6,
+        "clip": "viraj_strings",
+        "clip_src": 25.19
+      },
+      "fade_in": [
+        104.91,
+        105.6
+      ],
+      "low_fade_in": [
+        105.4,
+        105.8
+      ],
+      "fade_out": [
+        117.2,
+        118.1
+      ],
+      "low_fade_out": [
+        117.3,
+        117.7
+      ],
+      "target_lufs": -19.0,
+      "why": "Joyful development: full-band piano chorus. +1 st puts it in E minor/G (relative of Viraj's D/G colour); 79.5 -> 80.7 BPM to lock with Viraj's bar."
+    },
+    {
+      "id": "golden",
+      "source": "golden",
+      "variant": "mix",
+      "pitch": 1,
+      "stretch": 1.0,
+      "src_in": 22.6,
+      "src_out": 31.6,
+      "place": {
+        "src": 23.25,
+        "clip": "ophelia",
+        "clip_src": 117.66
+      },
+      "fade_in": [
+        22.6,
+        23.25
+      ],
+      "low_fade_in": [
+        23.05,
+        23.45
+      ],
+      "fade_out": [
+        30.55,
+        31.6
+      ],
+      "low_fade_out": [
+        30.7,
+        31.05
+      ],
+      "target_lufs": -18.5,
+      "eq": [
+        [
+          "lowshelf",
+          150,
+          -1.5
+        ]
+      ],
+      "why": "Playful lift: 2 bars (Bm-A | D-A) of the Golden Brown waltz figure, +1 st into B minor = relative minor of the home key D; ends on A, the dominant of Solas' first chord (D)."
+    },
+    {
+      "id": "solas",
+      "source": "solas",
+      "variant": "mix",
+      "pitch": 0,
+      "stretch": 1.0,
+      "src_in": 90.15,
+      "src_out": 119.95,
+      "place": {
+        "src": 90.66,
+        "clip": "golden",
+        "clip_src": 30.89
+      },
+      "fade_in": [
+        90.15,
+        90.66
+      ],
+      "low_fade_in": [
+        90.45,
+        90.85
+      ],
+      "fade_out": [
+        118.95,
+        119.6
+      ],
+      "low_fade_out": [
+        119.0,
+        119.42
+      ],
+      "target_lufs": -17.0,
+      "gain_points": [
+        [
+          90.66,
+          -1.5
+        ],
+        [
+          102.94,
+          0.0
+        ],
+        [
+          111.25,
+          0.5
+        ],
+        [
+          119.42,
+          1.0
+        ]
+      ],
+      "why": "Build-up (user pick 1:30-2:00): C-D-A-A loop = bVII-I-V of D, so it ends on the dominant of Summer's key.",
+      "eq": [
+        [
+          "lowshelf",
+          120,
+          -2.0
+        ]
+      ]
+    },
+    {
+      "id": "summer_build",
+      "source": "summer",
+      "variant": "mix",
+      "pitch": 0,
+      "stretch": 1.0,
+      "src_in": 172.9,
+      "src_out": 176.6,
+      "place": {
+        "src": 176.28,
+        "clip": "solas",
+        "clip_src": 119.42
+      },
+      "fade_in": [
+        172.9,
+        176.1
+      ],
+      "fade_curve_in": "exp",
+      "fade_out": [
+        176.28,
+        176.6
+      ],
+      "gain_from": "summer_climax",
+      "gain_db": -4.0,
+      "eq": [
+        [
+          "lowpass",
+          900,
+          0
+        ]
+      ],
+      "why": "Low string/timpani swell from Summer's own pre-climax, low-passed under Solas' last bar so the climax is anticipated. DISABLED in v2: its G/D pedal clashes with Solas' A chord (chroma fit 0.54).",
+      "enabled": false
+    },
+    {
+      "id": "summer_climax",
+      "source": "summer",
+      "variant": "mix",
+      "pitch": 0,
+      "stretch": 1.0,
+      "src_in": 176.18,
+      "src_out": 197.8,
+      "place": {
+        "src": 176.28,
+        "clip": "solas",
+        "clip_src": 119.42
+      },
+      "fade_in": [
+        176.18,
+        176.28
+      ],
+      "fade_out": [
+        197.45,
+        197.8
+      ],
+      "target_lufs": -14.5,
+      "why": "Emotional climax: first full-orchestra statement of Summer (8 bars, A D A D A F#m Em A), D major, 89 BPM."
+    },
+    {
+      "id": "summer_close",
+      "source": "summer",
+      "variant": "mix",
+      "pitch": 0,
+      "stretch": 1.0,
+      "src_in": 219.3,
+      "src_out": 241.7,
+      "place": {
+        "src": 219.42,
+        "clip": "summer_climax",
+        "clip_src": 197.6
+      },
+      "fade_in": [
+        219.3,
+        219.42
+      ],
+      "fade_out": [
+        241.2,
+        241.7
+      ],
+      "gain_from": "summer_climax",
+      "gain_db": 0.0,
+      "gain_points": [
+        [
+          219.42,
+          2.0
+        ],
+        [
+          224.88,
+          0.0
+        ],
+        [
+          233.0,
+          0.0
+        ],
+        [
+          234.3,
+          -1.0
+        ],
+        [
+          236.5,
+          -1.0
+        ]
+      ],
+      "why": "Resolution: internal edit V->I into Summer's closing phrase (D Bm G Bm D D) and its own final held D chord; no artificial fade."
+    }
+  ]
+}

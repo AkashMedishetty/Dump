@@ -1,194 +1,92 @@
 {
-  "duration_s": 116.57639583333334,
-  "integrated_lufs": -17.87697938187308,
-  "true_peak_dbtp": -1.0000000000091478,
-  "sample_peak_dbfs": -1.0055273750402192,
-  "master_gain_db": -0.5497861234214774,
+  "duration_s": 108.46585416666667,
+  "integrated_lufs": -18.068756817990018,
+  "true_peak_dbtp": -1.000000000008872,
+  "sample_peak_dbfs": -1.0055273750399432,
+  "master_gain_db": -0.8153630036282813,
   "clips": [
     {
-      "id": "viraj_piano",
-      "source": "viraj",
-      "src_in": 0.9,
-      "src_out": 12.4,
+      "id": "summer_open",
+      "source": "summer",
+      "src_in": 58.4,
+      "src_out": 92.7,
       "variant": "mix",
       "pitch_st": 0,
       "stretch": 1.0,
       "out_in": 0.25,
-      "out_out": 11.75,
-      "gain_db": 0.10317169463928555,
-      "measured_lufs": -23.652957818060763,
+      "out_out": 34.55,
+      "gain_db": 4.263158836852309,
+      "measured_lufs": -27.07852184048059,
       "fade_in": [
-        0.9,
-        1.4
+        58.4,
+        59.6
       ],
       "fade_out": [
-        12.05,
-        12.4
+        91.4,
+        92.65
       ],
       "low_fade_in": null,
-      "low_fade_out": null,
+      "low_fade_out": [
+        91.5,
+        91.9
+      ],
       "place": {
         "out": 0.0
       },
       "out_anchor": 0.25,
-      "why": "Gentle opening: solo piano intro, D major, no lead voice. Hands over sample-coherently to the instrumental stem."
-    },
-    {
-      "id": "viraj_strings",
-      "source": "viraj",
-      "src_in": 12.05,
-      "src_out": 28.19,
-      "variant": "stem",
-      "pitch_st": 0,
-      "stretch": 1.0,
-      "out_in": 11.4,
-      "out_out": 27.54,
-      "gain_db": 0.10317169463928555,
-      "measured_lufs": null,
-      "fade_in": [
-        12.05,
-        12.4
-      ],
-      "fade_out": [
-        25.19,
-        28.19
-      ],
-      "low_fade_in": null,
-      "low_fade_out": [
-        25.0,
-        25.6
-      ],
-      "place": {
-        "src": 12.05,
-        "clip": "viraj_piano",
-        "clip_src": 12.05
-      },
-      "out_anchor": 11.4,
-      "why": "Ensemble swell (4 bars) using the vocal-free stem: the lead line from 0:12 is voice-like, so it is removed. Bass hands to Ophelia on the bar line."
-    },
-    {
-      "id": "ophelia",
-      "source": "ophelia",
-      "src_in": 104.91,
-      "src_out": 118.1,
-      "variant": "mix",
-      "pitch_st": 1,
-      "stretch": 1.0151,
-      "out_in": 23.860270833333335,
-      "out_out": 36.8540625,
-      "gain_db": -8.219636816581458,
-      "measured_lufs": -11.330149306840019,
-      "fade_in": [
-        104.91,
-        105.6
-      ],
-      "fade_out": [
-        117.2,
-        118.1
-      ],
-      "low_fade_in": [
-        105.4,
-        105.8
-      ],
-      "low_fade_out": [
-        117.3,
-        117.7
-      ],
-      "place": {
-        "src": 105.6,
-        "clip": "viraj_strings",
-        "clip_src": 25.19
-      },
-      "out_anchor": 24.54,
-      "why": "Joyful development: full-band piano chorus. +1 st puts it in E minor/G (relative of Viraj's D/G colour); 79.5 -> 80.7 BPM to lock with Viraj's bar."
-    },
-    {
-      "id": "golden",
-      "source": "golden",
-      "src_in": 22.6,
-      "src_out": 31.6,
-      "variant": "mix",
-      "pitch_st": 1,
-      "stretch": 1.0,
-      "out_in": 35.770604166666665,
-      "out_out": 44.770604166666665,
-      "gain_db": -5.887414876399826,
-      "measured_lufs": -13.162371247021651,
-      "fade_in": [
-        22.6,
-        23.25
-      ],
-      "fade_out": [
-        30.55,
-        31.6
-      ],
-      "low_fade_in": [
-        23.05,
-        23.45
-      ],
-      "low_fade_out": [
-        30.7,
-        31.05
-      ],
-      "place": {
-        "src": 23.25,
-        "clip": "ophelia",
-        "clip_src": 117.66
-      },
-      "out_anchor": 36.42060289626638,
-      "why": "Playful lift: 2 bars (Bm-A | D-A) of the Golden Brown waltz figure, +1 st into B minor = relative minor of the home key D; ends on A, the dominant of Solas' first chord (D)."
+      "why": "Gentle opening from Summer itself: last piano phrase in C, the sustained strings that modulate, then the theme arriving in D major at 1:21. One continuous passage of the original recording."
     },
     {
       "id": "solas",
       "source": "solas",
-      "src_in": 90.15,
-      "src_out": 119.95,
+      "src_in": 90.25,
+      "src_out": 119.7,
       "variant": "mix",
       "pitch_st": 0,
       "stretch": 1.0,
-      "out_in": 43.550604166666666,
-      "out_out": 73.35060416666667,
-      "gain_db": -3.1197054277977037,
-      "measured_lufs": -14.430080695623774,
+      "out_in": 32.84,
+      "out_out": 62.290000000000006,
+      "gain_db": -3.9027777393154643,
+      "measured_lufs": -14.412585264312817,
       "fade_in": [
-        90.15,
-        90.66
+        90.25,
+        90.95
       ],
       "fade_out": [
-        118.95,
-        119.6
+        118.2,
+        119.45
       ],
       "low_fade_in": [
-        90.45,
-        90.85
+        90.66,
+        91.06
       ],
       "low_fade_out": [
-        119.0,
-        119.42
+        118.8,
+        119.3
       ],
       "place": {
         "src": 90.66,
-        "clip": "golden",
-        "clip_src": 30.89
+        "clip": "summer_open",
+        "clip_src": 91.4
       },
-      "out_anchor": 44.06060289626638,
-      "why": "Build-up (user pick 1:30-2:00): C-D-A-A loop = bVII-I-V of D, so it ends on the dominant of Summer's key."
+      "out_anchor": 33.25000000000001,
+      "why": "Build-up (your pick, 1:30-2:00). Enters on its D bar over Summer's D bar (same chord), then loops C-D-A-A = bVII-I-V of D and ends on A, the dominant of Summer's key. Level rises through the passage."
     },
     {
       "id": "summer_climax",
       "source": "summer",
-      "src_in": 176.18,
+      "src_in": 172.35,
       "src_out": 197.8,
       "variant": "mix",
       "pitch_st": 0,
       "stretch": 1.0,
-      "out_in": 72.72060416666666,
-      "out_out": 94.34060416666667,
-      "gain_db": 3.6521798951489393,
-      "measured_lufs": -18.701966018570417,
+      "out_in": 60.78,
+      "out_out": 86.23,
+      "gain_db": 3.6521811062641802,
+      "measured_lufs": -18.96754410989246,
       "fade_in": [
-        176.18,
-        176.28
+        172.4,
+        173.8
       ],
       "fade_out": [
         197.45,
@@ -197,12 +95,12 @@
       "low_fade_in": null,
       "low_fade_out": null,
       "place": {
-        "src": 176.28,
+        "src": 173.58,
         "clip": "solas",
         "clip_src": 119.42
       },
-      "out_anchor": 72.8206028962664,
-      "why": "Emotional climax: first full-orchestra statement of Summer (8 bars, A D A D A F#m Em A), D major, 89 BPM."
+      "out_anchor": 62.01000000000001,
+      "why": "Breath and climax: Summer's own tremolo swell rises out of Solas' last chord (no rhythm, so the tempo resets from 115 to 89 BPM without a bump), then the first full-orchestra statement of the theme at 2:56.3."
     },
     {
       "id": "summer_close",
@@ -212,9 +110,9 @@
       "variant": "mix",
       "pitch_st": 0,
       "stretch": 1.0,
-      "out_in": 94.02060416666667,
-      "out_out": 116.42060416666666,
-      "gain_db": 3.6521798951489393,
+      "out_in": 85.91,
+      "out_out": 108.31,
+      "gain_db": 3.6521811062641802,
       "measured_lufs": null,
       "fade_in": [
         219.3,
@@ -231,8 +129,8 @@
         "clip": "summer_climax",
         "clip_src": 197.6
       },
-      "out_anchor": 94.14060289626639,
-      "why": "Resolution: internal edit V->I into Summer's closing phrase (D Bm G Bm D D) and its own final held D chord; no artificial fade."
+      "out_anchor": 86.03,
+      "why": "Resolution: V->I edit inside Summer into its closing phrase (D Bm G Bm D D) and its own held final D chord."
     }
   ]
 }
