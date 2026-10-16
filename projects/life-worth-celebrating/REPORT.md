@@ -21,7 +21,7 @@ Summer frames the whole piece: it opens, peaks and ends it, and Solas is the bui
   - Summer → Solas: Summer's D bar (1:31.4) overlaps Solas' D bar (1:30.66).
   - Solas → Summer: Solas ends its phrase on A, the dominant of D. Summer's swell follows, then the tutti on A(sus4) → D.
   - The internal Summer cut is A → D (V → I).
-- **No tempo bump into the climax.** Solas runs at 115 BPM and Summer at 89 BPM. Between them sits Summer's rhythm-free tremolo swell, about 2 s at roughly −6 dB relative, so the pulse resets without a jolt. Its chroma fit is only 0.60, because the harmony really does move A → G/D → A → D. The two recordings overlap for under a second, while Solas is already fading.
+- **No tempo bump into the climax.** Solas runs at 115 BPM and Summer at 89 BPM. Between them sits Summer's rhythm-free tremolo swell, about 2 s at roughly −6 dB relative, so the pulse resets without a jolt. Its chroma fit is only 0.60, because the harmony really does move A → G/D → A → D. The two recordings overlap for about 1.5 s, and for most of it Solas is already fading out.
 - **Bass swap at each join.** Below 180 Hz, the outgoing recording's bass leaves before the incoming one's arrives, so the low end doesn't get muddy.
 - **Level arc.** Short-term loudness goes −28 → −20 (Summer opening) → −21 → −17 (Solas build) → breath −25 → **−13** (climax) → −19 → final chord. Small gain rides only. No compressor or limiter, and no added reverb.
 
