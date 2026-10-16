@@ -1,0 +1,8 @@
+# Copyrighted recordings and anything rendered from them stay local (this repo is public).
+input/*
+!input/README.md
+cache/
+models/
+output/*.wav
+output/*.mp3
+output/clips/
