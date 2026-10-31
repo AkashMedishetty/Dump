@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PhE Animation Player</title>
+<style>
+  @font-face { font-family: 'Brand'; src: url('../fonts/DMSans.ttf'); font-weight: 100 1000; }
+  :root { --p: #2A0D6E; --a: #2563EB; --n: #F4F1EB; --line: #2A0D6E22; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #E9E5DD; color: var(--p); font: 15px/1.4 'Brand', system-ui, sans-serif; min-height: 100vh; display: flex; flex-direction: column; }
+  header { display: flex; flex-wrap: wrap; gap: 12px 24px; align-items: center; padding: 16px; border-bottom: 1px solid var(--line); }
+  header h1 { font-size: 18px; font-weight: 500; margin: 0 auto 0 0; }
+  .seg { display: inline-flex; background: #fff8; border-radius: 999px; padding: 3px; }
+  .seg button { border: 0; background: none; color: inherit; font: inherit; padding: 6px 14px; border-radius: 999px; cursor: pointer; }
+  .seg button[aria-pressed="true"] { background: var(--p); color: var(--n); }
+  main { flex: 1; display: flex; align-items: center; justify-content: center; padding: 16px; min-height: 0; }
+  .frame { width: min(100%, calc((100vh - 200px) * var(--ar))); aspect-ratio: var(--ar); border-radius: 14px; overflow: hidden; box-shadow: 0 12px 40px #2A0D6E22; }
+  iframe { width: 100%; height: 100%; border: 0; display: block; }
+  footer { display: flex; flex-wrap: wrap; gap: 12px 20px; align-items: center; padding: 12px 16px 18px; border-top: 1px solid var(--line); }
+  .btn { border: 1px solid var(--p); background: none; color: inherit; font: inherit; border-radius: 999px; padding: 6px 16px; cursor: pointer; }
+  input[type=range] { flex: 1; min-width: 160px; accent-color: var(--a); }
+  .t { font-variant-numeric: tabular-nums; min-width: 92px; }
+  a { color: var(--a); }
+  #desc { flex-basis: 100%; opacity: .75; }
+</style></head>
+<body>
+<header>
+  <h1>PhE animations</h1>
+  <div class="seg" id="scene"></div>
+  <div class="seg" id="fmt"></div>
+  <div class="seg" id="bg"></div>
+</header>
+<main><div class="frame" id="frame"><iframe id="stage" title="Animation"></iframe></div></main>
+<footer>
+  <button class="btn" id="play">Pause</button>
+  <button class="btn" id="sound" aria-pressed="false">Sound off</button>
+  <input type="range" id="scrub" min="0" max="5" step="0.001" value="0" aria-label="Scrub">
+  <span class="t" id="time">0.00 s</span>
+  <a id="dl" href="#">MP4</a>
+  <span id="desc"></span>
+</footer>
+<audio id="audio" preload="auto"></audio>
+<script>
+const SCENES = {
+  'draw-drop': { key: 'A', label: 'A · Draw + drop', d: 'Strokes draw on along their centre lines, the dots drop in on the beat, the wordmark slides up.' },
+  'dot-run': { key: 'B', label: 'B · Dot run', d: 'One dot bounces in from the left; every touch-down leaves a dot and sprouts that letter.' },
+  'people-places': { key: 'C', label: 'C · People + places', d: 'Pill (people) + circle (places) = the experiences toggle, which morphs into the E; the dots land on the beat.' },
+  'idle': { key: 'idle', label: 'Idle loop', d: 'Seamless 4 s loop for screens and web headers: the dots breathe.', silent: true },
+};
+const FMTS = { '16x9': [1920, 1080], '9x16': [1080, 1920], '1x1': [1080, 1080] };
+const BGS = { light: 'Light', dark: 'Dark' };
+const Q = new URLSearchParams(location.search);
+const st = { scene: Q.get('scene') || 'draw-drop', fmt: Q.get('fmt') || '16x9', bg: Q.get('bg') || 'light', playing: true, sound: false, dur: 5 };
+const $ = (id) => document.getElementById(id), frame = $('stage'), audio = $('audio');
+function seg(id, items, key) {
+  $(id).innerHTML = Object.entries(items).map(([k, v]) => `<button data-k="${k}">${typeof v === 'string' ? v : v.label || k.replace('x', ':')}</button>`).join('');
+  $(id).onclick = (e) => { const k = e.target.dataset.k; if (k) { st[key] = k; load(); } };
+}
+seg('scene', SCENES, 'scene'); seg('fmt', Object.fromEntries(Object.keys(FMTS).map((k) => [k, k.replace('x', ':')])), 'fmt'); seg('bg', BGS, 'bg');
+function load() {
+  const [w, h] = FMTS[st.fmt], s = SCENES[st.scene];
+  for (const [id, key] of [['scene', 'scene'], ['fmt', 'fmt'], ['bg', 'bg']])
+    $(id).querySelectorAll('button').forEach((b) => b.setAttribute('aria-pressed', b.dataset.k === st[key]));
+  $('frame').style.setProperty('--ar', `${w} / ${h}`);
+  frame.src = `${st.scene}.html?w=${w}&h=${h}&bg=${st.bg}`;
+  const name = `phe-${s.key}-${st.scene}_${st.fmt}_${st.bg}`.replace('phe-idle-idle', 'phe-idle');
+  $('dl').href = `video/${name}.mp4`; $('dl').textContent = `${name}.mp4`; $('desc').textContent = s.d;
+  $('sound').disabled = !!s.silent;
+  audio.src = s.silent ? '' : `audio/${st.scene}.m4a`;
+  st.playing = true; $('play').textContent = 'Pause';
+  history.replaceState(null, '', `?scene=${st.scene}&fmt=${st.fmt}&bg=${st.bg}`);
+}
+const send = (m) => frame.contentWindow && frame.contentWindow.postMessage({ phe: m.cmd, t: m.t }, '*');
+addEventListener('message', (e) => {
+  const m = e.data || {};
+  if (m.phe === 'time') { st.dur = m.duration; $('scrub').max = m.duration; $('scrub').value = Math.min(m.t, m.duration); $('time').textContent = Math.min(m.t, m.duration).toFixed(2) + ' s'; }
+  if (m.phe === 'loop' && st.sound && st.playing) { audio.currentTime = 0; audio.play(); }
+});
+$('play').onclick = () => { st.playing = !st.playing; send({ cmd: st.playing ? 'play' : 'pause' }); $('play').textContent = st.playing ? 'Pause' : 'Play'; if (!st.playing) audio.pause(); };
+$('scrub').oninput = (e) => { st.playing = false; $('play').textContent = 'Play'; send({ cmd: 'pause' }); send({ cmd: 'seek', t: +e.target.value }); audio.pause(); };
+$('sound').onclick = () => {
+  st.sound = !st.sound; $('sound').textContent = st.sound ? 'Sound on' : 'Sound off'; $('sound').setAttribute('aria-pressed', st.sound);
+  if (st.sound) { send({ cmd: 'restart' }); st.playing = true; $('play').textContent = 'Pause'; audio.currentTime = 0; audio.play(); } else audio.pause();
+};
+load();
+</script>
+</body></html>

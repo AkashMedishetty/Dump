@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PhE hero motion: live player</title>
+<style>
+  html, body { margin: 0; height: 100%; background: #F4F1EB; overflow: hidden; }
+  canvas { display: block; width: 100vw; height: 100vh; }
+</style>
+</head>
+<body>
+<canvas id="c"></canvas>
+<!-- Plays the film live in the browser (needs a local web server: ES modules do not load from file://).
+     index.html is the render page: it only draws a frame when window.render(t) is called. -->
+<script type="module" src="js/main.js"></script>
+<script>
+  (function wait() {
+    if (!window.READY) return requestAnimationFrame(wait);
+    const t0 = performance.now();
+    (function tick(now) { window.render(((now - t0) / 1000) % window.DUR); requestAnimationFrame(tick); })(t0);
+  })();
+</script>
+</body>
+</html>

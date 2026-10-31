@@ -1,0 +1,98 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>PhE — C: People + places</title></head><body>
+<script src="../code/phe-logo.global.js"></script><script src="stage.js"></script>
+<script>
+// (C) People + places = experiences. A pill (people) and a circle (places) slide together; the circle hops into
+// the pill and switches it on, a toggle (experiences). The switched-on toggle morphs into the E's top bar,
+// its knob becomes the E's dot: the rest of the mark draws on, the P and h dots land on the beat, the knob drops last.
+const { ease, seg, lerp, clamp01, hop, drop, pose: posePreset, restPose, drawCanvas, GEOMETRY } = PheLogo;
+const L = Stage.place('primary');
+const S = GEOMETRY.strokes.reduce((o, s) => (o[s.id] = s, o), {}), D = GEOMETRY.dots.reduce((o, d) => (o[d.id] = d, o), {});
+const PH = 128, PW = 300, RING = 24, KR = 30;           // pill height/width, ring weight, knob radius (logo units)
+const PC = { x: 185, y: 112 };                         // pill centre in the concept beat
+const KL = PC.x - PW / 2 + PH / 2, KRx = PC.x + PW / 2 - PH / 2; // knob centre, left / right end
+const CIRC = { x: 405, y: PC.y };                       // circle resting place before it hops in
+const ET = (([x0, y, x1]) => ({ x0, x1, y }))(S['E-top'].d.match(/[\d.]+/g).map(Number)); // E top bar centre line, from its path
+const T = { pillIn: [0.1, 0.85], circIn: [0.2, 0.95], hop: [1.0, 1.45], toggle: [1.7, 2.15], morph: [2.45, 3.0],
+  strokes: { P: [2.9, 3.45], 'h-stem': [3.05, 3.4], 'h-arch': [3.31, 3.72], 'E-bowl': [3.25, 3.8] },
+  beats: { P: 3.95, h: 4.25, E: 4.55 }, word: [4.8, 5.35] };
+const ED = { H: D.E.y - ET.y };                         // the knob falls from the bar end to the baseline
+ED.tf = Math.sqrt(2 * ED.H / 4200);
+const dropHeight = Math.max(340, 150 - L.top + 40);
+
+function mix(a, b, u) { // hex colour lerp
+  const p = (h) => [1, 3, 5].map((i) => parseInt(h.slice(i, i + 2), 16)), A = p(a), B = p(b);
+  return '#' + A.map((v, i) => Math.round(lerp(v, B[i], u)).toString(16).padStart(2, '0')).join('');
+}
+function bar(ctx, x0, x1, y, w) { ctx.lineCap = 'round'; ctx.lineWidth = w; ctx.beginPath(); ctx.moveTo(x0, y); ctx.lineTo(Math.max(x1, x0 + 1e-3), y); ctx.stroke(); }
+function ring(ctx, cx, cy, w, h, t) { // pill outline, outer box w x h
+  const r = (h - t) / 2, x0 = cx - w / 2 + h / 2, x1 = cx + w / 2 - h / 2;
+  ctx.lineWidth = t; ctx.beginPath(); ctx.moveTo(x0, cy - r); ctx.lineTo(x1, cy - r); ctx.arc(x1, cy, r, -Math.PI / 2, Math.PI / 2);
+  ctx.lineTo(x0, cy + r); ctx.arc(x0, cy, r, Math.PI / 2, Math.PI * 1.5); ctx.closePath(); ctx.stroke();
+}
+function dot(ctx, x, y, r, sx = 1, sy = 1) { ctx.save(); ctx.translate(x, y + r); ctx.scale(sx, sy); ctx.beginPath(); ctx.arc(0, -r, r, 0, 7); ctx.fill(); ctx.restore(); }
+
+function cueList() {
+  const c = [{ t: T.pillIn[0], kind: 'whoosh', dur: 0.75, v: 0.7, pan: -0.5 }, { t: T.circIn[0], kind: 'whoosh', dur: 0.75, v: 0.6, pan: 0.5 },
+    { t: T.circIn[1] - 0.05, kind: 'tick', v: 0.5, i: 1 }, { t: T.hop[0], kind: 'tick', v: 0.35, i: 2 },
+    { t: T.hop[1], kind: 'pop', v: 1 }, { t: T.toggle[0], kind: 'whoosh', dur: 0.45, v: 0.35 }, { t: T.toggle[1], kind: 'toggle', v: 1 },
+    { t: T.morph[0], kind: 'whoosh', dur: 0.55, v: 0.8 }, { t: T.word[0], kind: 'rise', dur: 0.55, v: 0.6 }];
+  for (const [id, [a, b]] of Object.entries(T.strokes)) c.push({ t: a, kind: 'whoosh', id, dur: b - a, v: 0.35 });
+  ['P', 'h', 'E'].forEach((id, i) => PheLogo.bounceContacts().forEach((k, j) => c.push({ t: T.beats[id] + k.t, kind: j ? 'bounce' : 'land', id, i, v: j ? 0.5 * k.s : 1 })));
+  return c.sort((a, b) => a.t - b.t);
+}
+
+Stage.define({
+  duration: 6.0, cues: cueList(),
+  draw(ctx, t, th) {
+    // ---- the logo (everything after the morph)
+    const p = restPose();
+    for (const id of Object.keys(p.strokes)) p.strokes[id] = [0, 0];
+    for (const [id, [a, b]] of Object.entries(T.strokes)) p.strokes[id] = [0, ease.inOutCubic(seg(t, a, b))];
+    p.strokes['E-top'] = t >= T.morph[1] ? [0, 1] : [0, 0];
+    p.dots.P = drop(t - T.beats.P, { H: dropHeight, fadeIn: false });
+    p.dots.h = drop(t - T.beats.h, { H: dropHeight, fadeIn: false });
+    p.dots.E = t >= T.beats.E - ED.tf ? drop(t - T.beats.E, { H: ED.H, fadeIn: false, h1: 30 }) : { x: 0, y: 0, sx: 1, sy: 1, o: 0 };
+    const u = seg(t, ...T.word); p.word = { y: 46 * (1 - ease.outCubic(u)), o: ease.outCubic(clamp01(u * 1.6)) };
+    drawCanvas(ctx, { layout: 'primary', color: th.fg, dotColor: th.dot, x: L.x, y: L.y, scale: L.scale, pose: p });
+
+    // ---- the concept beat, in the same logo units
+    ctx.save(); ctx.translate(L.x, L.y); ctx.scale(L.scale, L.scale);
+    ctx.strokeStyle = th.fg; ctx.fillStyle = th.dot;
+    const m = ease.inOutCubic(seg(t, ...T.morph));
+    // pill (people)
+    if (t < T.morph[1]) {
+      const px = t < T.pillIn[1] ? lerp(L.left - PW, PC.x, ease.outCubic(seg(t, ...T.pillIn))) : PC.x;
+      if (t < T.morph[0]) {
+        ring(ctx, px, PC.y, PW, PH, RING);
+        // toggle fill grows behind the knob
+        const k = ease.inOutCubic(seg(t, ...T.toggle));
+        if (k > 0) { ctx.strokeStyle = th.fg; bar(ctx, KL, lerp(KL, KRx, k), PC.y, PH); }
+      } else { // morph: solid pill -> the E's top bar
+        const cx = lerp(PC.x, (ET.x0 + ET.x1) / 2, m), cy = lerp(PC.y, ET.y, m);
+        const half = lerp((PW - PH) / 2, (ET.x1 - ET.x0) / 2, m), w = lerp(PH, GEOMETRY.w, m);
+        bar(ctx, cx - half, cx + half, cy, w);
+      }
+    }
+    // circle (places) -> knob -> the E dot (until it starts to fall)
+    if (t < T.beats.E - ED.tf) {
+      let x, y, r = KR, sx = 1, sy = 1;
+      if (t < T.hop[0]) {
+        const a = seg(t, ...T.circIn); x = lerp(L.right + KR, CIRC.x, ease.outCubic(a)); y = CIRC.y;
+        const sq = 0.18 * Math.sin(Math.PI * seg(t, T.circIn[1] - 0.12, T.circIn[1] + 0.05)); sx = 1 + sq; sy = 1 - sq;
+        const pre = Math.sin(Math.PI * seg(t, T.hop[0] - 0.12, T.hop[0])) * 0.15; sx += pre; sy -= pre; // anticipation
+      } else if (t < T.hop[1]) {
+        const h = hop(t, T.hop[0], T.hop[1], CIRC.x, CIRC.y, KL, PC.y, 150); x = h.x; y = h.y;
+        const st = Math.min(0.18, Math.abs(h.vy) / 5000); sx = 1 - st * 0.5; sy = 1 + st;
+      } else if (t < T.morph[0]) {
+        x = lerp(KL, KRx, ease.inOutCubic(seg(t, ...T.toggle))); y = PC.y;
+        const sq = 0.25 * Math.sin(Math.PI * seg(t, T.hop[1], T.hop[1] + 0.12)) - 0.08 * Math.sin(Math.PI * seg(t, T.hop[1] + 0.12, T.hop[1] + 0.3));
+        sx = 1 + sq * 0.75; sy = 1 - sq;
+      } else {
+        x = lerp(KRx, ET.x1, m); y = lerp(PC.y, ET.y, m); r = lerp(KR, GEOMETRY.rd, m);
+      }
+      dot(ctx, x, y, r, sx, sy); // centre (x, y), squash anchored at the dot's bottom
+    }
+    ctx.restore();
+  },
+});
+</script></body></html>

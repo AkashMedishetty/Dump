@@ -1,0 +1,13 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Worlds</title>
+<style>html,body{margin:0;background:#0A0B0F;overflow:hidden}canvas{display:block}</style></head>
+<body><canvas id="c"></canvas>
+<script type="module">
+import { setup } from './film.js';
+const F = [['Inter','Inter.ttf','100 900'],['InterTight','InterTight.ttf','100 900'],['Mono','JetBrainsMono.ttf','100 800'],['Manrope','Manrope-800.woff','800'],
+  ['Caveat','Caveat.ttf','400 700'],['PressStart','PressStart2P.ttf','400'],['Limelight','Limelight.ttf','400'],['ArchivoBlack','ArchivoBlack.ttf','400'],
+  ['Bebas','BebasNeue.ttf','400'],['VT323','VT323.ttf','400'],['IMFell','IMFell.ttf','400'],['IMFellItalic','IMFellItalic.ttf','400'],['Lilita','LilitaOne.ttf','400']];
+await Promise.all(F.map(([n, f, w]) => new FontFace(n, `url(fonts/${f})`, { weight: w }).load().then(x => document.fonts.add(x))));
+setup(document.getElementById('c'));
+window.READY = true;
+</script></body></html>

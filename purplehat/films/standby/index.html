@@ -1,0 +1,16 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Standby</title>
+<style>html,body{margin:0;background:#0A0B0F;overflow:hidden}canvas{display:block}</style></head>
+<body><canvas id="c"></canvas>
+<script type="module">
+import { setup } from './film.js';
+const faces = [
+  new FontFace('Inter', 'url(fonts/Inter.ttf)', { weight: '100 900' }),
+  new FontFace('InterTight', 'url(fonts/InterTight.ttf)', { weight: '100 900' }),
+  new FontFace('Mono', 'url(fonts/JetBrainsMono.ttf)', { weight: '100 800' }),
+  new FontFace('Manrope', 'url(fonts/Manrope-800.woff)', { weight: '800' }),
+];
+await Promise.all(faces.map(f => f.load().then(x => document.fonts.add(x))));
+setup(document.getElementById('c'));
+window.READY = true;
+</script></body></html>

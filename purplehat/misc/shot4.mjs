@@ -1,0 +1,11 @@
+import { chromium } from '/opt/node-tools/node_modules/playwright/index.mjs';
+const b = await chromium.launch();
+const ctx = await b.newContext({ viewport: { width: 1200, height: 900 }, ignoreHTTPSErrors: true });
+const p = await ctx.newPage();
+const errs = []; p.on('pageerror', e => errs.push(e.message));
+await p.goto('file://' + process.cwd() + '/purplehat-mark.html');
+await p.waitForTimeout(2500);
+console.log('fonts:', await p.evaluate(() => document.fonts.check('800 40px Urbanist')));
+await p.screenshot({ path: 'mark-full.png', fullPage: true });
+console.log('errors:', errs);
+await b.close();

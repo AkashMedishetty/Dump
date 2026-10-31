@@ -1,0 +1,15 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>PhE — A: Draw + drop</title></head><body>
+<script src="../code/phe-logo.global.js"></script><script src="stage.js"></script>
+<script>
+// (A) Draw + drop: the strokes draw on along their centre lines, the three dots drop in from above the frame
+// and bounce onto the baseline one per beat (150 bpm), then the wordmark slides up. Choreography: PheLogo.PRESETS['draw-drop'].
+const L = Stage.place('primary');
+const dropHeight = Math.max(340, 150 - L.top + 40); // start just above the frame
+Stage.define({
+  duration: 5.0, cues: PheLogo.cues('draw-drop'),
+  draw(ctx, t, th) {
+    PheLogo.drawCanvas(ctx, { layout: 'primary', color: th.fg, dotColor: th.dot, x: L.x, y: L.y, scale: L.scale,
+      pose: PheLogo.pose('draw-drop', t, { dropHeight, fadeIn: false }) });
+  },
+});
+</script></body></html>

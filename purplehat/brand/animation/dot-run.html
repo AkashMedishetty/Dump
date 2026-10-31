@@ -1,0 +1,14 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>PhE — B: Dot run</title></head><body>
+<script src="../code/phe-logo.global.js"></script><script src="stage.js"></script>
+<script>
+// (B) Dot run: one dot bounces in from the left and touches down under the P, the h and the E. Each touch-down
+// leaves a dot behind and sprouts that letter's strokes out of it; the runner itself becomes the E's dot.
+const L = Stage.place('primary');
+Stage.define({
+  duration: 5.0, cues: PheLogo.cues('dot-run'),
+  draw(ctx, t, th) {
+    PheLogo.drawCanvas(ctx, { layout: 'primary', color: th.fg, dotColor: th.dot, x: L.x, y: L.y, scale: L.scale,
+      pose: PheLogo.pose('dot-run', t, { fadeIn: false }) });
+  },
+});
+</script></body></html>

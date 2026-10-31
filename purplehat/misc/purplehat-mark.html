@@ -1,0 +1,167 @@
+<title>PurpleHat Mark Studies</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+:root {
+  /* Layout: a working sheet. Three centre openings side by side, the numbers behind them, then real-size tests */
+  --bg: #f7f6f9;
+  --panel: #ffffff;
+  --fg: #1a1428;
+  --muted: #625b72;
+  --line: #e2dee9;
+  --accent: #5e44e8;
+  --brand: #5e44e8;
+  --sans: "Schibsted Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --bg: #121019; --panel: #1a1723; --fg: #ece8f4; --muted: #a49cb5; --line: #2d2839; --accent: #a996ff; color-scheme: dark; }
+}
+:root[data-theme="dark"] { --bg: #121019; --panel: #1a1723; --fg: #ece8f4; --muted: #a49cb5; --line: #2d2839; --accent: #a996ff; color-scheme: dark; }
+
+body { background: var(--bg); color: var(--fg); font-family: var(--sans); font-size: 16px; line-height: 1.55; }
+.wrap { max-width: 1120px; margin: 0 auto; padding-inline: 16px; padding-block: 40px 64px; display: grid; gap: 48px; }
+.label { font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+h1 { margin: 8px 0 12px; font-size: clamp(32px, 5vw, 52px); line-height: 1.02; font-weight: 700; letter-spacing: -0.02em; text-wrap: balance; }
+h2 { margin: 0; font-size: 19px; font-weight: 600; letter-spacing: -0.01em; text-wrap: balance; }
+.lede { margin: 0; max-width: 64ch; color: var(--muted); font-size: 18px; }
+
+.marks { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.mark { min-width: 0; display: grid; gap: 10px; align-content: start; }
+.tile { aspect-ratio: 1; max-width: 100%; background: var(--brand); border-radius: 4px; display: grid; place-items: center; }
+.tile svg { width: 64%; height: auto; display: block; }
+.mark.rec .tile { box-shadow: 0 0 0 2px var(--bg), 0 0 0 4px var(--accent); }
+.mark-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 12px; }
+.badge { font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--panel); background: var(--accent); padding: 2px 7px; border-radius: 99px; font-weight: 500; vertical-align: 2px; margin-left: 6px; }
+.badge.ref { background: transparent; color: var(--muted); border: 1px solid var(--line); }
+.mark p { margin: 0; color: var(--muted); font-size: 15px; }
+.nums { display: flex; flex-wrap: wrap; gap: 4px 14px; font-family: var(--mono); font-size: 12px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.nums b { color: var(--fg); font-weight: 500; }
+button.copy { font: 500 13px var(--sans); color: var(--fg); background: var(--panel); border: 1px solid var(--line); border-radius: 4px; padding: 6px 10px; cursor: pointer; }
+button.copy:hover { border-color: var(--accent); }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+details summary { cursor: pointer; font-size: 13px; color: var(--muted); }
+details textarea { width: 100%; height: 110px; margin-top: 8px; box-sizing: border-box; font: 11px/1.4 var(--mono); color: var(--fg); background: var(--panel); border: 1px solid var(--line); border-radius: 4px; padding: 8px; }
+
+.tests { display: grid; gap: 10px; overflow-x: auto; }
+.trow { display: grid; grid-template-columns: 96px repeat(3, minmax(170px, 1fr)); gap: 10px; align-items: center; min-width: 660px; }
+.chips { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; padding: 10px; border-radius: 4px; min-width: 0; }
+.chips.purple { background: var(--brand); }
+.chips.white { background: #ffffff; border: 1px solid var(--line); }
+.chips.ink { background: #17112b; }
+.chips svg { display: block; }
+.avatar { width: 44px; height: 44px; border-radius: 50%; background: var(--brand); display: grid; place-items: center; }
+.avatar svg { width: 32px; height: 32px; }
+
+@media (max-width: 860px) { .marks { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 520px) { .marks { grid-template-columns: 1fr; } }
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="label">PurpleHat Events · Logo</div>
+    <h1>Your four-panel mark, closing the centre</h1>
+    <p class="lede">Back to the original: three crown panels, the visor and four seams. The outline and the seam width stay exactly as they were. The inner edge of each panel moves toward the centre, so the opening in the middle gets smaller and the panels get fuller. The tips ease back a touch so the four seams keep exactly their original width.</p>
+  </header>
+
+  <section class="marks" id="marks"></section>
+
+  <section>
+    <div class="label" style="margin-bottom:12px">Tests · real pixel sizes</div>
+    <div class="tests" id="tests"></div>
+  </section>
+</div>
+
+<script>
+(() => {
+  const R = 100;
+  const COL = { brand: '#5e44e8', crown: '#f6f4ef', visor: '#d7cfff', ink: '#17112b', visorOnWhite: '#a996ff', white: '#ffffff' };
+  const RAD = Math.PI / 180;
+  const f = (n) => +n.toFixed(3);
+  const rot = ([x, y], q) => [[x, y], [-y, x], [-x, -y], [y, -x]][q]; // exact quarter turns: 0 top, 1 right (visor), 2 bottom, 3 left
+
+  // Narrowest width of a seam: twice the closest approach of the top panel's inner arc to the diagonal.
+  function arcs(H, TIP) {
+    const t = TIP * RAD, C = (R * R - H * H) / (2 * (R * Math.cos(t) - H));
+    return { t, C, r: C - H };
+  }
+  function seamWidth(H, TIP) {
+    const { t, C, r } = arcs(H, TIP);
+    const a1 = Math.atan2(C - R * Math.cos(t), R * Math.sin(t));
+    let m = Infinity;
+    for (let i = 0; i <= 1500; i++) {
+      const a = a1 + (Math.PI / 2 - a1) * (i / 1500);
+      m = Math.min(m, -(r * Math.cos(a) + (-C + r * Math.sin(a))) / Math.SQRT2);
+    }
+    return 2 * m;
+  }
+  // Keep the seams as wide as the original (H 43, tips 43°) by pulling the tips back as the centre closes.
+  const SEAM = seamWidth(43, 43);
+  function tipFor(H) {
+    let lo = 20, hi = 44.9;
+    for (let k = 0; k < 50; k++) { const mid = (lo + hi) / 2; if (seamWidth(H, mid) > SEAM) lo = mid; else hi = mid; }
+    return lo;
+  }
+
+  function geometry(H) {
+    const TIP = H === 43 ? 43 : tipFor(H);
+    const { t, r } = arcs(H, TIP);
+    const tipL = [-R * Math.sin(t), -R * Math.cos(t)], tipR = [R * Math.sin(t), -R * Math.cos(t)];
+    const panel = (q) => {
+      const a = rot(tipL, q), b = rot(tipR, q);
+      return `M${f(a[0])} ${f(a[1])}A${R} ${R} 0 0 1 ${f(b[0])} ${f(b[1])}A${f(r)} ${f(r)} 0 0 1 ${f(a[0])} ${f(a[1])}Z`;
+    };
+    return { H, r, TIP, panels: [0, 1, 2, 3].map(panel) };
+  }
+
+  function markSvg(g, { crown, visor, bg, size, pad = 4 }) {
+    const e = R + pad, vb = `${-e} ${-e} ${e * 2} ${e * 2}`;
+    const sz = size ? ` width="${size}" height="${size}"` : '';
+    return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="${vb}"${sz} role="img" aria-label="PurpleHat mark">` +
+      (bg ? `<rect x="${-e}" y="${-e}" width="${e * 2}" height="${e * 2}" fill="${bg}"/>` : '') +
+      g.panels.map((d, q) => `<path d="${d}" fill="${q === 1 ? visor : crown}"/>`).join('') + '</svg>';
+  }
+  const PURPLE = { crown: COL.crown, visor: COL.visor };
+  const WHITE = { crown: COL.brand, visor: COL.visorOnWhite };
+  const MONO = { crown: COL.ink, visor: COL.ink };
+  const REVERSE = { crown: COL.white, visor: COL.white };
+
+  const VERSIONS = [
+    { id: 'h43', H: 43, name: 'As it was', ref: true, note: 'The previous version, for comparison.' },
+    { id: 'h40', H: 40, name: 'Slightly closed', rec: true, note: 'The centre opening is 7% smaller and the panels a little fuller. The seams stay the same width.' },
+    { id: 'h37', H: 37, name: 'Closed a bit more', note: 'The centre opening is 14% smaller. The seams keep their width but open up a little where they meet the rim.' },
+  ];
+  VERSIONS.forEach((v) => (v.geo = geometry(v.H)));
+
+  const marks = document.getElementById('marks');
+  VERSIONS.forEach((v) => {
+    const file = markSvg(v.geo, { ...PURPLE, bg: COL.brand, pad: 40 });
+    const el = document.createElement('article');
+    el.className = 'mark' + (v.rec ? ' rec' : '');
+    const badge = v.rec ? '<span class="badge">My pick</span>' : v.ref ? '<span class="badge ref">Before</span>' : '';
+    el.innerHTML = `
+      <div class="tile">${markSvg(v.geo, PURPLE)}</div>
+      <div class="mark-head"><h2>${v.name}${badge}</h2><button class="copy" type="button" id="copy-${v.id}">Copy SVG</button></div>
+      <p>${v.note}</p>
+      <div class="nums"><span>Centre opening <b>${v.H * 2}</b></span><span>Panel depth <b>${R - v.H}</b></span><span>Tips <b>${v.geo.TIP.toFixed(1)}°</b></span></div>
+      <details><summary>SVG code</summary><textarea id="svg-${v.id}" readonly></textarea></details>`;
+    marks.appendChild(el);
+    const ta = el.querySelector('textarea'); ta.value = file;
+    const btn = el.querySelector('button');
+    btn.addEventListener('click', () => {
+      const done = () => { btn.textContent = 'Copied'; setTimeout(() => (btn.textContent = 'Copy SVG'), 1600); };
+      const fallback = () => { el.querySelector('details').open = true; ta.focus(); ta.select(); btn.textContent = 'Select and copy below'; };
+      try { navigator.clipboard.writeText(file).then(done, fallback); } catch (e) { fallback(); }
+    });
+  });
+
+  const sizes = [64, 32, 24, 16];
+  const row = (label, cls, cols) => `<div class="trow"><span class="label">${label}</span>` +
+    VERSIONS.map((v) => `<div class="chips ${cls}">${sizes.map((s) => markSvg(v.geo, { ...cols, size: s, pad: 2 })).join('')}</div>`).join('') + '</div>';
+  document.getElementById('tests').innerHTML =
+    `<div class="trow"><span></span>${VERSIONS.map((v) => `<span class="label">${v.name}</span>`).join('')}</div>` +
+    row('On purple', 'purple', PURPLE) + row('On white', 'white', WHITE) + row('One colour', 'white', MONO) + row('Reversed', 'ink', REVERSE) +
+    `<div class="trow"><span class="label">Profile</span>${VERSIONS.map((v) => `<div class="chips"><div class="avatar">${markSvg(v.geo, PURPLE)}</div></div>`).join('')}</div>`;
+})();
+</script>

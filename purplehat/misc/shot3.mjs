@@ -1,0 +1,13 @@
+import { chromium } from '/opt/node-tools/node_modules/playwright/index.mjs';
+const b = await chromium.launch();
+const p = await b.newPage({ viewport: { width: 1200, height: 900 } });
+const errs = []; p.on('pageerror', e => errs.push(e.message));
+await p.goto('file://' + process.cwd() + '/purplehat-mark.html');
+await p.waitForTimeout(600);
+await p.screenshot({ path: 'mark-full.png', fullPage: true });
+const svgs = await p.$$eval('.tile svg', els => els.map(e => e.outerHTML));
+const z = await b.newPage({ viewport: { width: 1500, height: 500 } });
+await z.setContent(`<body style="margin:0;background:#5e44e8;display:flex">${svgs.map(s=>s.replace('<svg', '<svg width="500" height="500"')).join('')}</body>`);
+await z.screenshot({ path: 'mark-zoom.png' });
+console.log('errors:', errs);
+await b.close();

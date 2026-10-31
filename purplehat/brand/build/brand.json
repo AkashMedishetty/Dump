@@ -1,0 +1,9 @@
+{
+  "colors": { "primary": "#2A0D6E", "accent": "#2563EB", "neutral": "#F4F1EB", "black": "#000000", "white": "#FFFFFF" },
+  "wordmark": {
+    "font": "fonts/DMSans.ttf",
+    "variations": { "wght": 500, "opsz": 14 },
+    "tracking": -0.01,
+    "_swap_to_satoshi": "Put Satoshi-Medium.otf in fonts/, set font to fonts/Satoshi-Medium.otf and variations to {}, then run: python build/build_all.py"
+  }
+}

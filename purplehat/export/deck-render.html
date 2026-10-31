@@ -1,0 +1,855 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Urbanist:wght@500;600;700;800&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap"><style>*{box-sizing:border-box} html,body{margin:0;padding:0;background:#222}
+section{position:relative;width:1920px;height:1080px;overflow:hidden;page-break-after:always;break-after:page;display:flex;flex-direction:column}
+section aside{display:none}
+h1,h2,h3,p,ul,ol{margin:0} h1{font-size:96px;font-weight:600;line-height:1.1} h2{font-size:64px;font-weight:600;line-height:1.15} h3{font-size:44px;font-weight:600;line-height:1.2} p{font-size:32px;line-height:1.4}
+table{border-collapse:collapse;width:100%} th,td{border-bottom:1px solid rgba(23,17,43,.18);padding:.35em .6em;text-align:left;vertical-align:top} th{font-weight:700}
+svg{flex:none;display:block}</style></head><body><section id="cover" data-transition="fade" style="background:#5E44E8;color:#F6F4EF;font-family:'Nunito Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;justify-content:center;gap:40px">
+<svg aria-label="PurpleHat mark" viewBox="-110 -110 220 220" width="220" height="220" style="position:absolute;left:1092px;top:200px;width:680px;height:680px"><path d="M-67.7 -73.6A100 100 0 0 1 67.7 -73.6A85 85 0 0 1 -67.7 -73.6Z" fill="#F6F4EF"/><path d="M73.6 -67.7A100 100 0 0 1 73.6 67.7A85 85 0 0 1 73.6 -67.7Z" fill="#D7CFFF"/><path d="M67.7 73.6A100 100 0 0 1 -67.7 73.6A85 85 0 0 1 67.7 73.6Z" fill="#F6F4EF"/><path d="M-73.6 67.7A100 100 0 0 1 -73.6 -67.7A85 85 0 0 1 -73.6 67.7Z" fill="#F6F4EF"/></svg>
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;letter-spacing:4px;text-transform:uppercase;color:#D7CFFF;width:900px">Identity exploration · October 2026</p>
+<h1 style="font-family:'Urbanist', Arial, sans-serif;font-size:136px;font-weight:800;line-height:0.95;letter-spacing:-3px;color:#F6F4EF;width:900px">PurpleHat Events</h1>
+<p style="font-size:36px;line-height:1.4;color:#E9E4FF;width:820px">The cap mark in twenty-six versions, thirty new concepts, the thinking behind each one, and the rules that hold them together.</p>
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;color:#D7CFFF;width:820px">For discussion</p>
+<aside>This deck walks through the whole logo process: the brief, your original cap concept, the routes we tried and dropped, the rules we kept, and 26 versions grouped into six families. It ends with a recommendation and a short list of decisions for this meeting.</aside>
+</section>
+
+<section id="brief" data-transition="fade" style="background:#F6F4EF;color:#17112B;font-family:'Nunito Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:56px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;letter-spacing:4px;text-transform:uppercase;color:#5E44E8">The brief</p>
+<h2 style="font-family:'Urbanist', Arial, sans-serif;font-size:72px;font-weight:700;line-height:1.05;letter-spacing:-1px">What we set out to do</h2>
+</div>
+<div style="display:flex;gap:32px">
+<div style="flex:1;display:flex;flex-direction:column;gap:16px;background:#FFFFFF;border:1px solid #E2DEE9;border-radius:16px;padding:40px">
+<h3 style="font-family:'Urbanist', Arial, sans-serif;font-size:44px;font-weight:700">Refine the concept</h3>
+<p style="font-size:28px;line-height:1.45;color:#4E4763">Keep the idea you brought, a cap seen from above, and draw it with real precision.</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:16px;background:#FFFFFF;border:1px solid #E2DEE9;border-radius:16px;padding:40px">
+<h3 style="font-family:'Urbanist', Arial, sans-serif;font-size:44px;font-weight:700">Make it work everywhere</h3>
+<p style="font-size:28px;line-height:1.45;color:#4E4763">From a 16-pixel browser tab to an LED wall, embroidered on a cap and printed in one colour.</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:16px;background:#FFFFFF;border:1px solid #E2DEE9;border-radius:16px;padding:40px">
+<h3 style="font-family:'Urbanist', Arial, sans-serif;font-size:44px;font-weight:700">Give it thinking</h3>
+<p style="font-size:28px;line-height:1.45;color:#4E4763">Every version has a reason, a rule and a place it belongs. Nothing random.</p>
+</div>
+</div>
+<div style="display:flex;flex-direction:column;gap:20px">
+<p style="font-size:28px;font-weight:700">The seven services it stands for</p>
+<div style="display:flex;flex-wrap:wrap;gap:14px">
+<p style="font-size:26px;font-weight:700;background:#5E44E8;color:#F6F4EF;padding:10px 22px;border-radius:999px">Event Management</p>
+<p style="font-size:26px;background:#E9E4FF;color:#17112B;padding:10px 22px;border-radius:999px">Conferences &amp; PCO</p>
+<p style="font-size:26px;background:#E9E4FF;color:#17112B;padding:10px 22px;border-radius:999px">MICE</p>
+<p style="font-size:26px;background:#E9E4FF;color:#17112B;padding:10px 22px;border-radius:999px">Corporate</p>
+<p style="font-size:26px;background:#E9E4FF;color:#17112B;padding:10px 22px;border-radius:999px">Experiential Installations</p>
+<p style="font-size:26px;background:#E9E4FF;color:#17112B;padding:10px 22px;border-radius:999px">Branding &amp; Design</p>
+<p style="font-size:26px;background:#E9E4FF;color:#17112B;padding:10px 22px;border-radius:999px">Websites, Apps &amp; Software</p>
+</div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;color:#8A829C">PurpleHat Events · Identity exploration · 02</p>
+<aside>Three goals guided everything: keep your concept and draw it precisely, make it work at every size and on every surface, and give each version a clear reason. Event Management is highlighted because it becomes the visor, the piece at the front.</aside>
+</section>
+
+<section id="idea" data-transition="fade" style="background:#17112B;color:#F6F4EF;font-family:'Nunito Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:row;align-items:center;gap:96px">
+<div style="width:640px;height:640px;background:#5E44E8;border-radius:24px;display:flex;align-items:center;justify-content:center">
+<svg aria-label="The mark: three crown panels and a visor" viewBox="-110 -110 220 220" width="220" height="220" style="width:520px;height:520px"><path d="M-67.7 -73.6A100 100 0 0 1 67.7 -73.6A85 85 0 0 1 -67.7 -73.6Z" fill="#F6F4EF"/><path d="M73.6 -67.7A100 100 0 0 1 73.6 67.7A85 85 0 0 1 73.6 -67.7Z" fill="#D7CFFF"/><path d="M67.7 73.6A100 100 0 0 1 -67.7 73.6A85 85 0 0 1 67.7 73.6Z" fill="#F6F4EF"/><path d="M-73.6 67.7A100 100 0 0 1 -73.6 -67.7A85 85 0 0 1 -73.6 67.7Z" fill="#F6F4EF"/></svg>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:36px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;letter-spacing:4px;text-transform:uppercase;color:#D7CFFF">Your concept</p>
+<h2 style="font-family:'Urbanist', Arial, sans-serif;font-size:72px;font-weight:700;line-height:1.05;letter-spacing:-1px;color:#F6F4EF">A purple cap, seen from above</h2>
+</div>
+<div style="display:flex;flex-direction:column;gap:22px">
+<p style="font-size:30px;line-height:1.4;color:#D9D3E6"><b style="color:#F6F4EF">Three crown panels.</b> The fabric pieces of the cap, all one shape.</p>
+<p style="font-size:30px;line-height:1.4;color:#D9D3E6"><b style="color:#D7CFFF">The visor.</b> The stiff front piece over the face. It faces right, the way we read: the cap looks forward.</p>
+<p style="font-size:30px;line-height:1.4;color:#D9D3E6"><b style="color:#F6F4EF">Four seams.</b> Where the pieces are stitched together.</p>
+<p style="font-size:30px;line-height:1.4;color:#D9D3E6"><b style="color:#F6F4EF">The centre.</b> The top of the cap, where every seam points.</p>
+</div>
+<p style="font-size:30px;line-height:1.4;color:#F6F4EF">Read as a symbol: a team of pieces made into one thing, with one piece out front leading.</p>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;color:#8A829C">PurpleHat Events · Identity exploration · 03</p>
+<aside>This is the concept as you brought it. The key insight is that the lighter piece is the visor, so the cap has a front and a direction. The four seams are the stitching between the pieces. Everything after this keeps that idea.</aside>
+</section>
+
+<section id="journey" data-transition="fade" style="background:#F6F4EF;color:#17112B;font-family:'Nunito Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:44px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;letter-spacing:4px;text-transform:uppercase;color:#5E44E8">The journey</p>
+<h2 style="font-family:'Urbanist', Arial, sans-serif;font-size:72px;font-weight:700;line-height:1.05;letter-spacing:-1px">Routes we tried, and why we came back</h2>
+</div>
+<table style="font-size:26px;color:#17112B">
+<tr><th style="width:26%">Route</th><th style="width:40%">What we saw</th><th style="width:34%">What we kept</th></tr>
+<tr><td>Particle stage</td><td>An impressive effect, but nothing about it was PurpleHat</td><td>Motion must grow out of the mark</td></tr>
+<tr><td>Seven lenses</td><td>One panel per service made a flower, and the centre grew too big</td><td>Seven is a story, not a shape</td></tr>
+<tr><td>Seven straight wedges</td><td>Read as a wheel or a pie chart, not a cap</td><td>Panels stay lenses with curved edges</td></tr>
+<tr><td>3D dome with a visor</td><td>Clearly a hat, but an illustration rather than a mark</td><td>Stay flat and abstract</td></tr>
+<tr><td>Split panels, seven seams</td><td>Busy; the panels lost their calm</td><td>Four seams, nothing added</td></tr>
+<tr style="background:#E9E4FF"><td><b>Four panels, centre closed</b></td><td><b>The calm of the original, with fuller panels</b></td><td><b>The master: 02 Core</b></td></tr>
+</table>
+<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;color:#8A829C">PurpleHat Events · Identity exploration · 04</p>
+<aside>Every route taught us something. The seven-service ideas were meaningful but made the mark busy or literal, so the services now live in the story and in the visor's role rather than in the drawing. The final row is where we landed: your original four panels with the centre slightly closed.</aside>
+</section>
+
+<section id="rules" data-transition="fade" style="background:#F6F4EF;color:#17112B;font-family:'Nunito Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:48px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;letter-spacing:4px;text-transform:uppercase;color:#5E44E8">The rules</p>
+<h2 style="font-family:'Urbanist', Arial, sans-serif;font-size:72px;font-weight:700;line-height:1.05;letter-spacing:-1px">Five rules behind every version</h2>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr 1fr;gap:24px">
+<div style="display:flex;flex-direction:column;gap:16px;background:#FFFFFF;border:1px solid #E2DEE9;border-top:6px solid #5E44E8;border-radius:12px;padding:32px">
+<h3 style="font-family:'Urbanist', Arial, sans-serif;font-size:36px;font-weight:700;line-height:1.1">One shape, four turns</h3>
+<p style="font-size:26px;line-height:1.45;color:#4E4763">Every panel is the same shape, turned exactly 90°.</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:16px;background:#FFFFFF;border:1px solid #E2DEE9;border-top:6px solid #5E44E8;border-radius:12px;padding:32px">
+<h3 style="font-family:'Urbanist', Arial, sans-serif;font-size:36px;font-weight:700;line-height:1.1">Two curves per panel</h3>
+<p style="font-size:26px;line-height:1.45;color:#4E4763">One arc of the outer circle, one inner arc. No straight edges.</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:16px;background:#FFFFFF;border:1px solid #E2DEE9;border-top:6px solid #5E44E8;border-radius:12px;padding:32px">
+<h3 style="font-family:'Urbanist', Arial, sans-serif;font-size:36px;font-weight:700;line-height:1.1">One seam width</h3>
+<p style="font-size:26px;line-height:1.45;color:#4E4763">All four seams stay equal, whatever else changes.</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:16px;background:#FFFFFF;border:1px solid #E2DEE9;border-top:6px solid #5E44E8;border-radius:12px;padding:32px">
+<h3 style="font-family:'Urbanist', Arial, sans-serif;font-size:36px;font-weight:700;line-height:1.1">The visor faces forward</h3>
+<p style="font-size:26px;line-height:1.45;color:#4E4763">Always on the right, the direction of reading. Never rotated.</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:16px;background:#FFFFFF;border:1px solid #E2DEE9;border-top:6px solid #5E44E8;border-radius:12px;padding:32px">
+<h3 style="font-family:'Urbanist', Arial, sans-serif;font-size:36px;font-weight:700;line-height:1.1">One accent</h3>
+<p style="font-size:26px;line-height:1.45;color:#4E4763">Only the visor changes colour. The crown is always one tone.</p>
+</div>
+</div>
+<p style="font-size:30px;line-height:1.4;color:#4E4763;width:1300px">Each of the 26 versions that follow either keeps all five rules, or breaks one on purpose for a single, named job.</p>
+<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;color:#8A829C">PurpleHat Events · Identity exploration · 05</p>
+<aside>These five rules are what make the mark feel calm and correct. When a version breaks one, for example the Tip of the hat breaks the symmetry, it is labelled as a special-purpose version, not a replacement for the master.</aside>
+</section>
+
+<section id="construction" data-transition="fade" style="background:#FFFFFF;color:#17112B;font-family:'Nunito Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:row;align-items:center;gap:80px">
+<svg aria-label="Construction drawing: outer circle, four inner arc circles and the seam diagonals" viewBox="-150 -125 300 250" width="300" height="250" style="width:860px;height:716.67px"><defs><clipPath id="cc"><rect x="-150" y="-125" width="300" height="250"/></clipPath></defs><g clip-path="url(#cc)"><circle cx="0" cy="-125" r="85" fill="none" stroke="#A39BB5" stroke-width="0.7" stroke-dasharray="3 3"/><circle cx="125" cy="0" r="85" fill="none" stroke="#A39BB5" stroke-width="0.7" stroke-dasharray="3 3"/><circle cx="0" cy="125" r="85" fill="none" stroke="#A39BB5" stroke-width="0.7" stroke-dasharray="3 3"/><circle cx="-125" cy="0" r="85" fill="none" stroke="#A39BB5" stroke-width="0.7" stroke-dasharray="3 3"/></g><circle r="100" fill="none" stroke="#A39BB5" stroke-width="0.7"/><path d="M-118 -118L118 118M-118 118L118 -118" stroke="#A39BB5" stroke-width="0.6"/><path d="M-67.7 -73.6A100 100 0 0 1 67.7 -73.6A85 85 0 0 1 -67.7 -73.6Z" fill="#5E44E8"/><path d="M73.6 -67.7A100 100 0 0 1 73.6 67.7A85 85 0 0 1 73.6 -67.7Z" fill="#A996FF"/><path d="M67.7 73.6A100 100 0 0 1 -67.7 73.6A85 85 0 0 1 67.7 73.6Z" fill="#5E44E8"/><path d="M-73.6 67.7A100 100 0 0 1 -73.6 -67.7A85 85 0 0 1 -73.6 67.7Z" fill="#5E44E8"/><path d="M0 0L-70.71 70.71" stroke="#17112B" stroke-width="1"/><path d="M0 0V-40" stroke="#17112B" stroke-width="1" stroke-dasharray="2 2"/></svg>
+<div style="flex:1;display:flex;flex-direction:column;gap:28px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;letter-spacing:4px;text-transform:uppercase;color:#5E44E8">Construction</p>
+<h2 style="font-family:'Urbanist', Arial, sans-serif;font-size:64px;font-weight:700;line-height:1.05;letter-spacing:-1px">Whole numbers, on purpose</h2>
+</div>
+<table style="font-size:26px;color:#17112B">
+<tr><th style="width:62%">Part</th><th style="width:38%">Value</th></tr>
+<tr><td>Outer circle</td><td>R 100</td></tr>
+<tr><td>Inner arcs, ×4</td><td>r 85, 125 out</td></tr>
+<tr><td>Centre opening</td><td>80</td></tr>
+<tr><td>Panel depth</td><td>60</td></tr>
+<tr><td>Panel tips</td><td>42.6° each side</td></tr>
+<tr><td>Seam width</td><td>6.8, constant</td></tr>
+<tr><td>Symmetry</td><td>4 × 90°</td></tr>
+</table>
+<p style="font-size:26px;line-height:1.45;color:#4E4763">Anyone can redraw the mark in Illustrator or Figma from this table.</p>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;color:#8A829C">PurpleHat Events · Identity exploration · 06</p>
+<aside>The dashed circles are the four inner arcs. Each has a radius of 85 and sits 125 units from the centre, which makes the inner edge 40 from the centre and the opening 80 across. The solid line is the outer radius, drawn along a seam. The tips are set so each seam is exactly 6.8 units wide, the same as in the original concept.</aside>
+</section>
+
+<section id="core" data-transition="fade" style="background:#5E44E8;color:#F6F4EF;font-family:'Nunito Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:row;align-items:center;gap:120px">
+<svg aria-label="02 Core, the master mark" viewBox="-110 -110 220 220" width="220" height="220" style="width:760px;height:760px"><path d="M-67.7 -73.6A100 100 0 0 1 67.7 -73.6A85 85 0 0 1 -67.7 -73.6Z" fill="#F6F4EF"/><path d="M73.6 -67.7A100 100 0 0 1 73.6 67.7A85 85 0 0 1 73.6 -67.7Z" fill="#D7CFFF"/><path d="M67.7 73.6A100 100 0 0 1 -67.7 73.6A85 85 0 0 1 67.7 73.6Z" fill="#F6F4EF"/><path d="M-73.6 67.7A100 100 0 0 1 -73.6 -67.7A85 85 0 0 1 -73.6 67.7Z" fill="#F6F4EF"/></svg>
+<div style="flex:1;display:flex;flex-direction:column;gap:32px">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;letter-spacing:4px;text-transform:uppercase;color:#D7CFFF">02 · Core</p>
+<h2 style="font-family:'Urbanist', Arial, sans-serif;font-size:96px;font-weight:800;line-height:1;letter-spacing:-2px;color:#F6F4EF">The master mark</h2>
+<p style="font-size:34px;line-height:1.45;color:#E9E4FF">Your concept, with the centre closed from 86 to 80 and the seams held at their original width.</p>
+<p style="font-size:34px;line-height:1.45;color:#E9E4FF">Every other version in this deck starts here.</p>
+</div>
+<aside>This is the master. It is your original idea with one refinement: the centre opening is 7 percent smaller, so the panels feel fuller, while the seams stay exactly as wide as before. All 26 versions are built from this drawing.</aside>
+</section>
+
+<section id="fam-geometry" data-transition="fade" style="background:#F6F4EF;color:#17112B;font-family:'Nunito Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:48px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;letter-spacing:4px;text-transform:uppercase;color:#5E44E8">Family A · Geometry · 01–06</p>
+<h2 style="font-family:'Urbanist', Arial, sans-serif;font-size:72px;font-weight:700;line-height:1.05;letter-spacing:-1px">Tuning the master</h2>
+<p style="font-size:30px;line-height:1.4;color:#4E4763">Same idea, six settings. Small moves in the centre, the seams and the button change its weight and feel.</p>
+</div>
+<div style="display:flex;gap:24px">
+<div style="flex:1;display:flex;flex-direction:column;gap:14px">
+<div style="aspect-ratio:1;background:#5E44E8;border-radius:16px;display:flex;align-items:center;justify-content:center"><svg aria-label="01 Original" viewBox="-110 -110 220 220" width="220" height="220" style="width:200px;height:200px"><path d="M-68.2 -73.14A100 100 0 0 1 68.2 -73.14A92.24 92.24 0 0 1 -68.2 -73.14Z" fill="#F6F4EF"/><path d="M73.14 -68.2A100 100 0 0 1 73.14 68.2A92.24 92.24 0 0 1 73.14 -68.2Z" fill="#D7CFFF"/><path d="M68.2 73.14A100 100 0 0 1 -68.2 73.14A92.24 92.24 0 0 1 68.2 73.14Z" fill="#F6F4EF"/><path d="M-73.14 68.2A100 100 0 0 1 -73.14 -68.2A92.24 92.24 0 0 1 -73.14 68.2Z" fill="#F6F4EF"/></svg></div>
+<h3 style="font-family:'Urbanist', Arial, sans-serif;font-size:32px;font-weight:700">01 Original</h3>
+<p style="font-size:24px;line-height:1.4;color:#4E4763">Your concept, rebuilt with true arcs. Centre 86.</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:14px">
+<div style="aspect-ratio:1;background:#5E44E8;border-radius:16px;box-shadow:0 0 0 5px #F6F4EF, 0 0 0 9px #17112B;display:flex;align-items:center;justify-content:center"><svg aria-label="02 Core" viewBox="-110 -110 220 220" width="220" height="220" style="width:200px;height:200px"><path d="M-67.7 -73.6A100 100 0 0 1 67.7 -73.6A85 85 0 0 1 -67.7 -73.6Z" fill="#F6F4EF"/><path d="M73.6 -67.7A100 100 0 0 1 73.6 67.7A85 85 0 0 1 73.6 -67.7Z" fill="#D7CFFF"/><path d="M67.7 73.6A100 100 0 0 1 -67.7 73.6A85 85 0 0 1 67.7 73.6Z" fill="#F6F4EF"/><path d="M-73.6 67.7A100 100 0 0 1 -73.6 -67.7A85 85 0 0 1 -73.6 67.7Z" fill="#F6F4EF"/></svg></div>
+<h3 style="font-family:'Urbanist', Arial, sans-serif;font-size:32px;font-weight:700">02 Core</h3>
+<p style="font-size:24px;line-height:1.4;color:#4E4763">Centre 80, seams held at 6.8. The master.</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:14px">
+<div style="aspect-ratio:1;background:#5E44E8;border-radius:16px;display:flex;align-items:center;justify-content:center"><svg aria-label="03 Fuller" viewBox="-110 -110 220 220" width="220" height="220" style="width:200px;height:200px"><path d="M-66.59 -74.61A100 100 0 0 1 66.59 -74.61A77.75 77.75 0 0 1 -66.59 -74.61Z" fill="#F6F4EF"/><path d="M74.61 -66.59A100 100 0 0 1 74.61 66.59A77.75 77.75 0 0 1 74.61 -66.59Z" fill="#D7CFFF"/><path d="M66.59 74.61A100 100 0 0 1 -66.59 74.61A77.75 77.75 0 0 1 66.59 74.61Z" fill="#F6F4EF"/><path d="M-74.61 66.59A100 100 0 0 1 -74.61 -66.59A77.75 77.75 0 0 1 -74.61 66.59Z" fill="#F6F4EF"/></svg></div>
+<h3 style="font-family:'Urbanist', Arial, sans-serif;font-size:32px;font-weight:700">03 Fuller</h3>
+<p style="font-size:24px;line-height:1.4;color:#4E4763">Centre 74. Heavier; more emblem than air.</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:14px">
+<div style="aspect-ratio:1;background:#5E44E8;border-radius:16px;display:flex;align-items:center;justify-content:center"><svg aria-label="04 Button" viewBox="-110 -110 220 220" width="220" height="220" style="width:200px;height:200px"><path d="M-67.7 -73.6A100 100 0 0 1 67.7 -73.6A85 85 0 0 1 -67.7 -73.6Z" fill="#F6F4EF"/><path d="M73.6 -67.7A100 100 0 0 1 73.6 67.7A85 85 0 0 1 73.6 -67.7Z" fill="#D7CFFF"/><path d="M67.7 73.6A100 100 0 0 1 -67.7 73.6A85 85 0 0 1 67.7 73.6Z" fill="#F6F4EF"/><path d="M-73.6 67.7A100 100 0 0 1 -73.6 -67.7A85 85 0 0 1 -73.6 67.7Z" fill="#F6F4EF"/><circle cx="0" cy="0" r="11" fill="#F6F4EF"/></svg></div>
+<h3 style="font-family:'Urbanist', Arial, sans-serif;font-size:32px;font-weight:700">04 Button</h3>
+<p style="font-size:24px;line-height:1.4;color:#4E4763">The cap's top button, where the seams point.</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:14px">
+<div style="aspect-ratio:1;background:#5E44E8;border-radius:16px;display:flex;align-items:center;justify-content:center"><svg aria-label="05 Fine seam" viewBox="-110 -110 220 220" width="220" height="220" style="width:200px;height:200px"><path d="M-68.92 -72.46A100 100 0 0 1 68.92 -72.46A89.4 89.4 0 0 1 -68.92 -72.46Z" fill="#F6F4EF"/><path d="M72.46 -68.92A100 100 0 0 1 72.46 68.92A89.4 89.4 0 0 1 72.46 -68.92Z" fill="#D7CFFF"/><path d="M68.92 72.46A100 100 0 0 1 -68.92 72.46A89.4 89.4 0 0 1 68.92 72.46Z" fill="#F6F4EF"/><path d="M-72.46 68.92A100 100 0 0 1 -72.46 -68.92A89.4 89.4 0 0 1 -72.46 68.92Z" fill="#F6F4EF"/></svg></div>
+<h3 style="font-family:'Urbanist', Arial, sans-serif;font-size:32px;font-weight:700">05 Fine seam</h3>
+<p style="font-size:24px;line-height:1.4;color:#4E4763">Seams 4.2 for big sizes: stage, signage, print.</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:14px">
+<div style="aspect-ratio:1;background:#5E44E8;border-radius:16px;display:flex;align-items:center;justify-content:center"><svg aria-label="06 Bold seam" viewBox="-110 -110 220 220" width="220" height="220" style="width:200px;height:200px"><path d="M-65.39 -75.66A100 100 0 0 1 65.39 -75.66A77.79 77.79 0 0 1 -65.39 -75.66Z" fill="#F6F4EF"/><path d="M75.66 -65.39A100 100 0 0 1 75.66 65.39A77.79 77.79 0 0 1 75.66 -65.39Z" fill="#D7CFFF"/><path d="M65.39 75.66A100 100 0 0 1 -65.39 75.66A77.79 77.79 0 0 1 65.39 75.66Z" fill="#F6F4EF"/><path d="M-75.66 65.39A100 100 0 0 1 -75.66 -65.39A77.79 77.79 0 0 1 -75.66 65.39Z" fill="#F6F4EF"/></svg></div>
+<h3 style="font-family:'Urbanist', Arial, sans-serif;font-size:32px;font-weight:700">06 Bold seam</h3>
+<p style="font-size:24px;line-height:1.4;color:#4E4763">Seams 11, so the cut survives at 16 px.</p>
+</div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;color:#8A829C">PurpleHat Events · Identity exploration · 08</p>
+<aside>All six keep the five rules. 01 is your concept as drawn; 02 is the master; 03 closes the centre further. 04 adds the button found on top of every real cap. 05 and 06 are size masters: the fine seam is for large surfaces where a thin cut looks elegant, the bold seam is the one to use for favicons and tiny icons.</aside>
+</section>
+
+<section id="fam-craft" data-transition="fade" style="background:#F6F4EF;color:#17112B;font-family:'Nunito Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:48px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;letter-spacing:4px;text-transform:uppercase;color:#5E44E8">Family B · Craft · 07–09</p>
+<h2 style="font-family:'Urbanist', Arial, sans-serif;font-size:72px;font-weight:700;line-height:1.05;letter-spacing:-1px">Made to be made</h2>
+<p style="font-size:30px;line-height:1.4;color:#4E4763">Versions for physical production: light, thread and print.</p>
+</div>
+<div style="display:flex;gap:32px">
+<div style="flex:1;display:flex;flex-direction:column;gap:16px">
+<div style="height:360px;background:#17112B;border-radius:16px;display:flex;align-items:center;justify-content:center"><svg aria-label="07 Neon" viewBox="-110 -110 220 220" width="220" height="220" style="width:290px;height:290px"><path d="M-67.7 -73.6A100 100 0 0 1 67.7 -73.6A85 85 0 0 1 -67.7 -73.6Z" fill="none" stroke="#F6F4EF" stroke-width="5" stroke-linejoin="round"/><path d="M73.6 -67.7A100 100 0 0 1 73.6 67.7A85 85 0 0 1 73.6 -67.7Z" fill="none" stroke="#D7CFFF" stroke-width="5" stroke-linejoin="round"/><path d="M67.7 73.6A100 100 0 0 1 -67.7 73.6A85 85 0 0 1 67.7 73.6Z" fill="none" stroke="#F6F4EF" stroke-width="5" stroke-linejoin="round"/><path d="M-73.6 67.7A100 100 0 0 1 -73.6 -67.7A85 85 0 0 1 -73.6 67.7Z" fill="none" stroke="#F6F4EF" stroke-width="5" stroke-linejoin="round"/></svg></div>
+<h3 style="font-family:'Urbanist', Arial, sans-serif;font-size:36px;font-weight:700">07 Neon</h3>
+<p style="font-size:26px;line-height:1.45;color:#4E4763">One continuous line per panel. Bends straight into neon tube; also foil and blind emboss.</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:16px">
+<div style="height:360px;background:#5E44E8;border-radius:16px;display:flex;align-items:center;justify-content:center"><svg aria-label="08 Stitch" viewBox="-110 -110 220 220" width="220" height="220" style="width:290px;height:290px"><path d="M-67.7 -73.6A100 100 0 0 1 67.7 -73.6A85 85 0 0 1 -67.7 -73.6Z" fill="#F6F4EF"/><path d="M73.6 -67.7A100 100 0 0 1 73.6 67.7A85 85 0 0 1 73.6 -67.7Z" fill="#D7CFFF"/><path d="M67.7 73.6A100 100 0 0 1 -67.7 73.6A85 85 0 0 1 67.7 73.6Z" fill="#F6F4EF"/><path d="M-73.6 67.7A100 100 0 0 1 -73.6 -67.7A85 85 0 0 1 -73.6 67.7Z" fill="#F6F4EF"/><path d="M-44 -76.21A88 88 0 0 1 44 -76.21" fill="none" stroke="#5E44E8" stroke-width="2.2" stroke-dasharray="5 4" stroke-linecap="round"/><path d="M76.21 -44A88 88 0 0 1 76.21 44" fill="none" stroke="#5E44E8" stroke-width="2.2" stroke-dasharray="5 4" stroke-linecap="round"/><path d="M44 76.21A88 88 0 0 1 -44 76.21" fill="none" stroke="#5E44E8" stroke-width="2.2" stroke-dasharray="5 4" stroke-linecap="round"/><path d="M-76.21 44A88 88 0 0 1 -76.21 -44" fill="none" stroke="#5E44E8" stroke-width="2.2" stroke-dasharray="5 4" stroke-linecap="round"/></svg></div>
+<h3 style="font-family:'Urbanist', Arial, sans-serif;font-size:36px;font-weight:700">08 Stitch</h3>
+<p style="font-size:26px;line-height:1.45;color:#4E4763">A running stitch 12 units in from the rim. For caps, tote bags and staff uniforms.</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:16px">
+<div style="height:360px;background:#5E44E8;border-radius:16px;display:flex;align-items:center;justify-content:center"><svg aria-label="09 Blueprint" viewBox="-110 -110 220 220" width="220" height="220" style="width:290px;height:290px"><defs><clipPath id="bp"><rect x="-110" y="-110" width="220" height="220"/></clipPath></defs><g clip-path="url(#bp)"><circle cx="0" cy="-125" r="85" fill="none" stroke="#D7CFFF" stroke-width="0.6" stroke-dasharray="3 3" opacity="0.7"/><circle cx="125" cy="0" r="85" fill="none" stroke="#D7CFFF" stroke-width="0.6" stroke-dasharray="3 3" opacity="0.7"/><circle cx="0" cy="125" r="85" fill="none" stroke="#D7CFFF" stroke-width="0.6" stroke-dasharray="3 3" opacity="0.7"/><circle cx="-125" cy="0" r="85" fill="none" stroke="#D7CFFF" stroke-width="0.6" stroke-dasharray="3 3" opacity="0.7"/></g><circle r="100" fill="none" stroke="#D7CFFF" stroke-width="0.6" opacity="0.8"/><path d="M-108 -108L108 108M-108 108L108 -108" stroke="#D7CFFF" stroke-width="0.6" opacity="0.6"/><path d="M-67.7 -73.6A100 100 0 0 1 67.7 -73.6A85 85 0 0 1 -67.7 -73.6Z" fill="#F6F4EF" fill-opacity="0.92"/><path d="M73.6 -67.7A100 100 0 0 1 73.6 67.7A85 85 0 0 1 73.6 -67.7Z" fill="#D7CFFF" fill-opacity="0.92"/><path d="M67.7 73.6A100 100 0 0 1 -67.7 73.6A85 85 0 0 1 67.7 73.6Z" fill="#F6F4EF" fill-opacity="0.92"/><path d="M-73.6 67.7A100 100 0 0 1 -73.6 -67.7A85 85 0 0 1 -73.6 67.7Z" fill="#F6F4EF" fill-opacity="0.92"/></svg></div>
+<h3 style="font-family:'Urbanist', Arial, sans-serif;font-size:36px;font-weight:700">09 Blueprint</h3>
+<p style="font-size:26px;line-height:1.45;color:#4E4763">The construction lines left visible. For pitch decks, proposals and the website's about page.</p>
+</div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;color:#8A829C">PurpleHat Events · Identity exploration · 09</p>
+<aside>These three are about making the mark physical. Neon works because each panel is one closed line with no crossings, so a sign maker can bend it. Stitch is the embroidery version, best on the crown of a real cap. Blueprint shows the geometry and tells clients that the identity was designed with care, which suits proposals.</aside>
+</section>
+
+<section id="fam-meaning" data-transition="fade" style="background:#17112B;color:#F6F4EF;font-family:'Nunito Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:48px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;letter-spacing:4px;text-transform:uppercase;color:#D7CFFF">Family C · Meaning · 10–13</p>
+<h2 style="font-family:'Urbanist', Arial, sans-serif;font-size:72px;font-weight:700;line-height:1.05;letter-spacing:-1px;color:#F6F4EF">What the visor can say</h2>
+<p style="font-size:30px;line-height:1.4;color:#D9D3E6">The visor is the one piece that leads. A small move gives the whole mark a gesture.</p>
+</div>
+<div style="display:flex;gap:24px">
+<div style="flex:1;display:flex;flex-direction:column;gap:14px">
+<div style="height:320px;background:#5E44E8;border-radius:16px;display:flex;align-items:center;justify-content:center"><svg aria-label="10 Tip of the hat" viewBox="-110 -110 220 220" width="220" height="220" style="width:250px;height:250px"><path d="M-67.7 -73.6A100 100 0 0 1 67.7 -73.6A85 85 0 0 1 -67.7 -73.6Z" fill="#F6F4EF"/><path d="M67.7 73.6A100 100 0 0 1 -67.7 73.6A85 85 0 0 1 67.7 73.6Z" fill="#F6F4EF"/><path d="M-73.6 67.7A100 100 0 0 1 -73.6 -67.7A85 85 0 0 1 -73.6 67.7Z" fill="#F6F4EF"/><path d="M73.6 -67.7A100 100 0 0 1 73.6 67.7A85 85 0 0 1 73.6 -67.7Z" fill="#D7CFFF" transform="rotate(-11 74 0)"/></svg></div>
+<h3 style="font-family:'Urbanist', Arial, sans-serif;font-size:32px;font-weight:700;color:#F6F4EF">10 Tip of the hat</h3>
+<p style="font-size:24px;line-height:1.4;color:#D9D3E6">Visor turned 11°: a greeting. For invitations and welcome screens.</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:14px">
+<div style="height:320px;background:#5E44E8;border-radius:16px;display:flex;align-items:center;justify-content:center"><svg aria-label="11 Forward" viewBox="-110 -110 230 220" width="230" height="220" style="width:250px;height:239.13px"><path d="M-67.7 -73.6A100 100 0 0 1 67.7 -73.6A85 85 0 0 1 -67.7 -73.6Z" fill="#F6F4EF"/><path d="M67.7 73.6A100 100 0 0 1 -67.7 73.6A85 85 0 0 1 67.7 73.6Z" fill="#F6F4EF"/><path d="M-73.6 67.7A100 100 0 0 1 -73.6 -67.7A85 85 0 0 1 -73.6 67.7Z" fill="#F6F4EF"/><path d="M73.6 -67.7A100 100 0 0 1 73.6 67.7A85 85 0 0 1 73.6 -67.7Z" fill="#D7CFFF" transform="translate(12 0)"/></svg></div>
+<h3 style="font-family:'Urbanist', Arial, sans-serif;font-size:32px;font-weight:700;color:#F6F4EF">11 Forward</h3>
+<p style="font-size:24px;line-height:1.4;color:#D9D3E6">Visor moved out 12 units: momentum. For launches and announcements.</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:14px">
+<div style="height:320px;background:#5E44E8;border-radius:16px;display:flex;align-items:center;justify-content:center"><svg aria-label="12 Lead" viewBox="-110 -110 220 220" width="220" height="220" style="width:250px;height:250px"><path d="M-67.7 -73.6A100 100 0 0 1 67.7 -73.6A85 85 0 0 1 -67.7 -73.6Z" fill="#8D78F4"/><path d="M67.7 73.6A100 100 0 0 1 -67.7 73.6A85 85 0 0 1 67.7 73.6Z" fill="#8D78F4"/><path d="M-73.6 67.7A100 100 0 0 1 -73.6 -67.7A85 85 0 0 1 -73.6 67.7Z" fill="#8D78F4"/><path d="M73.6 -67.7A100 100 0 0 1 73.6 67.7A85 85 0 0 1 73.6 -67.7Z" fill="#F6F4EF"/></svg></div>
+<h3 style="font-family:'Urbanist', Arial, sans-serif;font-size:32px;font-weight:700;color:#F6F4EF">12 Lead</h3>
+<p style="font-size:24px;line-height:1.4;color:#D9D3E6">Crown recedes, visor lit: Event Management leads the other services.</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:14px">
+<div style="height:320px;background:#5E44E8;border-radius:16px;display:flex;align-items:center;justify-content:center"><svg aria-label="13 In motion" viewBox="-110 -110 220 220" width="220" height="220" style="width:250px;height:250px"><path d="M-67.7 -73.6A100 100 0 0 1 67.7 -73.6A85 85 0 0 1 -67.7 -73.6Z" fill="#F6F4EF" transform="rotate(9 0 -70)"/><path d="M73.6 -67.7A100 100 0 0 1 73.6 67.7A85 85 0 0 1 73.6 -67.7Z" fill="#D7CFFF" transform="rotate(9 70 0)"/><path d="M67.7 73.6A100 100 0 0 1 -67.7 73.6A85 85 0 0 1 67.7 73.6Z" fill="#F6F4EF" transform="rotate(9 0 70)"/><path d="M-73.6 67.7A100 100 0 0 1 -73.6 -67.7A85 85 0 0 1 -73.6 67.7Z" fill="#F6F4EF" transform="rotate(9 -70 0)"/></svg></div>
+<h3 style="font-family:'Urbanist', Arial, sans-serif;font-size:32px;font-weight:700;color:#F6F4EF">13 In motion</h3>
+<p style="font-size:24px;line-height:1.4;color:#D9D3E6">Each panel turned 9°: a room coming together. The animation's key frame.</p>
+</div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;color:#8A829C">PurpleHat Events · Identity exploration · 10</p>
+<aside>These four break a rule on purpose to say something. Tip of the hat breaks symmetry to greet people, which suits invitations. Forward breaks the circle to suggest momentum. Lead dims the crown so the visor, Event Management, stands out. In motion turns each panel slightly; it is not a logo on its own but the starting frame of a logo animation where the panels settle into place.</aside>
+</section>
+
+<section id="fam-colour" data-transition="fade" style="background:#F6F4EF;color:#17112B;font-family:'Nunito Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:48px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;letter-spacing:4px;text-transform:uppercase;color:#5E44E8">Family D · Colour · 14–16</p>
+<h2 style="font-family:'Urbanist', Arial, sans-serif;font-size:72px;font-weight:700;line-height:1.05;letter-spacing:-1px">One mark, any surface</h2>
+<p style="font-size:30px;line-height:1.4;color:#4E4763">The shape carries the idea, so it survives losing its colours.</p>
+</div>
+<div style="display:flex;gap:32px">
+<div style="flex:1;display:flex;flex-direction:column;gap:16px">
+<div style="height:330px;background:#FFFFFF;border:1px solid #E2DEE9;border-radius:16px;display:flex;align-items:center;justify-content:center"><svg aria-label="14 One colour" viewBox="-110 -110 220 220" width="220" height="220" style="width:280px;height:280px"><path d="M-67.7 -73.6A100 100 0 0 1 67.7 -73.6A85 85 0 0 1 -67.7 -73.6Z" fill="#17112B"/><path d="M73.6 -67.7A100 100 0 0 1 73.6 67.7A85 85 0 0 1 73.6 -67.7Z" fill="#17112B"/><path d="M67.7 73.6A100 100 0 0 1 -67.7 73.6A85 85 0 0 1 67.7 73.6Z" fill="#17112B"/><path d="M-73.6 67.7A100 100 0 0 1 -73.6 -67.7A85 85 0 0 1 -73.6 67.7Z" fill="#17112B"/></svg></div>
+<h3 style="font-family:'Urbanist', Arial, sans-serif;font-size:36px;font-weight:700">14 One colour</h3>
+<p style="font-size:26px;line-height:1.45;color:#4E4763">Ink on white. Embroidery, rubber stamps, newspapers, single-colour print.</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:16px">
+<div style="height:330px;background:#17112B;border-radius:16px;display:flex;align-items:center;justify-content:center"><svg aria-label="15 Reversed" viewBox="-110 -110 220 220" width="220" height="220" style="width:280px;height:280px"><path d="M-67.7 -73.6A100 100 0 0 1 67.7 -73.6A85 85 0 0 1 -67.7 -73.6Z" fill="#FBFAF7"/><path d="M73.6 -67.7A100 100 0 0 1 73.6 67.7A85 85 0 0 1 73.6 -67.7Z" fill="#FBFAF7"/><path d="M67.7 73.6A100 100 0 0 1 -67.7 73.6A85 85 0 0 1 67.7 73.6Z" fill="#FBFAF7"/><path d="M-73.6 67.7A100 100 0 0 1 -73.6 -67.7A85 85 0 0 1 -73.6 67.7Z" fill="#FBFAF7"/></svg></div>
+<h3 style="font-family:'Urbanist', Arial, sans-serif;font-size:36px;font-weight:700">15 Reversed</h3>
+<p style="font-size:26px;line-height:1.45;color:#4E4763">White on ink. Dark stages, night events, merchandise on black.</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:16px">
+<div style="height:330px;background:#5E44E8;border-radius:16px;display:flex;align-items:center;justify-content:center"><svg aria-label="16 Tonal" viewBox="-110 -110 220 220" width="220" height="220" style="width:280px;height:280px"><path d="M-67.7 -73.6A100 100 0 0 1 67.7 -73.6A85 85 0 0 1 -67.7 -73.6Z" fill="#CEC3FF"/><path d="M73.6 -67.7A100 100 0 0 1 73.6 67.7A85 85 0 0 1 73.6 -67.7Z" fill="#F6F4EF"/><path d="M67.7 73.6A100 100 0 0 1 -67.7 73.6A85 85 0 0 1 67.7 73.6Z" fill="#BCAEFF"/><path d="M-73.6 67.7A100 100 0 0 1 -73.6 -67.7A85 85 0 0 1 -73.6 67.7Z" fill="#A895FF"/></svg></div>
+<h3 style="font-family:'Urbanist', Arial, sans-serif;font-size:36px;font-weight:700">16 Tonal</h3>
+<p style="font-size:26px;line-height:1.45;color:#4E4763">Three crown tints, visor in white. Breaks the one-tone rule, for large walls only.</p>
+</div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;color:#8A829C">PurpleHat Events · Identity exploration · 11</p>
+<aside>A strong mark has to work without its colours. In one colour the visor is no longer highlighted, and the mark still reads because of its shape. Tonal is a decorative version for big surfaces such as a stage backdrop; the three tints can stand for the three pairs of services, with the visor in white for Event Management.</aside>
+</section>
+
+<section id="fam-lockups" data-transition="fade" style="background:#F6F4EF;color:#17112B;font-family:'Nunito Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:48px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;letter-spacing:4px;text-transform:uppercase;color:#5E44E8">Family E · Lockups · 17–19</p>
+<h2 style="font-family:'Urbanist', Arial, sans-serif;font-size:72px;font-weight:700;line-height:1.05;letter-spacing:-1px">The mark with its name</h2>
+<p style="font-size:30px;line-height:1.4;color:#4E4763">The mark stays untouched; the name sits beside it or below it. PHE is the short form.</p>
+</div>
+<div style="display:flex;gap:32px">
+<div style="flex:1;display:flex;flex-direction:column;gap:16px">
+<div style="height:330px;background:#5E44E8;border-radius:16px;display:flex;flex-direction:row;align-items:center;justify-content:center;gap:28px">
+<svg aria-label="17 Horizontal lockup mark" viewBox="-110 -110 220 220" width="220" height="220" style="width:140px;height:140px"><path d="M-67.7 -73.6A100 100 0 0 1 67.7 -73.6A85 85 0 0 1 -67.7 -73.6Z" fill="#F6F4EF"/><path d="M73.6 -67.7A100 100 0 0 1 73.6 67.7A85 85 0 0 1 73.6 -67.7Z" fill="#D7CFFF"/><path d="M67.7 73.6A100 100 0 0 1 -67.7 73.6A85 85 0 0 1 67.7 73.6Z" fill="#F6F4EF"/><path d="M-73.6 67.7A100 100 0 0 1 -73.6 -67.7A85 85 0 0 1 -73.6 67.7Z" fill="#F6F4EF"/></svg>
+<div style="display:flex;flex-direction:column;gap:4px">
+<p style="font-family:'Urbanist', Arial, sans-serif;font-size:56px;font-weight:800;letter-spacing:-1px;line-height:1;color:#F6F4EF;white-space:nowrap">PurpleHat</p>
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;letter-spacing:10px;color:#D7CFFF">EVENTS</p>
+</div>
+</div>
+<h3 style="font-family:'Urbanist', Arial, sans-serif;font-size:36px;font-weight:700">17 Horizontal lockup</h3>
+<p style="font-size:26px;line-height:1.45;color:#4E4763">The default. Website header, email signature, documents, invoices.</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:16px">
+<div style="height:330px;background:#5E44E8;border-radius:16px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px">
+<svg aria-label="18 Stacked lockup mark" viewBox="-110 -110 220 220" width="220" height="220" style="width:130px;height:130px"><path d="M-67.7 -73.6A100 100 0 0 1 67.7 -73.6A85 85 0 0 1 -67.7 -73.6Z" fill="#F6F4EF"/><path d="M73.6 -67.7A100 100 0 0 1 73.6 67.7A85 85 0 0 1 73.6 -67.7Z" fill="#D7CFFF"/><path d="M67.7 73.6A100 100 0 0 1 -67.7 73.6A85 85 0 0 1 67.7 73.6Z" fill="#F6F4EF"/><path d="M-73.6 67.7A100 100 0 0 1 -73.6 -67.7A85 85 0 0 1 -73.6 67.7Z" fill="#F6F4EF"/></svg>
+<p style="font-family:'Urbanist', Arial, sans-serif;font-size:48px;font-weight:800;letter-spacing:-1px;line-height:1;color:#F6F4EF;text-align:center">PurpleHat</p>
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;letter-spacing:10px;color:#D7CFFF;text-align:center">EVENTS</p>
+</div>
+<h3 style="font-family:'Urbanist', Arial, sans-serif;font-size:36px;font-weight:700">18 Stacked lockup</h3>
+<p style="font-size:26px;line-height:1.45;color:#4E4763">For square spaces. Posters, stage backdrops, Instagram posts.</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:16px">
+<div style="height:330px;background:#5E44E8;border-radius:16px;display:flex;flex-direction:row;align-items:center;justify-content:center;gap:28px">
+<svg aria-label="19 PHE lockup mark" viewBox="-110 -110 220 220" width="220" height="220" style="width:140px;height:140px"><path d="M-67.7 -73.6A100 100 0 0 1 67.7 -73.6A85 85 0 0 1 -67.7 -73.6Z" fill="#F6F4EF"/><path d="M73.6 -67.7A100 100 0 0 1 73.6 67.7A85 85 0 0 1 73.6 -67.7Z" fill="#D7CFFF"/><path d="M67.7 73.6A100 100 0 0 1 -67.7 73.6A85 85 0 0 1 67.7 73.6Z" fill="#F6F4EF"/><path d="M-73.6 67.7A100 100 0 0 1 -73.6 -67.7A85 85 0 0 1 -73.6 67.7Z" fill="#F6F4EF"/></svg>
+<div style="display:flex;flex-direction:column;gap:14px">
+<svg aria-label="PHE in custom letters" viewBox="-10 -10 228 120" width="228" height="120" style="width:200px;height:105.26px"><path d="M8.5 100V8.5H14.5A29 29 0 0 1 14.5 66.5H8.5M74 0V100M136 0V100M74 50H136M208 8.5H166.5V91.5H208M166.5 50H202" fill="none" stroke="#F6F4EF" stroke-width="17" stroke-linejoin="miter" stroke-linecap="butt"/></svg>
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;letter-spacing:2px;color:#D7CFFF;white-space:nowrap">PURPLEHAT EVENTS</p>
+</div>
+</div>
+<h3 style="font-family:'Urbanist', Arial, sans-serif;font-size:36px;font-weight:700">19 PHE lockup</h3>
+<p style="font-size:26px;line-height:1.45;color:#4E4763">Custom-drawn P, H and E with the mark's weight. Short form for merch and social.</p>
+</div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;color:#8A829C">PurpleHat Events · Identity exploration · 12</p>
+<aside>The wordmark here is set in Urbanist as a stand-in; once a direction is chosen we would draw a custom wordmark based on it, so the round letters echo the circle of the mark. The PHE letters are already custom: drawn on a grid with square ends and a stroke that matches the weight of the panels.</aside>
+</section>
+
+<section id="fam-monograms" data-transition="fade" style="background:#17112B;color:#F6F4EF;font-family:'Nunito Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:48px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;letter-spacing:4px;text-transform:uppercase;color:#D7CFFF">Family E · Monograms · 20–22</p>
+<h2 style="font-family:'Urbanist', Arial, sans-serif;font-size:72px;font-weight:700;line-height:1.05;letter-spacing:-1px;color:#F6F4EF">PHE inside the mark</h2>
+<p style="font-size:30px;line-height:1.4;color:#D9D3E6">Three ways to put the letters into the cap itself. Each one is for large sizes only.</p>
+</div>
+<div style="display:flex;gap:32px">
+<div style="flex:1;display:flex;flex-direction:column;gap:16px">
+<div style="height:330px;background:#5E44E8;border-radius:16px;display:flex;align-items:center;justify-content:center"><svg aria-label="20 PHE seal" viewBox="-110 -110 220 220" width="220" height="220" style="width:280px;height:280px"><path d="M-67.7 -73.6A100 100 0 0 1 67.7 -73.6A85 85 0 0 1 -67.7 -73.6Z" fill="#F6F4EF"/><path d="M73.6 -67.7A100 100 0 0 1 73.6 67.7A85 85 0 0 1 73.6 -67.7Z" fill="#D7CFFF"/><path d="M67.7 73.6A100 100 0 0 1 -67.7 73.6A85 85 0 0 1 67.7 73.6Z" fill="#F6F4EF"/><path d="M-73.6 67.7A100 100 0 0 1 -73.6 -67.7A85 85 0 0 1 -73.6 67.7Z" fill="#F6F4EF"/><g transform="translate(-27.61 -13)"><path d="M2.5 26V2.5H4.06A7.54 7.54 0 0 1 4.06 17.58H2.5M20.1 0V26M36.22 0V26M20.1 13H36.22M55.22 2.5H44.72V23.5H55.22M44.72 13H53.66" fill="none" stroke="#F6F4EF" stroke-width="5" stroke-linejoin="miter" stroke-linecap="butt"/></g></svg></div>
+<h3 style="font-family:'Urbanist', Arial, sans-serif;font-size:36px;font-weight:700;color:#F6F4EF">20 PHE seal</h3>
+<p style="font-size:26px;line-height:1.45;color:#D9D3E6">Letters held in the centre opening. Badges, wristbands, lanyards.</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:16px">
+<div style="height:330px;background:#5E44E8;border-radius:16px;display:flex;align-items:center;justify-content:center"><svg aria-label="21 P H E across the middle" viewBox="-110 -110 220 220" width="220" height="220" style="width:280px;height:280px"><defs><mask id="ac" maskUnits="userSpaceOnUse" x="-110" y="-110" width="220" height="220"><rect x="-110" y="-110" width="220" height="220" fill="#fff"/><g transform="translate(-78.4 -19)"><path d="M3.5 38V3.5H5.78A11.02 11.02 0 0 1 5.78 25.54H3.5" fill="none" stroke="#000" stroke-width="7" stroke-linejoin="miter" stroke-linecap="butt"/></g><g transform="translate(0.64 -19)"><path d="M78.86 3.5H63.36V34.5H78.86M63.36 19H76.58" fill="none" stroke="#000" stroke-width="7" stroke-linejoin="miter" stroke-linecap="butt"/></g></mask></defs><g mask="url(#ac)"><path d="M-67.7 -73.6A100 100 0 0 1 67.7 -73.6A85 85 0 0 1 -67.7 -73.6Z" fill="#F6F4EF"/><path d="M73.6 -67.7A100 100 0 0 1 73.6 67.7A85 85 0 0 1 73.6 -67.7Z" fill="#D7CFFF"/><path d="M67.7 73.6A100 100 0 0 1 -67.7 73.6A85 85 0 0 1 67.7 73.6Z" fill="#F6F4EF"/><path d="M-73.6 67.7A100 100 0 0 1 -73.6 -67.7A85 85 0 0 1 -73.6 67.7Z" fill="#F6F4EF"/></g><g transform="translate(-40.08 -19)"><path d="M28.3 0V38M51.86 0V38M28.3 19H51.86" fill="none" stroke="#F6F4EF" stroke-width="7" stroke-linejoin="miter" stroke-linecap="butt"/></g></svg></div>
+<h3 style="font-family:'Urbanist', Arial, sans-serif;font-size:36px;font-weight:700;color:#F6F4EF">21 P · H · E across</h3>
+<p style="font-size:26px;line-height:1.45;color:#D9D3E6">Back to front across the cap: P in the back panel, H in the centre, E in the visor.</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:16px">
+<div style="height:330px;background:#5E44E8;border-radius:16px;display:flex;align-items:center;justify-content:center"><svg aria-label="22 Hidden H" viewBox="-110 -110 220 220" width="220" height="220" style="width:280px;height:280px"><path d="M-67.7 -73.6A100 100 0 0 1 67.7 -73.6A85 85 0 0 1 -67.7 -73.6Z" fill="#F6F4EF"/><path d="M73.6 -67.7A100 100 0 0 1 73.6 67.7A85 85 0 0 1 73.6 -67.7Z" fill="#D7CFFF"/><path d="M67.7 73.6A100 100 0 0 1 -67.7 73.6A85 85 0 0 1 67.7 73.6Z" fill="#F6F4EF"/><path d="M-73.6 67.7A100 100 0 0 1 -73.6 -67.7A85 85 0 0 1 -73.6 67.7Z" fill="#F6F4EF"/><rect x="-62" y="-8" width="62" height="16" fill="#F6F4EF"/><rect x="0" y="-8" width="62" height="16" fill="#D7CFFF"/></svg></div>
+<h3 style="font-family:'Urbanist', Arial, sans-serif;font-size:36px;font-weight:700;color:#F6F4EF">22 Hidden H</h3>
+<p style="font-size:26px;line-height:1.45;color:#D9D3E6">Back panel and visor joined across the centre: H for Hat. A detail for those who look.</p>
+</div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;color:#8A829C">PurpleHat Events · Identity exploration · 13</p>
+<aside>These put the initials into the mark. They look strong large, on a lanyard or a stage, but the letters disappear below about 48 pixels, so none of them can replace the plain mark. The Hidden H is the most subtle: it reads as a bar until someone points out the H, which can be a nice story to tell clients.</aside>
+</section>
+
+<section id="fam-system" data-transition="fade" style="background:#F6F4EF;color:#17112B;font-family:'Nunito Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:48px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;letter-spacing:4px;text-transform:uppercase;color:#5E44E8">Family F · System · 23–26</p>
+<h2 style="font-family:'Urbanist', Arial, sans-serif;font-size:72px;font-weight:700;line-height:1.05;letter-spacing:-1px">Beyond the logo</h2>
+<p style="font-size:30px;line-height:1.4;color:#4E4763">Containers, the smallest size, and the mark used as a material.</p>
+</div>
+<div style="display:flex;gap:24px">
+<div style="flex:1;display:flex;flex-direction:column;gap:14px">
+<div style="height:320px;background:#E9E4FF;border-radius:16px;display:flex;align-items:center;justify-content:center"><svg aria-label="23 App icon" viewBox="-130 -130 260 260" width="260" height="260" style="width:230px;height:230px"><rect x="-128" y="-128" width="256" height="256" rx="58" fill="#5E44E8"/><g transform="scale(0.72)"><path d="M-67.7 -73.6A100 100 0 0 1 67.7 -73.6A85 85 0 0 1 -67.7 -73.6Z" fill="#F6F4EF"/><path d="M73.6 -67.7A100 100 0 0 1 73.6 67.7A85 85 0 0 1 73.6 -67.7Z" fill="#D7CFFF"/><path d="M67.7 73.6A100 100 0 0 1 -67.7 73.6A85 85 0 0 1 67.7 73.6Z" fill="#F6F4EF"/><path d="M-73.6 67.7A100 100 0 0 1 -73.6 -67.7A85 85 0 0 1 -73.6 67.7Z" fill="#F6F4EF"/></g></svg></div>
+<h3 style="font-family:'Urbanist', Arial, sans-serif;font-size:32px;font-weight:700">23 App icon</h3>
+<p style="font-size:24px;line-height:1.4;color:#4E4763">Mark at 72% on a rounded square. Apps, WhatsApp Business, Google profile.</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:14px">
+<div style="height:320px;background:#FFFFFF;border:1px solid #E2DEE9;border-radius:16px;display:flex;flex-direction:row;align-items:center;justify-content:center;gap:28px">
+<svg aria-label="24 Favicon at 160 px" viewBox="-118 -118 236 236" width="236" height="236" style="width:160px;height:160px"><rect x="-118" y="-118" width="236" height="236" rx="34" fill="#5E44E8"/><g transform="scale(0.86)"><path d="M-65.39 -75.66A100 100 0 0 1 65.39 -75.66A77.79 77.79 0 0 1 -65.39 -75.66Z" fill="#F6F4EF"/><path d="M75.66 -65.39A100 100 0 0 1 75.66 65.39A77.79 77.79 0 0 1 75.66 -65.39Z" fill="#D7CFFF"/><path d="M65.39 75.66A100 100 0 0 1 -65.39 75.66A77.79 77.79 0 0 1 65.39 75.66Z" fill="#F6F4EF"/><path d="M-75.66 65.39A100 100 0 0 1 -75.66 -65.39A77.79 77.79 0 0 1 -75.66 65.39Z" fill="#F6F4EF"/></g></svg>
+<div style="display:flex;flex-direction:column;align-items:center;gap:18px">
+<svg aria-label="Favicon at 48 px" viewBox="-118 -118 236 236" width="236" height="236" style="width:48px;height:48px"><rect x="-118" y="-118" width="236" height="236" rx="34" fill="#5E44E8"/><g transform="scale(0.86)"><path d="M-65.39 -75.66A100 100 0 0 1 65.39 -75.66A77.79 77.79 0 0 1 -65.39 -75.66Z" fill="#F6F4EF"/><path d="M75.66 -65.39A100 100 0 0 1 75.66 65.39A77.79 77.79 0 0 1 75.66 -65.39Z" fill="#D7CFFF"/><path d="M65.39 75.66A100 100 0 0 1 -65.39 75.66A77.79 77.79 0 0 1 65.39 75.66Z" fill="#F6F4EF"/><path d="M-75.66 65.39A100 100 0 0 1 -75.66 -65.39A77.79 77.79 0 0 1 -75.66 65.39Z" fill="#F6F4EF"/></g></svg>
+<svg aria-label="Favicon at 32 px" viewBox="-118 -118 236 236" width="236" height="236" style="width:32px;height:32px"><rect x="-118" y="-118" width="236" height="236" rx="34" fill="#5E44E8"/><g transform="scale(0.86)"><path d="M-65.39 -75.66A100 100 0 0 1 65.39 -75.66A77.79 77.79 0 0 1 -65.39 -75.66Z" fill="#F6F4EF"/><path d="M75.66 -65.39A100 100 0 0 1 75.66 65.39A77.79 77.79 0 0 1 75.66 -65.39Z" fill="#D7CFFF"/><path d="M65.39 75.66A100 100 0 0 1 -65.39 75.66A77.79 77.79 0 0 1 65.39 75.66Z" fill="#F6F4EF"/><path d="M-75.66 65.39A100 100 0 0 1 -75.66 -65.39A77.79 77.79 0 0 1 -75.66 65.39Z" fill="#F6F4EF"/></g></svg>
+<svg aria-label="Favicon at 16 px" viewBox="-118 -118 236 236" width="236" height="236" style="width:16px;height:16px"><rect x="-118" y="-118" width="236" height="236" rx="34" fill="#5E44E8"/><g transform="scale(0.86)"><path d="M-65.39 -75.66A100 100 0 0 1 65.39 -75.66A77.79 77.79 0 0 1 -65.39 -75.66Z" fill="#F6F4EF"/><path d="M75.66 -65.39A100 100 0 0 1 75.66 65.39A77.79 77.79 0 0 1 75.66 -65.39Z" fill="#D7CFFF"/><path d="M65.39 75.66A100 100 0 0 1 -65.39 75.66A77.79 77.79 0 0 1 65.39 75.66Z" fill="#F6F4EF"/><path d="M-75.66 65.39A100 100 0 0 1 -75.66 -65.39A77.79 77.79 0 0 1 -75.66 65.39Z" fill="#F6F4EF"/></g></svg>
+</div>
+</div>
+<h3 style="font-family:'Urbanist', Arial, sans-serif;font-size:32px;font-weight:700">24 Favicon</h3>
+<p style="font-size:24px;line-height:1.4;color:#4E4763">The bold-seam master at 48, 32 and 16 px. Browser tabs and bookmarks.</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:14px">
+<div style="height:320px;background:#5E44E8;border-radius:16px;overflow:hidden;display:flex;align-items:center;justify-content:center"><svg aria-label="25 Pattern" viewBox="0 0 900 640" width="900" height="640" style="width:450px;height:320px"><defs><g id="pm" transform="scale(0.8)"><path d="M-67.7 -73.6A100 100 0 0 1 67.7 -73.6A85 85 0 0 1 -67.7 -73.6Z" fill="#7560EE"/><path d="M73.6 -67.7A100 100 0 0 1 73.6 67.7A85 85 0 0 1 73.6 -67.7Z" fill="#8D78F4"/><path d="M67.7 73.6A100 100 0 0 1 -67.7 73.6A85 85 0 0 1 67.7 73.6Z" fill="#7560EE"/><path d="M-73.6 67.7A100 100 0 0 1 -73.6 -67.7A85 85 0 0 1 -73.6 67.7Z" fill="#7560EE"/></g></defs><rect width="900" height="640" fill="#5E44E8"/><use href="#pm" x="0" y="0"/><use href="#pm" x="230" y="0"/><use href="#pm" x="460" y="0"/><use href="#pm" x="690" y="0"/><use href="#pm" x="920" y="0"/><use href="#pm" x="115" y="200"/><use href="#pm" x="345" y="200"/><use href="#pm" x="575" y="200"/><use href="#pm" x="805" y="200"/><use href="#pm" x="0" y="400"/><use href="#pm" x="230" y="400"/><use href="#pm" x="460" y="400"/><use href="#pm" x="690" y="400"/><use href="#pm" x="920" y="400"/><use href="#pm" x="115" y="600"/><use href="#pm" x="345" y="600"/><use href="#pm" x="575" y="600"/><use href="#pm" x="805" y="600"/></svg></div>
+<h3 style="font-family:'Urbanist', Arial, sans-serif;font-size:32px;font-weight:700">25 Pattern</h3>
+<p style="font-size:24px;line-height:1.4;color:#4E4763">A half-drop repeat in two purples. Wristbands, backdrops, gift wrap.</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:14px">
+<div style="height:320px;background:#17112B;border-radius:16px;overflow:hidden;display:flex;flex-direction:row;align-items:center;justify-content:space-between;padding:0 0 0 32px">
+<div style="display:flex;flex-direction:column;gap:6px">
+<p style="font-family:'Urbanist', Arial, sans-serif;font-size:36px;font-weight:800;line-height:1.05;color:#F6F4EF">Opening night</p>
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;color:#D7CFFF">8 PM</p>
+</div>
+<svg aria-label="26 Super-graphic" viewBox="20 -100 180 200" width="180" height="200" style="width:200px;height:222.22px"><path d="M-67.7 -73.6A100 100 0 0 1 67.7 -73.6A85 85 0 0 1 -67.7 -73.6Z" fill="#F6F4EF"/><path d="M73.6 -67.7A100 100 0 0 1 73.6 67.7A85 85 0 0 1 73.6 -67.7Z" fill="#D7CFFF"/><path d="M67.7 73.6A100 100 0 0 1 -67.7 73.6A85 85 0 0 1 67.7 73.6Z" fill="#F6F4EF"/><path d="M-73.6 67.7A100 100 0 0 1 -73.6 -67.7A85 85 0 0 1 -73.6 67.7Z" fill="#F6F4EF"/></svg>
+</div>
+<h3 style="font-family:'Urbanist', Arial, sans-serif;font-size:32px;font-weight:700">26 Super-graphic</h3>
+<p style="font-size:24px;line-height:1.4;color:#4E4763">The mark cropped huge off the edge. LED walls, stage screens, social covers.</p>
+</div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;color:#8A829C">PurpleHat Events · Identity exploration · 14</p>
+<aside>These turn the mark into a system. The app icon and favicon cover the smallest uses; the favicon uses the bold-seam master so the seams stay open at 16 pixels. The pattern and the super-graphic use the mark as a material, so event screens and printed materials feel like PurpleHat even when the full logo is not shown.</aside>
+</section>
+
+<section id="index" data-transition="fade" style="background:#F6F4EF;color:#17112B;font-family:'Nunito Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:44px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;letter-spacing:4px;text-transform:uppercase;color:#5E44E8">All versions</p>
+<h2 style="font-family:'Urbanist', Arial, sans-serif;font-size:72px;font-weight:700;line-height:1.05;letter-spacing:-1px">Twenty-six versions, one drawing</h2>
+</div>
+<div style="display:grid;grid-template-columns:repeat(9, 1fr);gap:16px">
+<div style="display:flex;flex-direction:column;gap:8px"><div style="height:130px;background:#5E44E8;border-radius:12px;display:flex;align-items:center;justify-content:center"><svg aria-label="01 Original" viewBox="-110 -110 220 220" width="220" height="220" style="width:104px;height:104px"><path d="M-68.2 -73.14A100 100 0 0 1 68.2 -73.14A92.24 92.24 0 0 1 -68.2 -73.14Z" fill="#F6F4EF"/><path d="M73.14 -68.2A100 100 0 0 1 73.14 68.2A92.24 92.24 0 0 1 73.14 -68.2Z" fill="#D7CFFF"/><path d="M68.2 73.14A100 100 0 0 1 -68.2 73.14A92.24 92.24 0 0 1 68.2 73.14Z" fill="#F6F4EF"/><path d="M-73.14 68.2A100 100 0 0 1 -73.14 -68.2A92.24 92.24 0 0 1 -73.14 68.2Z" fill="#F6F4EF"/></svg></div><p style="font-size:24px;font-weight:600">01 Original</p></div>
+<div style="display:flex;flex-direction:column;gap:8px"><div style="height:130px;background:#5E44E8;border-radius:12px;box-shadow:0 0 0 4px #F6F4EF, 0 0 0 7px #17112B;display:flex;align-items:center;justify-content:center"><svg aria-label="02 Core" viewBox="-110 -110 220 220" width="220" height="220" style="width:104px;height:104px"><path d="M-67.7 -73.6A100 100 0 0 1 67.7 -73.6A85 85 0 0 1 -67.7 -73.6Z" fill="#F6F4EF"/><path d="M73.6 -67.7A100 100 0 0 1 73.6 67.7A85 85 0 0 1 73.6 -67.7Z" fill="#D7CFFF"/><path d="M67.7 73.6A100 100 0 0 1 -67.7 73.6A85 85 0 0 1 67.7 73.6Z" fill="#F6F4EF"/><path d="M-73.6 67.7A100 100 0 0 1 -73.6 -67.7A85 85 0 0 1 -73.6 67.7Z" fill="#F6F4EF"/></svg></div><p style="font-size:24px;font-weight:600">02 Core</p></div>
+<div style="display:flex;flex-direction:column;gap:8px"><div style="height:130px;background:#5E44E8;border-radius:12px;display:flex;align-items:center;justify-content:center"><svg aria-label="03 Fuller" viewBox="-110 -110 220 220" width="220" height="220" style="width:104px;height:104px"><path d="M-66.59 -74.61A100 100 0 0 1 66.59 -74.61A77.75 77.75 0 0 1 -66.59 -74.61Z" fill="#F6F4EF"/><path d="M74.61 -66.59A100 100 0 0 1 74.61 66.59A77.75 77.75 0 0 1 74.61 -66.59Z" fill="#D7CFFF"/><path d="M66.59 74.61A100 100 0 0 1 -66.59 74.61A77.75 77.75 0 0 1 66.59 74.61Z" fill="#F6F4EF"/><path d="M-74.61 66.59A100 100 0 0 1 -74.61 -66.59A77.75 77.75 0 0 1 -74.61 66.59Z" fill="#F6F4EF"/></svg></div><p style="font-size:24px;font-weight:600">03 Fuller</p></div>
+<div style="display:flex;flex-direction:column;gap:8px"><div style="height:130px;background:#5E44E8;border-radius:12px;display:flex;align-items:center;justify-content:center"><svg aria-label="04 Button" viewBox="-110 -110 220 220" width="220" height="220" style="width:104px;height:104px"><path d="M-67.7 -73.6A100 100 0 0 1 67.7 -73.6A85 85 0 0 1 -67.7 -73.6Z" fill="#F6F4EF"/><path d="M73.6 -67.7A100 100 0 0 1 73.6 67.7A85 85 0 0 1 73.6 -67.7Z" fill="#D7CFFF"/><path d="M67.7 73.6A100 100 0 0 1 -67.7 73.6A85 85 0 0 1 67.7 73.6Z" fill="#F6F4EF"/><path d="M-73.6 67.7A100 100 0 0 1 -73.6 -67.7A85 85 0 0 1 -73.6 67.7Z" fill="#F6F4EF"/><circle cx="0" cy="0" r="11" fill="#F6F4EF"/></svg></div><p style="font-size:24px;font-weight:600">04 Button</p></div>
+<div style="display:flex;flex-direction:column;gap:8px"><div style="height:130px;background:#5E44E8;border-radius:12px;display:flex;align-items:center;justify-content:center"><svg aria-label="05 Fine seam" viewBox="-110 -110 220 220" width="220" height="220" style="width:104px;height:104px"><path d="M-68.92 -72.46A100 100 0 0 1 68.92 -72.46A89.4 89.4 0 0 1 -68.92 -72.46Z" fill="#F6F4EF"/><path d="M72.46 -68.92A100 100 0 0 1 72.46 68.92A89.4 89.4 0 0 1 72.46 -68.92Z" fill="#D7CFFF"/><path d="M68.92 72.46A100 100 0 0 1 -68.92 72.46A89.4 89.4 0 0 1 68.92 72.46Z" fill="#F6F4EF"/><path d="M-72.46 68.92A100 100 0 0 1 -72.46 -68.92A89.4 89.4 0 0 1 -72.46 68.92Z" fill="#F6F4EF"/></svg></div><p style="font-size:24px;font-weight:600">05 Fine</p></div>
+<div style="display:flex;flex-direction:column;gap:8px"><div style="height:130px;background:#5E44E8;border-radius:12px;display:flex;align-items:center;justify-content:center"><svg aria-label="06 Bold seam" viewBox="-110 -110 220 220" width="220" height="220" style="width:104px;height:104px"><path d="M-65.39 -75.66A100 100 0 0 1 65.39 -75.66A77.79 77.79 0 0 1 -65.39 -75.66Z" fill="#F6F4EF"/><path d="M75.66 -65.39A100 100 0 0 1 75.66 65.39A77.79 77.79 0 0 1 75.66 -65.39Z" fill="#D7CFFF"/><path d="M65.39 75.66A100 100 0 0 1 -65.39 75.66A77.79 77.79 0 0 1 65.39 75.66Z" fill="#F6F4EF"/><path d="M-75.66 65.39A100 100 0 0 1 -75.66 -65.39A77.79 77.79 0 0 1 -75.66 65.39Z" fill="#F6F4EF"/></svg></div><p style="font-size:24px;font-weight:600">06 Bold</p></div>
+<div style="display:flex;flex-direction:column;gap:8px"><div style="height:130px;background:#17112B;border-radius:12px;display:flex;align-items:center;justify-content:center"><svg aria-label="07 Neon" viewBox="-110 -110 220 220" width="220" height="220" style="width:104px;height:104px"><path d="M-67.7 -73.6A100 100 0 0 1 67.7 -73.6A85 85 0 0 1 -67.7 -73.6Z" fill="none" stroke="#F6F4EF" stroke-width="6" stroke-linejoin="round"/><path d="M73.6 -67.7A100 100 0 0 1 73.6 67.7A85 85 0 0 1 73.6 -67.7Z" fill="none" stroke="#D7CFFF" stroke-width="6" stroke-linejoin="round"/><path d="M67.7 73.6A100 100 0 0 1 -67.7 73.6A85 85 0 0 1 67.7 73.6Z" fill="none" stroke="#F6F4EF" stroke-width="6" stroke-linejoin="round"/><path d="M-73.6 67.7A100 100 0 0 1 -73.6 -67.7A85 85 0 0 1 -73.6 67.7Z" fill="none" stroke="#F6F4EF" stroke-width="6" stroke-linejoin="round"/></svg></div><p style="font-size:24px;font-weight:600">07 Neon</p></div>
+<div style="display:flex;flex-direction:column;gap:8px"><div style="height:130px;background:#5E44E8;border-radius:12px;display:flex;align-items:center;justify-content:center"><svg aria-label="08 Stitch" viewBox="-110 -110 220 220" width="220" height="220" style="width:104px;height:104px"><path d="M-67.7 -73.6A100 100 0 0 1 67.7 -73.6A85 85 0 0 1 -67.7 -73.6Z" fill="#F6F4EF"/><path d="M73.6 -67.7A100 100 0 0 1 73.6 67.7A85 85 0 0 1 73.6 -67.7Z" fill="#D7CFFF"/><path d="M67.7 73.6A100 100 0 0 1 -67.7 73.6A85 85 0 0 1 67.7 73.6Z" fill="#F6F4EF"/><path d="M-73.6 67.7A100 100 0 0 1 -73.6 -67.7A85 85 0 0 1 -73.6 67.7Z" fill="#F6F4EF"/><path d="M-44 -76.21A88 88 0 0 1 44 -76.21M76.21 -44A88 88 0 0 1 76.21 44M44 76.21A88 88 0 0 1 -44 76.21M-76.21 44A88 88 0 0 1 -76.21 -44" fill="none" stroke="#5E44E8" stroke-width="3" stroke-dasharray="6 5" stroke-linecap="round"/></svg></div><p style="font-size:24px;font-weight:600">08 Stitch</p></div>
+<div style="display:flex;flex-direction:column;gap:8px"><div style="height:130px;background:#5E44E8;border-radius:12px;display:flex;align-items:center;justify-content:center"><svg aria-label="09 Blueprint" viewBox="-110 -110 220 220" width="220" height="220" style="width:104px;height:104px"><circle r="100" fill="none" stroke="#D7CFFF" stroke-width="1.2" opacity="0.8"/><path d="M-108 -108L108 108M-108 108L108 -108" stroke="#D7CFFF" stroke-width="1.2" opacity="0.6"/><path d="M-67.7 -73.6A100 100 0 0 1 67.7 -73.6A85 85 0 0 1 -67.7 -73.6Z" fill="#F6F4EF" fill-opacity="0.92"/><path d="M73.6 -67.7A100 100 0 0 1 73.6 67.7A85 85 0 0 1 73.6 -67.7Z" fill="#D7CFFF" fill-opacity="0.92"/><path d="M67.7 73.6A100 100 0 0 1 -67.7 73.6A85 85 0 0 1 67.7 73.6Z" fill="#F6F4EF" fill-opacity="0.92"/><path d="M-73.6 67.7A100 100 0 0 1 -73.6 -67.7A85 85 0 0 1 -73.6 67.7Z" fill="#F6F4EF" fill-opacity="0.92"/></svg></div><p style="font-size:24px;font-weight:600">09 Blueprint</p></div>
+<div style="display:flex;flex-direction:column;gap:8px"><div style="height:130px;background:#5E44E8;border-radius:12px;display:flex;align-items:center;justify-content:center"><svg aria-label="10 Tip of the hat" viewBox="-110 -110 220 220" width="220" height="220" style="width:104px;height:104px"><path d="M-67.7 -73.6A100 100 0 0 1 67.7 -73.6A85 85 0 0 1 -67.7 -73.6Z" fill="#F6F4EF"/><path d="M67.7 73.6A100 100 0 0 1 -67.7 73.6A85 85 0 0 1 67.7 73.6Z" fill="#F6F4EF"/><path d="M-73.6 67.7A100 100 0 0 1 -73.6 -67.7A85 85 0 0 1 -73.6 67.7Z" fill="#F6F4EF"/><path d="M73.6 -67.7A100 100 0 0 1 73.6 67.7A85 85 0 0 1 73.6 -67.7Z" fill="#D7CFFF" transform="rotate(-11 74 0)"/></svg></div><p style="font-size:24px;font-weight:600">10 Tip</p></div>
+<div style="display:flex;flex-direction:column;gap:8px"><div style="height:130px;background:#5E44E8;border-radius:12px;display:flex;align-items:center;justify-content:center"><svg aria-label="11 Forward" viewBox="-110 -110 230 220" width="230" height="220" style="width:108px;height:103.3px"><path d="M-67.7 -73.6A100 100 0 0 1 67.7 -73.6A85 85 0 0 1 -67.7 -73.6Z" fill="#F6F4EF"/><path d="M67.7 73.6A100 100 0 0 1 -67.7 73.6A85 85 0 0 1 67.7 73.6Z" fill="#F6F4EF"/><path d="M-73.6 67.7A100 100 0 0 1 -73.6 -67.7A85 85 0 0 1 -73.6 67.7Z" fill="#F6F4EF"/><path d="M73.6 -67.7A100 100 0 0 1 73.6 67.7A85 85 0 0 1 73.6 -67.7Z" fill="#D7CFFF" transform="translate(12 0)"/></svg></div><p style="font-size:24px;font-weight:600">11 Forward</p></div>
+<div style="display:flex;flex-direction:column;gap:8px"><div style="height:130px;background:#5E44E8;border-radius:12px;display:flex;align-items:center;justify-content:center"><svg aria-label="12 Lead" viewBox="-110 -110 220 220" width="220" height="220" style="width:104px;height:104px"><path d="M-67.7 -73.6A100 100 0 0 1 67.7 -73.6A85 85 0 0 1 -67.7 -73.6Z" fill="#8D78F4"/><path d="M67.7 73.6A100 100 0 0 1 -67.7 73.6A85 85 0 0 1 67.7 73.6Z" fill="#8D78F4"/><path d="M-73.6 67.7A100 100 0 0 1 -73.6 -67.7A85 85 0 0 1 -73.6 67.7Z" fill="#8D78F4"/><path d="M73.6 -67.7A100 100 0 0 1 73.6 67.7A85 85 0 0 1 73.6 -67.7Z" fill="#F6F4EF"/></svg></div><p style="font-size:24px;font-weight:600">12 Lead</p></div>
+<div style="display:flex;flex-direction:column;gap:8px"><div style="height:130px;background:#5E44E8;border-radius:12px;display:flex;align-items:center;justify-content:center"><svg aria-label="13 In motion" viewBox="-110 -110 220 220" width="220" height="220" style="width:104px;height:104px"><path d="M-67.7 -73.6A100 100 0 0 1 67.7 -73.6A85 85 0 0 1 -67.7 -73.6Z" fill="#F6F4EF" transform="rotate(9 0 -70)"/><path d="M73.6 -67.7A100 100 0 0 1 73.6 67.7A85 85 0 0 1 73.6 -67.7Z" fill="#D7CFFF" transform="rotate(9 70 0)"/><path d="M67.7 73.6A100 100 0 0 1 -67.7 73.6A85 85 0 0 1 67.7 73.6Z" fill="#F6F4EF" transform="rotate(9 0 70)"/><path d="M-73.6 67.7A100 100 0 0 1 -73.6 -67.7A85 85 0 0 1 -73.6 67.7Z" fill="#F6F4EF" transform="rotate(9 -70 0)"/></svg></div><p style="font-size:24px;font-weight:600">13 Motion</p></div>
+<div style="display:flex;flex-direction:column;gap:8px"><div style="height:130px;background:#FFFFFF;border:1px solid #E2DEE9;border-radius:12px;display:flex;align-items:center;justify-content:center"><svg aria-label="14 One colour" viewBox="-110 -110 220 220" width="220" height="220" style="width:104px;height:104px"><path d="M-67.7 -73.6A100 100 0 0 1 67.7 -73.6A85 85 0 0 1 -67.7 -73.6Z" fill="#17112B"/><path d="M73.6 -67.7A100 100 0 0 1 73.6 67.7A85 85 0 0 1 73.6 -67.7Z" fill="#17112B"/><path d="M67.7 73.6A100 100 0 0 1 -67.7 73.6A85 85 0 0 1 67.7 73.6Z" fill="#17112B"/><path d="M-73.6 67.7A100 100 0 0 1 -73.6 -67.7A85 85 0 0 1 -73.6 67.7Z" fill="#17112B"/></svg></div><p style="font-size:24px;font-weight:600">14 Mono</p></div>
+<div style="display:flex;flex-direction:column;gap:8px"><div style="height:130px;background:#17112B;border-radius:12px;display:flex;align-items:center;justify-content:center"><svg aria-label="15 Reversed" viewBox="-110 -110 220 220" width="220" height="220" style="width:104px;height:104px"><path d="M-67.7 -73.6A100 100 0 0 1 67.7 -73.6A85 85 0 0 1 -67.7 -73.6Z" fill="#FBFAF7"/><path d="M73.6 -67.7A100 100 0 0 1 73.6 67.7A85 85 0 0 1 73.6 -67.7Z" fill="#FBFAF7"/><path d="M67.7 73.6A100 100 0 0 1 -67.7 73.6A85 85 0 0 1 67.7 73.6Z" fill="#FBFAF7"/><path d="M-73.6 67.7A100 100 0 0 1 -73.6 -67.7A85 85 0 0 1 -73.6 67.7Z" fill="#FBFAF7"/></svg></div><p style="font-size:24px;font-weight:600">15 Reverse</p></div>
+<div style="display:flex;flex-direction:column;gap:8px"><div style="height:130px;background:#5E44E8;border-radius:12px;display:flex;align-items:center;justify-content:center"><svg aria-label="16 Tonal" viewBox="-110 -110 220 220" width="220" height="220" style="width:104px;height:104px"><path d="M-67.7 -73.6A100 100 0 0 1 67.7 -73.6A85 85 0 0 1 -67.7 -73.6Z" fill="#CEC3FF"/><path d="M73.6 -67.7A100 100 0 0 1 73.6 67.7A85 85 0 0 1 73.6 -67.7Z" fill="#F6F4EF"/><path d="M67.7 73.6A100 100 0 0 1 -67.7 73.6A85 85 0 0 1 67.7 73.6Z" fill="#BCAEFF"/><path d="M-73.6 67.7A100 100 0 0 1 -73.6 -67.7A85 85 0 0 1 -73.6 67.7Z" fill="#A895FF"/></svg></div><p style="font-size:24px;font-weight:600">16 Tonal</p></div>
+<div style="display:flex;flex-direction:column;gap:8px"><div style="height:130px;background:#5E44E8;border-radius:12px;display:flex;flex-direction:row;align-items:center;justify-content:center;gap:6px"><svg aria-label="17 Horizontal lockup" viewBox="-110 -110 220 220" width="220" height="220" style="width:34px;height:34px"><path d="M-67.7 -73.6A100 100 0 0 1 67.7 -73.6A85 85 0 0 1 -67.7 -73.6Z" fill="#F6F4EF"/><path d="M73.6 -67.7A100 100 0 0 1 73.6 67.7A85 85 0 0 1 73.6 -67.7Z" fill="#D7CFFF"/><path d="M67.7 73.6A100 100 0 0 1 -67.7 73.6A85 85 0 0 1 67.7 73.6Z" fill="#F6F4EF"/><path d="M-73.6 67.7A100 100 0 0 1 -73.6 -67.7A85 85 0 0 1 -73.6 67.7Z" fill="#F6F4EF"/></svg><p style="font-family:'Urbanist', Arial, sans-serif;font-size:24px;font-weight:800;color:#F6F4EF;white-space:nowrap">PurpleHat</p></div><p style="font-size:24px;font-weight:600">17 Lockup</p></div>
+<div style="display:flex;flex-direction:column;gap:8px"><div style="height:130px;background:#5E44E8;border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px"><svg aria-label="18 Stacked lockup" viewBox="-110 -110 220 220" width="220" height="220" style="width:60px;height:60px"><path d="M-67.7 -73.6A100 100 0 0 1 67.7 -73.6A85 85 0 0 1 -67.7 -73.6Z" fill="#F6F4EF"/><path d="M73.6 -67.7A100 100 0 0 1 73.6 67.7A85 85 0 0 1 73.6 -67.7Z" fill="#D7CFFF"/><path d="M67.7 73.6A100 100 0 0 1 -67.7 73.6A85 85 0 0 1 67.7 73.6Z" fill="#F6F4EF"/><path d="M-73.6 67.7A100 100 0 0 1 -73.6 -67.7A85 85 0 0 1 -73.6 67.7Z" fill="#F6F4EF"/></svg><p style="font-family:'Urbanist', Arial, sans-serif;font-size:24px;font-weight:800;color:#F6F4EF;white-space:nowrap">PurpleHat</p></div><p style="font-size:24px;font-weight:600">18 Stacked</p></div>
+<div style="display:flex;flex-direction:column;gap:8px"><div style="height:130px;background:#5E44E8;border-radius:12px;display:flex;flex-direction:row;align-items:center;justify-content:center;gap:10px"><svg aria-label="19 PHE lockup mark" viewBox="-110 -110 220 220" width="220" height="220" style="width:52px;height:52px"><path d="M-67.7 -73.6A100 100 0 0 1 67.7 -73.6A85 85 0 0 1 -67.7 -73.6Z" fill="#F6F4EF"/><path d="M73.6 -67.7A100 100 0 0 1 73.6 67.7A85 85 0 0 1 73.6 -67.7Z" fill="#D7CFFF"/><path d="M67.7 73.6A100 100 0 0 1 -67.7 73.6A85 85 0 0 1 67.7 73.6Z" fill="#F6F4EF"/><path d="M-73.6 67.7A100 100 0 0 1 -73.6 -67.7A85 85 0 0 1 -73.6 67.7Z" fill="#F6F4EF"/></svg><svg aria-label="PHE letters" viewBox="-10 -10 228 120" width="228" height="120" style="width:76px;height:40px"><path d="M8.5 100V8.5H14.5A29 29 0 0 1 14.5 66.5H8.5M74 0V100M136 0V100M74 50H136M208 8.5H166.5V91.5H208M166.5 50H202" fill="none" stroke="#F6F4EF" stroke-width="17" stroke-linejoin="miter" stroke-linecap="butt"/></svg></div><p style="font-size:24px;font-weight:600">19 PHE</p></div>
+<div style="display:flex;flex-direction:column;gap:8px"><div style="height:130px;background:#5E44E8;border-radius:12px;display:flex;align-items:center;justify-content:center"><svg aria-label="20 PHE seal" viewBox="-110 -110 220 220" width="220" height="220" style="width:104px;height:104px"><path d="M-67.7 -73.6A100 100 0 0 1 67.7 -73.6A85 85 0 0 1 -67.7 -73.6Z" fill="#F6F4EF"/><path d="M73.6 -67.7A100 100 0 0 1 73.6 67.7A85 85 0 0 1 73.6 -67.7Z" fill="#D7CFFF"/><path d="M67.7 73.6A100 100 0 0 1 -67.7 73.6A85 85 0 0 1 67.7 73.6Z" fill="#F6F4EF"/><path d="M-73.6 67.7A100 100 0 0 1 -73.6 -67.7A85 85 0 0 1 -73.6 67.7Z" fill="#F6F4EF"/><g transform="translate(-27.61 -13)"><path d="M2.5 26V2.5H4.06A7.54 7.54 0 0 1 4.06 17.58H2.5M20.1 0V26M36.22 0V26M20.1 13H36.22M55.22 2.5H44.72V23.5H55.22M44.72 13H53.66" fill="none" stroke="#F6F4EF" stroke-width="5" stroke-linejoin="miter" stroke-linecap="butt"/></g></svg></div><p style="font-size:24px;font-weight:600">20 Seal</p></div>
+<div style="display:flex;flex-direction:column;gap:8px"><div style="height:130px;background:#5E44E8;border-radius:12px;display:flex;align-items:center;justify-content:center"><svg aria-label="21 P H E across" viewBox="-110 -110 220 220" width="220" height="220" style="width:104px;height:104px"><defs><mask id="ix" maskUnits="userSpaceOnUse" x="-110" y="-110" width="220" height="220"><rect x="-110" y="-110" width="220" height="220" fill="#fff"/><g transform="translate(-78.4 -19)"><path d="M3.5 38V3.5H5.78A11.02 11.02 0 0 1 5.78 25.54H3.5" fill="none" stroke="#000" stroke-width="7"/></g><g transform="translate(0.64 -19)"><path d="M78.86 3.5H63.36V34.5H78.86M63.36 19H76.58" fill="none" stroke="#000" stroke-width="7"/></g></mask></defs><g mask="url(#ix)"><path d="M-67.7 -73.6A100 100 0 0 1 67.7 -73.6A85 85 0 0 1 -67.7 -73.6Z" fill="#F6F4EF"/><path d="M73.6 -67.7A100 100 0 0 1 73.6 67.7A85 85 0 0 1 73.6 -67.7Z" fill="#D7CFFF"/><path d="M67.7 73.6A100 100 0 0 1 -67.7 73.6A85 85 0 0 1 67.7 73.6Z" fill="#F6F4EF"/><path d="M-73.6 67.7A100 100 0 0 1 -73.6 -67.7A85 85 0 0 1 -73.6 67.7Z" fill="#F6F4EF"/></g><g transform="translate(-40.08 -19)"><path d="M28.3 0V38M51.86 0V38M28.3 19H51.86" fill="none" stroke="#F6F4EF" stroke-width="7"/></g></svg></div><p style="font-size:24px;font-weight:600">21 P·H·E</p></div>
+<div style="display:flex;flex-direction:column;gap:8px"><div style="height:130px;background:#5E44E8;border-radius:12px;display:flex;align-items:center;justify-content:center"><svg aria-label="22 Hidden H" viewBox="-110 -110 220 220" width="220" height="220" style="width:104px;height:104px"><path d="M-67.7 -73.6A100 100 0 0 1 67.7 -73.6A85 85 0 0 1 -67.7 -73.6Z" fill="#F6F4EF"/><path d="M73.6 -67.7A100 100 0 0 1 73.6 67.7A85 85 0 0 1 73.6 -67.7Z" fill="#D7CFFF"/><path d="M67.7 73.6A100 100 0 0 1 -67.7 73.6A85 85 0 0 1 67.7 73.6Z" fill="#F6F4EF"/><path d="M-73.6 67.7A100 100 0 0 1 -73.6 -67.7A85 85 0 0 1 -73.6 67.7Z" fill="#F6F4EF"/><rect x="-62" y="-8" width="62" height="16" fill="#F6F4EF"/><rect x="0" y="-8" width="62" height="16" fill="#D7CFFF"/></svg></div><p style="font-size:24px;font-weight:600">22 Hidden H</p></div>
+<div style="display:flex;flex-direction:column;gap:8px"><div style="height:130px;background:#E9E4FF;border-radius:12px;display:flex;align-items:center;justify-content:center"><svg aria-label="23 App icon" viewBox="-130 -130 260 260" width="260" height="260" style="width:104px;height:104px"><rect x="-128" y="-128" width="256" height="256" rx="58" fill="#5E44E8"/><g transform="scale(0.72)"><path d="M-67.7 -73.6A100 100 0 0 1 67.7 -73.6A85 85 0 0 1 -67.7 -73.6Z" fill="#F6F4EF"/><path d="M73.6 -67.7A100 100 0 0 1 73.6 67.7A85 85 0 0 1 73.6 -67.7Z" fill="#D7CFFF"/><path d="M67.7 73.6A100 100 0 0 1 -67.7 73.6A85 85 0 0 1 67.7 73.6Z" fill="#F6F4EF"/><path d="M-73.6 67.7A100 100 0 0 1 -73.6 -67.7A85 85 0 0 1 -73.6 67.7Z" fill="#F6F4EF"/></g></svg></div><p style="font-size:24px;font-weight:600">23 App icon</p></div>
+<div style="display:flex;flex-direction:column;gap:8px"><div style="height:130px;background:#FFFFFF;border:1px solid #E2DEE9;border-radius:12px;display:flex;flex-direction:row;align-items:center;justify-content:center;gap:12px"><svg aria-label="24 Favicon at 48 px" viewBox="-118 -118 236 236" width="236" height="236" style="width:48px;height:48px"><rect x="-118" y="-118" width="236" height="236" rx="34" fill="#5E44E8"/><g transform="scale(0.86)"><path d="M-65.39 -75.66A100 100 0 0 1 65.39 -75.66A77.79 77.79 0 0 1 -65.39 -75.66Z" fill="#F6F4EF"/><path d="M75.66 -65.39A100 100 0 0 1 75.66 65.39A77.79 77.79 0 0 1 75.66 -65.39Z" fill="#D7CFFF"/><path d="M65.39 75.66A100 100 0 0 1 -65.39 75.66A77.79 77.79 0 0 1 65.39 75.66Z" fill="#F6F4EF"/><path d="M-75.66 65.39A100 100 0 0 1 -75.66 -65.39A77.79 77.79 0 0 1 -75.66 65.39Z" fill="#F6F4EF"/></g></svg><svg aria-label="Favicon at 32 px" viewBox="-118 -118 236 236" width="236" height="236" style="width:32px;height:32px"><rect x="-118" y="-118" width="236" height="236" rx="34" fill="#5E44E8"/><g transform="scale(0.86)"><path d="M-65.39 -75.66A100 100 0 0 1 65.39 -75.66A77.79 77.79 0 0 1 -65.39 -75.66Z" fill="#F6F4EF"/><path d="M75.66 -65.39A100 100 0 0 1 75.66 65.39A77.79 77.79 0 0 1 75.66 -65.39Z" fill="#D7CFFF"/><path d="M65.39 75.66A100 100 0 0 1 -65.39 75.66A77.79 77.79 0 0 1 65.39 75.66Z" fill="#F6F4EF"/><path d="M-75.66 65.39A100 100 0 0 1 -75.66 -65.39A77.79 77.79 0 0 1 -75.66 65.39Z" fill="#F6F4EF"/></g></svg><svg aria-label="Favicon at 16 px" viewBox="-118 -118 236 236" width="236" height="236" style="width:16px;height:16px"><rect x="-118" y="-118" width="236" height="236" rx="34" fill="#5E44E8"/><g transform="scale(0.86)"><path d="M-65.39 -75.66A100 100 0 0 1 65.39 -75.66A77.79 77.79 0 0 1 -65.39 -75.66Z" fill="#F6F4EF"/><path d="M75.66 -65.39A100 100 0 0 1 75.66 65.39A77.79 77.79 0 0 1 75.66 -65.39Z" fill="#D7CFFF"/><path d="M65.39 75.66A100 100 0 0 1 -65.39 75.66A77.79 77.79 0 0 1 65.39 75.66Z" fill="#F6F4EF"/><path d="M-75.66 65.39A100 100 0 0 1 -75.66 -65.39A77.79 77.79 0 0 1 -75.66 65.39Z" fill="#F6F4EF"/></g></svg></div><p style="font-size:24px;font-weight:600">24 Favicon</p></div>
+<div style="display:flex;flex-direction:column;gap:8px"><div style="height:130px;background:#5E44E8;border-radius:12px;overflow:hidden;display:flex;align-items:center;justify-content:center"><svg aria-label="25 Pattern" viewBox="0 0 600 440" width="600" height="440" style="width:177px;height:130px"><defs><g id="ixp" transform="scale(0.8)"><path d="M-67.7 -73.6A100 100 0 0 1 67.7 -73.6A85 85 0 0 1 -67.7 -73.6Z" fill="#7560EE"/><path d="M73.6 -67.7A100 100 0 0 1 73.6 67.7A85 85 0 0 1 73.6 -67.7Z" fill="#8D78F4"/><path d="M67.7 73.6A100 100 0 0 1 -67.7 73.6A85 85 0 0 1 67.7 73.6Z" fill="#7560EE"/><path d="M-73.6 67.7A100 100 0 0 1 -73.6 -67.7A85 85 0 0 1 -73.6 67.7Z" fill="#7560EE"/></g></defs><rect width="600" height="440" fill="#5E44E8"/><use href="#ixp" x="0" y="0"/><use href="#ixp" x="230" y="0"/><use href="#ixp" x="460" y="0"/><use href="#ixp" x="115" y="200"/><use href="#ixp" x="345" y="200"/><use href="#ixp" x="575" y="200"/><use href="#ixp" x="0" y="400"/><use href="#ixp" x="230" y="400"/><use href="#ixp" x="460" y="400"/></svg></div><p style="font-size:24px;font-weight:600">25 Pattern</p></div>
+<div style="display:flex;flex-direction:column;gap:8px"><div style="height:130px;background:#17112B;border-radius:12px;overflow:hidden;display:flex;align-items:center;justify-content:end"><svg aria-label="26 Super-graphic" viewBox="20 -100 180 200" width="180" height="200" style="width:117px;height:130px"><path d="M-67.7 -73.6A100 100 0 0 1 67.7 -73.6A85 85 0 0 1 -67.7 -73.6Z" fill="#F6F4EF"/><path d="M73.6 -67.7A100 100 0 0 1 73.6 67.7A85 85 0 0 1 73.6 -67.7Z" fill="#D7CFFF"/><path d="M67.7 73.6A100 100 0 0 1 -67.7 73.6A85 85 0 0 1 67.7 73.6Z" fill="#F6F4EF"/><path d="M-73.6 67.7A100 100 0 0 1 -73.6 -67.7A85 85 0 0 1 -73.6 67.7Z" fill="#F6F4EF"/></svg></div><p style="font-size:24px;font-weight:600">26 Crop</p></div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;color:#8A829C">PurpleHat Events · Identity exploration · 15</p>
+<aside>All 26 versions on one page, numbered as in the family slides. The outlined tile, 02 Core, is the master; every other version is drawn from it. This is a good slide to leave up while the team discusses favourites.</aside>
+</section>
+
+<section id="concepts-intro" data-transition="fade" style="background:#17112B;color:#F6F4EF;font-family:'Nunito Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:56px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;letter-spacing:4px;text-transform:uppercase;color:#D7CFFF">New directions</p>
+<h2 style="font-family:'Urbanist', Arial, sans-serif;font-size:96px;font-weight:800;line-height:1;letter-spacing:-2px;color:#F6F4EF">Thirty professional directions</h2>
+<p style="font-size:32px;line-height:1.4;color:#D9D3E6;width:1400px">Alternatives to the cap mark, held to the standard of a corporate identity: real typefaces, pure geometry and no illustration.</p>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:28px">
+<div style="display:flex;flex-direction:column;gap:14px;background:#2A2140;border-radius:16px;padding:40px">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;color:#D7CFFF">W01–W10</p>
+<h3 style="font-family:'Urbanist', Arial, sans-serif;font-size:44px;font-weight:700;color:#F6F4EF">Wordmarks</h3>
+<p style="font-size:26px;line-height:1.4;color:#D9D3E6">The name is the logo. Ten typefaces, each with one considered detail.</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:14px;background:#2A2140;border-radius:16px;padding:40px">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;color:#D7CFFF">L01–L10</p>
+<h3 style="font-family:'Urbanist', Arial, sans-serif;font-size:44px;font-weight:700;color:#F6F4EF">Lettermarks</h3>
+<p style="font-size:26px;line-height:1.4;color:#D9D3E6">P, H and E as compact marks for icons, profiles and stamps.</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:14px;background:#2A2140;border-radius:16px;padding:40px">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;color:#D7CFFF">S01–S10</p>
+<h3 style="font-family:'Urbanist', Arial, sans-serif;font-size:44px;font-weight:700;color:#F6F4EF">Symbols</h3>
+<p style="font-size:26px;line-height:1.4;color:#D9D3E6">A simple shape beside the name, drawn from the hat or the event.</p>
+</div>
+</div>
+<p style="font-size:28px;line-height:1.4;color:#F6F4EF">Rules for all thirty: no illustration · real typefaces only · at most three shapes · one accent colour.</p>
+<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;color:#8A829C">PurpleHat Events · Identity exploration · 16</p>
+<aside>These thirty directions sit alongside the cap mark as alternatives. They are deliberately restrained: a professional events, MICE and corporate firm needs an identity that looks established and trustworthy. Every letter here is drawn from a real typeface, converted to outlines, and every symbol uses no more than three simple shapes.</aside>
+</section>
+
+<section id="words-1" data-transition="fade" style="background:#F6F4EF;color:#17112B;font-family:'Nunito Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:36px">
+<div style="display:flex;flex-direction:column;gap:14px">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;letter-spacing:4px;text-transform:uppercase;color:#5E44E8">Wordmarks · W01–W05</p>
+<h2 style="font-family:'Urbanist', Arial, sans-serif;font-size:60px;font-weight:700;line-height:1.05;letter-spacing:-1px">The name is the logo</h2>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px 28px">
+<div style="display:flex;flex-direction:column;gap:10px"><div style="height:200px;background:#FBFAF7;border:1px solid #E2DEE9;border-radius:14px;display:flex;align-items:center;justify-content:center"><img src="../deck-gen/logos/W01.svg" alt="W01 Editorial wordmark" style="width:420px;height:140px;object-fit:contain"></div><h3 style="font-family:'Urbanist', Arial, sans-serif;font-size:28px;font-weight:700">W01 Editorial</h3><p style="font-size:24px;color:#4E4763">Instrument Serif, set tight.</p></div>
+<div style="display:flex;flex-direction:column;gap:10px"><div style="height:200px;background:#5E44E8;border-radius:14px;display:flex;align-items:center;justify-content:center"><img src="../deck-gen/logos/W02.svg" alt="W02 Roman and italic wordmark" style="width:420px;height:140px;object-fit:contain"></div><h3 style="font-family:'Urbanist', Arial, sans-serif;font-size:28px;font-weight:700">W02 Roman and italic</h3><p style="font-size:24px;color:#4E4763">Hat in italic: one quiet gesture.</p></div>
+<div style="display:flex;flex-direction:column;gap:10px"><div style="height:200px;background:#FBFAF7;border:1px solid #E2DEE9;border-radius:14px;display:flex;align-items:center;justify-content:center"><img src="../deck-gen/logos/W03.svg" alt="W03 Lowercase wordmark" style="width:420px;height:120px;object-fit:contain"></div><h3 style="font-family:'Urbanist', Arial, sans-serif;font-size:28px;font-weight:700">W03 Lowercase</h3><p style="font-size:24px;color:#4E4763">Manrope, lowercase, close-set.</p></div>
+<div style="display:flex;flex-direction:column;gap:10px"><div style="height:200px;background:#17112B;border-radius:14px;display:flex;align-items:center;justify-content:center"><img src="../deck-gen/logos/W04.svg" alt="W04 Light and bold wordmark" style="width:420px;height:120px;object-fit:contain"></div><h3 style="font-family:'Urbanist', Arial, sans-serif;font-size:28px;font-weight:700">W04 Light and bold</h3><p style="font-size:24px;color:#4E4763">Two weights, one name.</p></div>
+<div style="display:flex;flex-direction:column;gap:10px"><div style="height:200px;background:#5E44E8;border-radius:14px;display:flex;align-items:center;justify-content:center"><img src="../deck-gen/logos/W05.svg" alt="W05 Stacked wordmark" style="width:400px;height:150px;object-fit:contain"></div><h3 style="font-family:'Urbanist', Arial, sans-serif;font-size:28px;font-weight:700">W05 Stacked</h3><p style="font-size:24px;color:#4E4763">Inter Tight, stacked, tight leading.</p></div>
+<div style="display:flex;flex-direction:column;gap:14px;background:#17112B;border-radius:14px;padding:36px">
+<h3 style="font-family:'Urbanist', Arial, sans-serif;font-size:32px;font-weight:700;color:#F6F4EF">Why wordmarks</h3>
+<p style="font-size:24px;line-height:1.45;color:#D9D3E6">Most established firms lead with their name. It is clear, timeless and never needs explaining.</p>
+<p style="font-size:24px;line-height:1.45;color:#D7CFFF"><b>Rule:</b> one typeface, one detail.</p>
+</div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;color:#8A829C">PurpleHat Events · Identity exploration · 17</p>
+<aside>Five wordmarks. W01 is editorial and refined, W02 adds a single italic gesture on Hat, W03 is modern and approachable, W04 contrasts a light and a heavy weight, and W05 is a bold stacked block that works well in square formats. EVENTS is always set in spaced capitals as a quiet second line.</aside>
+</section>
+
+<section id="words-2" data-transition="fade" style="background:#F6F4EF;color:#17112B;font-family:'Nunito Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:36px">
+<div style="display:flex;flex-direction:column;gap:14px">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;letter-spacing:4px;text-transform:uppercase;color:#5E44E8">Wordmarks · W06–W10</p>
+<h2 style="font-family:'Urbanist', Arial, sans-serif;font-size:60px;font-weight:700;line-height:1.05;letter-spacing:-1px">Five more voices</h2>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px 28px">
+<div style="display:flex;flex-direction:column;gap:10px"><div style="height:200px;background:#FBFAF7;border:1px solid #E2DEE9;border-radius:14px;display:flex;align-items:center;justify-content:center"><img src="../deck-gen/logos/W06.svg" alt="W06 Hospitality capitals wordmark" style="width:420px;height:120px;object-fit:contain"></div><h3 style="font-family:'Urbanist', Arial, sans-serif;font-size:28px;font-weight:700">W06 Hospitality</h3><p style="font-size:24px;color:#4E4763">Spaced capitals with a hairline.</p></div>
+<div style="display:flex;flex-direction:column;gap:10px"><div style="height:200px;background:#17112B;border-radius:14px;display:flex;align-items:center;justify-content:center"><img src="../deck-gen/logos/W07.svg" alt="W07 Extended wordmark" style="width:420px;height:110px;object-fit:contain"></div><h3 style="font-family:'Urbanist', Arial, sans-serif;font-size:28px;font-weight:700">W07 Extended</h3><p style="font-size:24px;color:#4E4763">Wide and calm, for screens and stages.</p></div>
+<div style="display:flex;flex-direction:column;gap:10px"><div style="height:200px;background:#FBFAF7;border:1px solid #E2DEE9;border-radius:14px;display:flex;align-items:center;justify-content:center"><img src="../deck-gen/logos/W08.svg" alt="W08 Contemporary grotesk wordmark" style="width:420px;height:130px;object-fit:contain"></div><h3 style="font-family:'Urbanist', Arial, sans-serif;font-size:28px;font-weight:700">W08 Grotesk</h3><p style="font-size:24px;color:#4E4763">Bricolage: confident, with character.</p></div>
+<div style="display:flex;flex-direction:column;gap:10px"><div style="height:200px;background:#5E44E8;border-radius:14px;display:flex;align-items:center;justify-content:center"><img src="../deck-gen/logos/W09.svg" alt="W09 Gallery wordmark" style="width:420px;height:110px;object-fit:contain"></div><h3 style="font-family:'Urbanist', Arial, sans-serif;font-size:28px;font-weight:700">W09 Gallery</h3><p style="font-size:24px;color:#4E4763">Syne capitals: an arts voice.</p></div>
+<div style="display:flex;flex-direction:column;gap:10px"><div style="height:200px;background:#17112B;border-radius:14px;display:flex;align-items:center;justify-content:center"><img src="../deck-gen/logos/W10.svg" alt="W10 Classic wordmark" style="width:400px;height:150px;object-fit:contain"></div><h3 style="font-family:'Urbanist', Arial, sans-serif;font-size:28px;font-weight:700">W10 Classic</h3><p style="font-size:24px;color:#4E4763">Cormorant with an italic Events.</p></div>
+<div style="display:flex;flex-direction:column;gap:14px;background:#17112B;border-radius:14px;padding:36px">
+<h3 style="font-family:'Urbanist', Arial, sans-serif;font-size:32px;font-weight:700;color:#F6F4EF">Choosing a voice</h3>
+<p style="font-size:24px;line-height:1.45;color:#D9D3E6">Hospitality, technology, culture or luxury: the typeface sets the tone before anyone reads a word.</p>
+<p style="font-size:24px;line-height:1.45;color:#D7CFFF"><b>Rule:</b> EVENTS always secondary.</p>
+</div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;color:#8A829C">PurpleHat Events · Identity exploration · 18</p>
+<aside>W06 suits luxury hospitality and corporate dinners. W07 is the most technical and works best on screens and LED walls. W08 is contemporary and friendly without being casual. W09 leans towards arts and culture. W10 is the most traditional and premium, suited to weddings, galas and high-end corporate work.</aside>
+</section>
+
+<section id="letters-1" data-transition="fade" style="background:#F6F4EF;color:#17112B;font-family:'Nunito Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:36px">
+<div style="display:flex;flex-direction:column;gap:14px">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;letter-spacing:4px;text-transform:uppercase;color:#5E44E8">Lettermarks · L01–L05</p>
+<h2 style="font-family:'Urbanist', Arial, sans-serif;font-size:60px;font-weight:700;line-height:1.05;letter-spacing:-1px">Initials, made into a mark</h2>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px 28px">
+<div style="display:flex;flex-direction:column;gap:10px"><div style="height:200px;background:#5E44E8;border-radius:14px;display:flex;align-items:center;justify-content:center"><img src="../deck-gen/logos/L01.svg" alt="L01 PH ligature" style="width:260px;height:150px;object-fit:contain"></div><h3 style="font-family:'Urbanist', Arial, sans-serif;font-size:28px;font-weight:700">L01 PH ligature</h3><p style="font-size:24px;color:#4E4763">One stem; the bowl closes on the bar.</p></div>
+<div style="display:flex;flex-direction:column;gap:10px"><div style="height:200px;background:#FBFAF7;border:1px solid #E2DEE9;border-radius:14px;display:flex;align-items:center;justify-content:center"><img src="../deck-gen/logos/L02.svg" alt="L02 Serif monogram" style="width:260px;height:150px;object-fit:contain"></div><h3 style="font-family:'Urbanist', Arial, sans-serif;font-size:28px;font-weight:700">L02 Serif monogram</h3><p style="font-size:24px;color:#4E4763">P over H, with a fine gap.</p></div>
+<div style="display:flex;flex-direction:column;gap:10px"><div style="height:200px;background:#17112B;border-radius:14px;display:flex;align-items:center;justify-content:center"><img src="../deck-gen/logos/L03.svg" alt="L03 P in a disc" style="width:260px;height:150px;object-fit:contain"></div><h3 style="font-family:'Urbanist', Arial, sans-serif;font-size:28px;font-weight:700">L03 P in a disc</h3><p style="font-size:24px;color:#4E4763">A bold P cut from a solid disc.</p></div>
+<div style="display:flex;flex-direction:column;gap:10px"><div style="height:200px;background:#5E44E8;border-radius:14px;display:flex;align-items:center;justify-content:center"><img src="../deck-gen/logos/L04.svg" alt="L04 Block" style="width:260px;height:150px;object-fit:contain"></div><h3 style="font-family:'Urbanist', Arial, sans-serif;font-size:28px;font-weight:700">L04 Block</h3><p style="font-size:24px;color:#4E4763">PH set into a square, Swiss style.</p></div>
+<div style="display:flex;flex-direction:column;gap:10px"><div style="height:200px;background:#FBFAF7;border:1px solid #E2DEE9;border-radius:14px;display:flex;align-items:center;justify-content:center"><img src="../deck-gen/logos/L05.svg" alt="L05 Stencil" style="width:300px;height:130px;object-fit:contain"></div><h3 style="font-family:'Urbanist', Arial, sans-serif;font-size:28px;font-weight:700">L05 Stencil</h3><p style="font-size:24px;color:#4E4763">Stencil gaps recall the cap's seams.</p></div>
+<div style="display:flex;flex-direction:column;gap:14px;background:#17112B;border-radius:14px;padding:36px">
+<h3 style="font-family:'Urbanist', Arial, sans-serif;font-size:32px;font-weight:700;color:#F6F4EF">Why lettermarks</h3>
+<p style="font-size:24px;line-height:1.45;color:#D9D3E6">A compact sign for app icons, social profiles, stamps and embroidery, paired with a wordmark.</p>
+<p style="font-size:24px;line-height:1.45;color:#D7CFFF"><b>Rule:</b> no ornament, ever.</p>
+</div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;color:#8A829C">PurpleHat Events · Identity exploration · 19</p>
+<aside>Lettermarks give the brand a compact sign. L01 is the strongest geometric option and scales down well. L02 is a classic serif monogram, suited to premium print. L03 and L04 are bold and direct, ideal for app icons. L05 links back to the seams of the original cap concept.</aside>
+</section>
+
+<section id="letters-2" data-transition="fade" style="background:#F6F4EF;color:#17112B;font-family:'Nunito Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:36px">
+<div style="display:flex;flex-direction:column;gap:14px">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;letter-spacing:4px;text-transform:uppercase;color:#5E44E8">Lettermarks · L06–L10</p>
+<h2 style="font-family:'Urbanist', Arial, sans-serif;font-size:60px;font-weight:700;line-height:1.05;letter-spacing:-1px">Five more ways to sign</h2>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px 28px">
+<div style="display:flex;flex-direction:column;gap:10px"><div style="height:200px;background:#17112B;border-radius:14px;display:flex;align-items:center;justify-content:center"><img src="../deck-gen/logos/L06.svg" alt="L06 Geometric P" style="width:260px;height:150px;object-fit:contain"></div><h3 style="font-family:'Urbanist', Arial, sans-serif;font-size:28px;font-weight:700">L06 Geometric P</h3><p style="font-size:24px;color:#4E4763">A stem and a half circle.</p></div>
+<div style="display:flex;flex-direction:column;gap:10px"><div style="height:200px;background:#5E44E8;border-radius:14px;display:flex;align-items:center;justify-content:center"><img src="../deck-gen/logos/L07.svg" alt="L07 Italic Ph" style="width:260px;height:150px;object-fit:contain"></div><h3 style="font-family:'Urbanist', Arial, sans-serif;font-size:28px;font-weight:700">L07 Italic Ph</h3><p style="font-size:24px;color:#4E4763">Personal, like a signature.</p></div>
+<div style="display:flex;flex-direction:column;gap:10px"><div style="height:200px;background:#FBFAF7;border:1px solid #E2DEE9;border-radius:14px;display:flex;align-items:center;justify-content:center"><img src="../deck-gen/logos/L08.svg" alt="L08 H in a square" style="width:260px;height:150px;object-fit:contain"></div><h3 style="font-family:'Urbanist', Arial, sans-serif;font-size:28px;font-weight:700">L08 H in a square</h3><p style="font-size:24px;color:#4E4763">Two notches make a square an H.</p></div>
+<div style="display:flex;flex-direction:column;gap:10px"><div style="height:200px;background:#17112B;border-radius:14px;display:flex;align-items:center;justify-content:center"><img src="../deck-gen/logos/L09.svg" alt="L09 Seal" style="width:260px;height:150px;object-fit:contain"></div><h3 style="font-family:'Urbanist', Arial, sans-serif;font-size:28px;font-weight:700">L09 Seal</h3><p style="font-size:24px;color:#4E4763">PHE in a fine double ring.</p></div>
+<div style="display:flex;flex-direction:column;gap:10px"><div style="height:200px;background:#FBFAF7;border:1px solid #E2DEE9;border-radius:14px;display:flex;align-items:center;justify-content:center"><img src="../deck-gen/logos/L10.svg" alt="L10 Overlay" style="width:260px;height:150px;object-fit:contain"></div><h3 style="font-family:'Urbanist', Arial, sans-serif;font-size:28px;font-weight:700">L10 Overlay</h3><p style="font-size:24px;color:#4E4763">Overlapping P and H.</p></div>
+<div style="display:flex;flex-direction:column;gap:14px;background:#17112B;border-radius:14px;padding:36px">
+<h3 style="font-family:'Urbanist', Arial, sans-serif;font-size:32px;font-weight:700;color:#F6F4EF">Pairing</h3>
+<p style="font-size:24px;line-height:1.45;color:#D9D3E6">Each lettermark is paired with one of the wordmarks: serif with serif, geometric with geometric.</p>
+<p style="font-size:24px;line-height:1.45;color:#D7CFFF"><b>Rule:</b> one weight per mark.</p>
+</div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;color:#8A829C">PurpleHat Events · Identity exploration · 20</p>
+<aside>L06 is the purest geometric form. L07 is the most personal and works for a founder-led, boutique feel. L08 is a strong modernist block, very legible small. L09 suits contracts, certificates and invitations. L10 uses transparency and works best on screens.</aside>
+</section>
+
+<section id="symbols-1" data-transition="fade" style="background:#F6F4EF;color:#17112B;font-family:'Nunito Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:36px">
+<div style="display:flex;flex-direction:column;gap:14px">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;letter-spacing:4px;text-transform:uppercase;color:#5E44E8">Symbols · S01–S05</p>
+<h2 style="font-family:'Urbanist', Arial, sans-serif;font-size:60px;font-weight:700;line-height:1.05;letter-spacing:-1px">A simple shape beside the name</h2>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px 28px">
+<div style="display:flex;flex-direction:column;gap:10px"><div style="height:200px;background:#FBFAF7;border:1px solid #E2DEE9;border-radius:14px;display:flex;align-items:center;justify-content:center"><img src="../deck-gen/logos/S01.svg" alt="S01 Bowler symbol with wordmark" style="width:420px;height:110px;object-fit:contain"></div><h3 style="font-family:'Urbanist', Arial, sans-serif;font-size:28px;font-weight:700">S01 Bowler</h3><p style="font-size:24px;color:#4E4763">A dome over a line: hat, sunrise, venue.</p></div>
+<div style="display:flex;flex-direction:column;gap:10px"><div style="height:200px;background:#5E44E8;border-radius:14px;display:flex;align-items:center;justify-content:center"><img src="../deck-gen/logos/S02.svg" alt="S02 Seams symbol with wordmark" style="width:420px;height:110px;object-fit:contain"></div><h3 style="font-family:'Urbanist', Arial, sans-serif;font-size:28px;font-weight:700">S02 Seams</h3><p style="font-size:24px;color:#4E4763">The cap reduced to its four seams.</p></div>
+<div style="display:flex;flex-direction:column;gap:10px"><div style="height:200px;background:#17112B;border-radius:14px;display:flex;align-items:center;justify-content:center"><img src="../deck-gen/logos/S03.svg" alt="S03 Lens symbol with wordmark" style="width:420px;height:110px;object-fit:contain"></div><h3 style="font-family:'Urbanist', Arial, sans-serif;font-size:28px;font-weight:700">S03 Lens</h3><p style="font-size:24px;color:#4E4763">One panel of the cap, alone.</p></div>
+<div style="display:flex;flex-direction:column;gap:10px"><div style="height:200px;background:#FBFAF7;border:1px solid #E2DEE9;border-radius:14px;display:flex;align-items:center;justify-content:center"><img src="../deck-gen/logos/S04.svg" alt="S04 Eclipse symbol with wordmark" style="width:420px;height:110px;object-fit:contain"></div><h3 style="font-family:'Urbanist', Arial, sans-serif;font-size:28px;font-weight:700">S04 Eclipse</h3><p style="font-size:24px;color:#4E4763">A lavender crescent at the front.</p></div>
+<div style="display:flex;flex-direction:column;gap:10px"><div style="height:200px;background:#17112B;border-radius:14px;display:flex;align-items:center;justify-content:center"><img src="../deck-gen/logos/S05.svg" alt="S05 Spotlight symbol with wordmark" style="width:420px;height:110px;object-fit:contain"></div><h3 style="font-family:'Urbanist', Arial, sans-serif;font-size:28px;font-weight:700">S05 Spotlight</h3><p style="font-size:24px;color:#4E4763">A beam and its pool of light.</p></div>
+<div style="display:flex;flex-direction:column;gap:14px;background:#17112B;border-radius:14px;padding:36px">
+<h3 style="font-family:'Urbanist', Arial, sans-serif;font-size:32px;font-weight:700;color:#F6F4EF">Why symbols</h3>
+<p style="font-size:24px;line-height:1.45;color:#D9D3E6">A symbol can stand alone on stage screens and merch once people know it. Each is shown with a Manrope wordmark.</p>
+<p style="font-size:24px;line-height:1.45;color:#D7CFFF"><b>Rule:</b> three shapes at most.</p>
+</div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;color:#8A829C">PurpleHat Events · Identity exploration · 21</p>
+<aside>S01 Bowler is the simplest and most flexible of all the symbols. S02 Seams and S03 Lens are reductions of the original cap concept, so they keep its story. S04 Eclipse echoes the visor as a crescent. S05 Spotlight is the most event-specific.</aside>
+</section>
+
+<section id="symbols-2" data-transition="fade" style="background:#F6F4EF;color:#17112B;font-family:'Nunito Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:36px">
+<div style="display:flex;flex-direction:column;gap:14px">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;letter-spacing:4px;text-transform:uppercase;color:#5E44E8">Symbols · S06–S10</p>
+<h2 style="font-family:'Urbanist', Arial, sans-serif;font-size:60px;font-weight:700;line-height:1.05;letter-spacing:-1px">Five more shapes</h2>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px 28px">
+<div style="display:flex;flex-direction:column;gap:10px"><div style="height:200px;background:#5E44E8;border-radius:14px;display:flex;align-items:center;justify-content:center"><img src="../deck-gen/logos/S06.svg" alt="S06 Arena symbol with wordmark" style="width:420px;height:110px;object-fit:contain"></div><h3 style="font-family:'Urbanist', Arial, sans-serif;font-size:28px;font-weight:700">S06 Arena</h3><p style="font-size:24px;color:#4E4763">Rings of seats around a stage.</p></div>
+<div style="display:flex;flex-direction:column;gap:10px"><div style="height:200px;background:#FBFAF7;border:1px solid #E2DEE9;border-radius:14px;display:flex;align-items:center;justify-content:center"><img src="../deck-gen/logos/S07.svg" alt="S07 Arch symbol with wordmark" style="width:420px;height:110px;object-fit:contain"></div><h3 style="font-family:'Urbanist', Arial, sans-serif;font-size:28px;font-weight:700">S07 Arch</h3><p style="font-size:24px;color:#4E4763">A doorway: the way in.</p></div>
+<div style="display:flex;flex-direction:column;gap:10px"><div style="height:200px;background:#17112B;border-radius:14px;display:flex;align-items:center;justify-content:center"><img src="../deck-gen/logos/S08.svg" alt="S08 Contour symbol with wordmark" style="width:420px;height:110px;object-fit:contain"></div><h3 style="font-family:'Urbanist', Arial, sans-serif;font-size:28px;font-weight:700">S08 Contour</h3><p style="font-size:24px;color:#4E4763">One line traces a top hat.</p></div>
+<div style="display:flex;flex-direction:column;gap:10px"><div style="height:200px;background:#5E44E8;border-radius:14px;display:flex;align-items:center;justify-content:center"><img src="../deck-gen/logos/S09.svg" alt="S09 Silhouette symbol with wordmark" style="width:420px;height:110px;object-fit:contain"></div><h3 style="font-family:'Urbanist', Arial, sans-serif;font-size:28px;font-weight:700">S09 Silhouette</h3><p style="font-size:24px;color:#4E4763">A top hat in two rectangles.</p></div>
+<div style="display:flex;flex-direction:column;gap:10px"><div style="height:200px;background:#FBFAF7;border:1px solid #E2DEE9;border-radius:14px;display:flex;align-items:center;justify-content:center"><img src="../deck-gen/logos/S10.svg" alt="S10 Orbit symbol with wordmark" style="width:420px;height:110px;object-fit:contain"></div><h3 style="font-family:'Urbanist', Arial, sans-serif;font-size:28px;font-weight:700">S10 Orbit</h3><p style="font-size:24px;color:#4E4763">Each event is its own world.</p></div>
+<div style="display:flex;flex-direction:column;gap:14px;background:#17112B;border-radius:14px;padding:36px">
+<h3 style="font-family:'Urbanist', Arial, sans-serif;font-size:32px;font-weight:700;color:#F6F4EF">Restraint</h3>
+<p style="font-size:24px;line-height:1.45;color:#D9D3E6">Every symbol is geometry, not a drawing: it stays crisp from a favicon to a stage backdrop.</p>
+<p style="font-size:24px;line-height:1.45;color:#D7CFFF"><b>Rule:</b> one accent shape only.</p>
+</div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;color:#8A829C">PurpleHat Events · Identity exploration · 22</p>
+<aside>S06 Arena speaks to conferences and large audiences. S07 Arch is the calmest, an invitation in one shape. S08 Contour is a single continuous line, elegant on embossed or foiled print. S09 Silhouette is the most direct hat reference kept to pure geometry. S10 Orbit is the most imaginative of the set.</aside>
+</section>
+
+<section id="concepts-all" data-transition="fade" style="background:#F6F4EF;color:#17112B;font-family:'Nunito Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:30px">
+<div style="display:flex;flex-direction:column;gap:12px">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;letter-spacing:4px;text-transform:uppercase;color:#5E44E8">All thirty directions</p>
+<h2 style="font-family:'Urbanist', Arial, sans-serif;font-size:48px;font-weight:700;line-height:1.05;letter-spacing:-1px">Shortlist outlined: W01, W04, L01 and S01</h2>
+</div>
+<div style="display:grid;grid-template-columns:repeat(6, 1fr);gap:14px 16px">
+<div style="display:flex;flex-direction:column;gap:6px"><div style="height:84px;background:#FBFAF7;border-radius:10px;box-shadow:0 0 0 3px #F6F4EF, 0 0 0 6px #17112B;display:flex;align-items:center;justify-content:center"><img src="../deck-gen/logos/W01.svg" alt="W01" style="width:200px;height:62px;object-fit:contain"></div><p style="font-size:24px;font-weight:600">W01 Editorial</p></div>
+<div style="display:flex;flex-direction:column;gap:6px"><div style="height:84px;background:#5E44E8;border-radius:10px;display:flex;align-items:center;justify-content:center"><img src="../deck-gen/logos/W02.svg" alt="W02" style="width:200px;height:62px;object-fit:contain"></div><p style="font-size:24px;font-weight:600">W02 Italic</p></div>
+<div style="display:flex;flex-direction:column;gap:6px"><div style="height:84px;background:#FBFAF7;border-radius:10px;display:flex;align-items:center;justify-content:center"><img src="../deck-gen/logos/W03.svg" alt="W03" style="width:200px;height:56px;object-fit:contain"></div><p style="font-size:24px;font-weight:600">W03 Lowercase</p></div>
+<div style="display:flex;flex-direction:column;gap:6px"><div style="height:84px;background:#17112B;border-radius:10px;box-shadow:0 0 0 3px #F6F4EF, 0 0 0 6px #17112B;display:flex;align-items:center;justify-content:center"><img src="../deck-gen/logos/W04.svg" alt="W04" style="width:200px;height:56px;object-fit:contain"></div><p style="font-size:24px;font-weight:600">W04 Two weights</p></div>
+<div style="display:flex;flex-direction:column;gap:6px"><div style="height:84px;background:#5E44E8;border-radius:10px;display:flex;align-items:center;justify-content:center"><img src="../deck-gen/logos/W05.svg" alt="W05" style="width:200px;height:68px;object-fit:contain"></div><p style="font-size:24px;font-weight:600">W05 Stacked</p></div>
+<div style="display:flex;flex-direction:column;gap:6px"><div style="height:84px;background:#FBFAF7;border-radius:10px;display:flex;align-items:center;justify-content:center"><img src="../deck-gen/logos/W06.svg" alt="W06" style="width:200px;height:56px;object-fit:contain"></div><p style="font-size:24px;font-weight:600">W06 Hospitality</p></div>
+<div style="display:flex;flex-direction:column;gap:6px"><div style="height:84px;background:#17112B;border-radius:10px;display:flex;align-items:center;justify-content:center"><img src="../deck-gen/logos/W07.svg" alt="W07" style="width:200px;height:52px;object-fit:contain"></div><p style="font-size:24px;font-weight:600">W07 Extended</p></div>
+<div style="display:flex;flex-direction:column;gap:6px"><div style="height:84px;background:#FBFAF7;border-radius:10px;display:flex;align-items:center;justify-content:center"><img src="../deck-gen/logos/W08.svg" alt="W08" style="width:200px;height:60px;object-fit:contain"></div><p style="font-size:24px;font-weight:600">W08 Grotesk</p></div>
+<div style="display:flex;flex-direction:column;gap:6px"><div style="height:84px;background:#5E44E8;border-radius:10px;display:flex;align-items:center;justify-content:center"><img src="../deck-gen/logos/W09.svg" alt="W09" style="width:200px;height:52px;object-fit:contain"></div><p style="font-size:24px;font-weight:600">W09 Gallery</p></div>
+<div style="display:flex;flex-direction:column;gap:6px"><div style="height:84px;background:#17112B;border-radius:10px;display:flex;align-items:center;justify-content:center"><img src="../deck-gen/logos/W10.svg" alt="W10" style="width:200px;height:68px;object-fit:contain"></div><p style="font-size:24px;font-weight:600">W10 Classic</p></div>
+<div style="display:flex;flex-direction:column;gap:6px"><div style="height:84px;background:#5E44E8;border-radius:10px;box-shadow:0 0 0 3px #F6F4EF, 0 0 0 6px #17112B;display:flex;align-items:center;justify-content:center"><img src="../deck-gen/logos/L01.svg" alt="L01" style="width:120px;height:66px;object-fit:contain"></div><p style="font-size:24px;font-weight:600">L01 PH</p></div>
+<div style="display:flex;flex-direction:column;gap:6px"><div style="height:84px;background:#FBFAF7;border-radius:10px;display:flex;align-items:center;justify-content:center"><img src="../deck-gen/logos/L02.svg" alt="L02" style="width:120px;height:66px;object-fit:contain"></div><p style="font-size:24px;font-weight:600">L02 Monogram</p></div>
+<div style="display:flex;flex-direction:column;gap:6px"><div style="height:84px;background:#17112B;border-radius:10px;display:flex;align-items:center;justify-content:center"><img src="../deck-gen/logos/L03.svg" alt="L03" style="width:120px;height:66px;object-fit:contain"></div><p style="font-size:24px;font-weight:600">L03 Disc</p></div>
+<div style="display:flex;flex-direction:column;gap:6px"><div style="height:84px;background:#5E44E8;border-radius:10px;display:flex;align-items:center;justify-content:center"><img src="../deck-gen/logos/L04.svg" alt="L04" style="width:120px;height:66px;object-fit:contain"></div><p style="font-size:24px;font-weight:600">L04 Block</p></div>
+<div style="display:flex;flex-direction:column;gap:6px"><div style="height:84px;background:#FBFAF7;border-radius:10px;display:flex;align-items:center;justify-content:center"><img src="../deck-gen/logos/L05.svg" alt="L05" style="width:140px;height:60px;object-fit:contain"></div><p style="font-size:24px;font-weight:600">L05 Stencil</p></div>
+<div style="display:flex;flex-direction:column;gap:6px"><div style="height:84px;background:#17112B;border-radius:10px;display:flex;align-items:center;justify-content:center"><img src="../deck-gen/logos/L06.svg" alt="L06" style="width:120px;height:66px;object-fit:contain"></div><p style="font-size:24px;font-weight:600">L06 Geometric</p></div>
+<div style="display:flex;flex-direction:column;gap:6px"><div style="height:84px;background:#5E44E8;border-radius:10px;display:flex;align-items:center;justify-content:center"><img src="../deck-gen/logos/L07.svg" alt="L07" style="width:120px;height:66px;object-fit:contain"></div><p style="font-size:24px;font-weight:600">L07 Italic</p></div>
+<div style="display:flex;flex-direction:column;gap:6px"><div style="height:84px;background:#FBFAF7;border-radius:10px;display:flex;align-items:center;justify-content:center"><img src="../deck-gen/logos/L08.svg" alt="L08" style="width:120px;height:66px;object-fit:contain"></div><p style="font-size:24px;font-weight:600">L08 Square H</p></div>
+<div style="display:flex;flex-direction:column;gap:6px"><div style="height:84px;background:#17112B;border-radius:10px;display:flex;align-items:center;justify-content:center"><img src="../deck-gen/logos/L09.svg" alt="L09" style="width:120px;height:66px;object-fit:contain"></div><p style="font-size:24px;font-weight:600">L09 Seal</p></div>
+<div style="display:flex;flex-direction:column;gap:6px"><div style="height:84px;background:#FBFAF7;border-radius:10px;display:flex;align-items:center;justify-content:center"><img src="../deck-gen/logos/L10.svg" alt="L10" style="width:120px;height:66px;object-fit:contain"></div><p style="font-size:24px;font-weight:600">L10 Overlay</p></div>
+<div style="display:flex;flex-direction:column;gap:6px"><div style="height:84px;background:#FBFAF7;border-radius:10px;box-shadow:0 0 0 3px #F6F4EF, 0 0 0 6px #17112B;display:flex;align-items:center;justify-content:center"><img src="../deck-gen/logos/S01.svg" alt="S01" style="width:200px;height:52px;object-fit:contain"></div><p style="font-size:24px;font-weight:600">S01 Bowler</p></div>
+<div style="display:flex;flex-direction:column;gap:6px"><div style="height:84px;background:#5E44E8;border-radius:10px;display:flex;align-items:center;justify-content:center"><img src="../deck-gen/logos/S02.svg" alt="S02" style="width:200px;height:52px;object-fit:contain"></div><p style="font-size:24px;font-weight:600">S02 Seams</p></div>
+<div style="display:flex;flex-direction:column;gap:6px"><div style="height:84px;background:#17112B;border-radius:10px;display:flex;align-items:center;justify-content:center"><img src="../deck-gen/logos/S03.svg" alt="S03" style="width:200px;height:52px;object-fit:contain"></div><p style="font-size:24px;font-weight:600">S03 Lens</p></div>
+<div style="display:flex;flex-direction:column;gap:6px"><div style="height:84px;background:#FBFAF7;border-radius:10px;display:flex;align-items:center;justify-content:center"><img src="../deck-gen/logos/S04.svg" alt="S04" style="width:200px;height:52px;object-fit:contain"></div><p style="font-size:24px;font-weight:600">S04 Eclipse</p></div>
+<div style="display:flex;flex-direction:column;gap:6px"><div style="height:84px;background:#17112B;border-radius:10px;display:flex;align-items:center;justify-content:center"><img src="../deck-gen/logos/S05.svg" alt="S05" style="width:200px;height:52px;object-fit:contain"></div><p style="font-size:24px;font-weight:600">S05 Spotlight</p></div>
+<div style="display:flex;flex-direction:column;gap:6px"><div style="height:84px;background:#5E44E8;border-radius:10px;display:flex;align-items:center;justify-content:center"><img src="../deck-gen/logos/S06.svg" alt="S06" style="width:200px;height:52px;object-fit:contain"></div><p style="font-size:24px;font-weight:600">S06 Arena</p></div>
+<div style="display:flex;flex-direction:column;gap:6px"><div style="height:84px;background:#FBFAF7;border-radius:10px;display:flex;align-items:center;justify-content:center"><img src="../deck-gen/logos/S07.svg" alt="S07" style="width:200px;height:52px;object-fit:contain"></div><p style="font-size:24px;font-weight:600">S07 Arch</p></div>
+<div style="display:flex;flex-direction:column;gap:6px"><div style="height:84px;background:#17112B;border-radius:10px;display:flex;align-items:center;justify-content:center"><img src="../deck-gen/logos/S08.svg" alt="S08" style="width:200px;height:52px;object-fit:contain"></div><p style="font-size:24px;font-weight:600">S08 Contour</p></div>
+<div style="display:flex;flex-direction:column;gap:6px"><div style="height:84px;background:#5E44E8;border-radius:10px;display:flex;align-items:center;justify-content:center"><img src="../deck-gen/logos/S09.svg" alt="S09" style="width:200px;height:52px;object-fit:contain"></div><p style="font-size:24px;font-weight:600">S09 Silhouette</p></div>
+<div style="display:flex;flex-direction:column;gap:6px"><div style="height:84px;background:#FBFAF7;border-radius:10px;display:flex;align-items:center;justify-content:center"><img src="../deck-gen/logos/S10.svg" alt="S10" style="width:200px;height:52px;object-fit:contain"></div><p style="font-size:24px;font-weight:600">S10 Orbit</p></div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;color:#8A829C">PurpleHat Events · Identity exploration · 23</p>
+<aside>All thirty directions on one page, with four outlined as our shortlist. W01 Editorial is the most refined serif option; W04 is the strongest modern sans. L01 is a compact sign that scales from favicon to signage. S01 Bowler is the simplest symbol and carries the hat idea without becoming a drawing. A likely system pairs one wordmark with one mark.</aside>
+</section>
+
+<section id="colour" data-transition="fade" style="background:#F6F4EF;color:#17112B;font-family:'Nunito Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:48px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;letter-spacing:4px;text-transform:uppercase;color:#5E44E8">Colour</p>
+<h2 style="font-family:'Urbanist', Arial, sans-serif;font-size:72px;font-weight:700;line-height:1.05;letter-spacing:-1px">Four colours, each with one job</h2>
+</div>
+<div style="display:flex;gap:24px">
+<div style="flex:1;display:flex;flex-direction:column;gap:14px">
+<div style="height:250px;background:#5E44E8;border-radius:16px"></div>
+<h3 style="font-family:'Urbanist', Arial, sans-serif;font-size:36px;font-weight:700">Purple</h3>
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;color:#5E44E8">#5E44E8</p>
+<p style="font-size:26px;line-height:1.4;color:#4E4763">The ground. Backgrounds, and the crown on white.</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:14px">
+<div style="height:250px;background:#F6F4EF;border:1px solid #D9D3E6;border-radius:16px"></div>
+<h3 style="font-family:'Urbanist', Arial, sans-serif;font-size:36px;font-weight:700">Crown</h3>
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;color:#5E44E8">#F6F4EF</p>
+<p style="font-size:26px;line-height:1.4;color:#4E4763">The three crown panels. A warm white, never pure white.</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:14px">
+<div style="height:250px;background:#D7CFFF;border-radius:16px"></div>
+<h3 style="font-family:'Urbanist', Arial, sans-serif;font-size:36px;font-weight:700">Visor</h3>
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;color:#5E44E8">#D7CFFF</p>
+<p style="font-size:26px;line-height:1.4;color:#4E4763">The visor only. The single accent in the mark.</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:14px">
+<div style="height:250px;background:#17112B;border-radius:16px"></div>
+<h3 style="font-family:'Urbanist', Arial, sans-serif;font-size:36px;font-weight:700">Ink</h3>
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;color:#5E44E8">#17112B</p>
+<p style="font-size:26px;line-height:1.4;color:#4E4763">Text, the one-colour mark, and dark stages.</p>
+</div>
+</div>
+<p style="font-size:26px;line-height:1.4;color:#4E4763">Contrast: crown on purple 5.5:1 · visor on purple 4.1:1 · crown on ink 16.5:1. Print values (CMYK, Pantone) to be matched on a proof.</p>
+<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;color:#8A829C">PurpleHat Events · Identity exploration · 24</p>
+<aside>The palette is deliberately small. Purple is the brand ground, the warm white keeps the crown from looking cold, lavender belongs only to the visor, and ink handles text and single-colour use. The contrast ratios are calculated from the screen colours. Printed colours need to be matched on a physical proof before the guidelines are final.</aside>
+</section>
+
+<section id="type" data-transition="fade" style="background:#17112B;color:#F6F4EF;font-family:'Nunito Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:48px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;letter-spacing:4px;text-transform:uppercase;color:#D7CFFF">Typography</p>
+<h2 style="font-family:'Urbanist', Arial, sans-serif;font-size:72px;font-weight:700;line-height:1.05;letter-spacing:-1px;color:#F6F4EF">Type that shares the circle</h2>
+</div>
+<p style="font-family:'Urbanist', Arial, sans-serif;font-size:200px;font-weight:800;line-height:1;letter-spacing:-6px;color:#F6F4EF">PurpleHat</p>
+<div style="display:flex;gap:40px">
+<div style="flex:1;display:flex;flex-direction:column;gap:12px;border-top:2px solid #3A3150;padding:24px 0 0 0">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;color:#D7CFFF">DISPLAY · URBANIST</p>
+<p style="font-size:26px;line-height:1.45;color:#D9D3E6">Round bowls that echo the mark. Headlines and the base for a custom wordmark.</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:12px;border-top:2px solid #3A3150;padding:24px 0 0 0">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;color:#D7CFFF">TEXT · NUNITO SANS</p>
+<p style="font-size:26px;line-height:1.45;color:#D9D3E6">Warm and easy to read. Proposals, websites, captions.</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:12px;border-top:2px solid #3A3150;padding:24px 0 0 0">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;color:#D7CFFF">LABELS · IBM PLEX MONO</p>
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;line-height:1.5;color:#D9D3E6">Times, dates, halls: 8 PM · HALL 2 · 12.10.26</p>
+</div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;color:#8A829C">PurpleHat Events · Identity exploration · 25</p>
+<aside>All three fonts are free Google Fonts, so they work everywhere at no cost. The wordmark shown here is typeset in Urbanist. For the final logo we would redraw it by hand: tune the spacing, join the P and H rhythm, and match the stroke weight to the panels so the name and the mark feel like one piece.</aside>
+</section>
+
+<section id="space" data-transition="fade" style="background:#FFFFFF;color:#17112B;font-family:'Nunito Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:row;align-items:center;gap:96px">
+<svg aria-label="Clear space: one panel depth on every side of the mark" viewBox="-180 -180 360 360" width="360" height="360" style="width:640px;height:640px"><rect x="-160" y="-160" width="320" height="320" fill="#F3F0FF" stroke="#A996FF" stroke-width="1.2" stroke-dasharray="5 4"/><rect x="-100" y="-100" width="200" height="200" fill="#FFFFFF"/><rect x="100" y="-12" width="60" height="24" fill="#D7CFFF"/><rect x="-12" y="-160" width="24" height="60" fill="#D7CFFF"/><path d="M-67.7 -73.6A100 100 0 0 1 67.7 -73.6A85 85 0 0 1 -67.7 -73.6Z" fill="#5E44E8"/><path d="M73.6 -67.7A100 100 0 0 1 73.6 67.7A85 85 0 0 1 73.6 -67.7Z" fill="#A996FF"/><path d="M67.7 73.6A100 100 0 0 1 -67.7 73.6A85 85 0 0 1 67.7 73.6Z" fill="#5E44E8"/><path d="M-73.6 67.7A100 100 0 0 1 -73.6 -67.7A85 85 0 0 1 -73.6 67.7Z" fill="#5E44E8"/></svg>
+<div style="flex:1;display:flex;flex-direction:column;gap:28px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;letter-spacing:4px;text-transform:uppercase;color:#5E44E8">Space and size</p>
+<h2 style="font-family:'Urbanist', Arial, sans-serif;font-size:64px;font-weight:700;line-height:1.05;letter-spacing:-1px">Room to breathe, never too small</h2>
+</div>
+<p style="font-size:28px;line-height:1.45;color:#4E4763">Clear space on every side equals one panel depth: 30% of the mark's width, shown by the lavender bars.</p>
+<table style="font-size:26px;color:#17112B">
+<tr><th style="width:58%">Version</th><th style="width:42%">Smallest size</th></tr>
+<tr><td>02 Core</td><td>24 px · 8 mm</td></tr>
+<tr><td>06 Bold seam</td><td>16 px · 5 mm</td></tr>
+<tr><td>17 Horizontal lockup</td><td>120 px · 30 mm wide</td></tr>
+<tr><td>08 Stitch</td><td>40 mm across</td></tr>
+<tr><td>20–22 Monograms</td><td>48 px · 15 mm</td></tr>
+</table>
+<p style="font-size:24px;line-height:1.4;color:#6A6380">Print and embroidery sizes are starting points; confirm them on a test with your printer and embroiderer.</p>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;color:#8A829C">PurpleHat Events · Identity exploration · 26</p>
+<aside>Clear space is measured with the mark itself, so it scales with any size: one panel depth on every side. The minimum sizes come from the size tests: the core mark's seams start to close below 24 pixels, which is why the bold-seam version exists for favicons. The physical sizes need checking on real samples.</aside>
+</section>
+
+<section id="donts" data-transition="fade" style="background:#F6F4EF;color:#17112B;font-family:'Nunito Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:56px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;letter-spacing:4px;text-transform:uppercase;color:#5E44E8">Misuse</p>
+<h2 style="font-family:'Urbanist', Arial, sans-serif;font-size:72px;font-weight:700;line-height:1.05;letter-spacing:-1px">Six things never to do</h2>
+</div>
+<div style="display:flex;gap:24px">
+<div style="flex:1;display:flex;flex-direction:column;gap:16px">
+<div style="height:250px;background:#5E44E8;border-radius:16px;display:flex;align-items:center;justify-content:center"><svg aria-label="Rotated mark with the visor at the bottom" viewBox="-110 -110 220 220" width="220" height="220" style="width:180px;height:180px"><g transform="rotate(90)"><path d="M-67.7 -73.6A100 100 0 0 1 67.7 -73.6A85 85 0 0 1 -67.7 -73.6Z" fill="#F6F4EF"/><path d="M73.6 -67.7A100 100 0 0 1 73.6 67.7A85 85 0 0 1 73.6 -67.7Z" fill="#D7CFFF"/><path d="M67.7 73.6A100 100 0 0 1 -67.7 73.6A85 85 0 0 1 67.7 73.6Z" fill="#F6F4EF"/><path d="M-73.6 67.7A100 100 0 0 1 -73.6 -67.7A85 85 0 0 1 -73.6 67.7Z" fill="#F6F4EF"/></g></svg></div>
+<h3 style="font-family:'Urbanist', Arial, sans-serif;font-size:32px;font-weight:700">Don't rotate it</h3>
+<p style="font-size:24px;line-height:1.4;color:#4E4763">The visor always faces right.</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:16px">
+<div style="height:250px;background:#5E44E8;border-radius:16px;display:flex;align-items:center;justify-content:center"><svg aria-label="Mark with each panel in a different bright colour" viewBox="-110 -110 220 220" width="220" height="220" style="width:180px;height:180px"><path d="M-67.7 -73.6A100 100 0 0 1 67.7 -73.6A85 85 0 0 1 -67.7 -73.6Z" fill="#FFB547"/><path d="M73.6 -67.7A100 100 0 0 1 73.6 67.7A85 85 0 0 1 73.6 -67.7Z" fill="#FF5D72"/><path d="M67.7 73.6A100 100 0 0 1 -67.7 73.6A85 85 0 0 1 67.7 73.6Z" fill="#3DD6A3"/><path d="M-73.6 67.7A100 100 0 0 1 -73.6 -67.7A85 85 0 0 1 -73.6 67.7Z" fill="#5BB8FF"/></svg></div>
+<h3 style="font-family:'Urbanist', Arial, sans-serif;font-size:32px;font-weight:700">Don't recolour</h3>
+<p style="font-size:24px;line-height:1.4;color:#4E4763">One crown tone, one visor accent.</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:16px">
+<div style="height:250px;background:#5E44E8;border-radius:16px;display:flex;align-items:center;justify-content:center"><svg aria-label="Mark stretched wide" viewBox="-110 -110 220 220" width="220" height="220" preserveAspectRatio="none" style="width:220px;height:130px"><path d="M-67.7 -73.6A100 100 0 0 1 67.7 -73.6A85 85 0 0 1 -67.7 -73.6Z" fill="#F6F4EF"/><path d="M73.6 -67.7A100 100 0 0 1 73.6 67.7A85 85 0 0 1 73.6 -67.7Z" fill="#D7CFFF"/><path d="M67.7 73.6A100 100 0 0 1 -67.7 73.6A85 85 0 0 1 67.7 73.6Z" fill="#F6F4EF"/><path d="M-73.6 67.7A100 100 0 0 1 -73.6 -67.7A85 85 0 0 1 -73.6 67.7Z" fill="#F6F4EF"/></svg></div>
+<h3 style="font-family:'Urbanist', Arial, sans-serif;font-size:32px;font-weight:700">Don't stretch</h3>
+<p style="font-size:24px;line-height:1.4;color:#4E4763">Scale it evenly, always.</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:16px">
+<div style="height:250px;background:#FFFFFF;border:1px solid #E2DEE9;border-radius:16px;display:flex;align-items:center;justify-content:center"><svg aria-label="Pale mark on white with very low contrast" viewBox="-110 -110 220 220" width="220" height="220" style="width:180px;height:180px"><path d="M-67.7 -73.6A100 100 0 0 1 67.7 -73.6A85 85 0 0 1 -67.7 -73.6Z" fill="#E9E4FF"/><path d="M73.6 -67.7A100 100 0 0 1 73.6 67.7A85 85 0 0 1 73.6 -67.7Z" fill="#F3F0FF"/><path d="M67.7 73.6A100 100 0 0 1 -67.7 73.6A85 85 0 0 1 67.7 73.6Z" fill="#E9E4FF"/><path d="M-73.6 67.7A100 100 0 0 1 -73.6 -67.7A85 85 0 0 1 -73.6 67.7Z" fill="#E9E4FF"/></svg></div>
+<h3 style="font-family:'Urbanist', Arial, sans-serif;font-size:32px;font-weight:700">Don't fade it</h3>
+<p style="font-size:24px;line-height:1.4;color:#4E4763">Keep strong contrast with the ground.</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:16px">
+<div style="height:250px;background:#5E44E8;border-radius:16px;display:flex;align-items:center;justify-content:center"><svg aria-label="Mark mixing outlined and solid panels" viewBox="-110 -110 220 220" width="220" height="220" style="width:180px;height:180px"><path d="M-67.7 -73.6A100 100 0 0 1 67.7 -73.6A85 85 0 0 1 -67.7 -73.6Z" fill="#F6F4EF"/><path d="M73.6 -67.7A100 100 0 0 1 73.6 67.7A85 85 0 0 1 73.6 -67.7Z" fill="none" stroke="#F6F4EF" stroke-width="5"/><path d="M67.7 73.6A100 100 0 0 1 -67.7 73.6A85 85 0 0 1 67.7 73.6Z" fill="#F6F4EF"/><path d="M-73.6 67.7A100 100 0 0 1 -73.6 -67.7A85 85 0 0 1 -73.6 67.7Z" fill="none" stroke="#F6F4EF" stroke-width="5"/></svg></div>
+<h3 style="font-family:'Urbanist', Arial, sans-serif;font-size:32px;font-weight:700">Don't mix styles</h3>
+<p style="font-size:24px;line-height:1.4;color:#4E4763">All solid or all line, never both.</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:16px">
+<div style="height:250px;background:#5E44E8;border-radius:16px;display:flex;align-items:center;justify-content:center"><svg aria-label="Mark with extra seams cut into the panels" viewBox="-110 -110 220 220" width="220" height="220" style="width:180px;height:180px"><path d="M-67.7 -73.6A100 100 0 0 1 67.7 -73.6A85 85 0 0 1 -67.7 -73.6Z" fill="#F6F4EF"/><path d="M73.6 -67.7A100 100 0 0 1 73.6 67.7A85 85 0 0 1 73.6 -67.7Z" fill="#D7CFFF"/><path d="M67.7 73.6A100 100 0 0 1 -67.7 73.6A85 85 0 0 1 67.7 73.6Z" fill="#F6F4EF"/><path d="M-73.6 67.7A100 100 0 0 1 -73.6 -67.7A85 85 0 0 1 -73.6 67.7Z" fill="#F6F4EF"/><path d="M0 -104V-58M0 58V104M-104 0H-58" stroke="#5E44E8" stroke-width="6"/></svg></div>
+<h3 style="font-family:'Urbanist', Arial, sans-serif;font-size:32px;font-weight:700">Don't add seams</h3>
+<p style="font-size:24px;line-height:1.4;color:#4E4763">Four seams, always.</p>
+</div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;color:#8A829C">PurpleHat Events · Identity exploration · 27</p>
+<aside>Each of these breaks one of the five rules without a reason. Rotating moves the visor away from the front. Recolouring turns the crown into four separate things. Stretching breaks the circle. Low contrast makes it disappear. Mixing outline and solid confuses two styles. Extra seams were tested and dropped earlier, so they are listed here to stop them coming back.</aside>
+</section>
+
+<section id="in-use" data-transition="fade" style="background:#17112B;color:#F6F4EF;font-family:'Nunito Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:56px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;letter-spacing:4px;text-transform:uppercase;color:#D7CFFF">In use</p>
+<h2 style="font-family:'Urbanist', Arial, sans-serif;font-size:72px;font-weight:700;line-height:1.05;letter-spacing:-1px;color:#F6F4EF">Where it will live</h2>
+</div>
+<div style="display:flex;gap:24px">
+<div style="flex:1;display:flex;flex-direction:column;gap:18px">
+<div style="height:380px;background:#2A2140;border-radius:16px;display:flex;align-items:center;justify-content:center">
+<div style="width:300px;height:300px;background:#4B35C9;border-radius:50%;box-shadow:0 16px 40px rgba(0,0,0,0.45);display:flex;align-items:center;justify-content:center"><svg aria-label="Stitched mark on the top of a cap" viewBox="-110 -110 220 220" width="220" height="220" style="width:150px;height:150px"><path d="M-67.7 -73.6A100 100 0 0 1 67.7 -73.6A85 85 0 0 1 -67.7 -73.6Z" fill="#F6F4EF"/><path d="M73.6 -67.7A100 100 0 0 1 73.6 67.7A85 85 0 0 1 73.6 -67.7Z" fill="#D7CFFF"/><path d="M67.7 73.6A100 100 0 0 1 -67.7 73.6A85 85 0 0 1 67.7 73.6Z" fill="#F6F4EF"/><path d="M-73.6 67.7A100 100 0 0 1 -73.6 -67.7A85 85 0 0 1 -73.6 67.7Z" fill="#F6F4EF"/><path d="M-44 -76.21A88 88 0 0 1 44 -76.21M76.21 -44A88 88 0 0 1 76.21 44M44 76.21A88 88 0 0 1 -44 76.21M-76.21 44A88 88 0 0 1 -76.21 -44" fill="none" stroke="#4B35C9" stroke-width="2.6" stroke-dasharray="5 4" stroke-linecap="round"/></svg></div>
+</div>
+<h3 style="font-family:'Urbanist', Arial, sans-serif;font-size:32px;font-weight:700;color:#F6F4EF">The cap</h3>
+<p style="font-size:24px;line-height:1.4;color:#D9D3E6">08 Stitch on top of a purple cap: the logo, worn the way it was drawn.</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:18px">
+<div style="height:380px;background:#2A2140;border-radius:16px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px">
+<div style="width:200px;height:200px;background:#5E44E8;border-radius:50%;display:flex;align-items:center;justify-content:center"><svg aria-label="Profile picture" viewBox="-110 -110 220 220" width="220" height="220" style="width:140px;height:140px"><path d="M-67.7 -73.6A100 100 0 0 1 67.7 -73.6A85 85 0 0 1 -67.7 -73.6Z" fill="#F6F4EF"/><path d="M73.6 -67.7A100 100 0 0 1 73.6 67.7A85 85 0 0 1 73.6 -67.7Z" fill="#D7CFFF"/><path d="M67.7 73.6A100 100 0 0 1 -67.7 73.6A85 85 0 0 1 67.7 73.6Z" fill="#F6F4EF"/><path d="M-73.6 67.7A100 100 0 0 1 -73.6 -67.7A85 85 0 0 1 -73.6 67.7Z" fill="#F6F4EF"/></svg></div>
+<p style="font-size:26px;font-weight:700;color:#F6F4EF">PurpleHat Events</p>
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;color:#B8B0CC">@[your handle]</p>
+</div>
+<h3 style="font-family:'Urbanist', Arial, sans-serif;font-size:32px;font-weight:700;color:#F6F4EF">Social profile</h3>
+<p style="font-size:24px;line-height:1.4;color:#D9D3E6">The round mark fills a circle crop with nothing cut off.</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:18px">
+<div style="height:380px;background:#0D0A18;border-radius:16px;overflow:hidden;display:flex;flex-direction:row;align-items:center;justify-content:space-between;padding:0 0 0 36px">
+<div style="display:flex;flex-direction:column;gap:8px">
+<p style="font-family:'Urbanist', Arial, sans-serif;font-size:48px;font-weight:800;line-height:1;color:#F6F4EF">Welcome</p>
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;color:#D7CFFF">HALL 2</p>
+</div>
+<svg aria-label="Super-graphic on an LED wall" viewBox="20 -100 180 200" width="180" height="200" style="width:230px;height:255.56px"><path d="M-67.7 -73.6A100 100 0 0 1 67.7 -73.6A85 85 0 0 1 -67.7 -73.6Z" fill="#5E44E8"/><path d="M73.6 -67.7A100 100 0 0 1 73.6 67.7A85 85 0 0 1 73.6 -67.7Z" fill="#D7CFFF"/><path d="M67.7 73.6A100 100 0 0 1 -67.7 73.6A85 85 0 0 1 67.7 73.6Z" fill="#5E44E8"/><path d="M-73.6 67.7A100 100 0 0 1 -73.6 -67.7A85 85 0 0 1 -73.6 67.7Z" fill="#5E44E8"/></svg>
+</div>
+<h3 style="font-family:'Urbanist', Arial, sans-serif;font-size:32px;font-weight:700;color:#F6F4EF">LED wall</h3>
+<p style="font-size:24px;line-height:1.4;color:#D9D3E6">26 Super-graphic: the visor glows at the edge of the screen.</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:18px">
+<div style="height:380px;background:#2A2140;border-radius:16px;display:flex;align-items:center;justify-content:center">
+<div style="width:340px;height:200px;background:#F6F4EF;border-radius:10px;box-shadow:0 16px 40px rgba(0,0,0,0.45);display:flex;flex-direction:row;align-items:center;justify-content:center;gap:14px">
+<svg aria-label="Business card lockup" viewBox="-110 -110 220 220" width="220" height="220" style="width:60px;height:60px"><path d="M-67.7 -73.6A100 100 0 0 1 67.7 -73.6A85 85 0 0 1 -67.7 -73.6Z" fill="#5E44E8"/><path d="M73.6 -67.7A100 100 0 0 1 73.6 67.7A85 85 0 0 1 73.6 -67.7Z" fill="#A996FF"/><path d="M67.7 73.6A100 100 0 0 1 -67.7 73.6A85 85 0 0 1 67.7 73.6Z" fill="#5E44E8"/><path d="M-73.6 67.7A100 100 0 0 1 -73.6 -67.7A85 85 0 0 1 -73.6 67.7Z" fill="#5E44E8"/></svg>
+<div style="display:flex;flex-direction:column;gap:2px">
+<p style="font-family:'Urbanist', Arial, sans-serif;font-size:32px;font-weight:800;line-height:1;color:#17112B;white-space:nowrap">PurpleHat</p>
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;letter-spacing:6px;color:#5E44E8">EVENTS</p>
+</div>
+</div>
+</div>
+<h3 style="font-family:'Urbanist', Arial, sans-serif;font-size:32px;font-weight:700;color:#F6F4EF">Business card</h3>
+<p style="font-size:24px;line-height:1.4;color:#D9D3E6">17 Horizontal lockup in purple on the warm white.</p>
+</div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;color:#8A829C">PurpleHat Events · Identity exploration · 28</p>
+<aside>Four quick sketches of real uses. The cap is the strongest story: the logo is literally the top of a cap, so embroidering it on our own caps closes the loop. These are simple mock-ups to show scale and feel; proper photographic mock-ups would come with the final guidelines.</aside>
+</section>
+
+<section id="recommend" data-transition="fade" style="background:#5E44E8;color:#F6F4EF;font-family:'Nunito Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:56px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;letter-spacing:4px;text-transform:uppercase;color:#E9E4FF">Our recommendation</p>
+<h2 style="font-family:'Urbanist', Arial, sans-serif;font-size:72px;font-weight:700;line-height:1.05;letter-spacing:-1px;color:#F6F4EF">A small system of four</h2>
+</div>
+<div style="display:flex;gap:24px">
+<div style="flex:1;display:flex;flex-direction:column;gap:16px;background:#4B35C9;border-radius:16px;padding:32px">
+<div style="height:220px;display:flex;align-items:center;justify-content:center"><svg aria-label="02 Core" viewBox="-110 -110 220 220" width="220" height="220" style="width:200px;height:200px"><path d="M-67.7 -73.6A100 100 0 0 1 67.7 -73.6A85 85 0 0 1 -67.7 -73.6Z" fill="#F6F4EF"/><path d="M73.6 -67.7A100 100 0 0 1 73.6 67.7A85 85 0 0 1 73.6 -67.7Z" fill="#D7CFFF"/><path d="M67.7 73.6A100 100 0 0 1 -67.7 73.6A85 85 0 0 1 67.7 73.6Z" fill="#F6F4EF"/><path d="M-73.6 67.7A100 100 0 0 1 -73.6 -67.7A85 85 0 0 1 -73.6 67.7Z" fill="#F6F4EF"/></svg></div>
+<h3 style="font-family:'Urbanist', Arial, sans-serif;font-size:36px;font-weight:700;color:#F6F4EF">02 Core</h3>
+<p style="font-size:26px;line-height:1.4;color:#E9E4FF">The master. Wherever the mark stands alone.</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:16px;background:#4B35C9;border-radius:16px;padding:32px">
+<div style="height:220px;display:flex;align-items:center;justify-content:center"><svg aria-label="06 Bold seam" viewBox="-110 -110 220 220" width="220" height="220" style="width:200px;height:200px"><path d="M-65.39 -75.66A100 100 0 0 1 65.39 -75.66A77.79 77.79 0 0 1 -65.39 -75.66Z" fill="#F6F4EF"/><path d="M75.66 -65.39A100 100 0 0 1 75.66 65.39A77.79 77.79 0 0 1 75.66 -65.39Z" fill="#D7CFFF"/><path d="M65.39 75.66A100 100 0 0 1 -65.39 75.66A77.79 77.79 0 0 1 65.39 75.66Z" fill="#F6F4EF"/><path d="M-75.66 65.39A100 100 0 0 1 -75.66 -65.39A77.79 77.79 0 0 1 -75.66 65.39Z" fill="#F6F4EF"/></svg></div>
+<h3 style="font-family:'Urbanist', Arial, sans-serif;font-size:36px;font-weight:700;color:#F6F4EF">06 Bold seam</h3>
+<p style="font-size:26px;line-height:1.4;color:#E9E4FF">Below 32 px: favicons, app badges, tiny icons.</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:16px;background:#4B35C9;border-radius:16px;padding:32px">
+<div style="height:220px;display:flex;flex-direction:row;align-items:center;justify-content:center;gap:16px"><svg aria-label="17 Horizontal lockup" viewBox="-110 -110 220 220" width="220" height="220" style="width:96px;height:96px"><path d="M-67.7 -73.6A100 100 0 0 1 67.7 -73.6A85 85 0 0 1 -67.7 -73.6Z" fill="#F6F4EF"/><path d="M73.6 -67.7A100 100 0 0 1 73.6 67.7A85 85 0 0 1 73.6 -67.7Z" fill="#D7CFFF"/><path d="M67.7 73.6A100 100 0 0 1 -67.7 73.6A85 85 0 0 1 67.7 73.6Z" fill="#F6F4EF"/><path d="M-73.6 67.7A100 100 0 0 1 -73.6 -67.7A85 85 0 0 1 -73.6 67.7Z" fill="#F6F4EF"/></svg><div style="display:flex;flex-direction:column;gap:2px"><p style="font-family:'Urbanist', Arial, sans-serif;font-size:40px;font-weight:800;line-height:1;color:#F6F4EF;white-space:nowrap">PurpleHat</p><p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;letter-spacing:6px;color:#D7CFFF">EVENTS</p></div></div>
+<h3 style="font-family:'Urbanist', Arial, sans-serif;font-size:36px;font-weight:700;color:#F6F4EF">17 Lockup</h3>
+<p style="font-size:26px;line-height:1.4;color:#E9E4FF">Whenever the name needs to appear.</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:16px;background:#4B35C9;border-radius:16px;padding:32px">
+<div style="height:220px;display:flex;align-items:center;justify-content:center"><svg aria-label="08 Stitch" viewBox="-110 -110 220 220" width="220" height="220" style="width:200px;height:200px"><path d="M-67.7 -73.6A100 100 0 0 1 67.7 -73.6A85 85 0 0 1 -67.7 -73.6Z" fill="#F6F4EF"/><path d="M73.6 -67.7A100 100 0 0 1 73.6 67.7A85 85 0 0 1 73.6 -67.7Z" fill="#D7CFFF"/><path d="M67.7 73.6A100 100 0 0 1 -67.7 73.6A85 85 0 0 1 67.7 73.6Z" fill="#F6F4EF"/><path d="M-73.6 67.7A100 100 0 0 1 -73.6 -67.7A85 85 0 0 1 -73.6 67.7Z" fill="#F6F4EF"/><path d="M-44 -76.21A88 88 0 0 1 44 -76.21M76.21 -44A88 88 0 0 1 76.21 44M44 76.21A88 88 0 0 1 -44 76.21M-76.21 44A88 88 0 0 1 -76.21 -44" fill="none" stroke="#4B35C9" stroke-width="2.4" stroke-dasharray="5 4" stroke-linecap="round"/></svg></div>
+<h3 style="font-family:'Urbanist', Arial, sans-serif;font-size:36px;font-weight:700;color:#F6F4EF">08 Stitch</h3>
+<p style="font-size:26px;line-height:1.4;color:#E9E4FF">Caps, uniforms and merch.</p>
+</div>
+</div>
+<p style="font-size:28px;line-height:1.4;color:#F6F4EF">Plus 13 In motion as the first frame of a three-second logo animation, where the panels settle into place.</p>
+<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;color:#D7CFFF">PurpleHat Events · Identity exploration · 29</p>
+<aside>Our recommendation is to adopt a small, disciplined system rather than many logos. The core mark everywhere, the bold-seam version only at small sizes, the horizontal lockup when the name is needed, and the stitched version for merchandise. The other versions stay in the toolkit for specific jobs, as described in the families.</aside>
+</section>
+
+<section id="decisions" data-transition="fade" style="background:#F6F4EF;color:#17112B;font-family:'Nunito Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:44px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;letter-spacing:4px;text-transform:uppercase;color:#5E44E8">For this meeting</p>
+<h2 style="font-family:'Urbanist', Arial, sans-serif;font-size:72px;font-weight:700;line-height:1.05;letter-spacing:-1px">Seven decisions to make</h2>
+</div>
+<table style="font-size:26px;color:#17112B">
+<tr><th style="width:24%">Decision</th><th style="width:38%">Options</th><th style="width:38%">Our view</th></tr>
+<tr style="background:#E9E4FF"><td><b>Direction</b></td><td><b>Cap mark · one of 30 directions</b></td><td><b>Develop 02 Core and the shortlist side by side</b></td></tr>
+<tr><td>Centre size</td><td>86 · 80 · 74</td><td>80, the 02 Core</td></tr>
+<tr><td>Top button</td><td>Without · with</td><td>Without; the button on merch only</td></tr>
+<tr><td>PHE</td><td>Lockup · inside the mark · none</td><td>19 PHE lockup as the short form</td></tr>
+<tr><td>Wordmark</td><td>Urbanist as set · custom-drawn</td><td>Custom-drawn, based on Urbanist</td></tr>
+<tr><td>Purple</td><td>Keep #5E44E8 · adjust</td><td>Keep; confirm on screen and on a print proof</td></tr>
+<tr><td>Gesture</td><td>Tip · Forward · Lead · Motion</td><td>Motion, for the logo animation</td></tr>
+</table>
+<p style="font-size:28px;line-height:1.4;color:#4E4763">After this meeting: the custom wordmark, the final colour check, an export pack (SVG, PNG, PDF) and the logo animation.</p>
+<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;color:#8A829C">PurpleHat Events · Identity exploration · 30</p>
+<aside>These seven choices are all we need to finish the identity. The first one decides the direction: keep developing the cap mark, or take some of the thirty concepts to the same level of finish and compare. For each one we have given our view, but they are open for discussion. Once they are settled, the next round is the custom wordmark, colour proofs, the full export pack and a short logo animation.</aside>
+</section>
+</body></html>

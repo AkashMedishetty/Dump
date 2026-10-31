@@ -1,0 +1,14 @@
+<!doctype html><html><body style="margin:0"><canvas id="c" width="1920" height="1080"></canvas>
+<script type="module">
+import * as K from './kittest-kit.js';
+const g=document.getElementById('c').getContext('2d'); g.fillStyle='#F4F1EB'; g.fillRect(0,0,1920,1080);
+const R=110;
+K.fillMark(g,{x:480,y:200,R},'#2A0D6E','#2563EB');
+K.strokeMark(g,{x:1440,y:200,R},'#2A0D6E',3,'#2563EB');
+K.lineMark(g,{x:480,y:520,R},'#2A0D6E',4,'#2563EB');
+for(const c of K.markCells({x:1440,y:520,R},10)){g.fillStyle=K.isAcc(c.k)?'#2563EB':'#2A0D6E';g.fillRect(c.x-4,c.y-4,8,8);}
+const T=K.markTourPts({x:480,y:860,R}); g.strokeStyle='#111'; g.lineWidth=3; g.beginPath(); T.forEach(([x,y],i)=>i?g.lineTo(x,y):g.moveTo(x,y)); g.stroke();
+for(let k=0;k<8;k++){const [x,y]=K.anchor({x:1440,y:860,R},k); g.fillStyle='#e33'; g.beginPath(); g.arc(x,y,6,0,7); g.fill();}
+K.fillMark(g,{x:1440,y:860,R},'rgba(42,13,110,.25)','rgba(37,99,235,.4)');
+window.done=1;
+</script></body></html>

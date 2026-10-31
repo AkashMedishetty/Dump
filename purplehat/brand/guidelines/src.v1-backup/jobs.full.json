@@ -1,0 +1,259 @@
+{
+ "pdf": [
+  {
+   "html": "cards/PhE-BusinessCard-A-Violet-89x51mm.html",
+   "pdf": "cards/PhE-BusinessCard-A-Violet-89x51mm.pdf",
+   "w": 113,
+   "h": 75
+  },
+  {
+   "html": "cards/PhE-BusinessCard-B-Warm-White-89x51mm.html",
+   "pdf": "cards/PhE-BusinessCard-B-Warm-White-89x51mm.pdf",
+   "w": 113,
+   "h": 75
+  },
+  {
+   "html": "cards/PhE-BusinessCard-C-Pill-Diecut-89x51mm.html",
+   "pdf": "cards/PhE-BusinessCard-C-Pill-Diecut-89x51mm.pdf",
+   "w": 113,
+   "h": 75
+  },
+  {
+   "html": "cards/PhE-BusinessCard-A-Violet-85x55mm.html",
+   "pdf": "cards/PhE-BusinessCard-A-Violet-85x55mm.pdf",
+   "w": 109,
+   "h": 79
+  },
+  {
+   "html": "cards/PhE-BusinessCard-B-Warm-White-85x55mm.html",
+   "pdf": "cards/PhE-BusinessCard-B-Warm-White-85x55mm.pdf",
+   "w": 109,
+   "h": 79
+  },
+  {
+   "html": "cards/PhE-BusinessCard-C-Pill-Diecut-85x55mm.html",
+   "pdf": "cards/PhE-BusinessCard-C-Pill-Diecut-85x55mm.pdf",
+   "w": 109,
+   "h": 79
+  },
+  {
+   "html": "stationery/PhE-Letterhead-A4.html",
+   "pdf": "stationery/PhE-Letterhead-A4.pdf",
+   "w": 210,
+   "h": 297
+  },
+  {
+   "html": "stationery/PhE-Envelope-DL.html",
+   "pdf": "stationery/PhE-Envelope-DL.pdf",
+   "w": 244,
+   "h": 134
+  },
+  {
+   "html": "stationery/PhE-Badge-100x140mm.html",
+   "pdf": "stationery/PhE-Badge-100x140mm.pdf",
+   "w": 124,
+   "h": 164
+  },
+  {
+   "html": "stationery/PhE-Lanyard-20x450mm.html",
+   "pdf": "stationery/PhE-Lanyard-20x450mm.pdf",
+   "w": 44,
+   "h": 474
+  },
+  {
+   "html": "stationery/PhE-Ticket-180x70mm.html",
+   "pdf": "stationery/PhE-Ticket-180x70mm.pdf",
+   "w": 204,
+   "h": 94
+  },
+  {
+   "html": "stationery/PhE-Tags-110x42mm.html",
+   "pdf": "stationery/PhE-Tags-110x42mm.pdf",
+   "w": 134,
+   "h": 66
+  },
+  {
+   "html": "slides/PhE-Presentation-16x9.html",
+   "pdf": "slides/PhE-Presentation-16x9.pdf",
+   "wpx": 1920,
+   "hpx": 1080
+  },
+  {
+   "html": "PurpleHat-Brand-Guidelines.html",
+   "pdf": "PurpleHat-Brand-Guidelines.pdf",
+   "w": 297,
+   "h": 210
+  }
+ ],
+ "png": [
+  {
+   "html": "cards/PhE-BusinessCard-A-mockup.html",
+   "png": "cards/PhE-BusinessCard-A-mockup.png",
+   "w": 2400,
+   "h": 1500,
+   "scale": 1
+  },
+  {
+   "html": "cards/PhE-BusinessCard-B-mockup.html",
+   "png": "cards/PhE-BusinessCard-B-mockup.png",
+   "w": 2400,
+   "h": 1500,
+   "scale": 1
+  },
+  {
+   "html": "cards/PhE-BusinessCard-C-mockup.html",
+   "png": "cards/PhE-BusinessCard-C-mockup.png",
+   "w": 2400,
+   "h": 1500,
+   "scale": 1
+  },
+  {
+   "html": "cards/PhE-BusinessCard-85x55-overview.html",
+   "png": "cards/PhE-BusinessCard-85x55-overview.png",
+   "w": 2400,
+   "h": 1500,
+   "scale": 1
+  },
+  {
+   "html": "stationery/PhE-Tags-mockup.html",
+   "png": "stationery/PhE-Tags-mockup.png",
+   "w": 2400,
+   "h": 1500,
+   "scale": 1
+  },
+  {
+   "html": "stationery/PhE-Badge-Lanyard-mockup.html",
+   "png": "stationery/PhE-Badge-Lanyard-mockup.png",
+   "w": 2400,
+   "h": 1500,
+   "scale": 1
+  },
+  {
+   "html": "stationery/PhE-Ticket-mockup.html",
+   "png": "stationery/PhE-Ticket-mockup.png",
+   "w": 2400,
+   "h": 1500,
+   "scale": 1
+  },
+  {
+   "html": "stationery/PhE-Stationery-mockup.html",
+   "png": "stationery/PhE-Stationery-mockup.png",
+   "w": 2400,
+   "h": 1600,
+   "scale": 1
+  },
+  {
+   "html": "stationery/email-mark@2x.html",
+   "png": "stationery/email-mark@2x.png",
+   "w": 240,
+   "h": 86,
+   "scale": 1
+  },
+  {
+   "html": "stationery/PhE-Email-Signature-preview.html",
+   "png": "stationery/PhE-Email-Signature-preview.png",
+   "w": 1000,
+   "h": 300,
+   "scale": 1
+  },
+  {
+   "html": "social/PhE-Social-square-1-1080x1080.html",
+   "png": "social/PhE-Social-square-1-1080x1080.png",
+   "w": 1080,
+   "h": 1080,
+   "scale": 1
+  },
+  {
+   "html": "social/PhE-Social-square-2-1080x1080.html",
+   "png": "social/PhE-Social-square-2-1080x1080.png",
+   "w": 1080,
+   "h": 1080,
+   "scale": 1
+  },
+  {
+   "html": "social/PhE-Social-square-3-1080x1080.html",
+   "png": "social/PhE-Social-square-3-1080x1080.png",
+   "w": 1080,
+   "h": 1080,
+   "scale": 1
+  },
+  {
+   "html": "social/PhE-Social-portrait-1-1080x1350.html",
+   "png": "social/PhE-Social-portrait-1-1080x1350.png",
+   "w": 1080,
+   "h": 1350,
+   "scale": 1
+  },
+  {
+   "html": "social/PhE-Social-portrait-2-1080x1350.html",
+   "png": "social/PhE-Social-portrait-2-1080x1350.png",
+   "w": 1080,
+   "h": 1350,
+   "scale": 1
+  },
+  {
+   "html": "social/PhE-Social-portrait-3-1080x1350.html",
+   "png": "social/PhE-Social-portrait-3-1080x1350.png",
+   "w": 1080,
+   "h": 1350,
+   "scale": 1
+  },
+  {
+   "html": "social/PhE-Social-story-1-1080x1920.html",
+   "png": "social/PhE-Social-story-1-1080x1920.png",
+   "w": 1080,
+   "h": 1920,
+   "scale": 1
+  },
+  {
+   "html": "social/PhE-Social-story-2-1080x1920.html",
+   "png": "social/PhE-Social-story-2-1080x1920.png",
+   "w": 1080,
+   "h": 1920,
+   "scale": 1
+  },
+  {
+   "html": "social/PhE-Social-story-3-1080x1920.html",
+   "png": "social/PhE-Social-story-3-1080x1920.png",
+   "w": 1080,
+   "h": 1920,
+   "scale": 1
+  },
+  {
+   "html": "slides/PhE-Slide-1-title.html",
+   "png": "slides/PhE-Slide-1-title.png",
+   "w": 1920,
+   "h": 1080,
+   "scale": 1
+  },
+  {
+   "html": "slides/PhE-Slide-2-section.html",
+   "png": "slides/PhE-Slide-2-section.png",
+   "w": 1920,
+   "h": 1080,
+   "scale": 1
+  },
+  {
+   "html": "slides/PhE-Slide-3-content.html",
+   "png": "slides/PhE-Slide-3-content.png",
+   "w": 1920,
+   "h": 1080,
+   "scale": 1
+  },
+  {
+   "html": "slides/PhE-Slide-4-closing.html",
+   "png": "slides/PhE-Slide-4-closing.png",
+   "w": 1920,
+   "h": 1080,
+   "scale": 1
+  },
+  {
+   "html": "assets/img/app-icon.html",
+   "png": "assets/img/app-icon.png",
+   "w": 512,
+   "h": 512,
+   "scale": 1
+  }
+ ],
+ "guidePages": 35
+}

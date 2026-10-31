@@ -1,0 +1,83 @@
+{
+  "v": 4,
+  "createdOnFiles": {
+    "v": 1,
+    "at": "2026-10-03T12:00:00Z"
+  },
+  "lists": "css",
+  "title": "PurpleHat Identity",
+  "cover": "cover",
+  "order": [
+    "cover",
+    "brief",
+    "idea",
+    "journey",
+    "rules",
+    "construction",
+    "core",
+    "fam-geometry",
+    "fam-craft",
+    "fam-meaning",
+    "fam-colour",
+    "fam-lockups",
+    "fam-monograms",
+    "fam-system",
+    "index",
+    "concepts-intro",
+    "words-1",
+    "words-2",
+    "letters-1",
+    "letters-2",
+    "symbols-1",
+    "symbols-2",
+    "concepts-all",
+    "colour",
+    "type",
+    "space",
+    "donts",
+    "in-use",
+    "recommend",
+    "decisions"
+  ],
+  "sections": {
+    "s1": {
+      "description": "Why we did this and the idea we started from",
+      "start": "cover"
+    },
+    "s2": {
+      "description": "The routes we tried, the rules we kept and how the mark is built",
+      "start": "journey"
+    },
+    "s3": {
+      "description": "The cap mark in twenty-six versions, in six families",
+      "start": "core"
+    },
+    "s3b": {
+      "description": "Thirty professional directions: wordmarks, lettermarks and symbols",
+      "start": "concepts-intro"
+    },
+    "s4": {
+      "description": "How the mark behaves: colour, type, space and misuse",
+      "start": "colour"
+    },
+    "s5": {
+      "description": "Our recommendation and the decisions for the meeting",
+      "start": "recommend"
+    }
+  },
+  "faces": {
+    "urbanist": {
+      "family": "Urbanist",
+      "href": "https://fonts.googleapis.com/css2?family=Urbanist:wght@500;600;700;800&display=swap"
+    },
+    "nunito-sans": {
+      "family": "Nunito Sans",
+      "href": "https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&display=swap"
+    },
+    "ibm-plex-mono": {
+      "family": "IBM Plex Mono",
+      "href": "https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap"
+    }
+  },
+  "designSystems": []
+}

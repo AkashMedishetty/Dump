@@ -1,0 +1,13 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>PhE — Idle: breathing dots</title></head><body>
+<script src="../code/phe-logo.global.js"></script><script src="stage.js"></script>
+<script>
+// Idle loop for screens / web headers: the logo at rest, the three dots breathe one after another. Seamless 4 s loop.
+const L = Stage.place('primary');
+Stage.define({
+  duration: 4.0, loop: true, cues: [],
+  draw(ctx, t, th) {
+    PheLogo.drawCanvas(ctx, { layout: 'primary', color: th.fg, dotColor: th.dot, x: L.x, y: L.y, scale: L.scale,
+      pose: PheLogo.pose('breathe', t) });
+  },
+});
+</script></body></html>

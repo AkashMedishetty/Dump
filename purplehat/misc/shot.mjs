@@ -1,0 +1,10 @@
+import { chromium } from '/opt/node-tools/node_modules/playwright/index.mjs';
+const b = await chromium.launch();
+const p = await b.newPage({ viewport: { width: 1280, height: 900 } });
+const errs = []; p.on('pageerror', e => errs.push(e.message)); p.on('console', m => m.type()==='error' && errs.push(m.text()));
+await p.goto('file://' + process.cwd() + '/purplehat-mark.html');
+await p.waitForTimeout(800);
+await p.screenshot({ path: 'mark-full.png', fullPage: true });
+console.log('pre', errs);
+console.log('errors:', errs);
+await b.close();

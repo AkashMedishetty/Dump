@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PurpleHat Events Logo</title>
+<link rel="icon" href="icons/favicon.svg" type="image/svg+xml"><link rel="icon" href="icons/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="stylesheet" href="code/phe-logo.css">
+<style>
+  @font-face { font-family: 'Brand'; src: url('fonts/DMSans.ttf'); font-weight: 100 1000; }
+  :root { --p: #2A0D6E; --a: #2563EB; --n: #F4F1EB; --paper: #ECE8E0; --line: #2A0D6E1F; --r: 18px; }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--paper); color: var(--p); font: 16px/1.5 'Brand', system-ui, sans-serif; }
+  a { color: var(--a); }
+  .wrap { max-width: 1240px; margin: 0 auto; padding: 0 16px; }
+  nav { position: sticky; top: 0; z-index: 5; background: #ECE8E0ee; backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
+  nav .wrap { display: flex; gap: 18px; align-items: center; height: 56px; overflow-x: auto; white-space: nowrap; }
+  nav img { height: 22px; margin-right: auto; }
+  nav a { color: inherit; text-decoration: none; opacity: .75; font-size: 15px; } nav a:hover { opacity: 1; }
+  header.hero { padding: 40px 0 8px; }
+  .hero-grid { display: grid; grid-template-columns: 1.6fr 1fr; gap: 28px; align-items: center; }
+  .player { aspect-ratio: 16/9; border-radius: var(--r); overflow: hidden; box-shadow: 0 18px 50px #2A0D6E26; background: var(--n); }
+  .player iframe, .tile iframe { width: 100%; height: 100%; border: 0; display: block; }
+  h1 { font-weight: 500; font-size: clamp(30px, 4vw, 46px); line-height: 1.08; letter-spacing: -.015em; margin: 0 0 14px; }
+  h2 { font-weight: 500; font-size: 28px; letter-spacing: -.01em; margin: 0 0 6px; }
+  section { padding: 56px 0 8px; }
+  .lede { opacity: .8; margin: 0 0 22px; max-width: 70ch; }
+  .first { background: #fff8; border-radius: var(--r); padding: 18px 20px; }
+  .first ol { margin: 8px 0 0; padding-left: 20px; } .first li { margin: 4px 0; }
+  .grid { display: grid; gap: 14px; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
+  .grid.wide { grid-template-columns: repeat(auto-fill, minmax(380px, 1fr)); }
+  .card { background: var(--n); border-radius: var(--r); overflow: hidden; display: flex; flex-direction: column; }
+  .card .art { min-height: 190px; display: flex; align-items: center; justify-content: center; padding: 26px; flex: 1; }
+  .card .art img { max-width: 88%; max-height: 150px; }
+  .card.dark .art { background: var(--p); } .card.white .art { background: #fff; }
+  .card .meta { display: flex; gap: 10px; flex-wrap: wrap; align-items: baseline; padding: 10px 14px; border-top: 1px solid var(--line); font-size: 13px; }
+  .card .meta b { font-weight: 500; margin-right: auto; }
+  #anims { grid-template-columns: repeat(2, 1fr); }
+  .tile { border-radius: var(--r); overflow: hidden; background: var(--n); display: flex; flex-direction: column; }
+  .tile .vid { aspect-ratio: 16/9; } .tile .meta { padding: 12px 14px; font-size: 14px; border-top: 1px solid var(--line); }
+  .tile .meta p { margin: 2px 0 6px; opacity: .75; }
+  .toggle { display: inline-flex; background: #fff8; border-radius: 999px; padding: 3px; margin-bottom: 16px; }
+  .toggle button { border: 0; background: none; font: inherit; color: inherit; padding: 6px 16px; border-radius: 999px; cursor: pointer; }
+  .toggle button[aria-pressed="true"] { background: var(--p); color: var(--n); }
+  .demo { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 14px; }
+  .demo .card .art { min-height: 170px; cursor: pointer; }
+  .demo .art > * { width: 78%; max-height: 120px; }
+  pre { background: #1d0a4c; color: #E8E4F6; border-radius: 14px; padding: 16px; overflow-x: auto; font-size: 13px; line-height: 1.55; margin: 0; }
+  code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+  .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .files { columns: 2; column-gap: 32px; } .files div { break-inside: avoid; margin-bottom: 14px; }
+  .files b { font-weight: 500; }
+  .note { border-left: 3px solid var(--a); padding: 6px 0 6px 14px; margin: 18px 0 0; opacity: .85; }
+  .sheet img { width: 100%; border-radius: var(--r); display: block; }
+  footer { padding: 56px 0 64px; opacity: .6; font-size: 14px; }
+  @media (max-width: 860px) { .hero-grid, .cols { grid-template-columns: 1fr; } .files { columns: 1; } .grid.wide, #anims { grid-template-columns: 1fr; } }
+</style></head>
+<body>
+<nav><div class="wrap"><img src="svg/phe-mark-twotone.svg" alt="PhE">
+  <a href="#logo">Logo</a><a href="#lockups">Lockups</a><a href="#icons">Icons</a><a href="#spec">Spec</a><a href="#motion">Motion</a><a href="#code">Code</a><a href="#files">Files</a></div></nav>
+
+<header class="hero"><div class="wrap hero-grid">
+  <div class="player"><iframe src="animation/draw-drop.html?w=1920&h=1080&bg=light" title="Draw + drop animation" loading="eager"></iframe></div>
+  <div>
+    <h1>The PhE logo, as files, as code and in motion.</h1>
+    <p class="lede">Round-capped strokes of one width and three dots on the baseline. People + places = experiences: a pill and a circle are the pattern language, and the dots are the animation device.</p>
+    <div class="first"><b>Look at these first</b><ol>
+      <li><a href="contact-sheet.png">contact-sheet.png</a> — the whole SVG set on one page</li>
+      <li><a href="animation/player.html">animation/player.html</a> — the four animations, live, with sound</li>
+      <li><a href="code/README.md">code/README.md</a> — the logo as a JS module, React component and CSS</li></ol></div>
+  </div>
+</div></header>
+
+<main class="wrap">
+<section id="logo"><h2>Mark</h2>
+  <p class="lede">The primary mark is a single colour. Two-tone (dots in accent) is for motion, social and anywhere the dots lead. Reversed files carry the minimum clear space as padding.</p>
+  <div class="grid" id="marks"></div></section>
+
+<section id="lockups"><h2>Lockups</h2>
+  <p class="lede">The wordmark is set in DM Sans 500 as a stand-in for Satoshi Medium (Fontshare could not be reached from the build machine). Swapping it is one setting: see <a href="README.md">README.md</a>.</p>
+  <div class="grid wide" id="locks"></div></section>
+
+<section id="icons"><h2>App icon and favicon</h2>
+  <p class="lede">The full mark needs 120 px of width, so the favicon uses the P and its dot. App icons are full-bleed squares (the OS applies its own mask); the mark sits inside the maskable safe zone.</p>
+  <div class="grid" id="iconset"></div></section>
+
+<section id="spec"><h2>Clear space and minimum size</h2>
+  <div class="cols"><div class="card white"><div class="art"><img src="svg/phe-spec-clearspace.svg" alt="Clear space spec" style="max-height:none;max-width:100%"></div></div>
+  <div class="card white"><div class="art"><img src="svg/phe-spec-minsize.svg" alt="Minimum size spec" style="max-height:none;max-width:100%"></div></div></div></section>
+
+<section id="motion"><h2>Motion: the dots are the hero</h2>
+  <p class="lede">Every animation is a deterministic page (<code>window.render(t)</code>), rendered frame by frame to MP4 at 1920×1080, 1080×1920 and 1080×1080, 30 fps, on neutral and on primary, with sound at −16 LUFS. The landings fall on a 150 bpm grid.</p>
+  <div class="toggle" id="mbg"><button data-bg="light" aria-pressed="true">On neutral</button><button data-bg="dark" aria-pressed="false">On primary</button></div>
+  <div class="grid wide" id="anims"></div>
+  <p class="note">Open the <a href="animation/player.html">player</a> for sound, scrubbing and the vertical and square formats. Transparent versions of A for editors: <a href="animation/alpha/">animation/alpha/</a> (ProRes 4444 .mov and VP9 .webm with alpha).</p>
+  <div class="sheet" style="margin-top:20px" id="strips"></div></section>
+
+<section id="code"><h2>In code</h2>
+  <p class="lede">Same geometry, same choreography: the CSS keyframes are sampled from the JS presets that drive the videos. Click a tile to replay.</p>
+  <div class="demo" id="demos"></div>
+  <div class="cols" style="margin-top:14px">
+<pre><code>import { svgString, mount } from './code/phe-logo.js';
+
+// static markup (SSR, emails, OG images)
+el.innerHTML = svgString({ layout: 'primary', variant: 'reversed' });
+
+// live: strokes draw on, dots drop on the beat
+const logo = mount(el, { variant: 'twotone' });
+logo.play('draw-drop').finished.then(() =&gt; logo.play('breathe'));</code></pre>
+<pre><code>import { PheLogo } from './code/PheLogo';
+
+&lt;PheLogo variant="twotone" animate="draw-drop" size={96} /&gt;
+&lt;PheLogo layout="horizontal" size={40} /&gt;
+&lt;PheLogo animate="breathe" color="#000" dotColor="#2563EB" /&gt;
+
+/* CSS only */
+&lt;link rel="stylesheet" href="code/phe-logo.css"&gt;
+&lt;img src="code/phe-logo-animated.svg" alt="PurpleHat Events"&gt;</code></pre></div></section>
+
+<section id="files"><h2>Files</h2>
+  <div class="files">
+    <div><b>svg/</b> — 29 production SVGs: marks, lockups (primary / reversed / white / black), app icon, favicon, clear-space and minimum-size spec.</div>
+    <div><b>png/</b> — transparent PNG @1x/@2x/@4x of the key marks and lockups.</div>
+    <div><b>pdf/</b> — vector PDFs of the mark and the main lockups.</div>
+    <div><b>icons/</b> — favicon.ico (16/32/48), favicon.svg, favicon-16/32/48.png, apple-touch-icon.png (180), icon-192/512.png, site.webmanifest.</div>
+    <div><b>code/</b> — phe-logo.js (ES module), phe-logo.global.js (plain &lt;script&gt;), phe-logo.d.ts, PheLogo.tsx, phe-logo.css, phe-logo-animated.svg, README.md.</div>
+    <div><b>animation/</b> — scene pages, player.html, video/ (24 MP4s), alpha/ (.mov + .webm), audio/ (wav, m4a, cue lists), strips/.</div>
+    <div><b>logo.json · logo-geom.js · wordmark.json</b> — the geometry every file is generated from.</div>
+    <div><b>build/</b> — the generators. <code>python build/build_all.py</code> rebuilds everything; see README.md.</div>
+  </div></section>
+</main>
+<footer class="wrap">PurpleHat Events · PhE logo deliverables · generated from the fitted geometry (stroke 24, dot r 12.75)</footer>
+
+<script src="code/phe-logo.global.js"></script>
+<script>
+const card = (f, cls, label, links = ['svg']) => `<div class="card ${cls}"><div class="art"><img src="svg/${f}.svg" alt="${label}" loading="lazy"></div>
+  <div class="meta"><b>${label}</b>${links.map((l) => l === 'svg' ? `<a href="svg/${f}.svg" download>SVG</a>` : l === 'png' ? `<a href="png/${f}@4x.png" download>PNG</a>` : `<a href="pdf/${f}.pdf" download>PDF</a>`).join('')}</div></div>`;
+document.getElementById('marks').innerHTML = [
+  card('phe-mark-primary', '', 'Primary', ['svg', 'png', 'pdf']), card('phe-mark-twotone', '', 'Two-tone', ['svg', 'png', 'pdf']),
+  card('phe-mark-reversed', 'white', 'Reversed', ['svg', 'png', 'pdf']), card('phe-mark-twotone-reversed', 'white', 'Reversed two-tone', ['svg', 'png']),
+  card('phe-mark-black', 'white', 'Black', ['svg', 'png']), card('phe-mark-white', 'dark', 'White', ['svg', 'png']),
+  card('phe-mark-accent', 'white', 'Accent', ['svg', 'png']), card('phe-mark-stroked', '', 'Editable strokes', ['svg'])].join('');
+document.getElementById('locks').innerHTML = [
+  card('phe-lockup-primary', '', 'Stacked (primary)', ['svg', 'png', 'pdf']), card('phe-lockup-reversed', 'white', 'Stacked reversed', ['svg', 'png', 'pdf']),
+  card('phe-lockup-horizontal', '', 'Horizontal', ['svg', 'png', 'pdf']), card('phe-lockup-horizontal-reversed', 'white', 'Horizontal reversed', ['svg', 'png']),
+  card('phe-lockup-stacked', '', 'Two-line', ['svg', 'png']), card('phe-lockup-stacked-reversed', 'white', 'Two-line reversed', ['svg', 'png']),
+  card('phe-lockup-pill', '', 'Pill', ['svg', 'png']), card('phe-lockup-pill-reversed', 'white', 'Pill reversed', ['svg', 'png'])].join('');
+document.getElementById('iconset').innerHTML = card('phe-app-icon-rounded', '', 'App icon', ['svg', 'png']) + card('phe-favicon', '', 'Favicon (P monogram)') +
+  `<div class="card"><div class="art" style="gap:22px;align-items:flex-end">${[16, 32, 48].map((s) => `<img src="icons/favicon-${s}.png" alt="" style="width:${s}px;height:${s}px">`).join('')}
+   <img src="icons/apple-touch-icon.png" alt="" style="width:90px;height:90px;border-radius:20px"></div><div class="meta"><b>icons/ at 1:1</b><a href="icons/favicon.ico" download>.ico</a></div></div>`;
+
+const ANIMS = [['draw-drop', 'A', 'A · Draw + drop', 'Strokes draw on, the dots drop in on the beat, the wordmark slides up. 5 s'],
+  ['dot-run', 'B', 'B · Dot run', 'One dot bounces in; each touch-down leaves a dot and sprouts a letter. 5 s'],
+  ['people-places', 'C', 'C · People + places', 'Pill + circle = the experiences toggle, which morphs into the E. 6 s'],
+  ['idle', 'idle', 'Idle loop', 'The dots breathe. Seamless 4 s loop for screens and headers.']];
+function anims(bg) {
+  document.getElementById('anims').innerHTML = ANIMS.map(([id, k, label, d]) => {
+    const n = `phe-${k}-${id}`.replace('phe-idle-idle', 'phe-idle');
+    return `<div class="tile"><div class="vid"><iframe src="animation/${id}.html?w=1920&h=1080&bg=${bg}" title="${label}" loading="lazy"></iframe></div>
+    <div class="meta"><b>${label}</b><p>${d}</p>MP4: ${['16x9', '9x16', '1x1'].map((f) => `<a href="animation/video/${n}_${f}_${bg}.mp4">${f.replace('x', ':')}</a>`).join(' · ')}
+    · <a href="animation/player.html?scene=${id}&bg=${bg}">player</a></div></div>`;
+  }).join('');
+}
+anims('light');
+document.getElementById('mbg').onclick = (e) => { const bg = e.target.dataset.bg; if (!bg) return;
+  e.currentTarget.querySelectorAll('button').forEach((b) => b.setAttribute('aria-pressed', b.dataset.bg === bg)); anims(bg); };
+document.getElementById('strips').innerHTML = ['phe-A-draw-drop', 'phe-B-dot-run', 'phe-C-people-places', 'phe-idle']
+  .map((n) => `<p style="margin:14px 0 6px">${n} — frame strip</p><img src="animation/strips/${n}-strip.png" alt="${n} frames" loading="lazy">`).join('');
+
+// live code demos
+const demos = document.getElementById('demos');
+const demo = (label, make) => { const c = document.createElement('div'); c.className = 'card';
+  c.innerHTML = `<div class="art"></div><div class="meta"><b>${label}</b></div>`; demos.appendChild(c); const a = c.querySelector('.art'); make(a); };
+demo("mount() · play('draw-drop')", (a) => { const l = PheLogo.mount(a, { variant: 'twotone' }); const go = () => l.play('draw-drop'); go(); a.onclick = go; });
+demo("mount() · play('dot-run')", (a) => { const l = PheLogo.mount(a, {}); const go = () => l.play('dot-run'); go(); a.onclick = go; });
+demo("play('breathe') on primary", (a) => { a.style.background = 'var(--p)'; PheLogo.mount(a, { variant: 'twotone-reversed', background: null, animate: 'breathe' }); });
+demo("play('pulse')", (a) => { PheLogo.mount(a, { variant: 'twotone', animate: 'pulse' }); });
+demo('CSS only · inline SVG', (a) => { const go = () => { a.innerHTML = PheLogo.svgString({ css: true, variant: 'twotone', className: 'phe-idle' }); }; go(); a.onclick = go; });
+demo('CSS only · &lt;img src="phe-logo-animated.svg"&gt;', (a) => { const go = () => { a.innerHTML = `<img src="code/phe-logo-animated.svg?${Date.now()}" alt="PurpleHat Events">`; }; go(); a.onclick = go; });
+</script>
+</body></html>

@@ -1,0 +1,456 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>PurpleHat reel</title>
+<style>html,body{margin:0;background:#000}canvas{display:block}</style>
+<script src="node_modules/gsap/dist/gsap.min.js"></script>
+<script src="node_modules/d3-delaunay/dist/d3-delaunay.min.js"></script>
+</head><body><canvas id="gl" width="1080" height="1920"></canvas>
+<script>
+// PurpleHat Events — 24 s vertical brand reel. Pure function of time: draw(ctx, t).
+const W = 1080, H = 1920, FPS = 60, DUR = 24, SUB = 8, SHUTTER = 0.5;
+const C = { purple: '#5E44E8', ink: '#17112B', cream: '#F6F4EF', visor: '#D7CFFF', visorLight: '#A996FF', mute: '#8A829C' };
+const BEAT = 0.5;
+const ease = (n) => gsap.parseEase(n);
+const E = { out: ease('expo.out'), inOut: ease('power3.inOut'), in4: ease('power4.in'), in3: ease('power3.in'), out3: ease('power3.out'), back: ease('back.out(1.6)'), sine: ease('sine.inOut') };
+const clamp = (x, a = 0, b = 1) => Math.max(a, Math.min(b, x));
+const prog = (t, a, d) => clamp((t - a) / d);
+const lerp = (a, b, k) => a + (b - a) * k;
+
+// ---------- deterministic noise ----------
+function mulberry(a) { return () => { a |= 0; a = (a + 0x6D2B79F5) | 0; let t = Math.imul(a ^ (a >>> 15), 1 | a); t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t; return ((t ^ (t >>> 14)) >>> 0) / 4294967296; }; }
+const PERM = (() => { const r = mulberry(7), p = [...Array(256).keys()]; for (let i = 255; i > 0; i--) { const j = Math.floor(r() * (i + 1)); [p[i], p[j]] = [p[j], p[i]]; } return p.concat(p); })();
+const fade = (t) => t * t * t * (t * (t * 6 - 15) + 10);
+function grad(h, x, y, z) { const u = h < 8 ? x : y, v = h < 4 ? y : h === 12 || h === 14 ? x : z; return ((h & 1) ? -u : u) + ((h & 2) ? -v : v); }
+function noise3(x, y, z) {
+  const X = Math.floor(x) & 255, Y = Math.floor(y) & 255, Z = Math.floor(z) & 255; x -= Math.floor(x); y -= Math.floor(y); z -= Math.floor(z);
+  const u = fade(x), v = fade(y), w = fade(z), A = PERM[X] + Y, AA = PERM[A] + Z, AB = PERM[A + 1] + Z, B = PERM[X + 1] + Y, BA = PERM[B] + Z, BB = PERM[B + 1] + Z;
+  return lerp(lerp(lerp(grad(PERM[AA] & 15, x, y, z), grad(PERM[BA] & 15, x - 1, y, z), u), lerp(grad(PERM[AB] & 15, x, y - 1, z), grad(PERM[BB] & 15, x - 1, y - 1, z), u), v),
+    lerp(lerp(grad(PERM[AA + 1] & 15, x, y, z - 1), grad(PERM[BA + 1] & 15, x - 1, y, z - 1), u), lerp(grad(PERM[AB + 1] & 15, x, y - 1, z - 1), grad(PERM[BB + 1] & 15, x - 1, y - 1, z - 1), u), v), w);
+}
+
+// ---------- the cap mark ----------
+const PANEL_D = [
+  'M-67.7 -73.6A100 100 0 0 1 67.7 -73.6A85 85 0 0 1 -67.7 -73.6Z',
+  'M73.6 -67.7A100 100 0 0 1 73.6 67.7A85 85 0 0 1 73.6 -67.7Z',
+  'M67.7 73.6A100 100 0 0 1 -67.7 73.6A85 85 0 0 1 67.7 73.6Z',
+  'M-73.6 67.7A100 100 0 0 1 -73.6 -67.7A85 85 0 0 1 -73.6 67.7Z'];
+const PANEL = PANEL_D.map((d) => new Path2D(d));
+const DIRS = [[0, -1], [1, 0], [0, 1], [-1, 0]];
+// lens centred on its own midpoint (x = 70 in visor coordinates), horizontal
+const LENS = new Path2D(); { const m = new DOMMatrix().translate(-70, 0); LENS.addPath(PANEL[1], m); }
+const TIP = Math.atan2(67.7, 73.6), TI = Math.atan2(67.7, 73.6 - 125);
+function panelPoly(q, n = 60) {
+  const pts = [], rot = (q - 1) * Math.PI / 2, c = Math.cos(rot), s = Math.sin(rot);
+  const push = (x, y) => pts.push([x * c - y * s, x * s + y * c]);
+  for (let i = 0; i <= n; i++) { const a = -TIP + 2 * TIP * i / n; push(100 * Math.cos(a), 100 * Math.sin(a)); }
+  for (let i = 1; i <= n; i++) { const a = TI + (2 * Math.PI - 2 * TI) * i / n; push(125 + 85 * Math.cos(a), 85 * Math.sin(a)); }
+  return pts;
+}
+const POLYS = [0, 1, 2, 3].map((q) => panelPoly(q));
+function inMark(x, y) { if (x * x + y * y > 10000) return -1; for (let q = 0; q < 4; q++) { const dx = x - 125 * DIRS[q][0], dy = y - 125 * DIRS[q][1]; if (dx * dx + dy * dy <= 7225) return q; } return -1; }
+function strokePartial(ctx, pts, k) {
+  const n = Math.floor(k * (pts.length - 1)); if (n < 1) return;
+  ctx.beginPath(); ctx.moveTo(pts[0][0], pts[0][1]); for (let i = 1; i <= n; i++) ctx.lineTo(pts[i][0], pts[i][1]); ctx.stroke();
+}
+// orbit-in assembly; tVisor = moment the visor slams home
+function drawMark(ctx, t, t0, tVisor, cols) {
+  for (const [q, d] of [[3, 0], [0, 0.1], [2, 0.2]]) {
+    const u = prog(t, t0 + d, 1.1); if (u <= 0) continue; const k = E.out(u);
+    ctx.save(); ctx.globalAlpha = clamp(u * 5); ctx.rotate(-2.2 * (1 - k)); const sc = 1 + 0.9 * (1 - k); ctx.scale(sc, sc);
+    ctx.fillStyle = cols.crown; ctx.fill(PANEL[q]); ctx.restore();
+  }
+  const u = prog(t, tVisor - 0.42, 0.42); if (u <= 0) return; const k = E.in3(u);
+  ctx.save(); ctx.globalAlpha = clamp(u * 4); ctx.translate(520 * (1 - k), 0); ctx.rotate(-0.4 * (1 - k));
+  ctx.fillStyle = cols.visor; ctx.fill(PANEL[1]); ctx.restore();
+}
+
+// ---------- type ----------
+const FAM = { s: 'Manrope', serif: 'Instrument Serif' };
+function setFont(ctx, size, weight = 800, fam = 'Manrope', style = 'normal', track = 0) { ctx.font = `${style} ${weight} ${size}px "${fam}"`; ctx.letterSpacing = track + 'px'; }
+function revealLine(ctx, str, x, y, p, size, color, opt = {}) {
+  if (p <= 0) return; const k = E.out(p);
+  setFont(ctx, size, opt.weight ?? 800, opt.fam ?? 'Manrope', opt.style ?? 'normal', opt.track ?? -size * 0.03);
+  ctx.textAlign = opt.align || 'left';
+  ctx.save(); ctx.beginPath(); ctx.rect(0, y - size * 1.05, W, size * 1.4); ctx.clip();
+  ctx.fillStyle = color; ctx.globalAlpha = opt.alpha ?? 1; ctx.fillText(str, x, y + (1 - k) * size * 1.25); ctx.restore();
+}
+function label(ctx, str, x, y, color, align = 'left', alpha = 1, size = 26) {
+  setFont(ctx, size, 700, 'Manrope', 'normal', size * 0.28); ctx.textAlign = align; ctx.fillStyle = color; ctx.globalAlpha = alpha; ctx.fillText(str, x, y); ctx.globalAlpha = 1;
+}
+
+// ---------- impacts (shared with the soundtrack) ----------
+const SERVICES_T0 = 6, BAR = 2;
+const IMPACTS = [2, 4, 5, ...[0, 1, 2, 3, 4, 5, 6].map((i) => SERVICES_T0 + i * BAR), 20, 21];
+function impact(t) { let s = 0; for (const h of IMPACTS) if (t >= h) s += Math.exp(-(t - h) / 0.11) * (h === 2 || h === 4 || h === 21 ? 1 : 0.55); return Math.min(1.4, s); }
+
+// ---------- scenes ----------
+const SERVICES = [
+  { name: ['Branding', '& Design'], line: 'Identities, campaigns and collateral', bg: C.cream, fg: C.ink, draw: vBranding },
+  { name: ['Websites', '& Apps'], line: 'Custom software for events and brands', bg: C.ink, fg: C.cream, draw: vPixels },
+  { name: ['Conferences', '& PCO'], line: 'Delegates, programmes and venues', bg: C.purple, fg: C.cream, draw: vAudience },
+  { name: ['MICE'], line: 'Meetings, incentives, conferences, exhibitions', bg: C.cream, fg: C.ink, draw: vFlights },
+  { name: ['Corporate', 'Events'], line: 'Launches, offsites and town halls', bg: C.ink, fg: C.cream, draw: vPattern },
+  { name: ['Experiential', 'Installations'], line: 'Interactive worlds people step into', bg: C.purple, fg: C.cream, draw: vFlow },
+  { name: ['Event', 'Management'], line: 'From run-of-show to the last guest', bg: C.cream, fg: C.ink, draw: vRunOfShow },
+];
+const VC = [540, 770]; // visual centre
+
+function sceneService(ctx, i, lt) {
+  const S = SERVICES[i];
+  ctx.fillStyle = S.bg; ctx.fillRect(0, 0, W, H);
+  const accent = S.bg === C.cream ? C.purple : C.visor;
+  label(ctx, String(i + 1).padStart(2, '0') + ' / 07', 90, 240, accent);
+  label(ctx, 'PURPLEHAT EVENTS', W - 90, 240, S.fg, 'right', 0.55);
+  ctx.save(); ctx.translate(0, -30); S.draw(ctx, lt, S); ctx.restore();
+  // name block, fitted to width
+  setFont(ctx, 128, 800); const widest = Math.max(...S.name.map((s) => ctx.measureText(s).width));
+  const size = Math.min(124, 124 * 860 / widest);
+  const y0 = S.name.length === 1 ? 1420 : 1330;
+  S.name.forEach((s, j) => revealLine(ctx, s, 90, y0 + j * size * 1.02, prog(lt, 0.05 + j * 0.08, 0.9), size, S.fg));
+  const yl = y0 + (S.name.length - 1) * size * 1.02 + 84;
+  revealLine(ctx, S.line, 92, yl, prog(lt, 0.3, 0.9), 38, accent, { weight: 500, track: 0 });
+  // progress seam
+  ctx.fillStyle = S.fg; ctx.globalAlpha = 0.15; ctx.fillRect(90, 1620, W - 180, 3);
+  ctx.globalAlpha = 1; ctx.fillStyle = accent; ctx.fillRect(90, 1620, (W - 180) * ((i + clamp(lt / BAR)) / 7), 3);
+}
+
+// 01 Branding — the mark's own construction drawing
+function vBranding(ctx, lt) {
+  const [cx, cy] = VC, s = 3.3; ctx.translate(cx, cy); ctx.scale(s, s);
+  const kc = E.inOut(prog(lt, 0, 0.8)), fade = 1 - 0.75 * E.inOut(prog(lt, 0.95, 0.5));
+  ctx.lineWidth = 1.4 / s * 1.5; ctx.strokeStyle = C.purple; ctx.globalAlpha = 0.5 * fade;
+  ctx.setLineDash([6 / s * 2, 6 / s * 2]);
+  ctx.beginPath(); ctx.arc(0, 0, 100, -Math.PI / 2, -Math.PI / 2 + 2 * Math.PI * kc); ctx.stroke();
+  for (let q = 0; q < 4; q++) { const k = E.inOut(prog(lt, 0.12 + q * 0.07, 0.75)); if (k <= 0) continue; ctx.beginPath(); ctx.arc(125 * DIRS[q][0], 125 * DIRS[q][1], 85, 0, 2 * Math.PI * k); ctx.stroke(); }
+  ctx.setLineDash([]); ctx.globalAlpha = 0.35 * fade; ctx.lineWidth = 1 / s * 1.5;
+  ctx.beginPath(); ctx.moveTo(-118 * kc, 0); ctx.lineTo(118 * kc, 0); ctx.moveTo(0, -118 * kc); ctx.lineTo(0, 118 * kc); ctx.stroke();
+  // outlines with pen-tool anchors and handles
+  ctx.globalAlpha = 1; ctx.lineWidth = 3 / s; ctx.strokeStyle = C.ink;
+  for (let q = 0; q < 4; q++) strokePartial(ctx, POLYS[q], E.inOut(prog(lt, 0.35 + q * 0.06, 0.6)));
+  const ka = prog(lt, 0.7, 0.25), kf = E.out(prog(lt, 0.95, 0.6));
+  for (let q = 0; q < 4; q++) {
+    ctx.save(); ctx.rotate((q - 1) * Math.PI / 2);
+    for (const sy of [-1, 1]) {
+      const x = 73.6, y = 67.7 * sy, a = Math.atan2(y, x) + Math.PI / 2, hl = 26 * (1 - kf * 0.6);
+      ctx.globalAlpha = ka * (1 - kf * 0.85); ctx.strokeStyle = C.purple; ctx.lineWidth = 2 / s;
+      ctx.beginPath(); ctx.moveTo(x - Math.cos(a) * hl, y - Math.sin(a) * hl); ctx.lineTo(x + Math.cos(a) * hl, y + Math.sin(a) * hl); ctx.stroke();
+      ctx.fillStyle = C.purple; for (const d of [-1, 1]) { ctx.beginPath(); ctx.arc(x + d * Math.cos(a) * hl, y + d * Math.sin(a) * hl, 3.2 / s * 1.4, 0, 7); ctx.fill(); }
+      ctx.fillStyle = C.cream; ctx.fillRect(x - 4, y - 4, 8, 8); ctx.strokeStyle = C.ink; ctx.strokeRect(x - 4, y - 4, 8, 8);
+    }
+    ctx.restore();
+  }
+  ctx.globalAlpha = kf;
+  for (let q = 0; q < 4; q++) { ctx.fillStyle = q === 1 ? C.visorLight : C.purple; ctx.fill(PANEL[q]); }
+  ctx.globalAlpha = 1;
+  // spec readout
+  ctx.setTransform(1, 0, 0, 1, 0, 0);
+  const kr = prog(lt, 0.5, 0.4);
+  label(ctx, 'R 100 · r 85 · SEAM 6.8 · TIP 42.61°', VC[0], VC[1] + 420, C.ink, 'center', 0.5 * kr * fade + 0.15 * kr, 22);
+}
+
+// 02 Websites & Apps — the mark resolves like a page loading
+function vPixels(ctx, lt) {
+  const [cx, cy] = VC, box = 700, steps = [10, 20, 40, 80];
+  const st = Math.min(3, Math.max(0, Math.floor((lt + 0.0001) / 0.42)));
+  const scan = E.inOut(clamp(((lt % 0.42) + 0.42) % 0.42 / 0.3));
+  const drawGrid = (N, yLimit) => {
+    const cell = box / N, gap = cell * 0.14, r = Math.min(cell * 0.22, 8);
+    for (let j = 0; j < N; j++) {
+      const y = cy - box / 2 + j * cell; if (y > yLimit) break;
+      for (let i = 0; i < N; i++) {
+        const x = cx - box / 2 + i * cell, mx = ((x + cell / 2) - cx) / box * 220, my = ((y + cell / 2) - cy) / box * 220;
+        const q = inMark(mx, my); if (q < 0) continue;
+        ctx.fillStyle = q === 1 ? C.visor : C.cream; ctx.beginPath(); ctx.roundRect(x + gap / 2, y + gap / 2, cell - gap, cell - gap, r); ctx.fill();
+      }
+    }
+  };
+  if (lt < 0) return;
+  const yScan = cy - box / 2 + box * scan;
+  ctx.save(); ctx.beginPath(); ctx.rect(0, yScan, W, H); ctx.clip(); if (st > 0) drawGrid(steps[st - 1], 1e9); ctx.restore();
+  ctx.save(); ctx.beginPath(); ctx.rect(0, 0, W, yScan); ctx.clip(); drawGrid(steps[st], 1e9); ctx.restore();
+  if (scan < 1 && st < 4) { ctx.fillStyle = C.visor; ctx.globalAlpha = 0.9; ctx.fillRect(cx - box / 2 - 30, yScan - 1.5, box + 60, 3); ctx.globalAlpha = 1; }
+  // window chrome
+  ctx.strokeStyle = C.cream; ctx.globalAlpha = 0.18; ctx.lineWidth = 2; ctx.beginPath(); ctx.roundRect(cx - box / 2 - 50, cy - box / 2 - 110, box + 100, box + 160, 28); ctx.stroke();
+  ctx.beginPath(); ctx.moveTo(cx - box / 2 - 50, cy - box / 2 - 50); ctx.lineTo(cx + box / 2 + 50, cy - box / 2 - 50); ctx.stroke();
+  ctx.globalAlpha = 0.5; ctx.fillStyle = C.cream; for (let i = 0; i < 3; i++) { ctx.beginPath(); ctx.arc(cx - box / 2 - 14 + i * 30, cy - box / 2 - 80, 7, 0, 7); ctx.fill(); }
+  ctx.globalAlpha = 1;
+  label(ctx, `${steps[st]} × ${steps[st]}`, cx + box / 2 + 30, cy - box / 2 - 72, C.visor, 'right', 0.8, 22);
+}
+
+// 03 Conferences — an auditorium fills, front rows first (Delaunay mesh by d3-delaunay)
+const SEATS = (() => {
+  const pts = [], rows = [], sx = 540, sy = 450, r = mulberry(3);
+  for (let row = 0; row < 13; row++) {
+    const rad = 140 + row * 38, span = 0.86, n = Math.round(rad * 2 * span / 40);
+    for (let i = 0; i <= n; i++) { const a = Math.PI / 2 - span + 2 * span * i / n; pts.push([sx + rad * Math.cos(a) + (r() - 0.5) * 3, sy + rad * Math.sin(a) + (r() - 0.5) * 3]); rows.push(row); }
+  }
+  const del = d3.Delaunay.from(pts), edges = [];
+  for (let e = 0; e < del.triangles.length; e++) { const o = del.halfedges[e]; if (o >= 0 && o < e) continue; const a = del.triangles[e], b = del.triangles[e % 3 === 2 ? e - 2 : e + 1]; const d = Math.hypot(pts[a][0] - pts[b][0], pts[a][1] - pts[b][1]); if (d < 70) edges.push([a, b]); }
+  return { pts, rows, edges, sx, sy };
+})();
+function vAudience(ctx, lt) {
+  const { pts, rows, edges, sx, sy } = SEATS, rowT = (row) => 0.08 + row * 0.045;
+  ctx.strokeStyle = C.cream; ctx.lineWidth = 1.2;
+  ctx.beginPath();
+  for (const [a, b] of edges) { const k = prog(lt, rowT(Math.max(rows[a], rows[b])) + 0.25, 0.4); if (k <= 0) continue; ctx.moveTo(pts[a][0], pts[a][1]); ctx.lineTo(lerp(pts[a][0], pts[b][0], k), lerp(pts[a][1], pts[b][1], k)); }
+  ctx.globalAlpha = 0.16; ctx.stroke(); ctx.globalAlpha = 1;
+  pts.forEach(([x, y], i) => {
+    const k = E.back(prog(lt, rowT(rows[i]) + (x - 540) * 0.00008, 0.35)); if (k <= 0) return;
+    ctx.fillStyle = rows[i] < 2 ? C.visor : C.cream; ctx.beginPath(); ctx.arc(x, y, Math.max(0, 7.5 * k), 0, 7); ctx.fill();
+  });
+  // stage + speaker
+  const ks = E.out(prog(lt, 0, 0.5));
+  ctx.fillStyle = C.cream; ctx.beginPath(); ctx.roundRect(sx - 170 * ks, sy - 70, 340 * ks, 16, 8); ctx.fill();
+  const pulse = (lt * 2) % 1;
+  ctx.strokeStyle = C.visor; ctx.lineWidth = 2; ctx.globalAlpha = (1 - pulse) * ks; ctx.beginPath(); ctx.arc(sx, sy - 100, 12 + pulse * 40, 0, 7); ctx.stroke();
+  ctx.globalAlpha = ks; ctx.fillStyle = C.visor; ctx.beginPath(); ctx.arc(sx, sy - 100, 12, 0, 7); ctx.fill(); ctx.globalAlpha = 1;
+  const filled = pts.filter((p, i) => lt > rowT(rows[i])).length;
+  label(ctx, `${String(filled).padStart(3, '0')} SEATED`, W - 90, 1170, C.visor, 'right', 0.85, 22);
+}
+
+// 04 MICE — journeys converge on one destination
+const FLIGHTS = (() => { const r = mulberry(11), out = []; for (let i = 0; i < 14; i++) { const a = -Math.PI * 0.05 + (i / 13) * Math.PI * 2.1 + (r() - 0.5) * 0.3, d = 330 + r() * 120; out.push({ x: 540 + Math.cos(a) * d * 1.05, y: 770 + Math.sin(a) * d * 0.95, bend: (r() < 0.5 ? -1 : 1) * (0.25 + r() * 0.2), t0: 0.04 + i * 0.045 + r() * 0.04 }); } return out; })();
+const DOTS = (() => { const r = mulberry(5), out = []; for (let j = 0; j < 26; j++) for (let i = 0; i < 22; i++) { const x = 90 + i * 43, y = 330 + j * 34; const n = noise3(i * 0.18, j * 0.2, 1.3); if (n > -0.05) out.push([x, y, n]); } return out; })();
+function vFlights(ctx, lt) {
+  const [cx, cy] = VC;
+  ctx.fillStyle = C.ink; for (const [x, y, n] of DOTS) { const k = prog(lt, 0.0 + (y - 330) * 0.0004, 0.4); ctx.globalAlpha = 0.12 * k; ctx.beginPath(); ctx.arc(x, y, 3 + n * 2, 0, 7); ctx.fill(); }
+  ctx.globalAlpha = 1;
+  let landed = 0;
+  for (const f of FLIGHTS) {
+    const k = E.inOut(prog(lt, f.t0, 0.85)); if (k <= 0) continue;
+    const mx = (f.x + cx) / 2 - (cy - f.y) * f.bend, my = (f.y + cy) / 2 + (cx - f.x) * f.bend;
+    const P = (u) => [(1 - u) * (1 - u) * f.x + 2 * (1 - u) * u * mx + u * u * cx, (1 - u) * (1 - u) * f.y + 2 * (1 - u) * u * my + u * u * cy];
+    const tail = Math.max(0, k - 0.45), N = 40;
+    ctx.lineWidth = 4; ctx.lineCap = 'round';
+    for (let i = 0; i < N; i++) { const u0 = lerp(tail, k, i / N), u1 = lerp(tail, k, (i + 1) / N), [x0, y0] = P(u0), [x1, y1] = P(u1); ctx.strokeStyle = C.purple; ctx.globalAlpha = (i / N) * (1 - 0.7 * prog(lt, f.t0 + 0.85, 0.4)); ctx.beginPath(); ctx.moveTo(x0, y0); ctx.lineTo(x1, y1); ctx.stroke(); }
+    ctx.globalAlpha = 1; ctx.fillStyle = C.ink; ctx.beginPath(); ctx.arc(f.x, f.y, 6, 0, 7); ctx.fill();
+    if (k < 1) { const [hx, hy] = P(k); ctx.fillStyle = C.purple; ctx.beginPath(); ctx.arc(hx, hy, 7, 0, 7); ctx.fill(); } else landed++;
+  }
+  ctx.save(); ctx.translate(cx, cy); const km = E.back(prog(lt, 0.1, 0.5)); ctx.scale(0.62 * km, 0.62 * km);
+  for (let q = 0; q < 4; q++) { ctx.fillStyle = q === 1 ? C.visorLight : C.purple; ctx.fill(PANEL[q]); } ctx.restore();
+  for (const f of FLIGHTS) { const p = prog(lt, f.t0 + 0.85, 0.5); if (p <= 0 || p >= 1) continue; ctx.strokeStyle = C.purple; ctx.globalAlpha = 1 - p; ctx.lineWidth = 2; ctx.beginPath(); ctx.arc(cx, cy, 70 + p * 120, 0, 7); ctx.stroke(); }
+  ctx.globalAlpha = 1;
+  label(ctx, `${landed} / ${FLIGHTS.length} ARRIVED`, W - 90, 1170, C.purple, 'right', 0.9, 22);
+}
+
+// 05 Corporate — the brand pattern locks into alignment; the mark emerges
+function vPattern(ctx, lt) {
+  const L = 128, k = L / 140, cols = 7, rows = 7, ox = 540 - cols * L / 2, oy = 770 - rows * L / 2;
+  const hi = [3, 3];
+  ctx.save(); ctx.beginPath(); ctx.rect(ox - 20, oy - 20, cols * L + 40, rows * L + 40); ctx.clip();
+  for (let j = 0; j <= rows; j++) for (let i = 0; i <= cols; i++) for (const o of [0, 1]) {
+    if (o === 0 && i === cols) continue; if (o === 1 && j === rows) continue;
+    const x = ox + i * L + (o === 0 ? L / 2 : 0), y = oy + j * L + (o === 1 ? L / 2 : 0);
+    const d = Math.hypot(x - 540, y - 770) / 700, u = E.out(prog(lt, 0.02 + d * 0.55, 0.75));
+    if (u <= 0) continue;
+    const seed = Math.sin(i * 12.9898 + j * 78.233 + o * 3.1) * 43758.5453, rnd = seed - Math.floor(seed);
+    // the four lenses around cell (3,2) form the mark
+    const isMark = (o === 0 && i === hi[0] && (j === hi[1] || j === hi[1] + 1)) || (o === 1 && j === hi[1] && (i === hi[0] || i === hi[0] + 1));
+    const isVisor = o === 1 && j === hi[1] && i === hi[0] + 1;
+    const km = E.inOut(prog(lt, 1.0, 0.5));
+    ctx.save(); ctx.translate(x, y); ctx.rotate((o === 0 ? Math.PI / 2 : 0) + (1 - u) * (rnd - 0.5) * 5); ctx.scale(k * u, k * u);
+    ctx.fillStyle = isVisor ? C.visor : C.cream; ctx.globalAlpha = isMark ? lerp(0.22, 1, km) : 0.22 * (1 - 0.35 * km);
+    if (o === 1 && i === hi[0] && j === hi[1] && false) {}
+    ctx.fill(LENS); ctx.restore();
+  }
+  ctx.restore();
+}
+
+// 06 Installations — a visitor walks through a projected floor; the flow parts around them
+const FLOW = (() => {
+  const N = 1400, DT = 1 / 240, T0 = -0.5, T1 = 2.4, steps = Math.ceil((T1 - T0) / DT) + 1, r = mulberry(21);
+  const bx = 120, by = 380, bw = 840, bh = 780, pos = new Float32Array(N * steps * 2), col = new Uint8Array(N);
+  const P = new Float32Array(N * 2); for (let i = 0; i < N; i++) { P[2 * i] = bx + r() * bw; P[2 * i + 1] = by + r() * bh; col[i] = r() < 0.22 ? 1 : 0; }
+  const visitor = (t) => [bx + bw * (0.2 + 0.6 * (0.5 - 0.5 * Math.cos(Math.PI * clamp((t + 0.2) / 2.4)))), by + bh * (0.5 + 0.22 * Math.sin(t * 2.2))];
+  for (let s = 0; s < steps; s++) {
+    const t = T0 + s * DT, [vx, vy] = visitor(t);
+    for (let i = 0; i < N; i++) {
+      let x = P[2 * i], y = P[2 * i + 1]; pos[(s * N + i) * 2] = x; pos[(s * N + i) * 2 + 1] = y;
+      const sc = 0.0032, e = 0.5, z = t * 0.35;
+      const n1 = noise3(x * sc, (y + e) * sc, z), n2 = noise3(x * sc, (y - e) * sc, z), n3 = noise3((x + e) * sc, y * sc, z), n4 = noise3((x - e) * sc, y * sc, z);
+      let u = (n1 - n2) / (2 * e) * 70000, v = -(n3 - n4) / (2 * e) * 70000;
+      const dx = x - vx, dy = y - vy, d2 = dx * dx + dy * dy, rep = 9e6 / (d2 + 2500) / Math.sqrt(d2 + 1); u += dx * rep * 0.02; v += dy * rep * 0.02;
+      x += u * DT; y += v * DT;
+      if (x < bx) x += bw; if (x > bx + bw) x -= bw; if (y < by) y += bh; if (y > by + bh) y -= bh;
+      P[2 * i] = x; P[2 * i + 1] = y;
+    }
+  }
+  return { N, DT, T0, steps, pos, col, visitor, box: [bx, by, bw, bh] };
+})();
+function vFlow(ctx, lt) {
+  const { N, DT, T0, steps, pos, col, visitor, box } = FLOW, [bx, by, bw, bh] = box;
+  const ki = E.out(prog(lt, -0.1, 0.6));
+  ctx.strokeStyle = C.cream; ctx.globalAlpha = 0.25; ctx.lineWidth = 2; ctx.beginPath(); ctx.roundRect(bx - 12, by - 12, bw + 24, bh + 24, 20); ctx.stroke();
+  label(ctx, 'FLOOR PROJECTION · LIVE', bx - 12, by - 40, C.visor, 'left', 0.8, 22);
+  const s1 = Math.min(steps - 1, Math.max(0, Math.round((lt - T0) / DT))), TR = 60, stride = 4;
+  ctx.save(); ctx.beginPath(); ctx.rect(bx, by, bw, bh); ctx.clip(); ctx.lineWidth = 2.2; ctx.lineCap = 'round';
+  for (const c of [0, 1]) {
+    ctx.strokeStyle = c ? C.visor : C.cream; ctx.globalAlpha = 0.75 * ki; ctx.beginPath();
+    for (let i = 0; i < N; i++) {
+      if (col[i] !== c) continue; let first = true, px = 0, py = 0;
+      for (let s = Math.max(0, s1 - TR); s <= s1; s += stride) {
+        const x = pos[(s * N + i) * 2], y = pos[(s * N + i) * 2 + 1];
+        if (first || Math.abs(x - px) > 200 || Math.abs(y - py) > 200) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+        first = false; px = x; py = y;
+      }
+    }
+    ctx.stroke();
+  }
+  ctx.restore();
+  const [vx, vy] = visitor(lt);
+  ctx.globalAlpha = ki; ctx.strokeStyle = C.cream; ctx.lineWidth = 3; ctx.beginPath(); ctx.arc(vx, vy, 34, 0, 7); ctx.stroke();
+  ctx.fillStyle = C.cream; ctx.beginPath(); ctx.arc(vx, vy, 10, 0, 7); ctx.fill(); ctx.globalAlpha = 1;
+}
+
+// 07 Event management — run of show, ticked off as the day runs
+const ROS = [['08:30', 'Arrivals & registration'], ['09:30', 'Opening keynote'], ['11:00', 'Breakout sessions'], ['13:00', 'Lunch'], ['16:00', 'Experience zone'], ['19:30', 'Gala dinner']];
+function vRunOfShow(ctx, lt) {
+  const x0 = 120, y0 = 400, gap = 128, head = E.inOut(prog(lt, 0.3, 1.3)) * (ROS.length - 1) * gap;
+  ctx.strokeStyle = C.ink; ctx.globalAlpha = 0.25; ctx.lineWidth = 3; ctx.setLineDash([14, 10]);
+  ctx.beginPath(); ctx.moveTo(x0, y0); ctx.lineTo(x0, y0 + (ROS.length - 1) * gap * E.out(prog(lt, 0, 0.5))); ctx.stroke(); ctx.setLineDash([]);
+  ctx.globalAlpha = 1; ctx.strokeStyle = C.purple; ctx.lineWidth = 5; ctx.beginPath(); ctx.moveTo(x0, y0); ctx.lineTo(x0, y0 + head); ctx.stroke();
+  ROS.forEach(([tm, item], i) => {
+    const y = y0 + i * gap, kin = E.out(prog(lt, 0.02 + i * 0.05, 0.6)); if (kin <= 0) return;
+    const done = head >= i * gap - 0.5, kd = E.back(clamp((head - i * gap) / 40 + (done ? 1 : 0) * 0));
+    ctx.globalAlpha = kin;
+    ctx.fillStyle = done ? C.purple : C.cream; ctx.strokeStyle = done ? C.purple : C.ink; ctx.lineWidth = 3;
+    ctx.beginPath(); ctx.arc(x0, y, 14, 0, 7); ctx.fill(); ctx.stroke();
+    setFont(ctx, 40, 700, 'Manrope', 'normal', 0); ctx.textAlign = 'left'; ctx.fillStyle = C.purple; ctx.fillText(tm, x0 + 52 + (1 - kin) * 40, y + 14);
+    setFont(ctx, 40, 500, 'Manrope', 'normal', -0.5); ctx.fillStyle = C.ink; ctx.globalAlpha = kin * (done ? 1 : 0.55); ctx.fillText(item, x0 + 200 + (1 - kin) * 40, y + 14);
+    // tick
+    const kt = clamp((head - i * gap) / 60); ctx.globalAlpha = kin;
+    ctx.strokeStyle = C.ink; ctx.globalAlpha = 0.2 * kin; ctx.lineWidth = 2; ctx.beginPath(); ctx.arc(W - 140, y, 26, 0, 7); ctx.stroke();
+    if (kt > 0) {
+      ctx.globalAlpha = 1; ctx.fillStyle = C.purple; ctx.beginPath(); ctx.arc(W - 140, y, 26 * E.back(kt), 0, 7); ctx.fill();
+      ctx.strokeStyle = C.cream; ctx.lineWidth = 5; ctx.lineCap = 'round'; ctx.lineJoin = 'round';
+      const p = E.out(clamp(kt * 1.4 - 0.3)); ctx.beginPath(); ctx.moveTo(W - 151, y + 1);
+      if (p < 0.4) ctx.lineTo(W - 151 + 7 * p / 0.4, y + 1 + 8 * p / 0.4); else { ctx.lineTo(W - 144, y + 9); ctx.lineTo(W - 144 + 15 * (p - 0.4) / 0.6, y + 9 - 17 * (p - 0.4) / 0.6); }
+      ctx.stroke();
+    }
+  });
+  ctx.globalAlpha = 1;
+}
+
+// ---------- intro, title, outro ----------
+function sceneIntro(ctx, t) {
+  ctx.fillStyle = C.ink; ctx.fillRect(0, 0, W, H);
+  const zoom = 1 + 33 * E.in4(prog(t, 2.55, 1.45)), rot = -0.5 * E.in3(prog(t, 2.55, 1.45));
+  ctx.save(); ctx.translate(540, 900); ctx.rotate(rot); ctx.scale(2.9 * zoom, 2.9 * zoom);
+  const kd = E.out(prog(t, 2.0, 0.55));
+  if (kd > 0) { ctx.fillStyle = C.purple; ctx.beginPath(); ctx.arc(0, 0, 97 * kd, 0, 7); ctx.fill(); }
+  drawMark(ctx, t, 0.1, 2.0, { crown: C.cream, visor: C.visor });
+  ctx.restore();
+  // the opening fill outruns the panels once we are through
+  const thru = prog(t, 3.85, 0.15); if (thru > 0) { ctx.globalAlpha = thru; ctx.fillStyle = C.purple; ctx.fillRect(0, 0, W, H); ctx.globalAlpha = 1; }
+  const kl = prog(t, 0.6, 0.6) * (1 - prog(t, 2.5, 0.3));
+  label(ctx, 'PURPLEHAT EVENTS', 540, 1500, C.cream, 'center', 0.55 * kl, 26);
+}
+function sceneTitle(ctx, t) {
+  ctx.fillStyle = C.purple; ctx.fillRect(0, 0, W, H);
+  const lt = t - 4;
+  revealLine(ctx, 'Seven services.', 90, 860, prog(lt, 0, 0.9), 128, C.cream);
+  setFont(ctx, 176, 400, 'Instrument Serif', 'italic', -2); const sw = ctx.measureText('Stitched').width;
+  revealLine(ctx, 'Stitched', 84, 1050, prog(lt, 1.0, 0.9), 176, C.visor, { weight: 400, fam: 'Instrument Serif', style: 'italic', track: -2 });
+  revealLine(ctx, 'as one.', 84 + sw + 34, 1050, prog(lt, 1.08, 0.9), 128, C.cream);
+  // a running stitch underlines it
+  const ks = E.inOut(prog(lt, 1.15, 0.7)); ctx.strokeStyle = C.visor; ctx.lineWidth = 6; ctx.setLineDash([26, 16]); ctx.lineCap = 'butt';
+  ctx.beginPath(); ctx.moveTo(90, 1110); ctx.lineTo(90 + (W - 180) * ks, 1110); ctx.stroke(); ctx.setLineDash([]);
+  label(ctx, 'PURPLEHAT EVENTS', 90, 240, C.cream, 'left', 0.6);
+}
+const NAME = 'PurpleHat';
+function sceneOutro(ctx, t) {
+  ctx.fillStyle = C.purple; ctx.fillRect(0, 0, W, H);
+  const lt = t - 20, push = 1 + 0.035 * E.sine(prog(lt, 1.0, 3.0));
+  ctx.save(); ctx.translate(540, 960); ctx.scale(push, push); ctx.translate(-540, -960);
+  ctx.save(); ctx.translate(540, 760); ctx.scale(2.1, 2.1); drawMark(ctx, lt, 0.0, 1.0, { crown: C.cream, visor: C.visor }); ctx.restore();
+  setFont(ctx, 168, 800, 'Manrope', 'normal', -5); ctx.textAlign = 'left';
+  const total = ctx.measureText(NAME).width; let x = 540 - total / 2;
+  ctx.save(); ctx.beginPath(); ctx.rect(0, 960, W, 1250 - 960); ctx.clip();
+  for (let i = 0; i < NAME.length; i++) {
+    const ch = NAME[i], w = ctx.measureText(ch).width - 5, k = E.out(prog(lt, 1.0 + i * 0.04, 0.8));
+    ctx.fillStyle = C.cream; ctx.fillText(ch, x, 1180 + (1 - k) * 220); x += w + 0.0;
+  }
+  ctx.restore();
+  const ke = prog(lt, 1.45, 0.8); label(ctx, 'EVENTS', 540, 1272, C.visor, 'center', E.out(ke), 44);
+  revealLine(ctx, 'Seven services. Stitched as one.', 540, 1440, prog(lt, 2.0, 0.9), 46, C.cream, { weight: 500, track: 0, align: 'center', alpha: 0.85 });
+  ctx.restore();
+}
+
+// ---------- wipes: a giant visor crescent sweeps right → left ----------
+const WIPES = [6, 8, 10, 12, 14, 16, 18, 20];
+function wipe(ctx, t, b, drawOld, drawNew) {
+  const p = E.inOut(prog(t, b - 0.32, 0.5)), R = 3200, gap = 150;
+  const cxA = lerp(W + R + 40, -R + 0 - gap - 200, p) + 0, cxB = cxA + gap;
+  drawOld();
+  ctx.save(); ctx.beginPath(); ctx.arc(cxA + 0, 960, R, 0, 7); ctx.clip(); ctx.fillStyle = C.visor; ctx.fillRect(0, 0, W, H); ctx.restore();
+  ctx.save(); ctx.beginPath(); ctx.arc(cxB, 960, R, 0, 7); ctx.clip(); drawNew(); ctx.restore();
+}
+function sceneAt(ctx, t) {
+  if (t < 4) return sceneIntro(ctx, t);
+  if (t < 6 - 0.32) return sceneTitle(ctx, t);
+  for (let w = 0; w < WIPES.length; w++) {
+    const b = WIPES[w];
+    const old = () => (w === 0 ? sceneTitle(ctx, t) : sceneService(ctx, w - 1, t - WIPES[w - 1]));
+    const nw = () => (w === 7 ? sceneOutro(ctx, t) : sceneService(ctx, w, t - b));
+    if (t >= b - 0.32 && t < b + 0.18) return wipe(ctx, t, b, old, nw);
+    const next = WIPES[w + 1] ?? 1e9;
+    if (t >= b + 0.18 && t < next - 0.32) return nw();
+  }
+}
+function draw(ctx, t) {
+  ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.globalAlpha = 1;
+  const imp = impact(t), cam = 1 + 0.028 * imp, sh = imp * 5;
+  ctx.translate(W / 2 + noise3(t * 30, 0.5, 2) * sh, H / 2 + noise3(0.5, t * 30, 7) * sh); ctx.scale(cam, cam); ctx.translate(-W / 2, -H / 2);
+  ctx.fillStyle = C.ink; ctx.fillRect(-40, -40, W + 80, H + 80);
+  sceneAt(ctx, t);
+}
+
+// ---------- WebGL2 post: sub-frame accumulation (motion blur) + lens + grain ----------
+const scene = document.createElement('canvas'); scene.width = W; scene.height = H; const sctx = scene.getContext('2d', { willReadFrequently: true });
+const gl = document.getElementById('gl').getContext('webgl2', { preserveDrawingBuffer: true, antialias: false });
+gl.getExtension('EXT_color_buffer_float');
+function sh(type, src) { const s = gl.createShader(type); gl.shaderSource(s, src); gl.compileShader(s); if (!gl.getShaderParameter(s, gl.COMPILE_STATUS)) throw gl.getShaderInfoLog(s); return s; }
+function prog_(fs) { const p = gl.createProgram(); gl.attachShader(p, sh(gl.VERTEX_SHADER, `#version 300 es
+in vec2 a; out vec2 uv; void main(){ uv = a*0.5+0.5; gl_Position = vec4(a,0,1); }`)); gl.attachShader(p, sh(gl.FRAGMENT_SHADER, fs)); gl.linkProgram(p); return p; }
+const P_ACC = prog_(`#version 300 es
+precision highp float; in vec2 uv; uniform sampler2D s; uniform float w; out vec4 o; void main(){ o = vec4(texture(s, vec2(uv.x, 1.0-uv.y)).rgb * w, 1.0); }`);
+const P_OUT = prog_(`#version 300 es
+precision highp float; in vec2 uv; uniform sampler2D s; uniform float ca, seed; out vec4 o;
+float h(vec2 p){ p = fract(p*vec2(443.897,441.423)+seed); p += dot(p, p.yx+19.19); return fract((p.x+p.y)*p.x); }
+void main(){
+  vec2 d = uv - 0.5; float r2 = dot(d,d);
+  vec2 off = d * (0.0012 + ca) * (0.4 + 2.2*r2);
+  vec3 c = vec3(texture(s, uv + off).r, texture(s, uv).g, texture(s, uv - off).b);
+  c *= 1.0 - 0.10 * smoothstep(0.18, 0.75, r2*1.6);
+  float g = h(uv*vec2(1080.0,1920.0)) + h(uv*vec2(1080.0,1920.0)+3.7) - 1.0;
+  c += g * 0.028;
+  o = vec4(c, 1.0);
+}`);
+const vb = gl.createBuffer(); gl.bindBuffer(gl.ARRAY_BUFFER, vb); gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 1, -1, -1, 1, 1, 1]), gl.STATIC_DRAW);
+for (const p of [P_ACC, P_OUT]) { const l = gl.getAttribLocation(p, 'a'); gl.enableVertexAttribArray(l); gl.vertexAttribPointer(l, 2, gl.FLOAT, false, 0, 0); }
+const tex = gl.createTexture(); gl.bindTexture(gl.TEXTURE_2D, tex); for (const [k, v] of [[gl.TEXTURE_MIN_FILTER, gl.LINEAR], [gl.TEXTURE_MAG_FILTER, gl.LINEAR], [gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE], [gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE]]) gl.texParameteri(gl.TEXTURE_2D, k, v);
+const accT = gl.createTexture(); gl.bindTexture(gl.TEXTURE_2D, accT); gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA16F, W, H, 0, gl.RGBA, gl.HALF_FLOAT, null);
+for (const [k, v] of [[gl.TEXTURE_MIN_FILTER, gl.LINEAR], [gl.TEXTURE_MAG_FILTER, gl.LINEAR], [gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE], [gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE]]) gl.texParameteri(gl.TEXTURE_2D, k, v);
+const fbo = gl.createFramebuffer(); gl.bindFramebuffer(gl.FRAMEBUFFER, fbo); gl.framebufferTexture2D(gl.FRAMEBUFFER, gl.COLOR_ATTACHMENT0, gl.TEXTURE_2D, accT, 0);
+
+window.frame = (f, sub = SUB) => {
+  gl.bindFramebuffer(gl.FRAMEBUFFER, fbo); gl.viewport(0, 0, W, H); gl.clearColor(0, 0, 0, 1); gl.clear(gl.COLOR_BUFFER_BIT);
+  gl.enable(gl.BLEND); gl.blendFunc(gl.ONE, gl.ONE); gl.useProgram(P_ACC); gl.uniform1f(gl.getUniformLocation(P_ACC, 'w'), 1 / sub);
+  for (let s = 0; s < sub; s++) {
+    const t = (f + (sub === 1 ? 0 : (s + 0.5) / sub - 0.5) * SHUTTER) / FPS;
+    draw(sctx, Math.max(0, t));
+    gl.activeTexture(gl.TEXTURE0); gl.bindTexture(gl.TEXTURE_2D, tex); gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, sctx.getImageData(0, 0, W, H));
+    gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+  }
+  gl.disable(gl.BLEND); gl.bindFramebuffer(gl.FRAMEBUFFER, null); gl.useProgram(P_OUT);
+  gl.bindTexture(gl.TEXTURE_2D, accT);
+  gl.uniform1f(gl.getUniformLocation(P_OUT, 'ca'), 0.0075 * impact(f / FPS)); gl.uniform1f(gl.getUniformLocation(P_OUT, 'seed'), (f * 0.61803) % 1);
+  gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+  return document.getElementById('gl').toDataURL('image/png');
+};
+window.TOTAL = DUR * FPS;
+window.IMPACTS = IMPACTS;
+window.READY = Promise.all([
+  ['Manrope', 'fonts/Manrope-500.woff', { weight: '500' }], ['Manrope', 'fonts/Manrope-700.woff', { weight: '700' }], ['Manrope', 'fonts/Manrope-800.woff', { weight: '800' }],
+  ['Instrument Serif', 'fonts/InstrumentSerif-400i.woff', { weight: '400', style: 'italic' }],
+].map(([f, u, d]) => new FontFace(f, `url(${u})`, d).load().then((ff) => document.fonts.add(ff)))).then(() => true);
+</script></body></html>

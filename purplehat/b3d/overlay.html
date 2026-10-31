@@ -1,0 +1,21 @@
+<!doctype html><html><body style="margin:0;background:transparent"><canvas id="c" width="1920" height="1080"></canvas><script>
+const c = document.getElementById('c'), x = c.getContext('2d');
+const outC = (k) => 1 - Math.pow(1 - Math.max(0, Math.min(1, k)), 3);
+const W0 = { 120: 564, 150: 578, 180: 584 };
+const scaleAt = (f) => { const w = f <= 150 ? 564 + (578 - 564) * (f - 120) / 30 : 578 + (584 - 578) * (f - 150) / 30; return w / 584; };
+window.frame = (f) => {
+  x.clearRect(0, 0, 1920, 1080); if (f < 112) return c.toDataURL();
+  const s = scaleAt(f); x.save(); x.translate(960, 540); x.scale(s, s); x.translate(-960, -540);
+  x.font = '700 142px Manrope'; x.letterSpacing = '-4px'; x.textBaseline = 'alphabetic';
+  const word = 'PurpleHat', total = x.measureText(word).width; let px = 960 - total / 2;
+  for (let i = 0; i < word.length; i++) {
+    const ch = word[i], w = x.measureText(ch).width - 4, k = outC((f - 112 - i * 2) / 24);
+    if (k > 0) { x.save(); x.globalAlpha = k; x.filter = `blur(${(1 - k) * 9}px)`; x.fillStyle = '#F6F4EF'; x.fillText(ch, px, 872 + (1 - k) * 26); x.restore(); }
+    px += w;
+  }
+  const ke = outC((f - 134) / 30);
+  if (ke > 0) { x.font = '500 30px Manrope'; x.letterSpacing = `${(0.75 - 0.25 * ke) * 30}px`; x.textAlign = 'center'; x.globalAlpha = ke; x.fillStyle = '#D7CFFF'; x.fillText('EVENTS', 960 + 0.25 * 30 * ke / 2, 940); x.globalAlpha = 1; x.textAlign = 'left'; }
+  x.restore(); return c.toDataURL();
+};
+window.READY = Promise.all([['Manrope-700.woff', '700'], ['Manrope-500.woff', '500']].map(([u, w]) => new FontFace('Manrope', `url(${u})`, { weight: w }).load().then((ff) => document.fonts.add(ff))));
+</script></body></html>

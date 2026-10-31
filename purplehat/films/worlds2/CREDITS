@@ -1,0 +1,17 @@
+WORLDS — PurpleHat Events (43 styles, one mark)
+
+Made entirely in code (Canvas 2D in headless Chromium, numpy/scipy audio) with the Lemo-Opuscar
+directing method and toolkit (MIT, github.com/lemomo-ai/lemo-opuscar). Style grammar from its 43 STYLE.md
+guides; no demo code, characters, shots or melodies reused. All art, score and sound are original.
+
+Instrument samples
+- Piano: "Salamander Grand Piano V3" by Alexander Holm, CC BY 3.0 (https://creativecommons.org/licenses/by/3.0/)
+- VS Chamber Orchestra: Community Edition (Versilian Studios), CC0
+- Versilian Community Sample Library (Versilian Studios), CC0
+- FreePats project (freepats.zenvoid.org), CC0 / see project licence per bank
+
+Fonts (SIL Open Font License 1.1, Google Fonts)
+Inter, Inter Tight, JetBrains Mono, Manrope, Caveat, Press Start 2P, Limelight, Archivo Black,
+Bebas Neue, VT323, IM Fell English, Lilita One
+
+The PurpleHat mark and name belong to PurpleHat Events.

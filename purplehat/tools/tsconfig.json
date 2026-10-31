@@ -1,0 +1,2 @@
+{ "compilerOptions": { "strict": true, "jsx": "react-jsx", "target": "es2020", "module": "esnext", "moduleResolution": "bundler", "noEmit": true, "skipLibCheck": true, "types": ["react"], "typeRoots": ["./node_modules/@types"] },
+  "files": ["../brand/code/PheLogo.tsx", "../brand/code/phe-logo.d.ts"] }

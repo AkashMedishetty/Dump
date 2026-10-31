@@ -1,0 +1,21 @@
+{
+  "name": "PurpleHat Events",
+  "short_name": "PurpleHat",
+  "theme_color": "#2A0D6E",
+  "background_color": "#2A0D6E",
+  "display": "standalone",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

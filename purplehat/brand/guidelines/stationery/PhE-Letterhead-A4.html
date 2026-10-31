@@ -1,0 +1,45 @@
+<!doctype html><html><head><meta charset="utf-8"><title>PurpleHat Events — Letterhead (A4)</title><style>@font-face{font-family:'DM Sans';src:url('../assets/fonts/DMSans-300.ttf') format('truetype');font-weight:300;font-style:normal}
+@font-face{font-family:'DM Sans';src:url('../assets/fonts/DMSans-400.ttf') format('truetype');font-weight:400;font-style:normal}
+@font-face{font-family:'DM Sans';src:url('../assets/fonts/DMSans-500.ttf') format('truetype');font-weight:500;font-style:normal}
+@font-face{font-family:'DM Sans';src:url('../assets/fonts/DMSans-600.ttf') format('truetype');font-weight:600;font-style:normal}
+@font-face{font-family:'DM Sans';src:url('../assets/fonts/DMSans-700.ttf') format('truetype');font-weight:700;font-style:normal}
+@font-face{font-family:'DM Sans';src:url('../assets/fonts/DMSans-900.ttf') format('truetype');font-weight:900;font-style:normal}
+:root{--violet:#2A0D6E;--blue:#2563EB;--warm:#F4F1EB;--ink:#1A1033;--font:'Satoshi','DM Sans',system-ui,sans-serif}
+*{box-sizing:border-box}
+body{margin:0;font-family:var(--font);color:var(--ink);-webkit-font-smoothing:antialiased;font-optical-sizing:auto}
+.t{font-family:var(--font)}
+svg text{font-family:var(--font)}
+@page{size:210mm 297mm;margin:0}
+html{background:#ddd}body{margin:0}
+.sheet{width:210mm;height:297mm;position:relative;background:#fff;overflow:hidden;margin:0 auto}
+@media screen{body{padding:24px 0}.sheet{box-shadow:0 4px 30px #0003}.hint{display:block}}
+.hint{display:none;width:210mm;margin:0 auto 12px;font:13px/1.4 var(--font);color:#555}
+@media print{.hint{display:none!important}}
+@media screen and (max-width:800px){.hint{display:none}body{padding:0}.sheet{box-shadow:none}}
+.lh-hd{position:absolute;left:20mm;top:16mm}
+.lh-addr{position:absolute;right:20mm;top:17mm;text-align:right;font-size:8pt;line-height:1.55;color:#45414F}
+.lh-addr b{color:#2A0D6E;font-weight:600}
+.lh-body{position:absolute;left:20mm;right:28mm;top:62mm;bottom:40mm;font-size:10pt;line-height:1.6;color:#1A1033}
+.lh-body p{margin:0 0 4mm}.lh-body .date{color:#6E6A7A;margin-bottom:8mm}.lh-body .sig{margin-top:8mm}
+.lh-body .sig b{color:#2A0D6E;font-weight:600}
+[contenteditable]:focus{outline:1px dashed #2563EB;outline-offset:2mm}
+.lh-foot{position:absolute;left:20mm;right:20mm;bottom:11mm;font-size:6.8pt;letter-spacing:.03em;color:#2A0D6E;border-top:.25mm solid #E7E2F7;padding-top:3mm}
+.lh-foot div{display:flex;gap:2.4mm;align-items:center;line-height:1.9}
+.lh-foot i{width:1.3mm;height:1.3mm;border-radius:50%;background:#2563EB;display:inline-block}
+.lh-side{position:absolute;right:9mm;top:62mm}
+</style></head><body>
+<div class="hint">Editable letterhead: click into the text to edit, then print to PDF (A4, margins: none, background graphics: on). Production version must use Satoshi.</div>
+<div class="sheet"><div class="lh-hd"><svg class="mk " viewBox="0 0 438.99 159.84" style="width:44mm;height:16.02mm;overflow:visible;"><g fill="none" stroke="#2A0D6E" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"><path d="M12.75 106.27L12.75 56.04A44.04 44.04 0 0 1 56.78 12.00L96.35 12.00A45.51 45.51 0 0 1 96.35 103.02L86.20 103.02"/><path d="M187.24 12.37L187.24 143.73"/><path d="M187.24 113.59A44.50 44.50 0 0 1 276.24 113.59"/><path d="M324.08 13.26L426.24 13.26"/><path d="M426.24 68.87L361.64 68.87A39.11 39.11 0 0 0 361.64 147.09L394.32 147.09"/></g><g fill="#2563EB"><circle cx="12.75" cy="138.19" r="12.75"/><circle cx="276.24" cy="147.09" r="12.75"/><circle cx="426.24" cy="147.09" r="12.75"/></g></svg></div>
+<div class="lh-addr" contenteditable><b>PurpleHat Events</b><br>Hyderabad, Telangana, India<br>+91 00000 00000<br>hello@purplehat.events<br>purplehat.events</div>
+<svg class="lh-side" width="8mm" height="60mm" viewBox="0 0 8 60"><rect x=".25" y=".25" width="7.5" height="40" rx="3.75" fill="none" stroke="#2563EB" stroke-width=".4"/><circle cx="4" cy="36.25" r="2.4" fill="#2563EB"/><circle cx="4" cy="48" r="3.75" fill="none" stroke="#2A0D6E" stroke-width=".4"/></svg>
+<div class="lh-body" contenteditable>
+<p class="date">16 October 2026</p>
+<p>Recipient Name<br>Organisation<br>Address line, City</p>
+<p style="margin-top:8mm;color:#2A0D6E;font-weight:600">Subject: A short, specific subject line</p>
+<p>Dear Recipient,</p>
+<p>Thank you for thinking of PurpleHat Events. This is sample body copy set in the brand typeface at 10 pt with 16 pt leading, which keeps a letter comfortable to read at arm’s length. Replace this text with your own; the layout keeps a generous left margin aligned to the P of the logo.</p>
+<p>Write the way we speak in the room: warm, clear and confident. Lead with what matters to the reader, keep paragraphs short, and end with one obvious next step.</p>
+<p class="sig">Warm regards,<br><br><b>Akash Medishetty</b><br>Chief Technology Officer, PurpleHat Events</p>
+</div>
+<div class="lh-foot"><div><span>Event Management</span><i></i><span>Conferences & PCO</span><i></i><span>MICE</span><i></i><span>Corporate Events</span></div><div><span>Experiential Installations</span><i></i><span>Branding & Design</span><i></i><span>Websites & Apps</span></div></div>
+</div></body></html>

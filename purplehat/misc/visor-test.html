@@ -1,0 +1,64 @@
+<body style="background:#fff;display:flex;flex-wrap:wrap;gap:10px;padding:10px"><script>const TAU = Math.PI * 2;
+  const COL = { brand: '#5e44e8', crown: '#f6f4ef', visor: '#d7cfff', ink: '#17112b', visorOnWhite: '#a996ff' };
+
+  function circle(cx, cy, r, n = 360) {
+    const p = [];
+    for (let i = 0; i < n; i++) { const t = (i / n) * TAU; p.push([cx + r * Math.cos(t), cy + r * Math.sin(t)]); }
+    return p;
+  }
+  function area(p) {
+    let a = 0;
+    for (let i = 0; i < p.length; i++) { const [x1, y1] = p[i], [x2, y2] = p[(i + 1) % p.length]; a += x1 * y2 - x2 * y1; }
+    return a / 2;
+  }
+  // Keep the part of the polygon where nx*x + ny*y >= d.
+  function clipHalf(poly, nx, ny, d) {
+    const out = [];
+    for (let i = 0; i < poly.length; i++) {
+      const A = poly[i], B = poly[(i + 1) % poly.length];
+      const da = nx * A[0] + ny * A[1] - d, db = nx * B[0] + ny * B[1] - d;
+      if (da >= 0) out.push(A);
+      if ((da >= 0) !== (db >= 0)) { const t = da / (da - db); out.push([A[0] + (B[0] - A[0]) * t, A[1] + (B[1] - A[1]) * t]); }
+    }
+    return out;
+  }
+  function clipConvex(subject, clip) {
+    const s = Math.sign(area(clip));
+    let out = subject;
+    for (let i = 0; i < clip.length && out.length; i++) {
+      const A = clip[i], B = clip[(i + 1) % clip.length];
+      const nx = -(B[1] - A[1]) * s, ny = (B[0] - A[0]) * s;
+      out = clipHalf(out, nx, ny, nx * A[0] + ny * A[1]);
+    }
+    return out;
+  }
+  // Arc circle for a panel pointing up: it meets the unit circle at ±phi from vertical
+  // and reaches in to depth h from the centre.
+  function arcCircle(h, phiDeg) {
+    const ph = (phiDeg * Math.PI) / 180;
+    const c = (1 - h * h) / (2 * (Math.cos(ph) - h));
+    return { c, r: c - h };
+  }
+  function panelUp({ h, phi, outerOff = 0, outerR = 1 }, g) {
+    const k = arcCircle(h, phi);
+    let p = clipConvex(circle(0, outerOff, outerR), circle(0, -k.c, k.r));
+    const d = (g / 2) * Math.SQRT2;
+    p = clipHalf(p, -1, -1, d);
+    p = clipHalf(p, 1, -1, d);
+    return p;
+  }
+  function rotate(p, deg) {
+    const a = (deg * Math.PI) / 180, c = Math.cos(a), s = Math.sin(a);
+    return p.map(([x, y]) => [x * c - y * s, x * s + y * c]);
+  }
+  const S = 100;
+  const toPath = (p) => 'M' + p.map(([x, y]) => `${(x * S).toFixed(2)} ${(y * S).toFixed(2)}`).join('L') + 'Z';
+
+  
+const C=[[0.46, 50, 0.38, 50, 0, 1], [0.46, 50, 0.34, 50, 0, 1], [0.46, 50, 0.36, 46, 0, 1], [0.46, 50, 0.4, 50, 0.18, 1.28], [0.46, 50, 0.36, 50, 0.22, 1.34], [0.46, 50, 0.34, 47, 0.28, 1.42]];
+C.forEach(([ch,cp,vh,vp,vo,vr])=>{const g=0.07;const crown=[0,180,270].map(d=>toPath(rotate(panelUp({h:ch,phi:cp},g),d)));
+const visor=toPath(rotate(panelUp({h:vh,phi:vp,outerOff:vo,outerR:vr},g),90));
+const box=document.createElement('div');box.style.cssText='background:#5e44e8;padding:6px;display:flex;gap:8px;align-items:center;font:11px monospace;color:#fff';
+const mk=(s,c1,c2)=>`<svg viewBox="-140 -140 280 280" width="${s}" height="${s}">${crown.map(d=>`<path d="${d}" fill="${c1}"/>`).join('')}<path d="${visor}" fill="${c2}"/><circle r="11" fill="${c1}"/></svg>`;
+box.innerHTML=mk(180,'#f6f4ef','#d7cfff')+mk(180,'#f6f4ef','#f6f4ef')+mk(32,'#f6f4ef','#f6f4ef')+`vh${vh} vp${vp} off${vo}`;document.body.appendChild(box);});
+</script>
